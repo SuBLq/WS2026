@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f5f8f">
+<meta name="description" content="Калькулятор времени и ресурсов строительства Whiteout Survival со встроенным справочником зданий.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="WOS Стройка">
+
+
+
+<title>Whiteout Survival — калькулятор строительства</title>
+<style>
+:root{--bg:#eef5f8;--card:#fff;--ink:#173042;--muted:#698093;--accent:#1676a6;--accent2:#0f5f8f;--good:#0a7a51;--warn:#a45a10;--warnbg:#fff5e9;--danger:#b42318;--shadow:0 12px 32px rgba(18,59,83,.10)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:radial-gradient(circle at 12% -10%,rgba(61,163,205,.18),transparent 26rem),linear-gradient(180deg,#edf6fa 0,#f7fafb 22rem,#eef5f8 100%)}
+button,input,select{font:inherit}button{touch-action:manipulation}
+.app{max-width:860px;margin:auto;padding:18px 14px 48px}
+.hero{background:linear-gradient(135deg,#0d527d,#1676a6);color:#fff;border-radius:24px;padding:22px 20px 20px;box-shadow:var(--shadow);margin-bottom:14px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;right:-68px;top:-92px;background:rgba(255,255,255,.08)}
+.hero .eyebrow{font-size:12px;font-weight:800;letter-spacing:.13em;opacity:.8}
+.hero h1{font-size:25px;line-height:1.12;margin:7px 0}
+.hero p{margin:0;max-width:650px;font-size:14px;line-height:1.45;opacity:.9}
+.version{display:inline-block;margin-top:11px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:5px 9px;font-size:11px;font-weight:800}
+.card{background:#fff;border:1px solid rgba(124,157,176,.22);border-radius:18px;box-shadow:0 5px 18px rgba(29,73,98,.06);padding:17px;margin:11px 0}
+.card h2{font-size:17px;margin:0 0 13px}
+.label{font-size:12px;font-weight:800;color:var(--muted);margin:0 0 7px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.field input,.field select{width:100%;border:1px solid #cbdce5;background:#f9fcfd;color:var(--ink);border-radius:12px;padding:12px 10px;outline:none}
+.field input:focus,.field select:focus{border-color:#4ba5ca;box-shadow:0 0 0 3px rgba(50,151,194,.12)}
+.field small{display:block;color:var(--muted);font-size:11px;margin:5px 2px 0}
+.suffix{position:relative}.suffix input{padding-right:34px}.suffix:after{content:"%";position:absolute;right:12px;top:12px;color:#7890a0;font-weight:700}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.control{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border:1px solid #d4e2e9;background:#f9fcfd;border-radius:13px}
+.control b{display:block;font-size:14px}.control span{font-size:11px;color:var(--muted)}
+.switch{position:relative;width:48px;height:28px;flex:none}.switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;inset:0;background:#c8d6de;border-radius:999px;cursor:pointer}.slider:before{content:"";position:absolute;height:22px;width:22px;left:3px;top:3px;background:#fff;border-radius:50%;box-shadow:0 1px 5px rgba(0,0,0,.17);transition:.18s}
+.switch input:checked+.slider{background:var(--accent)}.switch input:checked+.slider:before{transform:translateX(20px)}
+.note{padding:12px 13px;border-radius:13px;background:var(--warnbg);color:#795125;border:1px solid #f0dfc9;font-size:12px;line-height:1.45;margin-top:10px}.note b{color:var(--warn)}
+
+.add-row{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) 50px;gap:8px;align-items:end}
+.add-btn{height:46px;width:50px;border:0;border-radius:13px;background:var(--accent);color:#fff;font-size:29px;line-height:1;font-weight:500;cursor:pointer;box-shadow:0 4px 12px rgba(22,118,166,.22)}
+.add-btn:disabled{background:#b9cbd4;box-shadow:none;cursor:default}
+.pick-info{margin-top:10px;padding:11px 12px;background:#eef8fc;border:1px solid #d1eaf4;border-radius:13px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.pick-info span{font-size:11px;color:#657e8d}.pick-info b{font-size:13px;color:var(--accent2);text-align:right}
+.status{min-height:19px;margin-top:7px;font-size:11px;font-weight:700;color:var(--muted)}
+.status.ok{color:var(--good)}.status.warn{color:var(--warn)}.status.bad{color:var(--danger)}
+
+.list-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.count-badge{font-size:11px;font-weight:800;background:#e7f1f5;color:#245a75;border-radius:999px;padding:5px 9px}
+.build-list{display:flex;flex-direction:column;gap:9px}
+.build{border:1px solid #d9e5eb;background:#fbfdfe;border-radius:14px;padding:11px}
+.build-head{display:flex;gap:8px;align-items:flex-start}
+.build-title{flex:1;min-width:0}.build-title b{display:block;font-size:14px}.build-title span{display:block;color:#718795;font-size:11px;margin-top:2px}
+.remove{border:0;background:#f5e9e7;color:#9c3a30;border-radius:9px;width:34px;height:34px;font-weight:900;cursor:pointer;flex:none}
+.build-out{display:grid;grid-template-columns:1fr auto;gap:7px 12px;margin-top:9px;padding-top:9px;border-top:1px dashed #d9e4e9;font-size:12px;align-items:center}
+.build-out b{color:var(--good);font-size:13px}.build-out .base{color:#526d7c;font-weight:800}
+.build-resource{grid-column:1/-1;color:#7a909d;font-size:10px;line-height:1.4}
+.empty{padding:22px 12px;text-align:center;color:#78909e;border:1px dashed #cddde5;border-radius:14px;font-size:13px}
+
+.result{background:linear-gradient(135deg,#eaf8f3,#f5fbf8);border:1px solid #c9eadc;border-radius:18px;padding:18px;margin-top:11px}
+.result .big{font-weight:900;color:var(--good);font-size:29px;margin:1px 0 9px}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.metric{background:rgba(255,255,255,.72);border:1px solid #dceee6;border-radius:12px;padding:10px}
+.metric span{display:block;color:#657c72;font-size:11px}.metric b{font-size:14px}
+.resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px}
+.resource{background:#fff;border:1px solid #d9e8ef;border-radius:11px;padding:9px}
+.resource span{display:block;font-size:10px;color:#728895}.resource b{display:block;margin-top:2px;font-size:13px;color:#244b61}
+.resource-total{margin-top:12px;padding-top:12px;border-top:1px solid #cfe7dc}
+
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.btn{border:0;border-radius:12px;padding:10px 12px;font-weight:800;cursor:pointer;background:#e7f1f5;color:#245a75}
+.btn.danger{background:#faecea;color:#9d2b20}
+.bulk summary,.settings summary{cursor:pointer;font-weight:800;color:#31586e}
+.bulk .inside,.settings .inside{padding-top:12px}
+.bulk-meta{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.55}
+.hyena-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.hyena-grid label{font-size:11px;color:var(--muted)}.hyena-grid input{width:100%;border:1px solid #d5e1e7;border-radius:10px;padding:9px;margin-top:4px}
+.footer{text-align:center;color:#738a99;font-size:11px;padding:17px 0}
+
+@media(max-width:620px){
+  .app{padding:10px 10px 36px}.hero{border-radius:20px;padding:18px 16px}.hero h1{font-size:22px}.card{padding:14px}
+  .controls,.grid2{grid-template-columns:1fr}
+  .add-row{grid-template-columns:minmax(0,1fr) 50px}
+  .add-row .level-field{grid-column:1/2} .add-row .add-btn{grid-column:2;grid-row:1/3;height:100%;min-height:92px}
+  .result-grid{grid-template-columns:1fr 1fr}.result .big{font-size:26px}
+}
+@media(max-width:390px){.result-grid,.resource-grid{grid-template-columns:1fr 1fr}.hyena-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+<link rel="stylesheet" href="../../assets/css/shell.css"></head>
+<body data-root="../../"><header class="site-top"><a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a><div class="site-top-actions"><button class="site-icon-btn" data-search-open>🔍 Поиск</button></div></header>
+<div class="app">
+<header class="hero">
+  <div class="eyebrow">WHITEOUT SURVIVAL</div>
+  <h1>Калькулятор строительства</h1>
+  <p>Добавляйте нужные стройки в список — время и ресурсы суммируются автоматически.</p>
+  <div class="version">Версия 4.0 · единый список</div>
+</header>
+
+<section class="card">
+<h2>Общие бонусы</h2>
+<div class="grid2">
+  <div class="field"><div class="label">Моя скорость строительства</div><div class="suffix"><input id="ownSpeed" type="number" min="0" step="0.1" value="0" inputmode="decimal"></div><small>Постоянный показатель без отдельно включённых ниже бонусов.</small></div>
+  <div class="field"><div class="label">Гиена</div><select id="hyena"><option value="0">Нет — 0%</option><option value="1">Ур. 1 — 5%</option><option value="2">Ур. 2 — 7%</option><option value="3">Ур. 3 — 9%</option><option value="4">Ур. 4 — 12%</option><option value="5">Ур. 5 — 15%</option></select></div>
+</div>
+<div class="controls" style="margin-top:10px">
+  <div class="control"><div><b>Титул строителя</b><span>+10% скорости строительства</span></div><label class="switch"><input id="titleBonus" type="checkbox"><span class="slider"></span></label></div>
+  <div class="control"><div><b>«Двойное время»</b><span>отдельный множитель времени</span></div><label class="switch"><input id="doubleTime" type="checkbox"><span class="slider"></span></label></div>
+</div>
+<div class="field" style="margin-top:10px"><div class="label">Другой временный бонус</div><div class="suffix"><input id="otherBonus" type="number" min="0" step="0.1" value="0" inputmode="decimal"></div></div>
+<div class="note"><b>Важно:</b> если титул, Гиена или другой временный эффект уже входят в отображаемую в игре скорость строительства, не добавляйте их второй раз.</div>
+</section>
+
+<section class="card">
+<h2>Добавить стройку</h2>
+<div class="add-row">
+  <div class="field"><div class="label">Здание</div><select id="pickBuilding"></select></div>
+  <div class="field level-field"><div class="label">Переход</div><select id="pickTransition"></select></div>
+  <button id="addBuild" class="add-btn" aria-label="Добавить стройку" title="Добавить">+</button>
+</div>
+<div class="pick-info"><span>Базовое время выбранной стройки</span><b id="pickTime">—</b></div>
+<div id="pickStatus" class="status"></div>
+</section>
+
+<section class="card">
+<div class="list-head"><h2 style="margin:0">Список строек</h2><div id="countBadge" class="count-badge">0</div></div>
+<div id="buildList" class="build-list"></div>
+<div class="actions"><button id="clearBuilds" class="btn danger">Очистить список</button></div>
+</section>
+
+<section class="result">
+<div class="label">ИТОГО ПО СПИСКУ</div>
+<div id="totalReal" class="big">0 мин</div>
+<div class="result-grid">
+  <div class="metric"><span>Базовое время</span><b id="totalBase">0 мин</b></div>
+  <div class="metric"><span>Сэкономлено</span><b id="totalSaved">0 мин</b></div>
+  <div class="metric"><span>Суммарная скорость</span><b id="totalSpeed">0%</b></div>
+  <div class="metric"><span>Строек</span><b id="totalCount">0</b></div>
+</div>
+<div class="resource-total"><div class="label">СУММАРНЫЕ РЕСУРСОЗАТРАТЫ</div><div id="totalResources" class="resource-grid"></div></div>
+</section>
+
+<details class="card bulk">
+<summary>Добавить весь переход сразу</summary>
+<div class="inside">
+  <div class="field"><div class="label">Общий переход</div><select id="bulkTransition"></select></div>
+  <div id="bulkMeta" class="bulk-meta"></div>
+  <div class="actions"><button id="bulkAdd" class="btn">Добавить недостающие здания</button></div>
+</div>
+</details>
+
+<details class="card settings">
+<summary>Настройки коэффициентов</summary>
+<div class="inside">
+  <div class="label">Бонус Гиены по уровням</div>
+  <div class="hyena-grid"><label>Ур. 1<input id="h1" type="number" step="0.1" value="5"></label><label>Ур. 2<input id="h2" type="number" step="0.1" value="7"></label><label>Ур. 3<input id="h3" type="number" step="0.1" value="9"></label><label>Ур. 4<input id="h4" type="number" step="0.1" value="12"></label><label>Ур. 5<input id="h5" type="number" step="0.1" value="15"></label><label>Титул<input id="titlePct" type="number" step="0.1" value="10"></label></div>
+  <div class="field" style="margin-top:10px"><div class="label">Множитель «Двойного времени»</div><input id="doubleMult" type="number" min="0.01" step="0.01" value="0.80"></div>
+  <div class="actions"><button id="resetSettings" class="btn">Сбросить коэффициенты</button></div>
+</div>
+</details>
+
+<div class="footer">Подготовлено SuBL · 206 переходов · 11 типов зданий</div>
+</div>
+
+<script>
+const BUILD_DB={"Топка":[{"label":"17 → 18","seconds":157980,"time":"1 д 19 ч 53 мин","resources":{"food":12000000,"wood":12000000,"coal":2500000,"iron":620000,"fc":0,"rfc":0}},{"label":"18 → 19","seconds":237000,"time":"2 д 17 ч 50 мин","resources":{"food":15000000,"wood":15000000,"coal":3100000,"iron":780000,"fc":0,"rfc":0}},{"label":"19 → 20","seconds":296280,"time":"3 д 10 ч 18 мин","resources":{"food":21000000,"wood":21000000,"coal":4300000,"iron":1000000,"fc":0,"rfc":0}},{"label":"20 → 21","seconds":385140,"time":"4 д 10 ч 59 мин","resources":{"food":27000000,"wood":27000000,"coal":5400000,"iron":1300000,"fc":0,"rfc":0}},{"label":"21 → 22","seconds":577740,"time":"6 д 16 ч 29 мин","resources":{"food":36000000,"wood":36000000,"coal":7200000,"iron":1800000,"fc":0,"rfc":0}},{"label":"22 → 23","seconds":808800,"time":"9 д 08 ч 40 мин","resources":{"food":44000000,"wood":44000000,"coal":8900000,"iron":2200000,"fc":0,"rfc":0}},{"label":"23 → 24","seconds":1132380,"time":"13 д 02 ч 33 мин","resources":{"food":60000000,"wood":60000000,"coal":12000000,"iron":3000000,"fc":0,"rfc":0}},{"label":"24 → 25","seconds":1585320,"time":"18 д 08 ч 22 мин","resources":{"food":81000000,"wood":81000000,"coal":16000000,"iron":4000000,"fc":0,"rfc":0}},{"label":"25 → 26","seconds":1823160,"time":"21 д 02 ч 26 мин","resources":{"food":100000000,"wood":100000000,"coal":21000000,"iron":5200000,"fc":0,"rfc":0}},{"label":"26 → 27","seconds":2187780,"time":"25 д 07 ч 43 мин","resources":{"food":140000000,"wood":140000000,"coal":24000000,"iron":7400000,"fc":0,"rfc":0}},{"label":"27 → 28","seconds":2515920,"time":"29 д 02 ч 52 мин","resources":{"food":190000000,"wood":190000000,"coal":39000000,"iron":9900000,"fc":0,"rfc":0}},{"label":"28 → 29","seconds":2893320,"time":"33 д 11 ч 42 мин","resources":{"food":240000000,"wood":240000000,"coal":49000000,"iron":12000000,"fc":0,"rfc":0}},{"label":"29 → 30","seconds":3472020,"time":"40 д 04 ч 27 мин","resources":{"food":300000000,"wood":300000000,"coal":60000000,"iron":15000000,"fc":0,"rfc":0}},{"label":"30 → FC1","seconds":3024000,"time":"35 д 00 ч 00 мин","resources":{"food":335000000,"wood":335000000,"coal":65000000,"iron":16500000,"fc":660,"rfc":0}},{"label":"FC1 → FC2","seconds":3888000,"time":"45 д 00 ч 00 мин","resources":{"food":360000000,"wood":360000000,"coal":70000000,"iron":18000000,"fc":790,"rfc":0}},{"label":"FC2 → FC3","seconds":4752000,"time":"55 д 00 ч 00 мин","resources":{"food":395000000,"wood":395000000,"coal":75000000,"iron":19500000,"fc":1190,"rfc":0}},{"label":"FC3 → FC4","seconds":5184000,"time":"60 д 00 ч 00 мин","resources":{"food":410000000,"wood":410000000,"coal":80000000,"iron":20500000,"fc":1400,"rfc":0}},{"label":"FC4 → FC5","seconds":6048000,"time":"70 д 00 ч 00 мин","resources":{"food":420000000,"wood":420000000,"coal":80000000,"iron":21000000,"fc":1675,"rfc":0}},{"label":"FC5 → FC6","seconds":6480000,"time":"75 д 00 ч 00 мин","resources":{"food":480000000,"wood":480000000,"coal":95000000,"iron":24000000,"fc":900,"rfc":60}},{"label":"FC6 → FC7","seconds":7776000,"time":"90 д 00 ч 00 мин","resources":{"food":500000000,"wood":500000000,"coal":105000000,"iron":27000000,"fc":1080,"rfc":90}},{"label":"FC7 → FC8","seconds":8640000,"time":"100 д 00 ч 00 мин","resources":{"food":650000000,"wood":650000000,"coal":130000000,"iron":33000000,"fc":1080,"rfc":120}},{"label":"FC8 → FC9","seconds":5616000,"time":"65 д 00 ч 00 мин","resources":{"food":700000000,"wood":700000000,"coal":145000000,"iron":36000000,"fc":1260,"rfc":180}},{"label":"FC9 → FC10","seconds":8640000,"time":"100 д 00 ч 00 мин","resources":{"food":800000000,"wood":800000000,"coal":165000000,"iron":42000000,"fc":1575,"rfc":420}}],"Посольство":[{"label":"17 → 18","seconds":100800,"time":"1 д 04 ч 00 мин","resources":{"food":2500000,"wood":2500000,"coal":500000,"iron":120000,"fc":0,"rfc":0}},{"label":"18 → 19","seconds":154800,"time":"1 д 19 ч 00 мин","resources":{"food":3100000,"wood":3100000,"coal":620000,"iron":150000,"fc":0,"rfc":0}},{"label":"19 → 20","seconds":194400,"time":"2 д 06 ч 00 мин","resources":{"food":4300000,"wood":4300000,"coal":860000,"iron":210000,"fc":0,"rfc":0}},{"label":"20 → 21","seconds":252000,"time":"2 д 22 ч 00 мин","resources":{"food":5400000,"wood":5400000,"coal":1000000,"iron":270000,"fc":0,"rfc":0}},{"label":"21 → 22","seconds":378000,"time":"4 д 09 ч 00 мин","resources":{"food":7200000,"wood":7200000,"coal":1400000,"iron":360000,"fc":0,"rfc":0}},{"label":"22 → 23","seconds":532800,"time":"6 д 04 ч 00 мин","resources":{"food":8900000,"wood":8900000,"coal":1700000,"iron":440000,"fc":0,"rfc":0}},{"label":"23 → 24","seconds":745200,"time":"8 д 15 ч 00 мин","resources":{"food":12000000,"wood":12000000,"coal":2400000,"iron":600000,"fc":0,"rfc":0}},{"label":"24 → 25","seconds":1044000,"time":"12 д 02 ч 00 мин","resources":{"food":16000000,"wood":16000000,"coal":3200000,"iron":810000,"fc":0,"rfc":0}},{"label":"25 → 26","seconds":1202400,"time":"13 д 22 ч 00 мин","resources":{"food":21000000,"wood":21000000,"coal":4200000,"iron":1000000,"fc":0,"rfc":0}},{"label":"26 → 27","seconds":1443600,"time":"16 д 17 ч 00 мин","resources":{"food":29000000,"wood":29000000,"coal":5900000,"iron":1400000,"fc":0,"rfc":0}},{"label":"27 → 28","seconds":1659600,"time":"19 д 05 ч 00 мин","resources":{"food":39000000,"wood":39000000,"coal":7900000,"iron":1900000,"fc":0,"rfc":0}},{"label":"28 → 29","seconds":1908000,"time":"22 д 02 ч 00 мин","resources":{"food":49000000,"wood":49000000,"coal":9800000,"iron":2400000,"fc":0,"rfc":0}},{"label":"29 → 30","seconds":2289600,"time":"26 д 12 ч 00 мин","resources":{"food":60000000,"wood":60000000,"coal":12000000,"iron":3000000,"fc":0,"rfc":0}},{"label":"30 → FC1","seconds":1980000,"time":"22 д 22 ч 00 мин","resources":{"food":65000000,"wood":65000000,"coal":13500000,"iron":3350000,"fc":165,"rfc":0}},{"label":"FC1 → FC2","seconds":2556000,"time":"29 д 14 ч 00 мин","resources":{"food":70000000,"wood":70000000,"coal":14500000,"iron":3600000,"fc":195,"rfc":0}},{"label":"FC2 → FC3","seconds":3132000,"time":"36 д 06 ч 00 мин","resources":{"food":75000000,"wood":75000000,"coal":15500000,"iron":3950000,"fc":295,"rfc":0}},{"label":"FC3 → FC4","seconds":3420000,"time":"39 д 14 ч 00 мин","resources":{"food":80000000,"wood":80000000,"coal":16000000,"iron":4100000,"fc":350,"rfc":0}},{"label":"FC4 → FC5","seconds":3978000,"time":"46 д 01 ч 00 мин","resources":{"food":80000000,"wood":80000000,"coal":16500000,"iron":4200000,"fc":415,"rfc":0}},{"label":"FC5 → FC6","seconds":4266000,"time":"49 д 09 ч 00 мин","resources":{"food":95000000,"wood":95000000,"coal":19000000,"iron":4800000,"fc":225,"rfc":13}},{"label":"FC6 → FC7","seconds":5130000,"time":"59 д 09 ч 00 мин","resources":{"food":105000000,"wood":105000000,"coal":21500000,"iron":5000000,"fc":270,"rfc":19}},{"label":"FC7 → FC8","seconds":5688000,"time":"65 д 20 ч 00 мин","resources":{"food":130000000,"wood":130000000,"coal":26500000,"iron":6500000,"fc":270,"rfc":30}},{"label":"FC8 → FC9","seconds":3776400,"time":"43 д 17 ч 00 мин","resources":{"food":145000000,"wood":145000000,"coal":29000000,"iron":7000000,"fc":315,"rfc":43}},{"label":"FC9 → FC10","seconds":5688000,"time":"65 д 20 ч 00 мин","resources":{"food":165000000,"wood":165000000,"coal":33500000,"iron":8000000,"fc":391,"rfc":103}}],"Научный центр":[{"label":"17 → 18","seconds":23700,"time":"6 ч 35 мин","resources":{"food":5000000,"wood":5000000,"coal":1000000,"iron":250000,"fc":0,"rfc":0}},{"label":"18 → 19","seconds":35520,"time":"9 ч 52 мин","resources":{"food":6200000,"wood":6200000,"coal":1200000,"iron":310000,"fc":0,"rfc":0}},{"label":"19 → 20","seconds":44400,"time":"12 ч 20 мин","resources":{"food":8600000,"wood":8600000,"coal":1700000,"iron":430000,"fc":0,"rfc":0}},{"label":"20 → 21","seconds":57720,"time":"16 ч 02 мин","resources":{"food":10000000,"wood":10000000,"coal":2100000,"iron":540000,"fc":0,"rfc":0}},{"label":"21 → 22","seconds":86400,"time":"1 д 00 ч 00 мин","resources":{"food":14000000,"wood":14000000,"coal":2800000,"iron":720000,"fc":0,"rfc":0}},{"label":"22 → 23","seconds":118800,"time":"1 д 09 ч 00 мин","resources":{"food":17000000,"wood":17000000,"coal":3500000,"iron":890000,"fc":0,"rfc":0}},{"label":"23 → 24","seconds":169200,"time":"1 д 23 ч 00 мин","resources":{"food":24000000,"wood":24000000,"coal":4800000,"iron":1200000,"fc":0,"rfc":0}},{"label":"24 → 25","seconds":237600,"time":"2 д 18 ч 00 мин","resources":{"food":32000000,"wood":32000000,"coal":6500000,"iron":1600000,"fc":0,"rfc":0}},{"label":"25 → 26","seconds":270000,"time":"3 д 03 ч 00 мин","resources":{"food":42000000,"wood":42000000,"coal":8400000,"iron":2100000,"fc":0,"rfc":0}},{"label":"26 → 27","seconds":327600,"time":"3 д 19 ч 00 мин","resources":{"food":59000000,"wood":59000000,"coal":11000000,"iron":2900000,"fc":0,"rfc":0}},{"label":"27 → 28","seconds":374400,"time":"4 д 08 ч 00 мин","resources":{"food":79000000,"wood":79000000,"coal":15000000,"iron":3900000,"fc":0,"rfc":0}},{"label":"28 → 29","seconds":432000,"time":"5 д 00 ч 00 мин","resources":{"food":98000000,"wood":98000000,"coal":19000000,"iron":4900000,"fc":0,"rfc":0}},{"label":"29 → 30","seconds":518400,"time":"6 д 00 ч 00 мин","resources":{"food":120000000,"wood":120000000,"coal":24000000,"iron":6000000,"fc":0,"rfc":0}}],"Лагерь пехоты":[{"label":"17 → 18","seconds":23700,"time":"6 ч 35 мин","resources":{"food":4300000,"wood":4300000,"coal":870000,"iron":210000,"fc":0,"rfc":0}},{"label":"18 → 19","seconds":35520,"time":"9 ч 52 мин","resources":{"food":5400000,"wood":5400000,"coal":1000000,"iron":270000,"fc":0,"rfc":0}},{"label":"19 → 20","seconds":44400,"time":"12 ч 20 мин","resources":{"food":7500000,"wood":7500000,"coal":1500000,"iron":370000,"fc":0,"rfc":0}},{"label":"20 → 21","seconds":57720,"time":"16 ч 02 мин","resources":{"food":9500000,"wood":9500000,"coal":1900000,"iron":470000,"fc":0,"rfc":0}},{"label":"21 → 22","seconds":86400,"time":"1 д 00 ч 00 мин","resources":{"food":12000000,"wood":12000000,"coal":2500000,"iron":630000,"fc":0,"rfc":0}},{"label":"22 → 23","seconds":118800,"time":"1 д 09 ч 00 мин","resources":{"food":15000000,"wood":15000000,"coal":3100000,"iron":490000,"fc":0,"rfc":0}},{"label":"23 → 24","seconds":169200,"time":"1 д 23 ч 00 мин","resources":{"food":21000000,"wood":21000000,"coal":4200000,"iron":1000000,"fc":0,"rfc":0}},{"label":"24 → 25","seconds":237600,"time":"2 д 18 ч 00 мин","resources":{"food":28000000,"wood":28000000,"coal":5700000,"iron":1400000,"fc":0,"rfc":0}},{"label":"25 → 26","seconds":270000,"time":"3 д 03 ч 00 мин","resources":{"food":36000000,"wood":36000000,"coal":7300000,"iron":1800000,"fc":0,"rfc":0}},{"label":"26 → 27","seconds":327600,"time":"3 д 19 ч 00 мин","resources":{"food":52000000,"wood":52000000,"coal":10000000,"iron":2600000,"fc":0,"rfc":0}},{"label":"27 → 28","seconds":374400,"time":"4 д 08 ч 00 мин","resources":{"food":69000000,"wood":69000000,"coal":13000000,"iron":3400000,"fc":0,"rfc":0}},{"label":"28 → 29","seconds":432000,"time":"5 д 00 ч 00 мин","resources":{"food":86000000,"wood":86000000,"coal":17000000,"iron":4300000,"fc":0,"rfc":0}},{"label":"29 → 30","seconds":518400,"time":"6 д 00 ч 00 мин","resources":{"food":100000000,"wood":100000000,"coal":21000000,"iron":5200000,"fc":0,"rfc":0}},{"label":"30 → FC1","seconds":450000,"time":"5 д 05 ч 00 мин","resources":{"food":115000000,"wood":115000000,"coal":23500000,"iron":5500000,"fc":295,"rfc":0}},{"label":"FC1 → FC2","seconds":576000,"time":"6 д 16 ч 00 мин","resources":{"food":125000000,"wood":125000000,"coal":25000000,"iron":6000000,"fc":355,"rfc":0}},{"label":"FC2 → FC3","seconds":702000,"time":"8 д 03 ч 00 мин","resources":{"food":135000000,"wood":135000000,"coal":27500000,"iron":6500000,"fc":535,"rfc":0}},{"label":"FC3 → FC4","seconds":774000,"time":"8 д 23 ч 00 мин","resources":{"food":140000000,"wood":140000000,"coal":28500000,"iron":7000000,"fc":630,"rfc":0}},{"label":"FC4 → FC5","seconds":900000,"time":"10 д 10 ч 00 мин","resources":{"food":145000000,"wood":145000000,"coal":29500000,"iron":7000000,"fc":750,"rfc":0}},{"label":"FC5 → FC6","seconds":972000,"time":"11 д 06 ч 00 мин","resources":{"food":165000000,"wood":165000000,"coal":33500000,"iron":8000000,"fc":405,"rfc":25}},{"label":"FC6 → FC7","seconds":1152000,"time":"13 д 08 ч 00 мин","resources":{"food":190000000,"wood":190000000,"coal":38000000,"iron":9500000,"fc":486,"rfc":37}},{"label":"FC7 → FC8","seconds":1296000,"time":"15 д 00 ч 00 мин","resources":{"food":230000000,"wood":230000000,"coal":46500000,"iron":11500000,"fc":486,"rfc":55}},{"label":"FC8 → FC9","seconds":828000,"time":"9 д 14 ч 00 мин","resources":{"food":250000000,"wood":250000000,"coal":50000000,"iron":12500000,"fc":567,"rfc":79}},{"label":"FC9 → FC10","seconds":1296000,"time":"15 д 00 ч 00 мин","resources":{"food":295000000,"wood":295000000,"coal":55000000,"iron":14500000,"fc":706,"rfc":187}}],"Лагерь копейщиков":[{"label":"17 → 18","seconds":23700,"time":"6 ч 35 мин","resources":{"food":4300000,"wood":4300000,"coal":870000,"iron":210000,"fc":0,"rfc":0}},{"label":"18 → 19","seconds":35520,"time":"9 ч 52 мин","resources":{"food":5400000,"wood":5400000,"coal":1000000,"iron":270000,"fc":0,"rfc":0}},{"label":"19 → 20","seconds":44400,"time":"12 ч 20 мин","resources":{"food":7500000,"wood":7500000,"coal":1500000,"iron":370000,"fc":0,"rfc":0}},{"label":"20 → 21","seconds":57720,"time":"16 ч 02 мин","resources":{"food":9500000,"wood":9500000,"coal":1900000,"iron":470000,"fc":0,"rfc":0}},{"label":"21 → 22","seconds":86400,"time":"1 д 00 ч 00 мин","resources":{"food":12000000,"wood":12000000,"coal":2500000,"iron":630000,"fc":0,"rfc":0}},{"label":"22 → 23","seconds":118800,"time":"1 д 09 ч 00 мин","resources":{"food":15000000,"wood":15000000,"coal":3100000,"iron":490000,"fc":0,"rfc":0}},{"label":"23 → 24","seconds":169200,"time":"1 д 23 ч 00 мин","resources":{"food":21000000,"wood":21000000,"coal":4200000,"iron":1000000,"fc":0,"rfc":0}},{"label":"24 → 25","seconds":237600,"time":"2 д 18 ч 00 мин","resources":{"food":28000000,"wood":28000000,"coal":5700000,"iron":1400000,"fc":0,"rfc":0}},{"label":"25 → 26","seconds":270000,"time":"3 д 03 ч 00 мин","resources":{"food":36000000,"wood":36000000,"coal":7300000,"iron":1800000,"fc":0,"rfc":0}},{"label":"26 → 27","seconds":327600,"time":"3 д 19 ч 00 мин","resources":{"food":52000000,"wood":52000000,"coal":10000000,"iron":2600000,"fc":0,"rfc":0}},{"label":"27 → 28","seconds":374400,"time":"4 д 08 ч 00 мин","resources":{"food":69000000,"wood":69000000,"coal":13000000,"iron":3400000,"fc":0,"rfc":0}},{"label":"28 → 29","seconds":432000,"time":"5 д 00 ч 00 мин","resources":{"food":86000000,"wood":86000000,"coal":17000000,"iron":4300000,"fc":0,"rfc":0}},{"label":"29 → 30","seconds":518400,"time":"6 д 00 ч 00 мин","resources":{"food":100000000,"wood":100000000,"coal":21000000,"iron":5200000,"fc":0,"rfc":0}},{"label":"30 → FC1","seconds":450000,"time":"5 д 05 ч 00 мин","resources":{"food":115000000,"wood":115000000,"coal":23500000,"iron":5500000,"fc":295,"rfc":0}},{"label":"FC1 → FC2","seconds":576000,"time":"6 д 16 ч 00 мин","resources":{"food":125000000,"wood":125000000,"coal":25000000,"iron":6000000,"fc":355,"rfc":0}},{"label":"FC2 → FC3","seconds":702000,"time":"8 д 03 ч 00 мин","resources":{"food":135000000,"wood":135000000,"coal":27500000,"iron":6500000,"fc":535,"rfc":0}},{"label":"FC3 → FC4","seconds":774000,"time":"8 д 23 ч 00 мин","resources":{"food":140000000,"wood":140000000,"coal":28500000,"iron":7000000,"fc":630,"rfc":0}},{"label":"FC4 → FC5","seconds":900000,"time":"10 д 10 ч 00 мин","resources":{"food":145000000,"wood":145000000,"coal":29500000,"iron":7000000,"fc":750,"rfc":0}},{"label":"FC5 → FC6","seconds":972000,"time":"11 д 06 ч 00 мин","resources":{"food":165000000,"wood":165000000,"coal":33500000,"iron":8000000,"fc":405,"rfc":25}},{"label":"FC6 → FC7","seconds":1152000,"time":"13 д 08 ч 00 мин","resources":{"food":190000000,"wood":190000000,"coal":38000000,"iron":9500000,"fc":486,"rfc":37}},{"label":"FC7 → FC8","seconds":1296000,"time":"15 д 00 ч 00 мин","resources":{"food":230000000,"wood":230000000,"coal":46500000,"iron":11500000,"fc":486,"rfc":55}},{"label":"FC8 → FC9","seconds":828000,"time":"9 д 14 ч 00 мин","resources":{"food":250000000,"wood":250000000,"coal":50000000,"iron":12500000,"fc":567,"rfc":79}},{"label":"FC9 → FC10","seconds":1296000,"time":"15 д 00 ч 00 мин","resources":{"food":295000000,"wood":295000000,"coal":55000000,"iron":14500000,"fc":706,"rfc":187}}],"Лагерь лучников":[{"label":"17 → 18","seconds":23700,"time":"6 ч 35 мин","resources":{"food":4300000,"wood":4300000,"coal":870000,"iron":210000,"fc":0,"rfc":0}},{"label":"18 → 19","seconds":35520,"time":"9 ч 52 мин","resources":{"food":5400000,"wood":5400000,"coal":1000000,"iron":270000,"fc":0,"rfc":0}},{"label":"19 → 20","seconds":44400,"time":"12 ч 20 мин","resources":{"food":7500000,"wood":7500000,"coal":1500000,"iron":370000,"fc":0,"rfc":0}},{"label":"20 → 21","seconds":57720,"time":"16 ч 02 мин","resources":{"food":9500000,"wood":9500000,"coal":1900000,"iron":470000,"fc":0,"rfc":0}},{"label":"21 → 22","seconds":86400,"time":"1 д 00 ч 00 мин","resources":{"food":12000000,"wood":12000000,"coal":2500000,"iron":630000,"fc":0,"rfc":0}},{"label":"22 → 23","seconds":118800,"time":"1 д 09 ч 00 мин","resources":{"food":15000000,"wood":15000000,"coal":3100000,"iron":490000,"fc":0,"rfc":0}},{"label":"23 → 24","seconds":169200,"time":"1 д 23 ч 00 мин","resources":{"food":21000000,"wood":21000000,"coal":4200000,"iron":1000000,"fc":0,"rfc":0}},{"label":"24 → 25","seconds":237600,"time":"2 д 18 ч 00 мин","resources":{"food":28000000,"wood":28000000,"coal":5700000,"iron":1400000,"fc":0,"rfc":0}},{"label":"25 → 26","seconds":270000,"time":"3 д 03 ч 00 мин","resources":{"food":36000000,"wood":36000000,"coal":7300000,"iron":1800000,"fc":0,"rfc":0}},{"label":"26 → 27","seconds":327600,"time":"3 д 19 ч 00 мин","resources":{"food":52000000,"wood":52000000,"coal":10000000,"iron":2600000,"fc":0,"rfc":0}},{"label":"27 → 28","seconds":374400,"time":"4 д 08 ч 00 мин","resources":{"food":69000000,"wood":69000000,"coal":13000000,"iron":3400000,"fc":0,"rfc":0}},{"label":"28 → 29","seconds":432000,"time":"5 д 00 ч 00 мин","resources":{"food":86000000,"wood":86000000,"coal":17000000,"iron":4300000,"fc":0,"rfc":0}},{"label":"29 → 30","seconds":518400,"time":"6 д 00 ч 00 мин","resources":{"food":100000000,"wood":100000000,"coal":21000000,"iron":5200000,"fc":0,"rfc":0}},{"label":"30 → FC1","seconds":450000,"time":"5 д 05 ч 00 мин","resources":{"food":115000000,"wood":115000000,"coal":23500000,"iron":5500000,"fc":295,"rfc":0}},{"label":"FC1 → FC2","seconds":576000,"time":"6 д 16 ч 00 мин","resources":{"food":125000000,"wood":125000000,"coal":25000000,"iron":6000000,"fc":355,"rfc":0}},{"label":"FC2 → FC3","seconds":702000,"time":"8 д 03 ч 00 мин","resources":{"food":135000000,"wood":135000000,"coal":27500000,"iron":6500000,"fc":535,"rfc":0}},{"label":"FC3 → FC4","seconds":774000,"time":"8 д 23 ч 00 мин","resources":{"food":140000000,"wood":140000000,"coal":28500000,"iron":7000000,"fc":630,"rfc":0}},{"label":"FC4 → FC5","seconds":900000,"time":"10 д 10 ч 00 мин","resources":{"food":145000000,"wood":145000000,"coal":29500000,"iron":7000000,"fc":750,"rfc":0}},{"label":"FC5 → FC6","seconds":972000,"time":"11 д 06 ч 00 мин","resources":{"food":165000000,"wood":165000000,"coal":33500000,"iron":8000000,"fc":405,"rfc":25}},{"label":"FC6 → FC7","seconds":1152000,"time":"13 д 08 ч 00 мин","resources":{"food":190000000,"wood":190000000,"coal":38000000,"iron":9500000,"fc":486,"rfc":37}},{"label":"FC7 → FC8","seconds":1296000,"time":"15 д 00 ч 00 мин","resources":{"food":230000000,"wood":230000000,"coal":46500000,"iron":11500000,"fc":486,"rfc":55}},{"label":"FC8 → FC9","seconds":828000,"time":"9 д 14 ч 00 мин","resources":{"food":250000000,"wood":250000000,"coal":50000000,"iron":12500000,"fc":567,"rfc":79}},{"label":"FC9 → FC10","seconds":1296000,"time":"15 д 00 ч 00 мин","resources":{"food":295000000,"wood":295000000,"coal":55000000,"iron":14500000,"fc":706,"rfc":187}}],"Командный центр":[{"label":"17 → 18","seconds":18960,"time":"5 ч 16 мин","resources":{"food":3700000,"wood":3700000,"coal":750000,"iron":180000,"fc":0,"rfc":0}},{"label":"18 → 19","seconds":28440,"time":"7 ч 54 мин","resources":{"food":4700000,"wood":4700000,"coal":940000,"iron":230000,"fc":0,"rfc":0}},{"label":"19 → 20","seconds":35520,"time":"9 ч 52 мин","resources":{"food":6400000,"wood":6400000,"coal":1200000,"iron":320000,"fc":0,"rfc":0}},{"label":"20 → 21","seconds":46200,"time":"12 ч 50 мин","resources":{"food":8100000,"wood":8100000,"coal":1600000,"iron":400000,"fc":0,"rfc":0}},{"label":"21 → 22","seconds":69300,"time":"19 ч 15 мин","resources":{"food":10000000,"wood":10000000,"coal":2100000,"iron":540000,"fc":0,"rfc":0}},{"label":"22 → 23","seconds":93600,"time":"1 д 02 ч 00 мин","resources":{"food":13000000,"wood":13000000,"coal":2600000,"iron":670000,"fc":0,"rfc":0}},{"label":"23 → 24","seconds":133200,"time":"1 д 13 ч 00 мин","resources":{"food":18000000,"wood":18000000,"coal":3600000,"iron":900000,"fc":0,"rfc":0}},{"label":"24 → 25","seconds":187200,"time":"2 д 04 ч 00 мин","resources":{"food":24000000,"wood":24000000,"coal":4900000,"iron":1200000,"fc":0,"rfc":0}},{"label":"25 → 26","seconds":216000,"time":"2 д 12 ч 00 мин","resources":{"food":31000000,"wood":31000000,"coal":6300000,"iron":1500000,"fc":0,"rfc":0}},{"label":"26 → 27","seconds":259200,"time":"3 д 00 ч 00 мин","resources":{"food":44000000,"wood":44000000,"coal":8900000,"iron":2200000,"fc":0,"rfc":0}},{"label":"27 → 28","seconds":298800,"time":"3 д 11 ч 00 мин","resources":{"food":59000000,"wood":59000000,"coal":11000000,"iron":2900000,"fc":0,"rfc":0}},{"label":"28 → 29","seconds":345600,"time":"4 д 00 ч 00 мин","resources":{"food":73000000,"wood":73000000,"coal":18000000,"iron":4500000,"fc":0,"rfc":0}},{"label":"29 → 30","seconds":414000,"time":"4 д 19 ч 00 мин","resources":{"food":90000000,"wood":90000000,"coal":18000000,"iron":4500000,"fc":0,"rfc":0}},{"label":"30 → FC1","seconds":362700,"time":"4 д 04 ч 45 мин","resources":{"food":100000000,"wood":100000000,"coal":20000000,"iron":5000000,"fc":130,"rfc":0}},{"label":"FC1 → FC2","seconds":450000,"time":"5 д 05 ч 00 мин","resources":{"food":105000000,"wood":105000000,"coal":21500000,"iron":5000000,"fc":155,"rfc":0}},{"label":"FC2 → FC3","seconds":558000,"time":"6 д 11 ч 00 мин","resources":{"food":115000000,"wood":115000000,"coal":23500000,"iron":5500000,"fc":235,"rfc":0}},{"label":"FC3 → FC4","seconds":612000,"time":"7 д 02 ч 00 мин","resources":{"food":120000000,"wood":120000000,"coal":24500000,"iron":6000000,"fc":280,"rfc":0}},{"label":"FC4 → FC5","seconds":720000,"time":"8 д 08 ч 00 мин","resources":{"food":125000000,"wood":125000000,"coal":25000000,"iron":6000000,"fc":335,"rfc":0}},{"label":"FC5 → FC6","seconds":774000,"time":"8 д 23 ч 00 мин","resources":{"food":145000000,"wood":145000000,"coal":29000000,"iron":7000000,"fc":180,"rfc":12}},{"label":"FC6 → FC7","seconds":882000,"time":"10 д 05 ч 00 мин","resources":{"food":160000000,"wood":160000000,"coal":32500000,"iron":7500000,"fc":216,"rfc":18}},{"label":"FC7 → FC8","seconds":1026000,"time":"11 д 21 ч 00 мин","resources":{"food":195000000,"wood":195000000,"coal":39500000,"iron":9500000,"fc":216,"rfc":24}},{"label":"FC8 → FC9","seconds":666000,"time":"7 д 17 ч 00 мин","resources":{"food":215000000,"wood":215000000,"coal":43500000,"iron":10500000,"fc":252,"rfc":36}},{"label":"FC9 → FC10","seconds":1026000,"time":"11 д 21 ч 00 мин","resources":{"food":250000000,"wood":250000000,"coal":50000000,"iron":12500000,"fc":315,"rfc":84}}],"Лазарет":[{"label":"17 → 18","seconds":22080,"time":"6 ч 08 мин","resources":{"food":3100000,"wood":3100000,"coal":620000,"iron":150000,"fc":0,"rfc":0}},{"label":"18 → 19","seconds":33180,"time":"9 ч 13 мин","resources":{"food":3900000,"wood":3900000,"coal":780000,"iron":190000,"fc":0,"rfc":0}},{"label":"19 → 20","seconds":41460,"time":"11 ч 31 мин","resources":{"food":5300000,"wood":5300000,"coal":1000000,"iron":260000,"fc":0,"rfc":0}},{"label":"20 → 21","seconds":53880,"time":"14 ч 58 мин","resources":{"food":6800000,"wood":6800000,"coal":1300000,"iron":340000,"fc":0,"rfc":0}},{"label":"21 → 22","seconds":80880,"time":"22 ч 28 мин","resources":{"food":9000000,"wood":9000000,"coal":1800000,"iron":450000,"fc":0,"rfc":0}},{"label":"22 → 23","seconds":111600,"time":"1 д 07 ч 00 мин","resources":{"food":11000000,"wood":11000000,"coal":2200000,"iron":560000,"fc":0,"rfc":0}},{"label":"23 → 24","seconds":158400,"time":"1 д 20 ч 00 мин","resources":{"food":15000000,"wood":15000000,"coal":3000000,"iron":750000,"fc":0,"rfc":0}},{"label":"24 → 25","seconds":219600,"time":"2 д 13 ч 00 мин","resources":{"food":20000000,"wood":20000000,"coal":4000000,"iron":1000000,"fc":0,"rfc":0}},{"label":"25 → 26","seconds":252000,"time":"2 д 22 ч 00 мин","resources":{"food":26000000,"wood":26000000,"coal":5200000,"iron":1300000,"fc":0,"rfc":0}},{"label":"26 → 27","seconds":306000,"time":"3 д 13 ч 00 мин","resources":{"food":37000000,"wood":37000000,"coal":7400000,"iron":1800000,"fc":0,"rfc":0}},{"label":"27 → 28","seconds":349200,"time":"4 д 01 ч 00 мин","resources":{"food":49000000,"wood":49000000,"coal":9900000,"iron":2400000,"fc":0,"rfc":0}},{"label":"28 → 29","seconds":403200,"time":"4 д 16 ч 00 мин","resources":{"food":61000000,"wood":61000000,"coal":12000000,"iron":3000000,"fc":0,"rfc":0}},{"label":"29 → 30","seconds":486000,"time":"5 д 15 ч 00 мин","resources":{"food":75000000,"wood":75000000,"coal":15000000,"iron":3700000,"fc":0,"rfc":0}},{"label":"30 → FC1","seconds":423300,"time":"4 д 21 ч 35 мин","resources":{"food":80000000,"wood":80000000,"coal":16500000,"iron":4200000,"fc":130,"rfc":0}},{"label":"FC1 → FC2","seconds":540000,"time":"6 д 06 ч 00 мин","resources":{"food":90000000,"wood":90000000,"coal":18000000,"iron":4500000,"fc":155,"rfc":0}},{"label":"FC2 → FC3","seconds":648000,"time":"7 д 12 ч 00 мин","resources":{"food":95000000,"wood":95000000,"coal":19500000,"iron":4950000,"fc":235,"rfc":0}},{"label":"FC3 → FC4","seconds":720000,"time":"8 д 08 ч 00 мин","resources":{"food":100000000,"wood":100000000,"coal":20500000,"iron":5000000,"fc":280,"rfc":0}},{"label":"FC4 → FC5","seconds":846000,"time":"9 д 19 ч 00 мин","resources":{"food":105000000,"wood":105000000,"coal":21000000,"iron":5000000,"fc":335,"rfc":0}},{"label":"FC5 → FC6","seconds":900000,"time":"10 д 10 ч 00 мин","resources":{"food":120000000,"wood":120000000,"coal":24000000,"iron":6000000,"fc":180,"rfc":12}},{"label":"FC6 → FC7","seconds":1080000,"time":"12 д 12 ч 00 мин","resources":{"food":135000000,"wood":135000000,"coal":27000000,"iron":6500000,"fc":216,"rfc":18}},{"label":"FC7 → FC8","seconds":1206000,"time":"13 д 23 ч 00 мин","resources":{"food":165000000,"wood":165000000,"coal":33000000,"iron":8000000,"fc":216,"rfc":24}},{"label":"FC8 → FC9","seconds":774000,"time":"8 д 23 ч 00 мин","resources":{"food":180000000,"wood":180000000,"coal":36000000,"iron":9000000,"fc":252,"rfc":36}},{"label":"FC9 → FC10","seconds":1206000,"time":"13 д 23 ч 00 мин","resources":{"food":210000000,"wood":210000000,"coal":42000000,"iron":10500000,"fc":315,"rfc":84}}],"Склад":[{"label":"17 → 18","seconds":23700,"time":"6 ч 35 мин","resources":{"food":2700000,"wood":2700000,"coal":550000,"iron":130000,"fc":0,"rfc":0}},{"label":"18 → 19","seconds":35520,"time":"9 ч 52 мин","resources":{"food":3400000,"wood":3400000,"coal":690000,"iron":170000,"fc":0,"rfc":0}},{"label":"19 → 20","seconds":44400,"time":"12 ч 20 мин","resources":{"food":4700000,"wood":4700000,"coal":940000,"iron":230000,"fc":0,"rfc":0}},{"label":"20 → 21","seconds":57720,"time":"16 ч 02 мин","resources":{"food":6000000,"wood":6000000,"coal":1200000,"iron":300000,"fc":0,"rfc":0}},{"label":"21 → 22","seconds":86400,"time":"1 д 00 ч 00 мин","resources":{"food":7900000,"wood":7900000,"coal":1500000,"iron":390000,"fc":0,"rfc":0}},{"label":"22 → 23","seconds":118800,"time":"1 д 09 ч 00 мин","resources":{"food":9800000,"wood":9800000,"coal":1900000,"iron":490000,"fc":0,"rfc":0}},{"label":"23 → 24","seconds":169200,"time":"1 д 23 ч 00 мин","resources":{"food":13000000,"wood":13000000,"coal":2600000,"iron":660000,"fc":0,"rfc":0}},{"label":"24 → 25","seconds":237600,"time":"2 д 18 ч 00 мин","resources":{"food":17000000,"wood":17000000,"coal":3500000,"iron":890000,"fc":0,"rfc":0}},{"label":"25 → 26","seconds":270000,"time":"3 д 03 ч 00 мин","resources":{"food":23000000,"wood":23000000,"coal":4600000,"iron":1100000,"fc":0,"rfc":0}},{"label":"26 → 27","seconds":327600,"time":"3 д 19 ч 00 мин","resources":{"food":32000000,"wood":32000000,"coal":6500000,"iron":1600000,"fc":0,"rfc":0}},{"label":"27 → 28","seconds":374400,"time":"4 д 08 ч 00 мин","resources":{"food":43000000,"wood":43000000,"coal":8700000,"iron":2100000,"fc":0,"rfc":0}},{"label":"28 → 29","seconds":432000,"time":"5 д 00 ч 00 мин","resources":{"food":54000000,"wood":54000000,"coal":10000000,"iron":2700000,"fc":0,"rfc":0}},{"label":"29 → 30","seconds":518400,"time":"6 д 00 ч 00 мин","resources":{"food":66000000,"wood":66000000,"coal":13000000,"iron":3300000,"fc":0,"rfc":0}}],"Баррикада":[{"label":"1 → 2","seconds":0,"time":"< 1 мин","resources":{"food":5300,"wood":1000,"coal":0,"iron":0,"fc":0,"rfc":0}},{"label":"2 → 3","seconds":1260,"time":"21 мин","resources":{"food":88000,"wood":17000,"coal":4400,"iron":0,"fc":0,"rfc":0}},{"label":"3 → 4","seconds":3840,"time":"1 ч 04 мин","resources":{"food":420000,"wood":420000,"coal":84000,"iron":21000,"fc":0,"rfc":0}},{"label":"4 → 5","seconds":13140,"time":"3 ч 39 мин","resources":{"food":1400000,"wood":1400000,"coal":290000,"iron":74000,"fc":0,"rfc":0}},{"label":"5 → 6","seconds":35520,"time":"9 ч 52 мин","resources":{"food":5300000,"wood":5300000,"coal":1000000,"iron":260000,"fc":0,"rfc":0}},{"label":"6 → 7","seconds":136800,"time":"1 д 14 ч","resources":{"food":15000000,"wood":15000000,"coal":3000000,"iron":750000,"fc":0,"rfc":0}},{"label":"7 → 8","seconds":259200,"time":"3 д","resources":{"food":37000000,"wood":37000000,"coal":7400000,"iron":1800000,"fc":0,"rfc":0}},{"label":"8 → 9","seconds":345600,"time":"4 д","resources":{"food":61000000,"wood":61000000,"coal":12000000,"iron":3000000,"fc":0,"rfc":0}},{"label":"9 → 10","seconds":424800,"time":"4 д 22 ч","resources":{"food":75000000,"wood":75000000,"coal":15000000,"iron":3700000,"fc":0,"rfc":0}}],"Военная академия":[{"label":"Открытие FC1","seconds":0,"time":"< 1 мин","resources":{"food":0,"wood":0,"coal":0,"iron":0,"fc":0,"rfc":0}},{"label":"FC1 → FC2","seconds":774000,"time":"8 д 23 ч 00 мин","resources":{"food":180000000,"wood":180000000,"coal":36000000,"iron":9000000,"fc":355,"rfc":0}},{"label":"FC2 → FC3","seconds":936000,"time":"10 д 20 ч 00 мин","resources":{"food":195000000,"wood":195000000,"coal":39500000,"iron":9500000,"fc":535,"rfc":0}},{"label":"FC3 → FC4","seconds":1026000,"time":"11 д 21 ч 00 мин","resources":{"food":205000000,"wood":205000000,"coal":41000000,"iron":10000000,"fc":630,"rfc":0}},{"label":"FC4 → FC5","seconds":1206000,"time":"13 д 23 ч 00 мин","resources":{"food":210000000,"wood":210000000,"coal":41000000,"iron":10500000,"fc":750,"rfc":0}},{"label":"FC5 → FC6","seconds":1296000,"time":"15 д 00 ч 00 мин","resources":{"food":240000000,"wood":240000000,"coal":48000000,"iron":12000000,"fc":405,"rfc":25}},{"label":"FC6 → FC7","seconds":1548000,"time":"17 д 22 ч 00 мин","resources":{"food":270000000,"wood":270000000,"coal":50000000,"iron":13500000,"fc":486,"rfc":37}},{"label":"FC7 → FC8","seconds":1728000,"time":"20 д 00 ч 00 мин","resources":{"food":330000000,"wood":330000000,"coal":65000000,"iron":16500000,"fc":486,"rfc":55}},{"label":"FC8 → FC9","seconds":1116000,"time":"12 д 22 ч 00 мин","resources":{"food":360000000,"wood":360000000,"coal":70000000,"iron":18000000,"fc":567,"rfc":79}},{"label":"FC9 → FC10","seconds":1728000,"time":"20 д 00 ч 00 мин","resources":{"food":420000000,"wood":420000000,"coal":80000000,"iron":36000000,"fc":706,"rfc":187}}]},BUILDING_ORDER=["Топка", "Посольство", "Научный центр", "Лагерь пехоты", "Лагерь копейщиков", "Лагерь лучников", "Командный центр", "Лазарет", "Склад", "Баррикада", "Военная академия"],ORDINARY_BUILDINGS=["Топка", "Посольство", "Научный центр", "Лагерь пехоты", "Лагерь копейщиков", "Лагерь лучников", "Командный центр", "Лазарет", "Склад"],FC_BUILDINGS=["Топка", "Посольство", "Лагерь пехоты", "Лагерь копейщиков", "Лагерь лучников", "Командный центр", "Лазарет", "Военная академия"],PRESET_STEPS=["17 → 18", "18 → 19", "19 → 20", "20 → 21", "21 → 22", "22 → 23", "23 → 24", "24 → 25", "25 → 26", "26 → 27", "27 → 28", "28 → 29", "29 → 30", "30 → FC1", "FC1 → FC2", "FC2 → FC3", "FC3 → FC4", "FC4 → FC5", "FC5 → FC6", "FC6 → FC7", "FC7 → FC8", "FC8 → FC9", "FC9 → FC10"];
+(function(){
+const $=id=>document.getElementById(id),STORE='wos_build_calc_v4',OLD=['wos_build_calc_v3','wos_build_calc_v2','wos_build_calc_v1'];
+const RKEYS=['food','wood','coal','iron','fc','rfc'],RN={food:'Мясо',wood:'Дерево',coal:'Уголь',iron:'Железо',fc:'КО',rfc:'ПКО'};
+const state={pickBuilding:'Топка',pickTransition:'25 → 26',builds:[]};
+
+function n(v){v=parseFloat(v);return Number.isFinite(v)?v:0}
+function fmt(s){s=Math.max(0,Math.round(s));if(!s)return'0 мин';let d=Math.floor(s/86400);s%=86400;let h=Math.floor(s/3600);s%=3600;let m=Math.floor(s/60),p=[];if(d)p.push(d+' д');if(h)p.push(h+' ч');if(m||(!d&&!h))p.push(m+' мин');return p.join(' ')}
+function fmtRes(v,k){v=Math.round(v||0);if(k==='fc'||k==='rfc')return v.toLocaleString('ru-RU');if(v>=1e6)return(v/1e6).toLocaleString('ru-RU',{maximumFractionDigits:3})+'М';if(v>=1e3)return(v/1e3).toLocaleString('ru-RU',{maximumFractionDigits:1})+' тыс.';return v.toLocaleString('ru-RU')}
+function emptyRes(){return{food:0,wood:0,coal:0,iron:0,fc:0,rfc:0}}
+function addRes(t,r){RKEYS.forEach(k=>t[k]+=r[k]||0);return t}
+function resHtml(r){return RKEYS.map(k=>`<div class="resource"><span>${RN[k]}</span><b>${fmtRes(r[k],k)}</b></div>`).join('')}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
+function opts(a,s){return a.map(v=>`<option value="${esc(v)}"${v===s?' selected':''}>${esc(v)}</option>`).join('')}
+function entry(b,l){return(BUILD_DB[b]||[]).find(e=>e.label===l)||null}
+function key(b,l){return b+'|||'+l}
+function usedSet(){return new Set(state.builds.map(x=>key(x.building,x.transition)))}
+function isUsed(b,l){return state.builds.some(x=>x.building===b&&x.transition===l)}
+function effective(b,l){return b==='Военная академия'&&l==='30 → FC1'?'Открытие FC1':l}
+function isFC(l){return l==='30 → FC1'||l.startsWith('FC')}
+function bulkBuildings(l){return isFC(l)?FC_BUILDINGS:ORDINARY_BUILDINGS}
+
+function hyena(){let l=parseInt($('hyena').value||'0',10);return l?n($('h'+l).value):0}
+function speed(){return n($('ownSpeed').value)+($('titleBonus').checked?n($('titlePct').value):0)+hyena()+n($('otherBonus').value)}
+function apply(s){let r=s/(1+speed()/100);if($('doubleTime').checked)r*=Math.max(.01,n($('doubleMult').value)||.8);return r}
+function hyenaLabels(){for(let i=1;i<=5;i++)$('hyena').options[i].textContent='Ур. '+i+' — '+n($('h'+i).value).toLocaleString('ru-RU')+'%'}
+
+function fillPickBuildings(){$('pickBuilding').innerHTML=opts(BUILDING_ORDER,state.pickBuilding)}
+function fillPickTransitions(preferCurrent=true){
+  const a=BUILD_DB[state.pickBuilding]||[];
+  if(!preferCurrent||!a.some(e=>e.label===state.pickTransition))state.pickTransition=a[0]?.label||'';
+  $('pickTransition').innerHTML=opts(a.map(e=>e.label),state.pickTransition);
+  updatePick()
+}
+function setStatus(text,type=''){const el=$('pickStatus');el.textContent=text;el.className='status'+(type?' '+type:'')}
+function updatePick(){
+  const e=entry(state.pickBuilding,state.pickTransition),dup=isUsed(state.pickBuilding,state.pickTransition);
+  $('pickTime').textContent=e?e.time:'—';
+  $('addBuild').disabled=!e||dup;
+  if(dup)setStatus('Эта стройка уже есть в списке. Выберите другой переход.','warn');
+  else setStatus('','')
+}
+function firstUnusedForBuilding(b,startIndex=0){
+  const a=BUILD_DB[b]||[],u=usedSet();
+  for(let i=startIndex;i<a.length;i++)if(!u.has(key(b,a[i].label)))return a[i].label;
+  for(let i=0;i<startIndex;i++)if(!u.has(key(b,a[i].label)))return a[i].label;
+  return null
+}
+function advancePick(){
+  const a=BUILD_DB[state.pickBuilding]||[],idx=a.findIndex(e=>e.label===state.pickTransition),u=usedSet();
+  for(let i=idx+1;i<a.length;i++){
+    if(!u.has(key(state.pickBuilding,a[i].label))){state.pickTransition=a[i].label;fillPickTransitions();return}
+  }
+  const bidx=BUILDING_ORDER.indexOf(state.pickBuilding);
+  for(let offset=1;offset<=BUILDING_ORDER.length;offset++){
+    const b=BUILDING_ORDER[(bidx+offset)%BUILDING_ORDER.length],lab=firstUnusedForBuilding(b,0);
+    if(lab){state.pickBuilding=b;state.pickTransition=lab;fillPickBuildings();fillPickTransitions();return}
+  }
+  updatePick();setStatus('Все доступные переходы уже добавлены.','ok')
+}
+function addCurrent(){
+  const e=entry(state.pickBuilding,state.pickTransition);
+  if(!e)return;
+  if(isUsed(state.pickBuilding,state.pickTransition)){setStatus('Дубликат не добавлен.','warn');advancePick();return}
+  const addedName=state.pickBuilding+' '+state.pickTransition;
+  state.builds.push({building:state.pickBuilding,transition:state.pickTransition});
+  render();advancePick();setStatus('Добавлено: '+addedName,'ok');save()
+}
+
+function buildTpl(it,i){
+  const e=entry(it.building,it.transition),rr=e?RKEYS.filter(k=>e.resources[k]).map(k=>RN[k]+' '+fmtRes(e.resources[k],k)).join(' · '):'';
+  return`<div class="build" data-i="${i}">
+    <div class="build-head"><div class="build-title"><b>${esc(it.building)}</b><span>${esc(it.transition)}</span></div><button class="remove" aria-label="Удалить">×</button></div>
+    <div class="build-out"><span>Базовое время</span><span class="base">${e?esc(e.time):'—'}</span><span>Реальное время</span><b class="real">0 мин</b><div class="build-resource">${rr}</div></div>
+  </div>`
+}
+function render(){
+  if(!state.builds.length)$('buildList').innerHTML='<div class="empty">Добавьте первую стройку кнопкой «+» выше.</div>';
+  else $('buildList').innerHTML=state.builds.map(buildTpl).join('');
+  document.querySelectorAll('.build').forEach(el=>{
+    const i=+el.dataset.i;
+    el.querySelector('.remove').onclick=()=>{state.builds.splice(i,1);render();updatePick();save()}
+  });
+  $('countBadge').textContent=state.builds.length+' '+plural(state.builds.length,'стройка','стройки','строек');
+  calcTotals()
+}
+function plural(n,a,b,c){n=Math.abs(n)%100;let n1=n%10;if(n>10&&n<20)return c;if(n1>1&&n1<5)return b;if(n1===1)return a;return c}
+function calcTotals(){
+  let base=0,real=0,res=emptyRes();
+  document.querySelectorAll('.build').forEach(el=>{
+    const i=+el.dataset.i,e=entry(state.builds[i].building,state.builds[i].transition),bs=e?e.seconds:0,rr=apply(bs);
+    base+=bs;real+=rr;if(e)addRes(res,e.resources);
+    el.querySelector('.real').textContent=fmt(rr)
+  });
+  $('totalReal').textContent=fmt(real);$('totalBase').textContent=fmt(base);$('totalSaved').textContent=fmt(Math.max(0,base-real));
+  $('totalSpeed').textContent=speed().toLocaleString('ru-RU',{maximumFractionDigits:2})+'%';$('totalCount').textContent=state.builds.length;
+  $('totalResources').innerHTML=resHtml(res)
+}
+
+function bulkData(l){
+  let s=0,res=emptyRes(),bs=bulkBuildings(l);
+  bs.forEach(b=>{let e=entry(b,effective(b,l));if(e){s+=e.seconds;addRes(res,e.resources)}});
+  return{bs,s,res}
+}
+function updateBulk(){
+  let d=bulkData($('bulkTransition').value),cost=RKEYS.filter(k=>d.res[k]).map(k=>RN[k]+' '+fmtRes(d.res[k],k)).join(' · ');
+  $('bulkMeta').innerHTML=d.bs.length+' зданий · '+fmt(d.s)+' базового времени<br>'+cost
+}
+function addBulk(){
+  const l=$('bulkTransition').value;let added=0;
+  bulkBuildings(l).forEach(b=>{const lab=effective(b,l);if(!isUsed(b,lab)&&entry(b,lab)){state.builds.push({building:b,transition:lab});added++}});
+  render();advancePick();setStatus(added?'Добавлено зданий: '+added:'Все здания этого перехода уже есть в списке.',added?'ok':'warn');save()
+}
+
+function snap(){return{ownSpeed:$('ownSpeed').value,hyena:$('hyena').value,titleBonus:$('titleBonus').checked,doubleTime:$('doubleTime').checked,otherBonus:$('otherBonus').value,coeffs:[1,2,3,4,5].map(i=>$('h'+i).value),titlePct:$('titlePct').value,doubleMult:$('doubleMult').value,pickBuilding:state.pickBuilding,pickTransition:state.pickTransition,bulkTransition:$('bulkTransition').value,builds:state.builds}}
+function save(){try{localStorage.setItem(STORE,JSON.stringify(snap()))}catch(e){}}
+function applyStored(x){
+  ['ownSpeed','hyena','otherBonus','titlePct','doubleMult'].forEach(k=>{if(x[k]!==undefined)$(k).value=x[k]});
+  $('titleBonus').checked=!!x.titleBonus;$('doubleTime').checked=!!x.doubleTime;
+  if(Array.isArray(x.coeffs))x.coeffs.forEach((v,i)=>{if($('h'+(i+1)))$('h'+(i+1)).value=v});
+  if(x.pickBuilding&&BUILD_DB[x.pickBuilding])state.pickBuilding=x.pickBuilding;
+  else if(x.singleBuilding&&BUILD_DB[x.singleBuilding])state.pickBuilding=x.singleBuilding;
+  if(x.pickTransition)state.pickTransition=x.pickTransition;else if(x.singleTransition)state.pickTransition=x.singleTransition;
+  if(Array.isArray(x.builds))state.builds=x.builds.filter(b=>b&&b.building&&BUILD_DB[b.building]&&entry(b.building,b.transition)).map(b=>({building:b.building,transition:b.transition}));
+  state.builds=state.builds.filter((b,i,a)=>a.findIndex(x=>x.building===b.building&&x.transition===b.transition)===i);
+  if(x.bulkTransition&&PRESET_STEPS.includes(x.bulkTransition))$('bulkTransition').value=x.bulkTransition;
+  else if(x.presetTransition&&PRESET_STEPS.includes(x.presetTransition))$('bulkTransition').value=x.presetTransition
+}
+function load(){
+  try{let x=JSON.parse(localStorage.getItem(STORE)||'null');if(x){applyStored(x);return}
+    for(let k of OLD){x=JSON.parse(localStorage.getItem(k)||'null');if(x){applyStored(x);return}}
+  }catch(e){}
+}
+
+$('pickBuilding').onchange=()=>{state.pickBuilding=$('pickBuilding').value;state.pickTransition=firstUnusedForBuilding(state.pickBuilding,0)||(BUILD_DB[state.pickBuilding][0]?.label||'');fillPickTransitions();save()};
+$('pickTransition').onchange=()=>{state.pickTransition=$('pickTransition').value;updatePick();save()};
+$('addBuild').onclick=addCurrent;
+$('clearBuilds').onclick=()=>{state.builds=[];render();updatePick();setStatus('Список очищен.','ok');save()};
+$('bulkTransition').onchange=()=>{updateBulk();save()};$('bulkAdd').onclick=addBulk;
+$('resetSettings').onclick=()=>{[5,7,9,12,15].forEach((v,i)=>$('h'+(i+1)).value=v);$('titlePct').value=10;$('doubleMult').value=.8;hyenaLabels();calcTotals();save()};
+['ownSpeed','hyena','titleBonus','doubleTime','otherBonus','h1','h2','h3','h4','h5','titlePct','doubleMult'].forEach(id=>{$(id).oninput=()=>{hyenaLabels();calcTotals();save()};$(id).onchange=()=>{hyenaLabels();calcTotals();save()}});
+
+$('bulkTransition').innerHTML=opts(PRESET_STEPS,'25 → 26');
+load();hyenaLabels();fillPickBuildings();fillPickTransitions();
+if(!$('bulkTransition').value)$('bulkTransition').value='25 → 26';
+updateBulk();render();updatePick();
+})();
+</script>
+<nav class="bottom-nav"><a href="../../index.html"><span class="ico">⌂</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">⚔️</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open><span class="ico">🔍</span><span>Поиск</span></button></nav><div id="searchModal" class="search-modal"><div class="search-box"><div class="search-head"><input id="searchInput" type="search" placeholder="Поиск: Флинт, КО, Литейная…" autocomplete="off"><button class="search-close" data-search-close>×</button></div><div id="searchResults" class="search-results"><div class="search-empty">Начните вводить запрос.</div></div></div></div><script src="../../assets/js/search-index.js"></script><script src="../../assets/js/app.js"></script><script>if('serviceWorker'in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('../../sw.js').catch(()=>{}));</script></body></html>
