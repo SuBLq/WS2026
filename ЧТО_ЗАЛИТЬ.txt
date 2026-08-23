@@ -1,8 +1,0 @@
-Загрузить в корень существующего репозитория с сохранением путей:
-
-- guides/events/foundry.html
-- downloads/docx/04_Битва_за_Литейную.docx
-- assets/js/search-index.js
-- sw.js
-
-После commit GitHub Pages обновится автоматически.
