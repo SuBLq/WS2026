@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#0f5f8f"/>
+<title>Калькулятор технологий · Whiteout Survival</title>
+<link rel="stylesheet" href="research.css"/>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="../../index.html"><span class="brand-mark">W</span><span>Whiteout Survival</span></a>
+  <div class="top-actions"><button class="top-btn help-btn" id="openHelp" type="button" aria-label="Открыть памятку">?</button><button class="top-btn" id="saveProfile" type="button">💾 <span>Сохранить</span></button></div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow">ИНСТРУМЕНТ</div>
+    <h1>Калькулятор технологий</h1>
+  </section>
+
+  <section class="card profile-card">
+    <div class="card-head">
+      <h2>Мой профиль</h2>
+      <button class="btn primary compact" id="openTree" type="button">Настроить технологии</button>
+    </div>
+    <div class="profile-grid">
+      <label class="field"><span>Исследовательский центр</span><input id="rcLevel" type="number" min="1" max="30" value="30" inputmode="numeric"/></label>
+      <label class="field"><span>Скорость исследований, +%</span><input id="researchSpeed" type="number" min="0" step="0.1" value="0" inputmode="decimal"/></label>
+      <label class="field"><span>Временный бонус, +%</span><input id="tempSpeed" type="number" min="0" step="0.1" value="0" inputmode="decimal"/></label>
+    </div>
+    <div class="profile-foot">
+      <div class="profile-summary" id="profileSummary">Технологии не настроены</div>
+      <button class="text-btn" id="clearProfile" type="button">Очистить технологии</button>
+    </div>
+  </section>
+
+  <section class="card target-card">
+    <div class="card-head"><h2>Цель</h2></div>
+    <div class="segmented" id="goalBranchTabs">
+      <button type="button" class="active" data-goal-branch="Battle">Битва</button>
+      <button type="button" data-goal-branch="Growth">Развитие</button>
+    </div>
+    <label class="field goal-select-field"><span>Технология</span><select id="goalTech"></select></label>
+    <div class="goal-level" id="goalLevelWrap">
+      <div class="range-head"><span>Целевой уровень</span><strong id="goalLevelText">—</strong></div>
+      <input class="range" id="goalLevel" type="range" min="1" max="1" step="1" value="1"/>
+    </div>
+    <div class="goal-preview" id="goalPreview" hidden></div>
+    <button class="btn primary goal-add" id="addGoalToPlan" type="button" disabled>Добавить в план расчётов</button>
+    <div class="empty-goals" id="emptyGoals" hidden>Все технологии этой ветки уже изучены полностью.</div>
+  </section>
+
+  <section class="card totals-card">
+    <div class="card-head"><h2>Итого</h2><div class="rc-warning" id="rcWarning" hidden></div></div>
+    <div class="kpis">
+      <div class="kpi"><span>Время</span><strong id="totalTime">—</strong></div>
+      <div class="kpi"><span>Базовое время</span><strong id="totalBase">—</strong></div>
+      <div class="kpi"><span>Мощь</span><strong id="totalPower">—</strong></div>
+      <div class="kpi rc-kpi"><span>треб. Иссл. Центр:</span><strong id="totalRC">ур. —</strong></div>
+    </div>
+    <div class="resources">
+      <div><span>Мясо</span><strong id="res-meat">—</strong></div>
+      <div><span>Дерево</span><strong id="res-wood">—</strong></div>
+      <div><span>Уголь</span><strong id="res-coal">—</strong></div>
+      <div><span>Железо</span><strong id="res-iron">—</strong></div>
+      <div><span>Сталь</span><strong id="res-steel">—</strong></div>
+    </div>
+  </section>
+
+  <section class="card route-card">
+    <div class="card-head route-head">
+      <div><h2>Нужно изучить</h2><div class="route-count" id="routeCount">—</div></div>
+      <div class="route-actions">
+        <button class="route-action" id="routeMax" type="button">До MAX</button>
+        <button class="route-action" id="routeMin" type="button">До MIN</button>
+        <button class="route-action danger" id="clearRoute" type="button">Очистить</button>
+      </div>
+    </div>
+    <div class="route-list" id="routeList"><div class="empty">Выберите целевую технологию.</div></div>
+  </section>
+</main>
+
+<div class="drawer-backdrop" id="drawerBackdrop">
+  <aside class="drawer" role="dialog" aria-modal="true" aria-label="Настройка технологий">
+    <div class="drawer-head">
+      <div class="drawer-title-row"><h2>Мои технологии</h2><button class="close" id="closeTree" type="button">×</button></div>
+      <div class="drawer-search"><input id="treeSearch" type="search" placeholder="Найти технологию…"/></div>
+      <div class="tabs">
+        <button class="tab active" type="button" data-branch="Growth">Развитие</button>
+        <button class="tab" type="button" data-branch="Battle">Битва</button>
+      </div>
+    </div>
+    <div class="tree" id="tree"></div>
+  </aside>
+</div>
+
+<div class="help-backdrop" id="helpBackdrop" aria-hidden="true">
+  <section class="help-card" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+    <div class="help-head">
+      <div><div class="help-kicker">ПАМЯТКА</div><h2 id="helpTitle">Как пользоваться калькулятором</h2></div>
+      <button class="help-close" id="closeHelp" type="button" aria-label="Закрыть">×</button>
+    </div>
+    <ol class="help-steps">
+      <li><b>Заполните профиль.</b><span>Укажите Исследовательский центр и скорость исследований.</span></li>
+      <li><b>Настройте изученные технологии.</b><span>Откройте дерево и выставьте текущие уровни. Кнопка «Предыдущие ряды → MAX» быстро заполняет всё выше выбранного ряда.</span></li>
+      <li><b>Выберите цель.</b><span>Сначала посмотрите цену самой технологии и обязательного пути, затем нажмите «Добавить в план расчётов».</span></li>
+      <li><b>Подправьте маршрут.</b><span>Слайдерами можно поднять промежуточные технологии выше минимума. Итоги пересчитываются сразу.</span></li>
+    </ol>
+    <button class="btn primary help-done" id="helpDone" type="button">Понятно</button>
+  </section>
+</div>
+
+<div class="toast" id="toast"></div>
+<nav class="bottom">
+  <a href="../../index.html">⌂<br/><span>Главная</span></a>
+  <a href="../construction/index.html">🏗️<br/><span>Стройка</span></a>
+  <button class="active" id="openTreeBottom" type="button">🌳<br/><span>Технологии</span></button>
+</nav>
+<script src="research-data.js"></script>
+<script src="research-app.js"></script>
+</body>
+</html>
