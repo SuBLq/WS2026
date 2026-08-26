@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <meta name="theme-color" content="#0f5f8f"/>
 <title>Калькулятор технологий · Whiteout Survival</title>
-<link rel="stylesheet" href="research.css"/>
+<link rel="stylesheet" href="research.css?v=19"/>
 <script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script></head>
-<body>
+<body data-root="../../">
 <header class="top">
   <a class="brand" href="../../index.html"><span class="brand-mark">W</span><span>Whiteout Survival</span></a>
   <div class="top-actions"><button class="top-btn theme-btn" id="themeToggle" type="button" aria-label="Переключить тему"><span class="theme-icon">🌙</span></button><button class="top-btn help-btn" id="openHelp" type="button" aria-label="Открыть памятку">?</button><button class="top-btn" id="saveProfile" type="button">💾 <span>Сохранить</span></button></div>
@@ -117,7 +117,8 @@
   <a href="../construction/index.html">🏗️<br/><span>Стройка</span></a>
   <button class="active" id="openTreeBottom" type="button">🌳<br/><span>Технологии</span></button>
 </nav>
-<script src="research-data.js"></script>
-<script src="research-app.js"></script>
+<script src="research-data.js?v=19"></script>
+<script src="research-app.js?v=19"></script>
+<script src="../../assets/js/app.js?v=19"></script>
 </body>
 </html>

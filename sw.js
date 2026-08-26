@@ -1,5 +1,32 @@
-const CACHE='wos-guide-site-v18-preview';
-const ASSETS=["./","./index.html","./manifest.webmanifest","./assets/css/shell.css","./assets/css/content.css","./assets/js/search-index.js","./assets/js/app.js","./assets/icons/favicon.svg","./assets/icons/icon-192.png","./assets/icons/icon-512.png","./tools/construction/index.html","./guides/events/ice-mine.html","./guides/events/crazy-joe.html","./guides/events/wandering-theater.html","./guides/events/foundry.html","./guides/combat/combat-system.html","./guides/combat/heroes-gear.html","./guides/development/account-development.html","./guides/development/shops-currencies.html","./guides/svs/first-svs.html","./guides/buildings/furnace.html","./guides/combat/hero-generations.html","./guides/buildings/buildings.html","./assets/guides/foundry/score.webp","./assets/guides/foundry/foundry.webp","./assets/guides/foundry/prototype.webp","./assets/guides/foundry/repair.webp","./assets/guides/foundry/warehouse.webp","./assets/guides/foundry/boiler.webp","./assets/guides/foundry/transit.webp","./assets/guides/foundry/merc.webp","./assets/guides/foundry/workshop.webp","./assets/guides/foundry/merc-mail.webp","./tools/research/index.html","./tools/research/research.css","./tools/research/research-data.js","./tools/research/research-app.js"];
-self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)));self.skipWaiting()});
-self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
-self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;e.respondWith(fetch(e.request).then(r=>{const x=r.clone();caches.open(CACHE).then(c=>c.put(e.request,x));return r}).catch(()=>caches.match(e.request).then(r=>r||caches.match('./index.html'))))});
+const CACHE='wos-guide-site-v19';
+const ASSETS=["./","./index.html","./manifest.webmanifest","./assets/css/shell.css?v=19","./assets/css/content.css?v=19","./assets/js/search-index.js?v=19","./assets/js/app.js?v=19","./assets/icons/favicon.svg","./assets/icons/icon-192.png","./assets/icons/icon-512.png","./tools/construction/index.html","./guides/events/ice-mine.html","./guides/events/crazy-joe.html","./guides/events/wandering-theater.html","./guides/events/foundry.html","./guides/combat/combat-system.html","./guides/combat/heroes-gear.html","./guides/development/account-development.html","./guides/development/shops-currencies.html","./guides/svs/first-svs.html","./guides/buildings/furnace.html","./guides/combat/hero-generations.html","./guides/buildings/buildings.html","./assets/guides/foundry/score.webp","./assets/guides/foundry/foundry.webp","./assets/guides/foundry/prototype.webp","./assets/guides/foundry/repair.webp","./assets/guides/foundry/warehouse.webp","./assets/guides/foundry/boiler.webp","./assets/guides/foundry/transit.webp","./assets/guides/foundry/merc.webp","./assets/guides/foundry/workshop.webp","./assets/guides/foundry/merc-mail.webp","./tools/research/index.html","./tools/research/research.css?v=19","./tools/research/research-data.js?v=19","./tools/research/research-app.js?v=19"];
+
+self.addEventListener('install',event=>{
+  self.skipWaiting();
+  event.waitUntil(caches.open(CACHE).then(cache=>Promise.allSettled(ASSETS.map(url=>cache.add(url)))));
+});
+self.addEventListener('activate',event=>{
+  event.waitUntil((async()=>{
+    const keys=await caches.keys();
+    await Promise.all(keys.filter(key=>key.startsWith('wos-guide-site-')&&key!==CACHE).map(key=>caches.delete(key)));
+    await self.clients.claim();
+  })());
+});
+self.addEventListener('fetch',event=>{
+  const req=event.request;
+  if(req.method!=='GET')return;
+  const url=new URL(req.url);
+  if(url.origin!==self.location.origin)return;
+  event.respondWith((async()=>{
+    try{
+      const fresh=await fetch(req,{cache:'no-store'});
+      if(fresh&&fresh.ok){const cache=await caches.open(CACHE);cache.put(req,fresh.clone()).catch(()=>{});}
+      return fresh;
+    }catch(err){
+      const cached=await caches.match(req,{ignoreSearch:false})||await caches.match(req,{ignoreSearch:true});
+      if(cached)return cached;
+      if(req.mode==='navigate')return (await caches.match('./index.html'))||Response.error();
+      throw err;
+    }
+  })());
+});

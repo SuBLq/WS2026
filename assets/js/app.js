@@ -113,4 +113,33 @@
   }
   prepareResponsiveTables();
 
+
+  function installUpdateStyles(){
+    if(document.getElementById('wos-update-style'))return;
+    const st=document.createElement('style');st.id='wos-update-style';
+    st.textContent=`.wos-update-toast{position:fixed;left:50%;bottom:78px;z-index:250;transform:translateX(-50%);display:flex;align-items:center;gap:9px;max-width:calc(100vw - 20px);padding:9px 10px 9px 12px;border-radius:14px;background:#0b2942;color:#eef9ff;border:1px solid #2d6686;box-shadow:0 14px 38px rgba(0,0,0,.32);font:700 12px/1.25 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wos-update-toast button{border:0;border-radius:9px;background:#1688b5;color:#fff;padding:8px 10px;font-weight:850;white-space:nowrap;cursor:pointer}.wos-update-toast[hidden]{display:none}@media(max-width:390px){.wos-update-toast{width:calc(100vw - 16px);justify-content:space-between}}`;
+    document.head.appendChild(st);
+  }
+  function showSiteUpdate(){
+    installUpdateStyles();let box=document.getElementById('wosUpdateToast');
+    if(!box){box=document.createElement('div');box.id='wosUpdateToast';box.className='wos-update-toast';box.innerHTML='<span>Доступна новая версия сайта</span><button type="button">Обновить</button>';document.body.appendChild(box);box.querySelector('button').addEventListener('click',()=>location.reload())}
+    box.hidden=false;
+  }
+  function registerSiteWorker(){
+    if(!('serviceWorker' in navigator)||!location.protocol.startsWith('http'))return;
+    const hadController=!!navigator.serviceWorker.controller;
+    navigator.serviceWorker.addEventListener('controllerchange',()=>{if(hadController)showSiteUpdate()});
+    window.addEventListener('load',async()=>{
+      try{
+        const reg=await navigator.serviceWorker.register(root+'sw.js',{updateViaCache:'none'});
+        reg.addEventListener('updatefound',()=>{
+          const w=reg.installing;if(!w)return;
+          w.addEventListener('statechange',()=>{if(w.state==='installed'&&navigator.serviceWorker.controller&&reg.waiting)showSiteUpdate()});
+        });
+        reg.update().catch(()=>{});
+      }catch(e){}
+    });
+  }
+  registerSiteWorker();
+
 })();

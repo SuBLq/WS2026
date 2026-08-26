@@ -149,3 +149,39 @@ html[data-theme="dark"] .goal-select-field select option:checked{
 @media (prefers-color-scheme:dark){
   html[data-theme="dark"] .goal-select-field select{color-scheme:dark}
 }
+
+
+/* v1.0 / preview v19 — цельная тёмная карточка маршрута */
+html[data-theme="dark"] .route-goal{
+  background:linear-gradient(180deg,#0d3554 0%,#0b2d49 100%);
+  border-color:#2b6485;
+  color:#edf7ff;
+  box-shadow:0 7px 20px rgba(0,0,0,.20);
+}
+html[data-theme="dark"] .route-goal-kicker{color:#6bd2f6}
+html[data-theme="dark"] .route-goal-name{color:#f3fbff}
+html[data-theme="dark"] .route-goal-level{color:#a8c2d2}
+html[data-theme="dark"] .route-goal-level b{color:#7ee0ff}
+html[data-theme="dark"] .goal-needs{border-color:#285570}
+html[data-theme="dark"] .goal-needs>b{color:#a9ccdd}
+html[data-theme="dark"] .goal-needs span{
+  color:#c9e6f3;
+  background:#123c58;
+  border:1px solid #285d7a;
+}
+html[data-theme="dark"] .route-goal .price-line{border-color:#2a5872;color:#b2cbd9}
+html[data-theme="dark"] .route-goal .price-label{color:#8edcf8}
+html[data-theme="dark"] .route-goal .price-time{color:#e0f4ff}
+html[data-theme="dark"] .route-goal .price-time em{color:#91aebf}
+html[data-theme="dark"] .route-goal .price-resources{color:#bad0dc}
+html[data-theme="dark"] .route-goal .price-resources b{color:#f0f8fc}
+html[data-theme="dark"] .prereq-chain{
+  background:#0b2942;
+  border-color:#275d79;
+  border-left-color:#35b8e8;
+}
+html[data-theme="dark"] .prereq-chain-head{background:#0d3552;border-color:#27536d}
+html[data-theme="dark"] .prereq-chain-title strong{color:#bde8f8}
+html[data-theme="dark"] .prereq-chain-title span{color:#9eb9c9}
+html[data-theme="dark"] .prereq-chain-list .route-item{background:#0b2942;border-color:#1d4661}
+html[data-theme="dark"] .route-card .empty{color:#9ab5c7}
