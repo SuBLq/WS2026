@@ -4,6 +4,31 @@
   const input=document.getElementById('searchInput');
   const results=document.getElementById('searchResults');
   const root=(document.body.dataset.root||'./');
+  const THEME_KEY='wos-theme';
+  function currentTheme(){return document.documentElement.dataset.theme==='dark'?'dark':'light'}
+  function applyTheme(theme,persist=true){
+    theme=theme==='dark'?'dark':'light';
+    document.documentElement.dataset.theme=theme;
+    if(persist){try{localStorage.setItem(THEME_KEY,theme)}catch(e){}}
+    const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute('content',theme==='dark'?'#06192b':'#0f5f8f');
+    document.querySelectorAll('[data-theme-toggle]').forEach(btn=>{
+      const icon=btn.querySelector('.theme-icon');if(icon)icon.textContent=theme==='dark'?'☀️':'🌙';
+      const label=btn.querySelector('.theme-label');if(label)label.textContent=theme==='dark'?'Светлая':'Тёмная';
+      btn.setAttribute('aria-label',theme==='dark'?'Включить светлую тему':'Включить тёмную тему');
+      btn.title=theme==='dark'?'Светлая тема':'Тёмная тема';
+    });
+  }
+  function installThemeToggle(){
+    const actions=document.querySelector('.site-top-actions');if(!actions)return;
+    if(!actions.querySelector('[data-theme-toggle]')){
+      const btn=document.createElement('button');btn.type='button';btn.className='site-icon-btn theme-toggle';btn.dataset.themeToggle='';
+      btn.innerHTML='<span class="theme-icon">🌙</span><span class="theme-label">Тёмная</span>';
+      actions.prepend(btn);
+    }
+    actions.querySelectorAll('[data-theme-toggle]').forEach(btn=>btn.addEventListener('click',()=>applyTheme(currentTheme()==='dark'?'light':'dark')));
+    applyTheme(currentTheme(),false);
+  }
+  installThemeToggle();
   function norm(s){return (s||'').toLowerCase().replace(/ё/g,'е')}
   function snippet(text,term){
     const t=norm(text),q=norm(term);let i=t.indexOf(q); if(i<0)i=0;

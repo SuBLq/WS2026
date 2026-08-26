@@ -6,11 +6,11 @@
 <meta name="theme-color" content="#0f5f8f"/>
 <title>Калькулятор технологий · Whiteout Survival</title>
 <link rel="stylesheet" href="research.css"/>
-</head>
+<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script></head>
 <body>
 <header class="top">
   <a class="brand" href="../../index.html"><span class="brand-mark">W</span><span>Whiteout Survival</span></a>
-  <div class="top-actions"><button class="top-btn help-btn" id="openHelp" type="button" aria-label="Открыть памятку">?</button><button class="top-btn" id="saveProfile" type="button">💾 <span>Сохранить</span></button></div>
+  <div class="top-actions"><button class="top-btn theme-btn" id="themeToggle" type="button" aria-label="Переключить тему"><span class="theme-icon">🌙</span></button><button class="top-btn help-btn" id="openHelp" type="button" aria-label="Открыть памятку">?</button><button class="top-btn" id="saveProfile" type="button">💾 <span>Сохранить</span></button></div>
 </header>
 
 <main class="wrap">
@@ -25,9 +25,9 @@
       <button class="btn primary compact" id="openTree" type="button">Настроить технологии</button>
     </div>
     <div class="profile-grid">
-      <label class="field"><span>Исследовательский центр</span><input id="rcLevel" type="number" min="1" max="30" value="30" inputmode="numeric"/></label>
-      <label class="field"><span>Скорость исследований, +%</span><input id="researchSpeed" type="number" min="0" step="0.1" value="0" inputmode="decimal"/></label>
-      <label class="field"><span>Временный бонус, +%</span><input id="tempSpeed" type="number" min="0" step="0.1" value="0" inputmode="decimal"/></label>
+      <label class="field"><span>🏛️ Исследовательский центр</span><input id="rcLevel" type="number" min="1" max="30" value="30" inputmode="numeric"/></label>
+      <label class="field"><span>⚡ Скорость исследований, +%</span><input id="researchSpeed" type="number" min="0" step="0.1" value="0" inputmode="decimal"/></label>
+      <label class="field"><span>⏱️ Временный бонус, +%</span><input id="tempSpeed" type="number" min="0" step="0.1" value="0" inputmode="decimal"/></label>
     </div>
     <div class="profile-foot">
       <div class="profile-summary" id="profileSummary">Технологии не настроены</div>
@@ -38,8 +38,8 @@
   <section class="card target-card">
     <div class="card-head"><h2>Цель</h2></div>
     <div class="segmented" id="goalBranchTabs">
-      <button type="button" class="active" data-goal-branch="Battle">Битва</button>
-      <button type="button" data-goal-branch="Growth">Развитие</button>
+      <button type="button" class="active" data-goal-branch="Battle">⚔️ Битва</button>
+      <button type="button" data-goal-branch="Growth">📈 Развитие</button>
     </div>
     <label class="field goal-select-field"><span>Технология</span><select id="goalTech"></select></label>
     <div class="goal-level" id="goalLevelWrap">
@@ -54,17 +54,17 @@
   <section class="card totals-card">
     <div class="card-head"><h2>Итого</h2><div class="rc-warning" id="rcWarning" hidden></div></div>
     <div class="kpis">
-      <div class="kpi"><span>Время</span><strong id="totalTime">—</strong></div>
-      <div class="kpi"><span>Базовое время</span><strong id="totalBase">—</strong></div>
-      <div class="kpi"><span>Мощь</span><strong id="totalPower">—</strong></div>
-      <div class="kpi rc-kpi"><span>треб. Иссл. Центр:</span><strong id="totalRC">ур. —</strong></div>
+      <div class="kpi"><span>⏱ Время</span><strong id="totalTime">—</strong></div>
+      <div class="kpi"><span>🕒 Базовое время</span><strong id="totalBase">—</strong></div>
+      <div class="kpi"><span>💪 Мощь</span><strong id="totalPower">—</strong></div>
+      <div class="kpi rc-kpi"><span>🏛️ треб. Иссл. Центр:</span><strong id="totalRC">ур. —</strong></div>
     </div>
     <div class="resources">
-      <div><span>Мясо</span><strong id="res-meat">—</strong></div>
-      <div><span>Дерево</span><strong id="res-wood">—</strong></div>
-      <div><span>Уголь</span><strong id="res-coal">—</strong></div>
-      <div><span>Железо</span><strong id="res-iron">—</strong></div>
-      <div><span>Сталь</span><strong id="res-steel">—</strong></div>
+      <div><span>🥩 Мясо</span><strong id="res-meat">—</strong></div>
+      <div><span>🪵 Дерево</span><strong id="res-wood">—</strong></div>
+      <div><span>⬛ Уголь</span><strong id="res-coal">—</strong></div>
+      <div><span>🔩 Железо</span><strong id="res-iron">—</strong></div>
+      <div><span>⚙️ Сталь</span><strong id="res-steel">—</strong></div>
     </div>
   </section>
 
@@ -87,8 +87,8 @@
       <div class="drawer-title-row"><h2>Мои технологии</h2><button class="close" id="closeTree" type="button">×</button></div>
       <div class="drawer-search"><input id="treeSearch" type="search" placeholder="Найти технологию…"/></div>
       <div class="tabs">
-        <button class="tab active" type="button" data-branch="Growth">Развитие</button>
-        <button class="tab" type="button" data-branch="Battle">Битва</button>
+        <button class="tab active" type="button" data-branch="Growth">📈 Развитие</button>
+        <button class="tab" type="button" data-branch="Battle">⚔️ Битва</button>
       </div>
     </div>
     <div class="tree" id="tree"></div>

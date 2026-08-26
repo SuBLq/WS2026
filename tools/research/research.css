@@ -52,3 +52,100 @@
 .prereq-chain{margin-top:4px;border:1px solid #d6e4ea;border-left:4px solid #1685a8;background:#f8fbfc;border-radius:14px;overflow:hidden}.prereq-chain-head{padding:10px 11px;background:#eef6f9;border-bottom:1px solid #dce8ed}.prereq-chain-head.no-prereq{border-bottom:0}.prereq-chain-title{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap}.prereq-chain-title strong{font-size:12px;color:#2c5d73}.prereq-chain-title span{font-size:10px;color:var(--muted)}.prereq-chain-head .price-line{margin-top:7px;padding-top:7px;border-top:1px dashed #d2e2e9}.prereq-chain-list{display:grid;gap:0}.prereq-chain-list .route-item{border:0;border-top:1px solid #e0eaee;border-radius:0;background:#fff}.prereq-chain-list .route-item:first-child{border-top:0}.prereq-chain-list .route-item:before{width:3px}.prereq-chain-list .route-item:last-child{border-bottom-left-radius:10px;border-bottom-right-radius:10px}
 @media(max-width:700px){.goal-preview-costs{grid-template-columns:1fr}.goal-preview{padding:10px}.prereq-chain-head{padding:9px}.prereq-chain-list .route-item{padding:10px}}
 @media(max-width:370px){.goal-preview-title{display:grid}.goal-preview-title>b{justify-self:start}.goal-add{font-size:11px}.prereq-chain-title{display:grid;gap:2px}}
+
+/* Preview v17 — game-blue night theme + clearer color language */
+.theme-btn{width:40px;padding:9px 0;font-size:16px;font-weight:950}
+.profile-card{border-top:3px solid #2b9bc4}.target-card{border-top:3px solid #557cc0}.totals-card{border-top:3px solid #16966d}.route-card{border-top:3px solid #7b65b1}
+.kpi:first-child{background:#eef8fc}.kpi:nth-child(2){background:#f4f6fb}.kpi:nth-child(3){background:#f0faf5}.kpi.rc-kpi{background:#f8f5fc}
+.resources>div:nth-child(1){border-top:3px solid #d78370}.resources>div:nth-child(2){border-top:3px solid #b68555}.resources>div:nth-child(3){border-top:3px solid #687682}.resources>div:nth-child(4){border-top:3px solid #7897a8}.resources>div:nth-child(5){border-top:3px solid #9b7daf}
+
+html[data-theme="dark"]{
+  --bg:#06192b;--card:#0b2942;--ink:#eef8ff;--muted:#98b4c7;--line:#214a67;
+  --blue:#43c5ef;--blue2:#24a9d8;--navy:#d9f1ff;--growth:#49d2a7;--battle:#ff8f83;
+  --cyan:#55c9ec;--purple:#b5a0ee;--green:#4bd29c;--amber:#e5b15f;--danger:#ff8277;
+  --soft:#0d2e49;--shadow:0 12px 32px rgba(0,0,0,.28);color-scheme:dark;
+}
+html[data-theme="dark"],html[data-theme="dark"] body{background:#06192b;color:var(--ink)}
+html[data-theme="dark"] body{background:radial-gradient(circle at 85% -8%,rgba(22,125,184,.26),transparent 27rem),linear-gradient(180deg,#06192b 0,#082139 260px,#06192b 100%)}
+html[data-theme="dark"] .top{background:rgba(6,35,59,.96);box-shadow:0 5px 22px rgba(0,0,0,.28)}
+html[data-theme="dark"] .brand-mark{background:#dff5ff;color:#0a5d89}
+html[data-theme="dark"] .top-btn{background:#0f4367;border-color:#2d698c;color:#e8f7ff}
+html[data-theme="dark"] .eyebrow{color:#78c9ed}
+html[data-theme="dark"] .card{background:#0b2942;border-color:#214a67;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+html[data-theme="dark"] .field input,html[data-theme="dark"] .field select,html[data-theme="dark"] .drawer-search input{background:#081f34;border-color:#28516d;color:#edf8ff}
+html[data-theme="dark"] .field input:focus,html[data-theme="dark"] .field select:focus,html[data-theme="dark"] .drawer-search input:focus{border-color:#3ba8d0;box-shadow:0 0 0 3px rgba(58,170,215,.18)}
+html[data-theme="dark"] .profile-foot{border-color:#1d415b}
+html[data-theme="dark"] .segmented{background:#0a2238}
+html[data-theme="dark"] .segmented button{color:#91aec0}
+html[data-theme="dark"] .segmented button.active{background:#123b59;color:#9ee6ff;box-shadow:none}
+html[data-theme="dark"] .goal-level,html[data-theme="dark"] .goal-preview,html[data-theme="dark"] .goal-preview-cost,html[data-theme="dark"] .prereq-chain,html[data-theme="dark"] .route-item,html[data-theme="dark"] .kpi,html[data-theme="dark"] .resources>div{background:#0d2e49;border-color:#214a67}
+html[data-theme="dark"] .goal-preview-title strong,html[data-theme="dark"] .route-name,html[data-theme="dark"] .kpi strong,html[data-theme="dark"] .resources strong{color:#eff9ff}
+html[data-theme="dark"] .goal-preview-title>b,html[data-theme="dark"] .goal-chip{background:#104665!important;color:#95e5ff!important}
+html[data-theme="dark"] .goal-preview-label,html[data-theme="dark"] .price-label,html[data-theme="dark"] .prereq-chain-title strong{color:#a5d6e9}
+html[data-theme="dark"] .price-line,html[data-theme="dark"] .price-resources{color:#a4bdcc;border-color:#24516e}
+html[data-theme="dark"] .price-time{color:#ccecff}html[data-theme="dark"] .price-time em{color:#829fb2}html[data-theme="dark"] .price-resources b{color:#8fa9ba}
+html[data-theme="dark"] .prereq-chain-head{background:#0e3552;border-color:#214a67}
+html[data-theme="dark"] .prereq-chain-list .route-item{background:#0b2942;border-color:#1d415b}
+html[data-theme="dark"] .route-item.kind-goal{background:#0d3554}.route-item.kind-manual{}
+html[data-theme="dark"] .route-item.kind-manual{background:#0c3540}
+html[data-theme="dark"] .kind-chip{background:#123a54;color:#9bdcf5}
+html[data-theme="dark"] .route-levels{border-color:#1d415b!important}
+html[data-theme="dark"] .route-action{background:#0e3552;border-color:#285875;color:#acdff1}
+html[data-theme="dark"] .route-action:hover{background:#12405e}
+html[data-theme="dark"] .route-action.danger{background:#44252a;border-color:#744047;color:#ffb1a9}
+html[data-theme="dark"] .rc-warning{background:#47351d;color:#ffd18c}
+html[data-theme="dark"] .drawer-backdrop{background:rgba(1,10,17,.72)}
+html[data-theme="dark"] .drawer{background:#071d31}
+html[data-theme="dark"] .drawer-head{background:rgba(8,31,51,.97);border-color:#214a67}
+html[data-theme="dark"] .close{background:#123954;color:#def4ff}
+html[data-theme="dark"] .tab{background:#102f48;color:#91adbf}.tab.active{}
+html[data-theme="dark"] .tab.active{background:#14628b;color:#fff}
+html[data-theme="dark"] .tier-title>strong{color:#a8cada}
+html[data-theme="dark"] .row-max{background:#0d3552;border-color:#285875;color:#a9def1}
+html[data-theme="dark"] .tech-card{background:#0b2942;border-color:#214a67}
+html[data-theme="dark"] .tech-card.is-full{background:#102535;border-color:#294252;color:#758e9e}
+html[data-theme="dark"] .tech-card.is-full .tech-sub{color:#647e8e}
+html[data-theme="dark"] .full-chip{background:#29404f;color:#a4b6c1}
+html[data-theme="dark"] .help-backdrop{background:rgba(1,10,17,.75)}
+html[data-theme="dark"] .help-card{background:#0b2942;border-color:#28516d;box-shadow:0 25px 75px rgba(0,0,0,.45)}
+html[data-theme="dark"] .help-close{background:#123954;color:#def4ff}
+html[data-theme="dark"] .help-steps li{background:#0d2e49;border-color:#214a67}
+html[data-theme="dark"] .help-steps li:before{background:#104665;color:#a8eaff}
+html[data-theme="dark"] .help-steps span{color:#a6bdcb}
+html[data-theme="dark"] .bottom{background:rgba(6,26,44,.97);border-color:#214967}
+html[data-theme="dark"] .bottom a,html[data-theme="dark"] .bottom button{color:#90adbf}
+html[data-theme="dark"] .bottom .active{color:#7ee1ff}
+html[data-theme="dark"] .toast{background:#0e4263;color:#fff;border:1px solid #2b6689}
+@media(max-width:520px){.theme-btn{width:36px}}
+
+/* v18 — контраст выпадающего списка целей в тёмной теме */
+html[data-theme="dark"] .goal-select-field select{
+  color-scheme:dark;
+  background:#081f34;
+  color:#f2f9ff;
+  border-color:#3180a8;
+}
+html[data-theme="dark"] .goal-select-field select option{
+  background-color:#0b2942;
+  color:#edf7ff;
+  font-weight:700;
+}
+html[data-theme="dark"] .goal-select-field select optgroup{
+  background-color:#071d31;
+  color:#75d9ff;
+  font-weight:950;
+}
+html[data-theme="dark"] .goal-select-field select option:disabled{
+  background-color:#0a243b;
+  color:#b2cfde;
+  opacity:1;
+  font-weight:900;
+}
+html[data-theme="dark"] .goal-select-field select option:checked{
+  background:#2c79b9 linear-gradient(0deg,#2c79b9 0%,#2c79b9 100%);
+  color:#ffffff;
+  font-weight:900;
+}
+@media (prefers-color-scheme:dark){
+  html[data-theme="dark"] .goal-select-field select{color-scheme:dark}
+}

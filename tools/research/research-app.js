@@ -3,6 +3,7 @@
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const STATE_KEY='wos-research-calculator-v4';
 const HELP_KEY='wos-research-help-v1';
+const THEME_KEY='wos-theme';
 const LEGACY_KEYS=['wos-research-planner-v2','wos-research-calculator-v3'];
 const DATA=window.WOS_RESEARCH_DATA||null;
 const RU_BASE=DATA?.meta?.translations||{};
@@ -17,6 +18,14 @@ let TECHS={},current={},branch='Growth',treeQuery='',rcLevel=30,speed=0,tempSpee
 let goalBranch='Battle',goalId='',goalLevel=1,overrides={},candidateId='',candidateLevel=1;
 let saveTimer=null,liveTotalsFrame=0,clearProfileArmed=false,clearProfileTimer=null;
 
+function theme(){return document.documentElement.dataset.theme==='dark'?'dark':'light'}
+function applyTheme(t,persist=true){
+  t=t==='dark'?'dark':'light';document.documentElement.dataset.theme=t;
+  if(persist){try{localStorage.setItem(THEME_KEY,t)}catch(e){}}
+  const btn=$('#themeToggle'),icon=btn?.querySelector('.theme-icon');if(icon)icon.textContent=t==='dark'?'☀️':'🌙';
+  if(btn){btn.title=t==='dark'?'Светлая тема':'Тёмная тема';btn.setAttribute('aria-label',t==='dark'?'Включить светлую тему':'Включить тёмную тему')}
+  const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute('content',t==='dark'?'#06192b':'#0f5f8f');
+}
 function toast(text){const e=$('#toast');if(!e)return;e.textContent=text;e.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('show'),1700)}
 function saveSoon(){clearTimeout(saveTimer);saveTimer=setTimeout(save,120)}
 function showHelp(force=false){const e=$('#helpBackdrop');if(!e||(!force&&localStorage.getItem(HELP_KEY)))return;e.classList.add('open');e.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
@@ -347,6 +356,7 @@ function clearProfile(){
 }
 function setGoalBranch(b){if(!['Growth','Battle'].includes(b)||b===goalBranch)return;goalBranch=b;candidateId='';candidateLevel=1;renderGoalOptions();save()}
 function bind(){
+  $('#themeToggle')?.addEventListener('click',()=>applyTheme(theme()==='dark'?'light':'dark'));
   $('#saveProfile').addEventListener('click',()=>{save();toast('Профиль сохранён')});
   $('#openHelp').addEventListener('click',()=>showHelp(true));$('#closeHelp').addEventListener('click',()=>hideHelp(true));$('#helpDone').addEventListener('click',()=>hideHelp(true));$('#helpBackdrop').addEventListener('click',e=>{if(e.target===$('#helpBackdrop'))hideHelp(true)});
   $('#openTree').addEventListener('click',openDrawer);$('#openTreeBottom').addEventListener('click',openDrawer);$('#closeTree').addEventListener('click',closeDrawer);$('#drawerBackdrop').addEventListener('click',e=>{if(e.target===$('#drawerBackdrop'))closeDrawer()});
@@ -365,7 +375,7 @@ function bind(){
 }
 function init(){
   if(!DATA){document.body.innerHTML='<main class="wrap"><section class="card"><h2>Не удалось загрузить базу технологий.</h2></section></main>';return}
-  loadState();buildTechs();bind();renderAll();save();if(!localStorage.getItem(HELP_KEY))setTimeout(()=>showHelp(false),180);
+  loadState();buildTechs();bind();applyTheme(theme(),false);renderAll();save();if(!localStorage.getItem(HELP_KEY))setTimeout(()=>showHelp(false),180);
 }
 init();
 })();
