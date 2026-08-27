@@ -185,3 +185,67 @@ html[data-theme="dark"] .prereq-chain-title strong{color:#bde8f8}
 html[data-theme="dark"] .prereq-chain-title span{color:#9eb9c9}
 html[data-theme="dark"] .prereq-chain-list .route-item{background:#0b2942;border-color:#1d4661}
 html[data-theme="dark"] .route-card .empty{color:#9ab5c7}
+
+/* Preview v20 — broader gradient language + hard dark-route contrast */
+.profile-card{background:linear-gradient(145deg,#ffffff 0%,#f5fbfd 100%)}
+.target-card{background:linear-gradient(145deg,#ffffff 0%,#f6f8fd 100%)}
+.totals-card{background:linear-gradient(145deg,#f3fbf8 0%,#eef9f7 52%,#f8fcfb 100%)}
+.route-card{background:linear-gradient(145deg,#ffffff 0%,#f8f6fc 100%)}
+.goal-preview{background:linear-gradient(145deg,#f6fbfd 0%,#eef6fa 100%)}
+.segmented button.active{background:linear-gradient(135deg,#ffffff,#eaf6fb)}
+.btn.primary{background:linear-gradient(135deg,#0e75a4 0%,#18a3cb 100%);box-shadow:0 5px 14px rgba(17,130,175,.18)}
+
+html[data-theme="dark"] .profile-card{
+  background:linear-gradient(145deg,#0b2942 0%,#0c344e 100%)!important;
+}
+html[data-theme="dark"] .target-card{
+  background:linear-gradient(145deg,#0b2942 0%,#102d51 100%)!important;
+}
+html[data-theme="dark"] .totals-card{
+  background:linear-gradient(135deg,#0b3544 0%,#0d4a4d 58%,#0b3442 100%)!important;
+  border-color:#27666d!important;
+}
+html[data-theme="dark"] .route-card{
+  background:linear-gradient(155deg,#0b2942 0%,#0b263f 60%,#102944 100%)!important;
+}
+html[data-theme="dark"] .goal-preview{
+  background:linear-gradient(145deg,#0d3855 0%,#0b2b47 100%)!important;
+  border-color:#2b6381!important;
+}
+html[data-theme="dark"] .goal-preview-cost{
+  background:linear-gradient(145deg,#0d314c,#0a2942)!important;
+  border-color:#285a75!important;
+}
+html[data-theme="dark"] .segmented button.active{
+  background:linear-gradient(135deg,#14486a,#176b91)!important;
+  color:#e7f8ff!important;
+}
+html[data-theme="dark"] .btn.primary{
+  background:linear-gradient(135deg,#1175a5,#20a8ce)!important;
+  box-shadow:0 6px 16px rgba(11,115,163,.28)!important;
+}
+html[data-theme="dark"] .route-card .route-goal{
+  color:#edf8ff!important;
+  background:linear-gradient(135deg,#0f3d5d 0%,#0b2d49 58%,#102b4d 100%)!important;
+  border-color:#347395!important;
+  box-shadow:0 9px 24px rgba(0,0,0,.22)!important;
+}
+html[data-theme="dark"] .route-card .route-goal-kicker{color:#72d8fa!important}
+html[data-theme="dark"] .route-card .route-goal-name{color:#f4fbff!important}
+html[data-theme="dark"] .route-card .route-goal-level{color:#b5cedc!important}
+html[data-theme="dark"] .route-card .route-goal-level b{color:#7ee4ff!important}
+html[data-theme="dark"] .route-card .goal-needs{border-color:#2c607b!important}
+html[data-theme="dark"] .route-card .goal-needs>b{color:#b9d7e6!important}
+html[data-theme="dark"] .route-card .goal-needs span{
+  color:#d5edf7!important;
+  background:linear-gradient(135deg,#123d5a,#104761)!important;
+  border-color:#2f6682!important;
+}
+html[data-theme="dark"] .route-card .route-goal .price-label{color:#8be1fb!important}
+html[data-theme="dark"] .route-card .route-goal .price-time{color:#e7f7ff!important}
+html[data-theme="dark"] .route-card .route-goal .price-time em{color:#9bb8c8!important}
+html[data-theme="dark"] .route-card .route-goal .price-resources{color:#c1d8e3!important}
+html[data-theme="dark"] .route-card .route-goal .price-resources b{color:#f2f9fc!important}
+html[data-theme="dark"] .prereq-chain-head{
+  background:linear-gradient(135deg,#0f3955,#0c304c)!important;
+}

@@ -84,3 +84,86 @@ html[data-theme="dark"] .mobile-card-subtitle,html[data-theme="dark"] .mobile-fi
 html[data-theme="dark"] .mobile-field-value{color:#c9dce7}
 html[data-theme="dark"] .mobile-card-fields,html[data-theme="dark"] .mobile-field{border-color:#1e4561}
 html[data-theme="dark"] .mobile-building-card .quick-time{color:#78d9fb}
+
+/* Preview v20 — gradient accents and dark-safe guide inserts */
+.callout{
+  background:linear-gradient(135deg,#eaf7fc 0%,#f7fbfd 72%);
+  border:1px solid #d1e7f0;
+  border-left:5px solid #36a2cf;
+  box-shadow:0 5px 16px rgba(28,91,120,.05);
+}
+.mine-note{
+  color:#31566a;
+  background:linear-gradient(135deg,#eef8fc 0%,#f9fcfe 78%);
+  border-color:#d3e8f1;
+  box-shadow:0 5px 16px rgba(28,91,120,.05);
+}
+.mine-note.good{
+  color:#315b50;
+  background:linear-gradient(135deg,#e9f8f2 0%,#f7fcfa 78%);
+  border-color:#c9e8da;
+}
+.mine-note.warn{
+  color:#674a28;
+  background:linear-gradient(135deg,#fff4e4 0%,#fffaf2 78%);
+  border-color:#f0d3aa;
+}
+.mini-kpi>div,.split-card{
+  background:linear-gradient(145deg,#f4f9fb 0%,#ffffff 100%);
+  box-shadow:0 4px 14px rgba(28,91,120,.04);
+}
+.rank-chip{background:linear-gradient(135deg,#f7fbfd,#eef7fb)}
+.foundry-shot{background:linear-gradient(145deg,#f4f9fb,#fff)}
+
+html[data-theme="dark"] .callout{
+  color:#cde4f0;
+  background:linear-gradient(135deg,#0e3a59 0%,#0a2945 76%)!important;
+  border:1px solid #285c78!important;
+  border-left:5px solid #42c5ef!important;
+  box-shadow:0 8px 22px rgba(0,0,0,.18);
+}
+html[data-theme="dark"] .callout strong{color:#92e3ff!important}
+html[data-theme="dark"] .callout p{color:#c5dce8!important}
+
+html[data-theme="dark"] .mine-note{
+  color:#c8ddea!important;
+  background:linear-gradient(135deg,#0e3856 0%,#0a2944 78%)!important;
+  border-color:#2a5b76!important;
+  box-shadow:0 8px 22px rgba(0,0,0,.17);
+}
+html[data-theme="dark"] .mine-note strong{color:#90e1ff!important}
+html[data-theme="dark"] .mine-note.good{
+  color:#c9e8df!important;
+  background:linear-gradient(135deg,#0d4143 0%,#0a2c3d 82%)!important;
+  border-color:#2c746c!important;
+}
+html[data-theme="dark"] .mine-note.good strong{color:#76e5b9!important}
+html[data-theme="dark"] .mine-note.warn{
+  color:#ead6b9!important;
+  background:linear-gradient(135deg,#44351f 0%,#132f40 82%)!important;
+  border-color:#745a32!important;
+}
+html[data-theme="dark"] .mine-note.warn strong{color:#ffd48d!important}
+html[data-theme="dark"] .mini-kpi>div,
+html[data-theme="dark"] .split-card{
+  color:#d7e9f2!important;
+  background:linear-gradient(145deg,#0d334f 0%,#0a2942 100%)!important;
+  border-color:#26536e!important;
+  box-shadow:0 7px 20px rgba(0,0,0,.14);
+}
+html[data-theme="dark"] .mini-kpi b,html[data-theme="dark"] .route{color:#7edcff!important}
+html[data-theme="dark"] .mini-kpi span,html[data-theme="dark"] .muted{color:#9bb8c8!important}
+html[data-theme="dark"] .split-card h3{color:#eff9ff!important}
+html[data-theme="dark"] .split-card p{color:#c7dce7!important}
+html[data-theme="dark"] .rank-chip{
+  color:#c9e3ef!important;
+  background:linear-gradient(135deg,#103956,#0c2d48)!important;
+  border-color:#285a75!important;
+}
+html[data-theme="dark"] .foundry-shot{
+  background:linear-gradient(145deg,#0d334f,#0a2942)!important;
+  border-color:#26536e!important;
+}
+html[data-theme="dark"] .foundry-shot figcaption{color:#abc4d2!important}
+html[data-theme="dark"] .foundry-figure img{background:#0b2942!important;border-color:#26536e!important}
+html[data-theme="dark"] .foundry-figure figcaption{color:#9fbac9!important}
