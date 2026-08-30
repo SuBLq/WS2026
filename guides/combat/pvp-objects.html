@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#0f5f8f"/>
+<meta name="description" content="PvP за объекты в Whiteout Survival: Джесси и Джассер в атаке, Сергей и Патрик в защите, формации 50/20/30 и 60/40/0, горячая замена, пополнение гарнизона, синхронизация времени и тактические приёмы."/>
+<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
+<link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
+<link href="../../assets/css/content.css?v=24" rel="stylesheet"/>
+<title>PVP ЗА ОБЪЕКТЫ · Whiteout Survival</title>
+<style>
+.pvp-note{border:1px solid #d8e7ee;background:linear-gradient(135deg,#eef8fc 0%,#f9fcfe 78%);border-radius:15px;padding:14px 15px;margin:13px 0;color:#31566a;box-shadow:0 5px 16px rgba(28,91,120,.05)}
+.pvp-note strong{display:block;color:#0f638c;margin-bottom:5px}.pvp-note.good{background:linear-gradient(135deg,#e9f8f2 0%,#f7fcfa 78%);border-color:#c9e8da;color:#315b50}.pvp-note.good strong{color:#087350}.pvp-note.warn{background:linear-gradient(135deg,#fff4e4 0%,#fffaf2 78%);border-color:#f0d3aa;color:#674a28}.pvp-note.warn strong{color:#9b5515}
+.role-divider{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:15px 16px;border:1px solid #d8e7ee;border-radius:17px;margin:16px 0 12px;background:linear-gradient(145deg,#f4f9fb 0%,#fff 100%);box-shadow:0 4px 14px rgba(28,91,120,.04)}.role-divider h3{margin:0 0 6px;font-size:19px;color:#123f58}.role-divider p{margin:0;font-size:13px;line-height:1.55;color:#496473;max-width:620px}.role-divider .ratio{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.ratio span{font-size:11px;font-weight:900;padding:5px 8px;border-radius:999px;background:#eaf4f8;color:#245d77;border:1px solid #d4e5ec}.role-divider.attack{border-top:4px solid #d89539}.role-divider.defense{border-top:4px solid #3d98bd}
+.shot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 14px}.pvp-shot{margin:0;border:1px solid #d7e5ec;border-radius:15px;padding:8px;background:linear-gradient(145deg,#f7fbfd,#fff);box-shadow:0 4px 14px rgba(28,91,120,.04);overflow:hidden}.pvp-shot img{display:block;width:100%;height:auto;border-radius:10px;background:#eaf2f6}.pvp-shot figcaption{font-size:10.5px;line-height:1.4;color:#6b8190;padding:7px 3px 2px}
+.skill-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:10px 0 8px}.skill-card{border:1px solid #d7e5ec;border-radius:15px;overflow:hidden;background:#fff}.skill-card img{display:block;width:100%;height:auto}.skill-card p{font-size:11.5px;line-height:1.48;color:#496473;margin:0;padding:10px 11px 12px}.skill-card b{color:#173f56}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:13px 0}.flow-step{position:relative;border:1px solid #d8e7ee;background:#f7fbfd;border-radius:13px;padding:11px 10px;font-size:11.5px;line-height:1.4;color:#36596d}.flow-step b{display:block;color:#0f638c;margin-bottom:3px;font-size:11px}.flow-step:not(:last-child):after{content:'→';position:absolute;right:-8px;top:50%;transform:translateY(-50%);z-index:2;color:#4c94b4;font-weight:900;background:#eef5f8;border-radius:50%;width:17px;height:17px;display:grid;place-items:center}
+.command-list{counter-reset:cmd;list-style:none;padding:0;margin:9px 0}.command-list li{counter-increment:cmd;position:relative;padding:10px 10px 10px 42px;margin:7px 0;border:1px solid #dfe9ee;border-radius:13px;background:#fafcfd;font-size:13px;line-height:1.5;color:#29495b}.command-list li:before{content:counter(cmd);position:absolute;left:11px;top:10px;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;background:#e1f1f7;color:#12688e;font-size:11px;font-weight:900}
+.example-box{border:1px solid #c9e0ea;background:linear-gradient(135deg,#f0f8fb,#fbfdfe);border-radius:16px;margin:13px 0;padding:14px}.example-box strong{display:block;color:#145f82;margin-bottom:9px}.example-row{display:grid;grid-template-columns:130px 1fr;gap:10px;padding:7px 0;border-top:1px solid #dfeaf0;font-size:12px;line-height:1.45;color:#365568}.example-row:first-of-type{border-top:0}.example-row b{color:#173f56}.example-result{margin-top:10px;padding:10px 11px;border-radius:11px;background:#e7f6ef;color:#225c4a;font-size:12px;line-height:1.48}
+.battle-figure,.sync-figure,.collage-figure{margin:14px 0;border:1px solid #d7e5ec;border-radius:16px;padding:9px;background:#f6fafc}.battle-figure img,.sync-figure img,.collage-figure img{display:block;width:100%;height:auto;border-radius:11px}.battle-figure figcaption,.sync-figure figcaption,.collage-figure figcaption{font-size:10.5px;line-height:1.45;color:#6b8190;padding:8px 4px 2px}
+.sync-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:12px;align-items:start}.mini-title{margin:16px 0 8px;font-size:16px;color:#173f56}
+@media(max-width:780px){.role-divider,.sync-grid{grid-template-columns:1fr;display:grid}.role-divider .ratio{justify-content:flex-start}}
+@media(max-width:620px){.shot-grid,.skill-grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.flow-step:not(:last-child):after{content:'↓';right:50%;top:auto;bottom:-12px;transform:translateX(50%)}.example-row{grid-template-columns:1fr;gap:2px}}
+html[data-theme="dark"] .pvp-note{color:#c8ddea;background:linear-gradient(135deg,#0e3856 0%,#0a2944 78%);border-color:#2a5b76;box-shadow:0 8px 22px rgba(0,0,0,.17)}html[data-theme="dark"] .pvp-note strong{color:#90e1ff}html[data-theme="dark"] .pvp-note.good{color:#c9e8df;background:linear-gradient(135deg,#0d4143 0%,#0a2c3d 82%);border-color:#2c746c}html[data-theme="dark"] .pvp-note.good strong{color:#76e5b9}html[data-theme="dark"] .pvp-note.warn{color:#ead6b9;background:linear-gradient(135deg,#44351f 0%,#132f40 82%);border-color:#745a32}html[data-theme="dark"] .pvp-note.warn strong{color:#ffd48d}
+html[data-theme="dark"] .role-divider,html[data-theme="dark"] .pvp-shot,html[data-theme="dark"] .skill-card,html[data-theme="dark"] .flow-step,html[data-theme="dark"] .example-box,html[data-theme="dark"] .battle-figure,html[data-theme="dark"] .sync-figure,html[data-theme="dark"] .collage-figure,html[data-theme="dark"] .command-list li{background:linear-gradient(145deg,#0d334f,#0a2942);border-color:#26536e;color:#c7dce7}html[data-theme="dark"] .role-divider h3,html[data-theme="dark"] .skill-card b,html[data-theme="dark"] .example-row b,html[data-theme="dark"] .mini-title{color:#eff9ff}html[data-theme="dark"] .role-divider p,html[data-theme="dark"] .skill-card p,html[data-theme="dark"] .example-row,html[data-theme="dark"] .pvp-shot figcaption,html[data-theme="dark"] .battle-figure figcaption,html[data-theme="dark"] .sync-figure figcaption,html[data-theme="dark"] .collage-figure figcaption{color:#abc4d2}html[data-theme="dark"] .ratio span{background:#103956;border-color:#285a75;color:#c9e3ef}html[data-theme="dark"] .flow-step b,html[data-theme="dark"] .example-box strong{color:#7edcff}html[data-theme="dark"] .flow-step:not(:last-child):after{background:#071e33;color:#7edcff}html[data-theme="dark"] .example-row{border-color:#214967}html[data-theme="dark"] .example-result{background:#0d4143;color:#c9e8df}html[data-theme="dark"] .command-list li:before{background:#104966;color:#9fe7ff}
+</style>
+<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
+</head>
+<body data-root="../../">
+<header class="site-top">
+  <a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a>
+  <div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div>
+</header>
+
+<main class="guide-wrap">
+<section class="guide-hero">
+  <div class="eyebrow">⚔️ БОЕВАЯ СИСТЕМА</div>
+  <h1>PVP ЗА ОБЪЕКТЫ</h1>
+  <p>Как собирать атакующие и защитные отряды, когда менять героев после захвата и почему синхронизация времени решает исход боя за объект</p>
+  <div class="hero-meta"><span class="pill">Альянсовая тактика</span><span class="pill">Черновик</span></div>
+</section>
+
+<div class="guide-toolbar">
+  <a class="action-link" href="../../index.html#guides">← Все гайды</a>
+</div>
+
+<details class="toc" open>
+<summary>Содержание</summary>
+<div class="toc-list">
+  <a href="#hospital">0. Госпиталь и недопустимые потери</a>
+  <a href="#formations">1. Герои и формации</a>
+  <a href="#why">2. Почему атака и защита разные</a>
+  <a href="#swap">3. Горячая замена</a>
+  <a href="#movesets">4. Экономный вариант и олл-ин</a>
+  <a href="#refill">5. Пополнение гарнизона</a>
+  <a href="#sync">6. Синхронизация времени</a>
+  <a href="#minimarch">7. Дробное пополнение для каждого игрока</a>
+  <a href="#mistakes">8. Типичные ошибки</a>
+  <a href="#routine">9. Алгоритм участника</a>
+  <a href="#officers">10. Для офицеров и лидеров рейдов и гарнизона</a>
+</div>
+</details>
+
+<article class="article">
+<aside class="callout"><strong>Основа схемы</strong><p>В атаку участники идут с <b>Джесси</b> или <b>Джассером</b> первым героем и формацией <b>50 / 20 / 30</b>. После захвата объекта атакующий отряд меняется на защитный: <b>Сергей</b> или <b>Патрик</b> первым героем, формация <b>60 / 40 / 0</b>. Дальше удержание строится на горячей замене, пополнении гарнизона и точном расчёте времени.</p></aside>
+
+
+<h2 id="hospital">0. Госпиталь и недопустимые потери</h2>
+<p class="body-p">В важных боях нужно следить не только за захватом объекта, но и за состоянием госпиталя. После поражения около <b>30% войск отряда</b> попадают в госпиталь как тяжелораненые. Пока в госпитале есть место, эти войска можно вернуть. Когда госпиталь переполняется, войска начинают погибать окончательно.</p>
+<p class="body-p">Восстанавливать такие потери через Военное Бюро очень дорого или очень долго. Поэтому задача игрока — не допускать переполнения госпиталя, вовремя лечиться и, если ситуация выходит из-под контроля, лучше временно выйти из боя на лечение, чем потерять невосполнимые тысячи, десятки и сотни тысяч войск.</p>
+<figure class="sync-figure"><img src="../../assets/guides/pvp/heal-4min.webp" alt="Экран лечения с выделенным госпиталем и лечением на четыре минуты" loading="lazy"/><figcaption>Следим за заполнением госпиталя и подбираем такие партии лечения, чтобы таймер был кратен 4 минутам. Помощь альянса мгновенно снимает 4 минуты лечения.</figcaption></figure>
+<p class="body-p">Базовый принцип бесплатного по времени лечения простой: выгодно выставлять для лечения количество войск, кратное <b>4 минутам</b>. Каждая помощь альянса моментально лечит <b>4 минуты</b>. Если в альянсе есть, например, <b>5 игроков</b> с Ультраценной картой, то вы получаете мгновенное лечение партий суммарно до <b>20 минут</b> без расхода ускорений.</p>
+<div class="pvp-note"><strong>Как лечиться на практике</strong>В реальных важных боях, особенно в <b>СвС</b>, при необходимости можно и нужно тратить ускорения лечения. Но в обычной ситуации выгоднее лечиться маленькими партиями так, чтобы их закрывала помощь альянса, а не ваши ускорения.</div>
+<div class="pvp-note warn"><strong>ОКОНЧАТЕЛЬНАЯ УТРАТА ВОЙСК НЕПРИЕМЛЕМА</strong>Если госпиталь близок к заполнению, игроку лучше сделать паузу и уйти на лечение, чем продолжать бой ценой прямых необратимых потерь. Исключение — осознанные особые случаи, но по умолчанию такие потери недопустимы.</div>
+<figure class="battle-figure"><img src="../../assets/guides/pvp/losses-unacceptable.webp" alt="Отчёт боя с выделенной строкой потерь как пример недопустимой окончательной утраты войск" loading="lazy"/><figcaption>Строка «Потери» — это окончательно погибшие войска. За этим показателем следим в первую очередь. При атаках на город другого игрока часть войск в потерях обычно будет всегда, поэтому к таким ударам относимся особенно осторожно.</figcaption></figure>
+
+<h2 id="formations">1. Герои и формации</h2>
+<p class="body-p">Для боёв за объекты мы используем не «красивые тройки», а рабочие сборки под конкретную задачу. Ниже — стандартные отряды для атаки и для защиты.</p>
+
+<div class="role-divider attack">
+  <div>
+    <h3>Атака</h3>
+    <p>В атаку ставим первым только <b>Джесси</b> или <b>Джассера</b>. Это универсальная формация для участия в рейде по объекту.</p>
+  </div>
+  <div class="ratio"><span>Пехота 50%</span><span>Копья 20%</span><span>Стрелки 30%</span></div>
+</div>
+<div class="shot-grid">
+  <figure class="pvp-shot"><img src="../../assets/guides/pvp/attack-jessie.webp" alt="Атакующая формация 50 20 30 с Джесси первым героем" loading="lazy"/><figcaption>Джесси первой · 50% пехоты / 20% копий / 30% стрелков.</figcaption></figure>
+  <figure class="pvp-shot"><img src="../../assets/guides/pvp/attack-jasser.webp" alt="Атакующая формация 50 20 30 с Джассером первым героем" loading="lazy"/><figcaption>Джассер первым · та же универсальная формация 50 / 20 / 30.</figcaption></figure>
+</div>
+<div class="skill-grid">
+  <div class="skill-card"><img src="../../assets/guides/pvp/skill-jessie.webp" alt="Навык Джесси на повышение урона всех войск" loading="lazy"/><p><b>Джесси.</b> Экспедиционный навык повышает урон, наносимый всеми войсками. Именно ради этого навыка она ставится первой.</p></div>
+  <div class="skill-card"><img src="../../assets/guides/pvp/skill-jasser.webp" alt="Навык Джассера на повышение урона всех войск" loading="lazy"/><p><b>Джассер.</b> Экспедиционный навык также повышает урон всех войск. По задаче это прямой аналог Джесси для участия в атаке.</p></div>
+</div>
+<div class="pvp-note"><strong>Что здесь действительно работает</strong>При присоединении к рейду или гарнизону у обычного участника учитывается только навык <b>первого</b> героя. Поэтому в атаке нужны именно Джесси или Джассер. Второй и третий герои в этой схеме бонуса не дают и могут быть любыми.</div>
+
+<div class="role-divider defense">
+  <div>
+    <h3>Защита</h3>
+    <p>После захвата объекта для удержания ставим первым только <b>Сергея</b> или <b>Патрика</b>. Кого именно использовать, задают офицеры альянса.</p>
+  </div>
+  <div class="ratio"><span>Пехота 60%</span><span>Копья 40%</span><span>Стрелки 0%</span></div>
+</div>
+<div class="shot-grid">
+  <figure class="pvp-shot"><img src="../../assets/guides/pvp/defense-sergey.webp" alt="Защитная формация 60 40 0 с Сергеем первым героем" loading="lazy"/><figcaption>Сергей первым · защитная формация 60% пехоты / 40% копий / 0% стрелков.</figcaption></figure>
+  <figure class="pvp-shot"><img src="../../assets/guides/pvp/defense-patrick.webp" alt="Защитная формация 60 40 0 с Патриком первым героем" loading="lazy"/><figcaption>Патрик первым · тот же защитный шаблон 60 / 40 / 0.</figcaption></figure>
+</div>
+<div class="skill-grid">
+  <div class="skill-card"><img src="../../assets/guides/pvp/skill-sergey.webp" alt="Навык Сергея на снижение получаемого урона" loading="lazy"/><p><b>Сергей.</b> Экспедиционный навык снижает получаемый урон всеми войсками. Это один из двух базовых защитных навыков для гарнизона.</p></div>
+  <div class="skill-card"><img src="../../assets/guides/pvp/skill-patrick.webp" alt="Навык Патрика на повышение здоровья всех войск" loading="lazy"/><p><b>Патрик.</b> Экспедиционный навык повышает здоровье всех войск. Второй стандартный вариант для защиты объекта.</p></div>
+</div>
+<div class="pvp-note"><strong>Почему только Сергей или Патрик</strong>Для удержания объекта нам нужен либо навык Сергея на снижение входящего урона, либо навык Патрика на повышение здоровья войск. Какой из них нужен в конкретном бою, решают офицеры. Второй и третий герои в отряде снова ничего не добавляют.</div>
+
+<h2 id="why">2. Почему атака и защита разные</h2>
+<p class="body-p">Атакующий отряд и защитный отряд решают разные задачи, поэтому и собираются по-разному. В атаке нам нужно как можно быстрее выбить вражеский гарнизон. Для этого берём Джесси или Джассера и добавляем стрелков в формацию 50 / 20 / 30 — они помогают быстрее разбирать пехотный фронт противника.</p>
+<p class="body-p">После захвата задача меняется. Теперь объект нужно пережить под входящим ударом, поэтому мы отказываемся от стрелков, увеличиваем долю пехоты и оставляем копейщиков как второй опорный тип войск. Отсюда и защитная формация 60 / 40 / 0 с Сергеем или Патриком первым героем.</p>
+<div class="pvp-note good"><strong>Вывод</strong>Атакой объект забирают, защитой объект удерживают. Если оставить внутри Джесси или Джассера и атакующую формацию, захват может быть успешным, но удержание станет заметно хуже.</div>
+
+<h2 id="swap">3. Горячая замена</h2>
+<p class="body-p">После успешного захвата объекта атакующий отряд не должен долго стоять внутри. Его задача выполнена. Дальше нужно быстро заменить его на защитный отряд, не оставив объект пустым ни на секунду.</p>
+<div class="flow">
+  <div class="flow-step"><b>1. Захват</b>Рейд альянса забирает объект. Ваш атакующий отряд с Джесси или Джассером остаётся внутри.</div>
+  <div class="flow-step"><b>2. Подмена</b>Сразу отправляете защитный отряд с Сергеем или Патриком и формацией 60 / 40 / 0.</div>
+  <div class="flow-step"><b>3. Около 5 секунд</b>Перед самым прибытием защиты выводите свой старый атакующий отряд.</div>
+  <div class="flow-step"><b>4. Удержание</b>Освободившееся место сразу занимает защитный отряд.</div>
+</div>
+<div class="pvp-note good"><strong>Что важно</strong>Нельзя выводить старый отряд сразу после захвата: в этот момент объект останется без прикрытия. Но и держать в защите Джесси или Джассера дольше необходимого тоже нельзя. Мы освобождаем место только тогда, когда защитный марш уже почти пришёл.</div>
+
+<h2 id="movesets">4. Экономный вариант и олл-ин</h2>
+<h3 class="mini-title">Экономный вариант</h3>
+<ol class="command-list">
+<li>Рейд альянса захватывает объект. Ваш атакующий отряд остаётся внутри.</li>
+<li>Сразу после захвата отправляете отдельный защитный отряд с Сергеем или Патриком и формацией 60 / 40 / 0.</li>
+<li>Следите за временем его прибытия. Когда остаётся примерно <b>5 секунд</b>, выводите старый отряд с Джесси или Джассером.</li>
+<li>Защитный отряд заходит на освободившееся место и дальше используется для удержания объекта.</li>
+</ol>
+<p class="body-p">Это базовая и самая безопасная схема, если после нашего захвата есть время на спокойную перестановку.</p>
+
+<h3 class="mini-title">Олл-ин</h3>
+<ol class="command-list">
+<li>Наш атакующий рейд уже идёт к объекту.</li>
+<li>Игроки заранее запускают защитные марши следом за ним, ещё до удара.</li>
+<li>Рейд захватывает объект, а защитные отряды в этот момент уже находятся в нескольких секундах от цели.</li>
+<li>Перед прибытием защиты атакующие отряды выводятся, и место сразу занимают защитные.</li>
+</ol>
+<p class="body-p">Олл-ин нужен там, где противник отвечает очень быстро и окно между захватом и следующим ударом будет минимальным.</p>
+<div class="pvp-note warn"><strong>Цена ошибки выше</strong>Олл-ин требует точных таймингов. Слишком ранний вывод атакующего отряда создаёт пустое окно, а слишком поздний защитный марш оставляет объект в атакующей формации под встречный удар.</div>
+
+<h2 id="refill">5. Пополнение гарнизона</h2>
+<p class="body-p">Пополнение — это не новая горячая замена. Нужный защитный отряд уже стоит внутри объекта и остаётся там. Вы отправляете к нему дополнительные войска, а по прибытии игра заполняет освободившиеся места в существующем отряде.</p>
+<p class="body-p">Для обычного пополнения новые герои не нужны. Мы не меняем состав по героям и не заводим новый отряд, а просто возвращаем численность уже стоящему гарнизону.</p>
+<div class="example-box">
+<strong>Пример: как работает пополнение</strong>
+<div class="example-row"><b>До боя</b><span>В гарнизоне стояло <b>130 000</b> войск.</span></div>
+<div class="example-row"><b>После удара</b><span>Погибло или выбыло <b>70 000</b>. В гарнизоне осталось <b>60 000</b>, значит свободно ещё 70 000 мест.</span></div>
+<div class="example-row"><b>Отправили</b><span><b>60 000 пехоты</b> и <b>40 000 копейщиков</b> — всего 100 000 войск на пополнение.</span></div>
+<div class="example-row"><b>Пополнено</b><span>В гарнизон войдут <b>60 000 пехоты</b> и <b>10 000 копейщиков</b>. Этого хватает, чтобы закрыть свободные 70 000 мест.</span></div>
+<div class="example-result"><b>Итог:</b> гарнизон снова заполнен до 130 000. Оставшиеся 30 000 копейщиков не понадобились и вернулись обратно.</div>
+</div>
+<div class="pvp-note"><strong>Приоритет заполнения</strong>Сначала игра использует войска более высокого уровня. Если уровень одинаковый, порядок заполнения такой: <b>пехота → копейщики → стрелки</b>. Поэтому важно не только отправлять больше войск, но и понимать, какой тип реально зайдёт внутрь.</div>
+
+<h2 id="sync">6. Синхронизация времени</h2>
+<div class="pvp-note warn"><strong>Синхронизация времени — сверхважная часть PvP</strong>Недостаточно знать правильных героев и формации. Если вы неправильно рассчитали время отправки, объект может получить удар ещё до того, как атакующие герои будут заменены на защитных.</div>
+<p class="body-p">При отправке отряда смотрим не только на состав, но и на время в пути. Его показывает кнопка <b>«Отправить»</b> внизу экрана. Именно это время используется для расчёта горячей замены или заранее отправленного защитного марша.</p>
+<figure class="sync-figure"><img src="../../assets/guides/pvp/sync-timer.webp" alt="Кнопка Отправить с таймером времени в пути до цели" loading="lazy"/><figcaption>Таймер рядом с кнопкой «Отправить» показывает, сколько ваш марш будет идти до цели. Этот показатель обязательно учитываем при любой замене.</figcaption></figure>
+<div class="sync-grid">
+  <div>
+    <h3 class="mini-title">Как работает синхронизация</h3>
+    <ol class="command-list">
+      <li>Лидер рейда сообщает, сколько рейду идти до цели после отправки.</li>
+      <li>Все союзники видят таймер сбора рейда и знают собственное время в пути по кнопке «Отправить».</li>
+      <li>Сравниваем оба значения и заранее считаем, когда запускать свой защитный отряд на замену.</li>
+      <li>Оставляем себе небольшой запас времени, чтобы успеть вывести старый атакующий отряд перед приходом защиты.</li>
+    </ol>
+  </div>
+  <div>
+    <h3 class="mini-title">Пример расчёта</h3>
+    <div class="example-box" style="margin-top:0">
+      <div class="example-row"><b>Сбор рейда</b><span><b>3:00</b></span></div>
+      <div class="example-row"><b>Ход рейда</b><span><b>0:35</b> до цели после отправки</span></div>
+      <div class="example-row"><b>Ваш ход</b><span><b>0:47</b> до той же цели отдельным маршем</span></div>
+      <div class="example-row"><b>Действие</b><span>Запускаете свой защитный отряд примерно за <b>15–20 секунд до отправки рейда</b>, чтобы успеть подвести его к замене и оставить себе время на вывод старого атакующего отряда.</span></div>
+      <div class="example-result"><b>Почему это важно:</b> чем больше окно между захватом объекта и приходом защиты, тем выше шанс, что по гарнизону ударят до замены Джесси или Джассера на Сергея или Патрика.</div>
+    </div>
+  </div>
+</div>
+<p class="body-p">Во время плотного боя дополнительно следим за двумя зонами на карте: слева — наши марши и время их прибытия, справа — таймеры ближайших вражеских ударов или рейдов. Сопоставление этих двух таймеров и есть практическая сторона синхронизации.</p>
+<figure class="battle-figure"><img src="../../assets/guides/pvp/battle-timers.webp" alt="Бой за объект с выделенными маршами слева и таймерами входящих атак справа" loading="lazy"/><figcaption>Слева — состояние и время наших маршей. Справа — ближайшие входящие удары или рейды по объекту. Остальной экран в этот момент вторичен.</figcaption></figure>
+
+<h2 id="minimarch">7. Дробное пополнение для каждого игрока</h2>
+<p class="body-p">Этот приём нужен не только офицерам. Любой игрок, который следит за входящими ударами, может заранее подвести подкрепление так, чтобы оно пришло <b>сразу после вражеского удара</b> — например через 00:01 после него. Если это умеют делать многие участники, гарнизон становится заметно труднее выбить даже серией вражеских рейдов.</p>
+<p class="body-p">Если вы не уверены, что попадёте в идеальный момент одним крупным подкреплением, допускается отправка <b>нескольких маленьких маршей пополнения</b>. Это особенно полезно против одновременных ударов противника.</p>
+<figure class="collage-figure"><img src="../../assets/guides/pvp/refill-minimarches-collage.webp" alt="Пошаговый коллаж подготовки мини-отрядов для дробного пополнения гарнизона" loading="lazy"/><figcaption>Последовательность подготовки мини-отрядов: базовая отправка → убрать героев при ещё не выровненном войске → нажать «Уравнять» и выровнять все три типа → убрать всех стрелков.</figcaption></figure>
+<ol class="command-list">
+<li>Открываете отправку подкрепления и оцениваете, когда именно после вражеского удара должны прийти ваши войска.</li>
+<li>Через «минус» убираете героев. Для такого пополнения герои не нужны.</li>
+<li>Нажимаете <b>«Уравнять»</b>, чтобы быстро разделить войска на удобные части.</li>
+<li><b>Убираете всех стрелков.</b> Для пополнения гарнизона по нашей схеме нужны только пехота и копейщики.</li>
+<li>Отправляете такие мини-отряды каждые <b>5–7 секунд</b>. Можно запускать несколько маршей подряд, если хотите перекрыть возможную ошибку по времени.</li>
+</ol>
+<div class="pvp-note good"><strong>Зачем это делать</strong>После удара противника часть войск в гарнизоне выбывает. Если ваши мини-отряды приходят сразу следом, гарнизон быстро восстанавливает численность и следующему вражескому удару становится сложнее добить его остаток.</div>
+<div class="pvp-note warn"><strong>Главный риск</strong>Следите за госпиталем и за общим состоянием гарнизона. Если гарнизон всё-таки падёт, то все ваши отряды, которые ещё находятся в пути как подкрепление, будут разбиты с большими потерями — примерно <b>30% от каждого отряда</b>.</div>
+
+<h2 id="mistakes">8. Типичные ошибки</h2>
+<ul class="bullets">
+<li><b>Неправильный первый герой.</b> Если первым стоит не Джесси, не Джассер, не Сергей и не Патрик по ситуации, отряд теряет весь смысл.</li>
+<li><b>Джесси или Джассер остаются в защите.</b> Они нужны, чтобы захватить объект, а не держать его под ответными ударами.</li>
+<li><b>Одинаковая формация на всё.</b> 50 / 20 / 30 используется для атаки, 60 / 40 / 0 — для защиты.</li>
+<li><b>Слишком ранний вывод старого отряда.</b> Между отзывом и приходом защиты появляется опасное окно.</li>
+<li><b>Слишком поздняя отправка защиты.</b> Объект слишком долго стоит в атакующей конфигурации.</li>
+<li><b>Отсутствие синхронизации.</b> Игрок смотрит только на сбор рейда и забывает про собственное время в пути.</li>
+<li><b>Отправка пополнения без расчёта.</b> Подкрепление приходит слишком рано, погибает в ударе вместе с основным гарнизоном или вообще не успевает к следующей атаке.</li>
+<li><b>Бесконечное пополнение одного и того же отряда.</b> Легкораненые постепенно блокируют доступный запас войск; периодически отряд нужно полностью вернуть в город.</li>
+</ul>
+
+<h2 id="routine">9. Алгоритм участника</h2>
+<h3 class="mini-title">Когда идём в атаку</h3>
+<ol class="command-list">
+<li>Ставим первым <b>Джесси</b> или <b>Джассера</b>.</li>
+<li>Выбираем формацию <b>50 / 20 / 30</b>.</li>
+<li>Присоединяемся к нужному рейду и следуем командам офицеров.</li>
+</ol>
+<h3 class="mini-title">Когда объект захвачен</h3>
+<ol class="command-list">
+<li>Готовим отдельный отряд с <b>Сергеем</b> или <b>Патриком</b> — кого указали офицеры.</li>
+<li>Выбираем формацию <b>60 / 40 / 0</b> и отправляем её к объекту.</li>
+<li>Примерно за <b>5 секунд</b> до прибытия защиты выводим свой старый атакующий отряд.</li>
+</ol>
+<h3 class="mini-title">Когда гарнизон уже стоит</h3>
+<ol class="command-list">
+<li>После вражеского удара смотрим, сколько войск осталось в нашем отряде.</li>
+<li>Если первый герой и формация остаются правильными, не меняем отряд без причины — просто пополняем гарнизон.</li>
+<li>Если ожидается серия ударов, стараемся не ограничиваться одним крупным пополнением: дробные мини-отряды часто работают надёжнее.</li>
+<li>Следим не только за госпиталем, но и за общим количеством доступных войск. Войска, которые стали легкоранеными в гарнизоне, нельзя отправить повторно, пока исходный отряд не вернулся в город.</li>
+<li>Между вражескими рейдами периодически делаем полную безопасную замену: возвращаем старый отряд, разблокируем легкораненых и снова заводим свежую защиту.</li>
+</ol>
+<div class="example-box">
+<strong>Почему при долгой обороне «заканчиваются» войска</strong>
+<div class="example-row"><b>Старт</b><span>У вас <b>400 000</b> войск. Один защитный отряд стоит в гарнизоне, остальные войска доступны для пополнения.</span></div>
+<div class="example-row"><b>После ударов</b><span>Часть войск становится обычными ранеными и уходит в госпиталь. Другая часть становится <b>легкораненой</b>.</span></div>
+<div class="example-row"><b>Во время боя</b><span>Вы лечите раненых и раз за разом отправляете свежие подкрепления. При этом легкораненые из стоящего в гарнизоне отряда остаются привязаны к нему и временно недоступны для новых маршей.</span></div>
+<div class="example-row"><b>Что делать</b><span>Когда между вражескими рейдами появляется безопасное окно, полностью возвращаете старый отряд в город и заводите новый.</span></div>
+<div class="example-result"><b>После возвращения:</b> легкораненые сразу разблокируются и снова становятся доступными. Они не умирают и не исчезают — игра просто не даёт использовать их повторно, пока их отряд находится вне города.</div>
+</div>
+<div class="pvp-note warn"><strong>Не возвращаем отряд под удар</strong>Ротация ради легкораненых делается между вражескими рейдами, когда новый защитный отряд уже подготовлен. Нельзя освобождать гарнизон только потому, что хочется быстрее вернуть войска в доступный пул.</div>
+
+<h2 id="officers">10. Для офицеров и лидеров рейдов и гарнизона</h2>
+<p class="body-p">Ниже — приёмы, которые уже требуют координации нескольких людей. Это уровень офицеров, тактиков и лидеров рейдов, но обычным участникам тоже полезно понимать, что именно от них будут требовать.</p>
+
+<h3 class="mini-title">Одновременный удар</h3>
+<p class="body-p">Рейд-лидеры синхронизируют время удара между собой. Тактик альянса сообщает целевое время попадания, а каждый лидер отдельно считает свой запуск по формуле <b>время сбора рейда + время в пути</b>.</p>
+<div class="example-box">
+<strong>Пример</strong>
+<div class="example-row"><b>Задача</b><span>Тактик сообщает: удары лидеров <b>А</b>, <b>Б</b> и <b>С</b> должны прийти в <b>18:07</b>. Текущее время — <b>18:00</b>.</span></div>
+<div class="example-row"><b>Расчёт</b><span>Каждый лидер через экран отправки смотрит, сколько его рейду идти до цели, и учитывает своё время сбора.</span></div>
+<div class="example-row"><b>Запуск</b><span>Если суммарное время рейда лидера равно 7 минутам, он стартует сразу. Если суммарное время 6 минут 20 секунд, стартует в 18:00:40, и так далее.</span></div>
+<div class="example-result"><b>Итог:</b> два, три, четыре и более рейда падают по гарнизону почти одновременно и не оставляют противнику времени на обновление погибающих войск между ударами.</div>
+</div>
+
+<h3 class="mini-title">Требовать дробное пополнение от участников</h3>
+<p class="body-p">Приём из раздела <a href="#minimarch">«Дробное пополнение для каждого игрока»</a> должен использоваться не эпизодически, а как стандарт. Особенно это важно против одновременных рейдов противника. Чем больше игроков умеют подводить мини-отряды сразу после удара, тем сложнее выбить гарнизон даже сильной серией атак.</p>
+
+<h3 class="mini-title">Согласованная утрата гарнизона</h3>
+<p class="body-p">Иногда офицеры заранее понимают, что текущий гарнизон удар не выдержит. В такой ситуации можно договориться с союзным альянсом, чтобы он ударил по нашему объекту <b>сразу после</b> вражеского рейда.</p>
+<div class="pvp-note"><strong>Логика приёма</strong>Гарнизон альянса <b>А</b> падает. Противник после своего удара тоже несёт потери, а внутри объекта у него часто остаются не те герои и не идеальная конфигурация. Если рейд союзного альянса <b>Б</b> прилетит в ближайшие секунды после падения нашего гарнизона, шансы быстро выбить ослабленного противника и не дать ему закрепиться резко возрастают.</div>
+<div class="pvp-note warn"><strong>Условие применения</strong>Этот приём работает только при точной синхронизации и при реальном понимании, что спасти свой гарнизон уже нельзя. Иначе можно просто подарить объект противнику и ещё потратить союзный рейд впустую.</div>
+</article>
+</main>
+
+<a class="back-top" href="#" id="backTop">↑</a>
+<nav class="bottom-nav"><a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open=""><span class="ico">🔎</span><span>Поиск</span></button></nav>
+<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: PvP, гарнизон, Джесси, Сергей…" type="search"/><button class="search-close" data-search-close="">×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
+<script src="../../assets/js/search-index.js?v=28"></script><script src="../../assets/js/app.js?v=24"></script>
+</body>
+</html>
