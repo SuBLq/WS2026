@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#0f5f8f"/>
+<meta name="description" content="Мобилизация альянса — 6000+ очков без слива запасов: личные задания 200%/120%, три попытки за 150 гемов, билеты и работа R4/R5."/>
+<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
+<link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
+<link href="../../assets/css/content.css?v=24" rel="stylesheet"/>
+<title>МОБИЛИЗАЦИЯ АЛЬЯНСА · Whiteout Survival</title>
+<style>
+.mob-rule{display:flex;align-items:center;gap:14px;margin:16px 0 20px;padding:16px 18px;border-radius:18px;border:1px solid #c6e6d8;background:linear-gradient(135deg,#e9f8f1,#f9fcfb)}
+.mob-rule-num{font-size:38px;line-height:1;font-weight:950;color:#087350;white-space:nowrap}.mob-rule strong{display:block;font-size:16px;color:#075f46}.mob-rule p{margin:4px 0 0;font-size:12.5px;line-height:1.5;color:#315b50}
+.mob-priority{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0 18px}.mob-priority>div{border:1px solid #d8e7ee;border-radius:15px;padding:13px;background:linear-gradient(145deg,#f4f9fb,#fff)}.mob-priority b{display:block;color:#0f638c;font-size:14px;margin-bottom:5px}.mob-priority p{font-size:12px;line-height:1.48;margin:0;color:#496473}
+.mob-shot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0 22px}.mob-shot-single{max-width:460px;margin:16px auto 22px}.mob-shot{margin:0;border:1px solid #d8e7ee;border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 8px 24px rgba(22,86,116,.08)}.mob-shot img{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover}.mob-shot figcaption{padding:11px 12px 13px;font-size:11.5px;line-height:1.48;color:#486676}.mob-shot figcaption b{color:#0f638c}
+.mob-note{border:1px solid #d8e7ee;background:#f5fbfe;border-radius:15px;padding:14px 15px;margin:13px 0;color:#31566a}.mob-note strong{display:block;color:#0f638c;margin-bottom:5px}.mob-note.warn{background:linear-gradient(135deg,#fff2e6,#fffaf4);border-color:#efd0aa;color:#674a28}.mob-note.warn strong{color:#9b5515}.mob-note.good{background:linear-gradient(135deg,#e9f8f2,#f7fcfa);border-color:#c9e8da;color:#315b50}.mob-note.good strong{color:#087350}
+.mob-do-dont{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 18px}.mob-list{border:1px solid #d8e7ee;border-radius:16px;padding:14px;background:#fff}.mob-list h3{margin:0 0 8px;font-size:14px}.mob-list.good h3{color:#087350}.mob-list.bad h3{color:#a23d2d}.mob-list ul{padding-left:18px;margin:0}.mob-list li{font-size:12.5px;line-height:1.5;margin:5px 0;color:#31566a}
+.mob-algorithm{display:grid;gap:9px}.mob-algorithm>div{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;padding:11px 12px;border:1px solid #d8e7ee;border-radius:14px;background:linear-gradient(145deg,#f4f9fb,#fff)}.mob-algorithm span{width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#116b98,#23a1ae);color:#fff;font-weight:950}.mob-algorithm p{margin:4px 0 0;font-size:12.5px;line-height:1.5;color:#31566a}
+.mob-score{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;margin:16px 0;padding:16px 18px;border-radius:18px;border:1px solid #c8dded;background:linear-gradient(135deg,#edf7fc,#fbfdff)}.mob-score b{font-size:34px;line-height:1;color:#0f638c}.mob-score strong{display:block;color:#174c68;font-size:15px}.mob-score p{margin:4px 0 0;color:#496777;font-size:12.5px;line-height:1.5}
+@media(max-width:620px){.mob-priority,.mob-shot-grid,.mob-do-dont{grid-template-columns:1fr}.mob-shot-single{max-width:none}.mob-rule{align-items:flex-start}.mob-rule-num{font-size:33px}.mob-score{align-items:start}.mob-score b{font-size:30px}}
+html[data-theme="dark"] .mob-rule{background:linear-gradient(135deg,#0d4143,#0a2c3d);border-color:#2c746c}html[data-theme="dark"] .mob-rule-num,html[data-theme="dark"] .mob-rule strong{color:#76e5b9}html[data-theme="dark"] .mob-rule p{color:#c9e8df}
+html[data-theme="dark"] .mob-priority>div,html[data-theme="dark"] .mob-algorithm>div{background:linear-gradient(145deg,#0d334f,#0a2942);border-color:#26536e}html[data-theme="dark"] .mob-priority b{color:#7edcff}html[data-theme="dark"] .mob-priority p,html[data-theme="dark"] .mob-algorithm p{color:#c7dce7}
+html[data-theme="dark"] .mob-shot,html[data-theme="dark"] .mob-list{background:#0b2b44;border-color:#285875;box-shadow:0 8px 22px rgba(0,0,0,.18)}html[data-theme="dark"] .mob-shot figcaption,html[data-theme="dark"] .mob-list li{color:#c7dce7}html[data-theme="dark"] .mob-shot figcaption b{color:#7edcff}
+html[data-theme="dark"] .mob-note{color:#c8ddea;background:linear-gradient(135deg,#0e3856,#0a2944);border-color:#2a5b76}html[data-theme="dark"] .mob-note strong{color:#90e1ff}html[data-theme="dark"] .mob-note.warn{color:#ead6b9;background:linear-gradient(135deg,#44351f,#132f40);border-color:#745a32}html[data-theme="dark"] .mob-note.warn strong{color:#ffd48d}html[data-theme="dark"] .mob-note.good{color:#c9e8df;background:linear-gradient(135deg,#0d4143,#0a2c3d);border-color:#2c746c}html[data-theme="dark"] .mob-note.good strong{color:#76e5b9}
+html[data-theme="dark"] .mob-list.good h3{color:#76e5b9}html[data-theme="dark"] .mob-list.bad h3{color:#ffb3a6}html[data-theme="dark"] .mob-score{background:linear-gradient(135deg,#0e3856,#0a2944);border-color:#2a5b76}html[data-theme="dark"] .mob-score b{color:#7edcff}html[data-theme="dark"] .mob-score strong{color:#e7f7ff}html[data-theme="dark"] .mob-score p{color:#c7dce7}
+</style>
+<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
+</head>
+<body data-root="../../">
+<header class="site-top">
+  <a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a>
+  <div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div>
+</header>
+
+<main class="guide-wrap">
+<section class="guide-hero">
+  <div class="eyebrow">🎯 РУТИННЫЕ СОБЫТИЯ</div>
+  <h1>МОБИЛИЗАЦИЯ АЛЬЯНСА</h1>
+  <p>6000+ очков за полный цикл без слива стратегических запасов: тренировка войск, сбор, звери, личные 200%/120% и дисциплина при выборе заданий.</p>
+  <div class="hero-meta"><span class="pill">F2P</span><span class="pill">R4 / R5</span><span class="pill">Стратегия SuBL</span></div>
+</section>
+
+<div class="guide-toolbar"><a class="action-link" href="../../index.html#guides">← Все гайды</a></div>
+
+<details class="toc" open>
+<summary>Содержание</summary>
+<div class="toc-list">
+  <a href="#idea">1. Главный принцип</a>
+  <a href="#tasks">2. Какие задания брать</a>
+  <a href="#personal">3. Личные задания 200% и 120%</a>
+  <a href="#attempts">4. Три попытки за 150 гемов</a>
+  <a href="#vouchers">5. Два билета выбора задания</a>
+  <a href="#chests">6. Почему попытки окупаются</a>
+  <a href="#ignore">7. Что игнорируем</a>
+  <a href="#officers">8. Для R4 и R5</a>
+  <a href="#cycle">9. Алгоритм полного цикла</a>
+</div>
+</details>
+
+<article class="article">
+<aside class="callout"><strong>Мобилизация должна встраиваться в обычную игру</strong><p>Мы не открываем запасы «ради очков». Берём задания на то, что и так собирались делать: тренировать войска, собирать ресурсы, убивать зверей и Полярные Ужасы. Всё ценное — ускорения, снаряжение, талисманы, гемы и редкие материалы — сохраняем для событий, где их трата приносит больше.</p></aside>
+
+<div class="mob-rule"><div class="mob-rule-num">6000+</div><div><strong>рабочий минимум за полный цикл</strong><p>При дисциплинированном выборе заданий, ежедневной покупке трёх дешёвых попыток и нормальном использовании личных миссий этот результат набирается без необходимости сжигать накопления.</p></div></div>
+
+<h2 id="idea">1. Главный принцип</h2>
+<p class="body-p">Мобилизация — не отдельный режим, ради которого нужно ломать развитие аккаунта. Это <b>надстройка над обычной рутиной</b>. Перед тем как собрать войска, вернуть марши с ресурсов или пройти Маяк, сначала смотрим, можно ли взять подходящее задание и получить очки за действие, которое всё равно было бы сделано.</p>
+<div class="mob-priority">
+  <div><b>Тренировка войск</b><p>Лучший источник очков. Подводим очереди к завершению заранее и принимаем задание перед сбором готовых войск.</p></div>
+  <div><b>Сбор ресурсов</b><p>Почти бесплатные очки. Удобно брать перед сном или перед долгим офлайном, заранее отправив марши на клетки.</p></div>
+  <div><b>Звери и Ужасы</b><p>Берём из общего пула, когда это совпадает с Маяком и обычной тратой выносливости. Банки выносливости специально ради Мобилизации не пьём.</p></div>
+</div>
+
+<h2 id="tasks">2. Какие задания брать</h2>
+<div class="mob-do-dont">
+  <div class="mob-list good"><h3>✓ Основной пул</h3><ul>
+    <li><b>Тренировка / повышение войск.</b></li>
+    <li><b>Сбор ресурсов.</b></li>
+    <li><b>Убийство зверей.</b> Совмещаем с очисткой Маяка: звери из заданий Маяка тоже засчитываются.</li>
+    <li><b>Полярные Ужасы.</b> По возможности присоединяемся к обычным рейдам альянса вместо отдельного расхода выносливости.</li>
+  </ul></div>
+  <div class="mob-list bad"><h3>✕ Не ради Мобилизации</h3><ul>
+    <li>Ускорения, строительство и исследования.</li>
+    <li>Снаряжение губернатора и талисманы.</li>
+    <li>Снаряжение героев, камни эссенции, виджеты и редкие материалы.</li>
+    <li>Фрагменты героев, огненные кристаллы и другие накопительные ресурсы развития.</li>
+    <li>Трата гемов и покупка наборов — если нет параллельного события, где эта трата уже запланирована.</li>
+  </ul></div>
+</div>
+<div class="mob-note"><strong>Допустимый микрорегулировочный расход</strong>Если личное задание на войска уже взято, а очередь чуть не успевает, можно подтянуть хвост примерно до <b>2 часов ускорений на один лагерь</b>. С нуля разгонять обучение большими пачками ускорений ради Мобилизации не нужно.</div>
+
+<h2 id="personal">3. Личные задания: 200% и 120%</h2>
+<p class="body-p">Главные попытки тратим прежде всего на <b>личные задания</b>. Один раз в сутки доступна повышенная ценность <b>200%</b>, остальные хорошие личные задания идут с <b>120%</b>. Именно здесь тренировка войск и сбор ресурсов дают лучший результат за одну попытку.</p>
+<div class="mob-shot-grid">
+<figure class="mob-shot"><img src="../../assets/guides/mobilization/personal-200-120.webp" alt="Личные задания Мобилизации альянса с бонусами 200% и 120%" loading="lazy"/><figcaption><b>200% не тратим на случайную задачу.</b> На скрине 200% выпал на тренировку войск — это идеальный сценарий. Рядом видна 120% задача на сбор.</figcaption></figure>
+<figure class="mob-shot"><img src="../../assets/guides/mobilization/personal-cooldowns.webp" alt="Восстановление личных заданий Мобилизации альянса" loading="lazy"/><figcaption><b>Личные задания не бесконечны.</b> После выполнений слоты уходят на восстановление, причём таймер постепенно растёт. Поэтому хороший 200% нельзя бессмысленно прожигать.</figcaption></figure>
+</div>
+<ul class="bullets">
+<li>Если подходит <b>200% тренировка</b> — принимаем её перед завершением очередей.</li>
+<li>Если выпал мусор — не хватаем его из страха потерять попытку. В начале дня личное задание можно роллить примерно раз в <b>5 минут</b>; ждём подходящий вариант, пока откат короткий.</li>
+<li>С каждым завершённым личным заданием восстановление становится длиннее. Ближе к концу дневного лимита уже важнее планировать, чем бесконечно ждать идеальный ролл.</li>
+<li>На сбор удобно заранее выставить марши и принять миссию незадолго до их возвращения.</li>
+</ul>
+
+<h2 id="attempts">4. Каждый день покупаем три попытки за 150 гемов</h2>
+<p class="body-p">Три дополнительные попытки ежедневно стоят суммарно <b>150 гемов</b>. Для Мобилизации это одна из немногих обязательных трат: дешёвые попытки превращаются в дополнительные очки и повторяемые сундуки события.</p>
+<div class="mob-shot-single"><figure class="mob-shot"><img src="../../assets/guides/mobilization/attempts-150.webp" alt="Покупка трех попыток Мобилизации альянса за 150 гемов" loading="lazy"/><figcaption><b>Берём именно три.</b> На скрине выбрано 3 попытки, итоговая цена — <b>150 гемов</b>. Покупаем их ежедневно, даже если используем не сразу: главное — не потратить потом на плохие задания.</figcaption></figure></div>
+<div class="mob-note warn"><strong>Попытка дороже задания</strong>Не нужно «закрывать слот», взяв миссию на 60–150 очков просто потому, что попытки есть. Попытка — ограниченный ресурс. Лучше дождаться хорошего личного задания или нормальной задачи из общего пула.</div>
+
+<h2 id="vouchers">5. Два бесплатных билета выбора личного задания</h2>
+<p class="body-p">За шкалу Обелисков альянса в течение события получаем <b>два бесплатных билета выбора личного задания</b>. Это аварийный инструмент для самого ценного сценария — <b>200% тренировки войск</b>.</p>
+<div class="mob-shot-single"><figure class="mob-shot"><img src="../../assets/guides/mobilization/alliance-monuments.webp" alt="Награды Обелисков альянса в Мобилизации альянса" loading="lazy"/><figcaption><b>Билеты не покупаем — два приходят со шкалы события.</b> Забираем награды со шкалы и сохраняем билеты до момента, когда 200% тренировка действительно нужна.</figcaption></figure></div>
+<ol>
+<li>Держим очереди найма близко к завершению.</li>
+<li>Если подходящей 200% тренировки нет и ждать следующий ролл уже нельзя — используем билет и выбираем тренировку вручную.</li>
+<li><b>Важно:</b> 200% через билет доступен, пока в этот день ещё не закрыто личное задание. После этого билет выбирает только 120% миссию. Поэтому такой расход планируем заранее.</li>
+<li>В последние дни события не даём билетам сгореть. Идеал всё ещё 200% тренировка; если окно уже потеряно и иначе билет пропадёт, разумнее забрать полезную 120% тренировку/сбор, чем оставить его неиспользованным.</li>
+</ol>
+
+<h2 id="chests">6. Почему три попытки за гемы выгодны</h2>
+<p class="body-p">За каждые <b>200 очков Мобилизации</b> после открытия повторяемой награды приходит очередной <b>Сундук Мобилизации</b>. Внутри могут быть гемы, мифический универсальный фрагмент, Lucky Hero Gear Chest, ускорения и опыт усиления снаряжения. Поэтому дешёвые дополнительные попытки выгодны <b>только если</b> превращать их в нормальные задания.</p>
+<div class="mob-score"><b>200</b><div><strong>очков → ещё один сундук</strong><p>Три дешёвые попытки должны приносить несколько сотен очков, а не уходить на «что попалось». Тогда 150 гемов работают на прогресс, а не просто исчезают.</p></div></div>
+<div class="mob-note good"><strong>Главный экономический смысл</strong>Мы не пытаемся купить высокий рейтинг. Мы покупаем дешёвые попытки и монетизируем повседневные действия, за которые игра дополнительно выдаёт сундуки и награды со шкалы.</div>
+
+<h2 id="ignore">7. Что игнорируем даже за красивые цифры</h2>
+<p class="body-p">По умолчанию игнорируем <b>всё, кроме тренировки войск, сбора ресурсов и фарма зверей/Полярных Ужасов</b>. Причина не в том, что остальные задания невозможно выполнить, а в цене ресурсов: те же ускорения, гемы, фрагменты, снаряжение и талисманы обычно выгоднее тратить в СвС, Мощи государств, Колесе Фортуны и других профильных событиях.</p>
+<div class="mob-note warn"><strong>Исключение — двойной зачёт</strong>Если параллельно идёт событие, где расход и так запланирован, задача Мобилизации становится бесплатным бонусом. Пример: идёт <b>Колесо Фортуны</b> — тогда задание на трату гемов можно оставить и выполнить одновременно с прокрутками Колеса. Но не крутим Колесо и не тратим гемы только потому, что на доске появилась Мобилизация.</div>
+
+<h2 id="officers">8. Для R4/R5: чистим общий пул</h2>
+<p class="body-p">R4 и R5 могут обновлять общие задания. Этим нужно пользоваться регулярно: плохая доска провоцирует игроков сжигать запасы, хорошая — сама направляет альянс в безопасные активности.</p>
+<h3>Что обнуляем</h3>
+<ul class="bullets">
+<li>Любые задачи на <b>прямую трату ускорений</b>.</li>
+<li><b>Строительство и исследования</b>, если они требуют специально форсировать развитие.</li>
+<li><b>Снаряжение губернатора, талисманы, снаряжение героев</b> и редкие материалы их улучшения.</li>
+<li><b>Фрагменты героев, огненные кристаллы, истинное золото, питомцы</b> и другие накопительные ресурсы, если такие задания уже доступны на возрасте государства.</li>
+<li><b>Трата гемов</b> без подходящего параллельного события.</li>
+<li><b>Покупка наборов / пополнение</b>, если конкретный донатер заранее не попросил оставить задачу.</li>
+<li>Любое другое задание, которое не укладывается в правило: <b>войска / сбор / звери / Ужасы</b>.</li>
+</ul>
+<h3>Что оставляем</h3>
+<ul class="bullets">
+<li>Тренировку и повышение войск.</li>
+<li>Сбор ресурсов.</li>
+<li>Зверей и Полярных Ужасов.</li>
+<li>Ситуативную дорогую задачу, если она сейчас даёт <b>двойной зачёт</b> в другом событии.</li>
+<li>Конкретную задачу, которую заранее попросил оставить игрок, готовый её выполнить без ущерба аккаунту.</li>
+</ul>
+<div class="mob-note"><strong>Не обновляйте доску вслепую</strong>У общего пула есть откат на обновление — <b>30 минут</b>. Перед сбросом редкой дорогой задачи посмотрите чат и календарь: донатеру может быть нужна покупка набора, а во время Колеса Фортуны гемовая миссия внезапно становится хорошей.</div>
+
+<h2 id="cycle">9. Финальный алгоритм на весь цикл</h2>
+<div class="mob-algorithm">
+<div><span>1</span><p>Каждый день сразу покупаем <b>3 попытки за 150 гемов</b>.</p></div>
+<div><span>2</span><p>Смотрим личные миссии. Главные цели — <b>200% тренировка</b> и хорошие <b>120% тренировка/сбор</b>.</p></div>
+<div><span>3</span><p>Перед сбором готовых войск или возвратом маршей с ресурсов сначала принимаем подходящую миссию.</p></div>
+<div><span>4</span><p>Если очередь найма не дотягивает совсем немного — допустимо подтянуть её малым объёмом ускорений, ориентир до <b>2 часов на лагерь</b>.</p></div>
+<div><span>5</span><p>Из общего пула добираем <b>сбор ресурсов, зверей и Полярные Ужасы</b>. Зверей совмещаем с Маяком; банки выносливости отдельно под Мобилизацию не открываем.</p></div>
+<div><span>6</span><p>Два бесплатных билета держим прежде всего под <b>200% тренировку</b>, когда войска вот-вот закончатся, а нужной личной миссии нет.</p></div>
+<div><span>7</span><p>Не расходуем ускорения, снаряжение, талисманы, фрагменты, гемы и другие дефицитные ресурсы без параллельного выгодного события.</p></div>
+<div><span>8</span><p>R4/R5 регулярно вычищают плохой общий пул и оставляют игрокам безопасные задания.</p></div>
+<div><span>9</span><p>Не тратим попытки на слабые задачи. При полном цикле такая дисциплина даёт <b>6000+ очков</b> без саморазрушения аккаунта.</p></div>
+</div>
+</article>
+</main>
+
+<a class="back-top" href="#" id="backTop">↑</a>
+<nav class="bottom-nav"><a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open=""><span class="ico">🔎</span><span>Поиск</span></button></nav>
+<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: Мобилизация, 200%, попытки, R4…" type="search"/><button class="search-close" data-search-close="">×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
+<script src="../../assets/js/search-index.js?v=31"></script><script src="../../assets/js/app.js?v=24"></script>
+</body>
+</html>
