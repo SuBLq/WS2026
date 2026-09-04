@@ -19,16 +19,22 @@
 .phase-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0}
 .phase-card{border:1px solid #d8e7ee;border-radius:15px;padding:13px;background:linear-gradient(145deg,#f4f9fb 0%,#fff 100%)}
 .phase-card b{display:block;color:#0f638c;font-size:14px;margin-bottom:5px}.phase-card p{font-size:12px;line-height:1.48;margin:0;color:#496473}
+.range-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0 16px}
+.range-card{border:1px solid #d8e7ee;border-radius:17px;overflow:hidden;background:linear-gradient(145deg,#f7fbfd,#fff);box-shadow:0 5px 16px rgba(28,91,120,.05)}
+.range-card-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 14px;background:#eef7fb;border-bottom:1px solid #d8e7ee}
+.range-stage{font-size:20px;line-height:1;font-weight:950;color:#173f56;white-space:nowrap}.range-status{font-size:10.5px;line-height:1.2;font-weight:900;border-radius:999px;padding:6px 9px;text-align:right}.range-status.yes{background:#e1f5eb;color:#087350;border:1px solid #bce2cf}.range-status.no{background:#fff0e5;color:#9b5515;border:1px solid #efd0aa}
+.range-card-body{padding:13px 14px}.range-card-body p{font-size:12.5px;line-height:1.55;margin:0;color:#31566a}.range-card-body strong{color:#173f56}.range-flow{display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin-top:11px}.range-flow span{font-size:10.5px;font-weight:850;color:#0f638c;background:#eef7fb;border:1px solid #d2e6ef;border-radius:8px;padding:5px 7px}.range-flow i{font-style:normal;color:#7b98a7;font-size:11px}
 .keyword{font-weight:900;color:#0f638c}
 .snow-goal{display:flex;align-items:center;gap:14px;margin:16px 0 20px;padding:16px 18px;border-radius:18px;border:1px solid #bee2d1;background:linear-gradient(135deg,#e7f8ef,#f7fcfa)}.snow-goal-num{font-size:46px;line-height:1;font-weight:950;color:#087350}.snow-goal strong{display:block;font-size:17px;color:#075f46}.snow-goal p{margin:4px 0 0;font-size:12.5px;line-height:1.5;color:#315b50}
 .snow-shot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0 22px}.snow-shot-single{max-width:460px;margin:16px auto 22px}.snow-shot{margin:0;border:1px solid #d8e7ee;border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 8px 24px rgba(22,86,116,.08)}.snow-shot img{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover}.snow-shot figcaption{padding:11px 12px 13px;font-size:11.5px;line-height:1.48;color:#486676}.snow-shot figcaption b{color:#0f638c}
 .snow-algorithm{display:grid;gap:9px}.snow-algorithm>div{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;padding:11px 12px;border:1px solid #d8e7ee;border-radius:14px;background:linear-gradient(145deg,#f4f9fb,#fff)}.snow-algorithm span{width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#116b98,#23a1ae);color:#fff;font-weight:950}.snow-algorithm p{margin:4px 0 0;font-size:12.5px;line-height:1.5;color:#31566a}
-@media(max-width:620px){.phase-grid,.snow-shot-grid{grid-template-columns:1fr}.snow-shot-single{max-width:none}.snow-goal{align-items:flex-start}.snow-goal-num{font-size:40px}}
+@media(max-width:620px){.phase-grid,.snow-shot-grid,.range-grid{grid-template-columns:1fr}.snow-shot-single{max-width:none}.snow-goal{align-items:flex-start}.snow-goal-num{font-size:40px}.range-card-head{padding:12px 13px}.range-card-body{padding:12px 13px}.range-stage{font-size:19px}.range-status{font-size:10px}}
 html[data-theme="dark"] .snow-note{color:#c8ddea;background:linear-gradient(135deg,#0e3856 0%,#0a2944 78%);border-color:#2a5b76;box-shadow:0 8px 22px rgba(0,0,0,.17)}
 html[data-theme="dark"] .snow-note strong{color:#90e1ff}
 html[data-theme="dark"] .snow-note.good{color:#c9e8df;background:linear-gradient(135deg,#0d4143 0%,#0a2c3d 82%);border-color:#2c746c}html[data-theme="dark"] .snow-note.good strong{color:#76e5b9}
 html[data-theme="dark"] .snow-note.warn{color:#ead6b9;background:linear-gradient(135deg,#44351f 0%,#132f40 82%);border-color:#745a32}html[data-theme="dark"] .snow-note.warn strong{color:#ffd48d}
 html[data-theme="dark"] .phase-card{background:linear-gradient(145deg,#0d334f,#0a2942);border-color:#26536e}html[data-theme="dark"] .phase-card b,html[data-theme="dark"] .keyword{color:#7edcff}html[data-theme="dark"] .phase-card p{color:#c7dce7}
+html[data-theme="dark"] .range-card{background:linear-gradient(145deg,#0d334f,#0a2942);border-color:#26536e;box-shadow:0 8px 22px rgba(0,0,0,.17)}html[data-theme="dark"] .range-card-head{background:#10334f;border-color:#26536e}html[data-theme="dark"] .range-stage,html[data-theme="dark"] .range-card-body strong{color:#e7f7ff}html[data-theme="dark"] .range-card-body p{color:#c7dce7}html[data-theme="dark"] .range-status.yes{background:#123d36;color:#76e5b9;border-color:#2c746c}html[data-theme="dark"] .range-status.no{background:#44351f;color:#ffd48d;border-color:#745a32}html[data-theme="dark"] .range-flow span{background:#10334f;border-color:#285875;color:#7edcff}html[data-theme="dark"] .range-flow i{color:#7695a7}
 html[data-theme="dark"] .snow-goal{background:linear-gradient(135deg,#0d4143,#0a2c3d);border-color:#2c746c}html[data-theme="dark"] .snow-goal-num,html[data-theme="dark"] .snow-goal strong{color:#76e5b9}html[data-theme="dark"] .snow-goal p{color:#c9e8df}html[data-theme="dark"] .snow-shot{background:#0b2b44;border-color:#285875;box-shadow:0 8px 22px rgba(0,0,0,.18)}html[data-theme="dark"] .snow-shot figcaption{color:#c7dce7}html[data-theme="dark"] .snow-shot figcaption b{color:#7edcff}html[data-theme="dark"] .snow-algorithm>div{background:linear-gradient(145deg,#0d334f,#0a2942);border-color:#26536e}html[data-theme="dark"] .snow-algorithm p{color:#c7dce7}
 </style>
 <script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
@@ -81,11 +87,22 @@ html[data-theme="dark"] .snow-goal{background:linear-gradient(135deg,#0d4143,#0a
 <p class="body-p">Смысл маршрута — очень быстро проскочить дешёвую часть события, как можно раньше разогнать восстановление топлива и не тратить основной запас на дорогой снег до подготовки печи.</p>
 
 <h2 id="ranges">2. Два диапазона этапов</h2>
-<div class="table-scroll"><table>
-<tr><th>Этапы</th><th>Суперочиститель</th><th>Как играем</th></tr>
-<tr><td><b>1–13</b></td><td><b>Используем</b></td><td>Обычные этапы закрываем <b>Суперочистителем</b>. Бонусные этапы <b>5 и 10</b> проходим вручную. <b>13-й — последняя обычная комната, где Суперочиститель имеет смысл нажимать.</b></td></tr>
-<tr><td><b>14+</b></td><td><b>Не используем</b></td><td>Сначала запускаем минимум <b>4 Ракеты 2.0</b>, за их счёт открываем карту и уголь, как можно раньше повышаем <b>печь</b>, затем вручную добираем 95%. Дополнительные ракеты — по ситуации.</td></tr>
-</table></div>
+<div class="range-grid">
+  <section class="range-card">
+    <div class="range-card-head"><span class="range-stage">1–13</span><span class="range-status yes">Суперочиститель: используем</span></div>
+    <div class="range-card-body">
+      <p>Обычные этапы закрываем <strong>Суперочистителем</strong>. Бонусные этапы <strong>5 и 10</strong> проходим вручную. <strong>13-й — последняя обычная комната, где Суперочиститель имеет смысл нажимать.</strong></p>
+      <div class="range-flow"><span>Суперочиститель</span><i>→</i><span>бонусы вручную</span><i>→</i><span>до 13-го</span></div>
+    </div>
+  </section>
+  <section class="range-card">
+    <div class="range-card-head"><span class="range-stage">14+</span><span class="range-status no">Суперочиститель: не используем</span></div>
+    <div class="range-card-body">
+      <p>Сначала запускаем минимум <strong>4 Ракеты 2.0</strong>, за их счёт открываем карту и уголь, как можно раньше повышаем <strong>печь</strong>, затем вручную добираем <strong>95%</strong>. Дополнительные ракеты — по ситуации.</p>
+      <div class="range-flow"><span>4+ ракеты</span><i>→</i><span>уголь</span><i>→</i><span>печь</span><i>→</i><span>95% вручную</span></div>
+    </div>
+  </section>
+</div>
 <div class="snow-note warn"><strong>Граница стратегии — после 13-го</strong>До 13-го включительно работаем по схеме <b>Суперочиститель + ручные бонусные комнаты</b>. Начиная с 14-го — только <b>ракеты + печь + ручная зачистка</b>.</div>
 
 <h2 id="start">3. Быстрый старт: до 13-го примерно за 15 минут</h2>
