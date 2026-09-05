@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#0f5f8f"/>
+<meta name="description" content="Снаряжение героев Whiteout Survival: здоровье и смертоносность по слотам, приоритет пехоты и стрелков, лестница усиления, Камни Эссенции и эксклюзивные виджеты."/>
+<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
+<link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
+<link href="../../assets/css/content.css?v=24" rel="stylesheet"/>
+<title>СНАРЯЖЕНИЕ ГЕРОЕВ · Whiteout Survival</title>
+<style>
+.gear-rule{display:grid;grid-template-columns:46px 1fr;gap:12px;align-items:start;margin:16px 0 20px;padding:16px;border:1px solid #c8dfeb;border-radius:18px;background:linear-gradient(135deg,#eef8fd,#fff)}.gear-rule .ico{display:flex;width:46px;height:46px;align-items:center;justify-content:center;border-radius:14px;background:linear-gradient(135deg,#116b98,#23a1ae);color:#fff;font-size:22px}.gear-rule strong{display:block;color:#125d82;font-size:15px}.gear-rule p{margin:4px 0 0;font-size:12.5px;line-height:1.5;color:#486879}
+.stat-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 18px}.stat-card{padding:14px;border:1px solid #d6e5ed;border-radius:17px;background:linear-gradient(145deg,#f6fbfe,#fff)}.stat-card .tag{display:inline-block;padding:4px 8px;border-radius:999px;font-size:10px;font-weight:900;margin-bottom:7px}.stat-card.health .tag{background:#e7f8f0;color:#087350}.stat-card.lethality .tag{background:#fff0e7;color:#a35217}.stat-card b{display:block;color:#164f6c;font-size:14px}.stat-card p{margin:4px 0 0;font-size:12px;line-height:1.48;color:#506f7f}
+.class-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:14px 0 18px}.class-card{padding:15px;border:1px solid #d6e5ed;border-radius:18px;background:#fff}.class-card.primary{border-color:#bfe2d2;background:linear-gradient(145deg,#ecf9f3,#fff)}.class-card b{display:block;font-size:14px;color:#0f638c;margin-bottom:6px}.class-card.primary b{color:#087350}.class-card p{margin:0;font-size:12.4px;line-height:1.5;color:#4c6b7a}.class-card .micro{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.class-card .micro span{font-size:10px;font-weight:850;padding:5px 7px;border-radius:999px;background:#eef5f8;color:#46687a}
+.shot-single{max-width:520px;margin:15px auto 20px}.shot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0 20px}.gear-shot{margin:0;border:1px solid #d5e4ec;border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 8px 24px rgba(22,86,116,.08)}.gear-shot img{display:block;width:100%;height:auto}.gear-shot figcaption{padding:10px 12px 12px;font-size:11.5px;line-height:1.48;color:#486676}.gear-shot figcaption b{color:#0f638c}
+.priority-banner{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;margin:14px 0 18px;padding:15px 16px;border-radius:17px;border:1px solid #c8e8da;background:linear-gradient(135deg,#e8f8f1,#fbfefd)}.priority-banner .num{font-size:26px;font-weight:950;color:#087350;white-space:nowrap}.priority-banner strong{display:block;color:#087350;font-size:14px}.priority-banner p{margin:3px 0 0;font-size:12px;line-height:1.47;color:#42675a}
+.ladder{display:grid;gap:8px;margin:13px 0 18px}.ladder-row{display:grid;grid-template-columns:62px 1fr;gap:10px;align-items:center;padding:11px 12px;border:1px solid #d7e5ed;border-radius:14px;background:#fff}.ladder-row b{color:#0f638c;font-size:13px}.ladder-row span{font-size:12.5px;line-height:1.45;color:#486879}.ladder-row:last-child{background:linear-gradient(135deg,#eef8fd,#fff)}
+.widget-flow{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;margin:14px 0 18px}.widget-step{padding:13px;border:1px solid #d6e5ed;border-radius:16px;background:#fff}.widget-step b{display:block;color:#0f638c;font-size:14px}.widget-step p{margin:4px 0 0;font-size:12px;line-height:1.45;color:#506f7f}.widget-arrow{font-size:22px;font-weight:900;color:#1382a4}.widget-step.even{border-color:#bdddf0;background:linear-gradient(135deg,#eaf7ff,#fff)}
+.widget-math{display:grid;grid-template-columns:auto 1fr;gap:13px;align-items:center;margin:13px 0 18px;padding:15px 16px;border-radius:17px;border:1px solid #c5dfec;background:linear-gradient(135deg,#eef8fd,#fbfdff)}.widget-math b{font-size:28px;color:#0f638c}.widget-math strong{display:block;color:#125d82;font-size:14px}.widget-math p{margin:4px 0 0;font-size:12.2px;line-height:1.48;color:#486879}
+.check-card{margin:14px 0 18px;padding:15px 16px;border:1px solid #d6e5ed;border-radius:17px;background:linear-gradient(145deg,#f5fafe,#fff)}.check-card strong{display:block;color:#0f638c;margin-bottom:7px}.check-card ul{margin:0;padding-left:18px}.check-card li{margin:5px 0;font-size:12.5px;line-height:1.48;color:#486879}
+.badge-note{margin:12px 0 18px;padding:13px 14px;border-radius:15px;border:1px solid #efd0aa;background:linear-gradient(135deg,#fff2e6,#fffaf4);font-size:12.4px;line-height:1.5;color:#674a28}.badge-note b{color:#9b5515}
+@media(max-width:620px){.stat-pair,.class-grid,.shot-grid{grid-template-columns:1fr}.widget-flow{grid-template-columns:1fr}.widget-arrow{transform:rotate(90deg);justify-self:center}.priority-banner{align-items:start}.priority-banner .num{font-size:23px}}
+html[data-theme="dark"] .gear-rule,html[data-theme="dark"] .stat-card,html[data-theme="dark"] .class-card,html[data-theme="dark"] .gear-shot,html[data-theme="dark"] .ladder-row,html[data-theme="dark"] .widget-step,html[data-theme="dark"] .check-card{background:linear-gradient(145deg,#0d334f,#0a2942);border-color:#285875}html[data-theme="dark"] .gear-rule strong,html[data-theme="dark"] .stat-card b,html[data-theme="dark"] .class-card b,html[data-theme="dark"] .gear-shot figcaption b,html[data-theme="dark"] .ladder-row b,html[data-theme="dark"] .widget-step b,html[data-theme="dark"] .check-card strong{color:#7edcff}html[data-theme="dark"] .gear-rule p,html[data-theme="dark"] .stat-card p,html[data-theme="dark"] .class-card p,html[data-theme="dark"] .gear-shot figcaption,html[data-theme="dark"] .ladder-row span,html[data-theme="dark"] .widget-step p,html[data-theme="dark"] .check-card li{color:#c7dce7}html[data-theme="dark"] .class-card.primary,html[data-theme="dark"] .priority-banner{background:linear-gradient(135deg,#0d4143,#0a2c3d);border-color:#2c746c}html[data-theme="dark"] .class-card.primary b,html[data-theme="dark"] .priority-banner .num,html[data-theme="dark"] .priority-banner strong{color:#76e5b9}html[data-theme="dark"] .priority-banner p{color:#c9e8df}html[data-theme="dark"] .widget-step.even,html[data-theme="dark"] .widget-math{background:linear-gradient(135deg,#0e3856,#0a2944);border-color:#2a5b76}html[data-theme="dark"] .widget-math b,html[data-theme="dark"] .widget-math strong{color:#90e1ff}html[data-theme="dark"] .widget-math p{color:#c7dce7}html[data-theme="dark"] .badge-note{background:linear-gradient(135deg,#44351f,#132f40);border-color:#745a32;color:#ead6b9}html[data-theme="dark"] .badge-note b{color:#ffd48d}
+</style>
+<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
+</head>
+<body data-root="../../">
+<header class="site-top"><a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a><div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div></header>
+<main class="guide-wrap">
+<section class="guide-hero"><div class="eyebrow">🛡️ БОЙ И ГЕРОИ</div><h1>СНАРЯЖЕНИЕ ГЕРОЕВ</h1><p>Какие слоты усиливать в первую очередь, почему «сбалансировано» не значит «поровну», и на каком уровне разумно останавливать эксклюзивные виджеты.</p><div class="hero-meta"><span class="pill">F2P / low spend</span><span class="pill">Мифическое снаряжение</span><span class="pill">Виджеты</span></div></section>
+<div class="guide-toolbar"><a class="action-link" href="../../index.html#guides">← Все гайды</a></div>
+<details class="toc" open><summary>Содержание</summary><div class="toc-list"><a href="#base">0. Две характеристики и четыре слота</a><a href="#infantry">1. Пехота: здоровье прежде всего</a><a href="#damage">2. Стрелки и копейщики</a><a href="#ladder">3. Лестница усиления</a><a href="#essence">4. Камни Эссенции и мастерство</a><a href="#widgets">5. Эксклюзивные виджеты</a><a href="#algorithm">6. Финальный алгоритм</a></div></details>
+<article class="article">
+<aside class="callout"><strong>Главная идея</strong><p>Не надо делать четыре предмета одинаковыми. У каждого класса есть два приоритетных слота и два вторичных. Приоритетные предметы должны быть <b>заметно сильнее</b>, а вторичные лишь подтягиваются там, где улучшение становится дешёвым.</p></aside>
+
+<h2 id="base">0. Две характеристики и четыре слота</h2>
+<p class="body-p">У мифического снаряжения героя четыре основных предмета. Для боевой ценности отряда важнее всего два процента: <b>здоровье</b> соответствующего типа войск и <b>смертоносность</b>. Распределение слотов одинаково по классам.</p>
+<div class="stat-pair">
+  <div class="stat-card health"><span class="tag">ЖИВУЧЕСТЬ</span><b>Пояс + Перчатки → здоровье</b><p>Эта пара повышает процент здоровья войск класса героя. Для пехоты это основной приоритет.</p></div>
+  <div class="stat-card lethality"><span class="tag">УРОН</span><b>Шапка + Сапоги → смертоносность</b><p>Эта пара повышает смертоносность. Для стрелков и копейщиков обычно именно сюда уходят лучшие ресурсы.</p></div>
+</div>
+<div class="gear-rule"><div class="ico">≠</div><div><strong>Сбалансированное снаряжение — не равномерное</strong><p>Равные цифры на всех четырёх слотах выглядят аккуратно, но расходуют дефицитные ресурсы там, где они дают меньший боевой эффект. Правильный баланс — это сильный перекос в пользу нужной характеристики.</p></div></div>
+
+<h2 id="infantry">1. Пехота: здоровье прежде всего</h2>
+<p class="body-p">Пехота принимает основной объём входящего урона и должна как можно дольше удерживать передний строй. Поэтому для неё <b>здоровье — основная характеристика</b>. Смертоносность полезна, но вторична по отношению к выживаемости фронта.</p>
+<div class="priority-banner"><div class="num">+91 / +40</div><div><strong>Нормальный перекос, а не ошибка</strong><p>На примере Флинта Пояс и Перчатки на здоровье заметно опережают Очки и Сапоги на смертоносность. Это и есть правильная логика распределения ресурсов.</p></div></div>
+<div class="shot-single"><figure class="gear-shot"><img src="../../assets/guides/hero-gear/flint-balanced.webp" alt="Флинт с приоритетно усиленными предметами на здоровье пехоты" loading="lazy"/><figcaption><b>Флинт как пример.</b> Приоритетные предметы находятся значительно выше по усилению и мастерству, чем вторичные. Точные цифры не являются обязательной целью — важен сам разрыв.</figcaption></figure></div>
+<div class="shot-grid">
+<figure class="gear-shot"><img src="../../assets/guides/hero-gear/infantry-gloves.webp" alt="Перчатки хранителя дают здоровье пехоты" loading="lazy"/><figcaption><b>Перчатки → здоровье пехоты.</b> Один из двух главных слотов пехотного героя.</figcaption></figure>
+<figure class="gear-shot"><img src="../../assets/guides/hero-gear/infantry-belt.webp" alt="Пояс хранителя даёт здоровье пехоты" loading="lazy"/><figcaption><b>Пояс → здоровье пехоты.</b> Второй приоритетный слот для фронта.</figcaption></figure>
+<figure class="gear-shot"><img src="../../assets/guides/hero-gear/infantry-goggles.webp" alt="Шапка хранителя даёт смертоносность пехоты" loading="lazy"/><figcaption><b>Шапка → смертоносность.</b> Улучшаем, но медленнее пары на здоровье.</figcaption></figure>
+<figure class="gear-shot"><img src="../../assets/guides/hero-gear/infantry-boots.webp" alt="Сапоги хранителя дают смертоносность пехоты" loading="lazy"/><figcaption><b>Сапоги → смертоносность.</b> Вторичный слот в пехотной сборке.</figcaption></figure>
+</div>
+
+<h2 id="damage">2. Стрелки и копейщики: смертоносность впереди, здоровье не мусор</h2>
+<p class="body-p">Для стрелков основной боевой приоритет обычно смещается в <b>смертоносность</b>: их задача — быстро наносить урон. У копейщиков по распределению предметов действует та же схема: Шапка и Сапоги дают смертоносность, Пояс и Перчатки — здоровье.</p>
+<div class="class-grid">
+  <div class="class-card primary"><b>Стрелки / копейщики</b><p><b>Шапка + Сапоги</b> усиливаем быстрее. Это атакующая пара со смертоносностью.</p><div class="micro"><span>приоритет</span><span>смертоносность</span></div></div>
+  <div class="class-card"><b>Но здоровье тоже работает</b><p>Стрелки регулярно получают урон от копейщиков: часть атак проходит сквозь строй и достаёт заднюю линию. Поэтому Пояс и Перчатки нельзя бросать на нуле.</p><div class="micro"><span>второй темп</span><span>здоровье</span></div></div>
+</div>
+<div class="shot-grid">
+<figure class="gear-shot"><img src="../../assets/guides/hero-gear/marksman-goggles.webp" alt="Шапка снайпера даёт смертоносность стрелков" loading="lazy"/><figcaption><b>Шапка → смертоносность стрелков.</b> Приоритетный атакующий слот.</figcaption></figure>
+<figure class="gear-shot"><img src="../../assets/guides/hero-gear/marksman-boots.webp" alt="Сапоги снайпера дают смертоносность стрелков" loading="lazy"/><figcaption><b>Сапоги → смертоносность стрелков.</b> Вторая половина атакующей пары.</figcaption></figure>
+<figure class="gear-shot"><img src="../../assets/guides/hero-gear/marksman-belt.webp" alt="Пояс снайпера даёт здоровье стрелков" loading="lazy"/><figcaption><b>Пояс → здоровье стрелков.</b> Вторичный, но полезный защитный слот.</figcaption></figure>
+<figure class="gear-shot"><img src="../../assets/guides/hero-gear/marksman-gloves.webp" alt="Перчатки снайпера дают здоровье стрелков" loading="lazy"/><figcaption><b>Перчатки → здоровье стрелков.</b> Не приоритет №1, но живучесть задней линии имеет смысл.</figcaption></figure>
+</div>
+<aside class="callout"><strong>Копейщики — та же логика предметов</strong><p>Для копейщиков типы бонусов распределены так же: атакующая пара даёт смертоносность, защитная — здоровье. В обычной атакующей прокачке приоритет сохраняем за смертоносностью.</p></aside>
+
+<h2 id="ladder">3. Рабочая лестница усиления</h2>
+<p class="body-p">Обозначения: <b>П</b> — приоритетные два слота класса, <b>Н</b> — неприоритетные. Смысл лестницы — сохранять заметный разрыв, но не доводить вторичные предметы до состояния, когда их дешёвое улучшение уже выгоднее следующего дорогого шага основного.</p>
+<div class="ladder">
+  <div class="ladder-row"><b>Шаг 1–2</b><span><b>П +30</b> → затем <b>Н +20</b></span></div>
+  <div class="ladder-row"><b>Шаг 3–4</b><span><b>П +50</b> → затем <b>Н +30</b></span></div>
+  <div class="ladder-row"><b>Шаг 5–6</b><span><b>П +80</b> → затем <b>Н +40</b></span></div>
+  <div class="ladder-row"><b>Шаг 7–8</b><span><b>Н +50</b> → затем <b>П +90</b></span></div>
+  <div class="ladder-row"><b>Дальше</b><span>Сохраняем тот же принцип: приоритетная пара впереди, вторичная подтягивается по выгоде следующего шага.</span></div>
+</div>
+<div class="badge-note"><b>Это ориентир, а не математический закон.</b> Если один вторичный слот сильно отстал и следующий дешёвый шаг даёт больше характеристик за ресурс, его можно поднять раньше. Главное — не превращать четыре предмета в идеально ровную линию.</div>
+
+<h2 id="essence">4. Камни Эссенции и мастерство</h2>
+<p class="body-p">Камни Эссенции — дефицитный ресурс, поэтому их особенно важно не распылять. Мастерство на приоритетной паре должно идти впереди вторичных предметов по той же логике, что и обычное усиление.</p>
+<div class="gear-rule"><div class="ico">◆</div><div><strong>Сначала приоритетные мифические предметы</strong><p>Пехота: Пояс + Перчатки. Стрелки и копейщики: Шапка + Сапоги. Вторичные предметы улучшаем, но Камни Эссенции не распределяем между четырьмя слотами поровну только ради красивых цифр.</p></div></div>
+
+<h2 id="widgets">5. Эксклюзивное снаряжение / виджеты</h2>
+<p class="body-p">Эксклюзивный виджет принадлежит конкретному мифическому герою и не передаётся следующему поколению. Каждый уровень одновременно повышает базовые проценты и поочерёдно усиливает один из двух эксклюзивных навыков.</p>
+<div class="widget-math"><b>+6%</b><div><strong>смертоносности и здоровья за каждый уровень</strong><p>Например, переход Флинта с +5 на +6 поднимает оба экспедиционных процента с 30% до 36% — по 6 процентных пунктов на каждый уровень.</p></div></div>
+<div class="widget-flow">
+  <div class="widget-step"><b>Нечётные: 1 / 3 / 5 / 7 / 9</b><p>Повышают навык <b>Освоения</b>. Он имеет значение прежде всего в Освоении и на Арене.</p></div>
+  <div class="widget-arrow">→</div>
+  <div class="widget-step even"><b>Чётные: 2 / 4 / 6 / 8 / 10</b><p>Повышают <b>Экспедиционный</b> навык — тот, который обычно важнее для основных боевых режимов, ралли и гарнизона.</p></div>
+</div>
+<div class="shot-grid">
+<figure class="gear-shot"><img src="../../assets/guides/hero-gear/widget-flint-info.webp" alt="Эксклюзивный виджет с двумя навыками" loading="lazy"/><figcaption><b>Два разных навыка.</b> Отдельно показаны навык Освоения и Экспедиционный навык.</figcaption></figure>
+<figure class="gear-shot"><img src="../../assets/guides/hero-gear/widget-flint-upgrade.webp" alt="Переход виджета с пятого на шестой уровень" loading="lazy"/><figcaption><b>Чётный уровень.</b> При переходе +5 → +6 растут здоровье и смертоносность, а также повышается Экспедиционный навык.</figcaption></figure>
+</div>
+
+<div class="gear-rule"><div class="ico">⏸</div><div><strong>Часто разумно останавливаться на устраивающем чётном уровне</strong><p>Как правило, игрока интересует именно Экспедиция. Если скоро выходит новый герой нового поколения и виджеты понадобятся уже ему, нет необходимости любой ценой дожимать текущий виджет до следующего нечётного уровня. Остановитесь на подходящем 2 / 4 / 6 / 8 и сохраните ресурс.</p></div></div>
+<div class="badge-note"><b>Исключение:</b> если для вас важны Арена и Освоение, нечётные уровни уже нельзя считать «проходными» — там прокачивается именно соответствующий навык.</div>
+<ul class="bullets"><li><b>Не открывайте выбираемые сундуки виджетов заранее.</b> Пока сундук не привязан к конкретному герою, он сохраняет гибкость.</li><li>Перед крупной тратой виджетов смотрим, насколько близко следующее поколение нужного класса.</li><li>Оцениваем не только +6% за уровень, но и то, какой из двух навыков получит усиление именно на этом шаге.</li></ul>
+
+<h2 id="algorithm">6. Финальный алгоритм</h2>
+<div class="check-card"><strong>Короткая схема без распыления</strong><ul>
+<li><b>Пехота:</b> здоровье в Пояс + Перчатки выводим вперёд.</li>
+<li><b>Стрелки / копейщики:</b> смертоносность в Шапку + Сапоги выводим вперёд.</li>
+<li>Вторичные два слота не бросаем: подтягиваем их тогда, когда шаг становится дешёвым.</li>
+<li>Камни Эссенции и мастерство в первую очередь отправляем в приоритетную пару.</li>
+<li>Не стремимся к одинаковым цифрам на четырёх слотах — разрыв между П и Н нормален и желателен.</li>
+<li>Виджеты планируем по поколению героя; при дефиците ресурсов удобная точка остановки обычно находится на чётном уровне.</li>
+</ul></div>
+<div class="priority-banner"><div class="num">П ≫ Н</div><div><strong>Главный визуальный ориентир</strong><p>Если открыть хорошо собранного героя, по его четырём предметам должно быть видно, какие два слота являются приоритетными. Это не перекос сборки — это и есть специализация.</p></div></div>
+</article>
+<section class="related"><h2>Связанные материалы</h2><div class="related-grid"><a href="heroes.html">🧬 ГЕРОИ</a><a href="hero-generations.html">📊 ГЕРОИ ПО ПОКОЛЕНИЯМ</a></div></section>
+</main>
+<a class="back-top" href="#" id="backTop">↑</a>
+<nav class="bottom-nav"><a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open=""><span class="ico">🔎</span><span>Поиск</span></button></nav>
+<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: здоровье, смертоносность, виджеты…" type="search"/><button class="search-close" data-search-close="">×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
+<script src="../../assets/js/search-index.js?v=34"></script><script src="../../assets/js/app.js?v=24"></script>
+</body>
+</html>
