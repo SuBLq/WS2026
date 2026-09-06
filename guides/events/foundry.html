@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <meta name="theme-color" content="#0f5f8f"/>
-<meta name="description" content="Битва за Литейную — очки объектов, AFK-фарм, оружейные мастерские, наёмники, телепорты и боевая логика."/>
+<meta name="description" content="Битва за Литейную — PvP за объекты, очки, AFK-фарм, мастерские, наёмники, телепорты и командная логика."/>
 <link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="../../manifest.webmanifest" rel="manifest"/>
 <link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
@@ -12,21 +12,42 @@
 <link href="../../assets/css/content.css?v=24" rel="stylesheet"/>
 <title>БИТВА ЗА ЛИТЕЙНУЮ · Whiteout Survival</title>
 <style>
-.foundry-figure{margin:13px 0 18px}
-.foundry-figure img{display:block;width:100%;height:auto;border-radius:15px;border:1px solid #d7e4ea;background:#edf4f8}
-.foundry-figure figcaption{font-size:10.5px;line-height:1.4;color:#718795;margin:6px 3px 0}
-.foundry-shot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 18px}
-.foundry-shot{margin:0;background:#f8fbfc;border:1px solid #d7e4ea;border-radius:15px;padding:7px}
-.foundry-shot img{display:block;width:100%;height:auto;border-radius:11px}
-.foundry-shot figcaption{font-size:10.5px;line-height:1.35;color:#5f7887;padding:6px 3px 2px}
-.foundry-shot-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
-.foundry-key{font-weight:900;color:#0f638c}
-@media(max-width:620px){
-  .foundry-shot-grid,.foundry-shot-grid.three{grid-template-columns:1fr}
-  .foundry-shot{padding:6px}
-}
+:root{--fy-blue:#2d8fc0;--fy-cyan:#5fc8e8;--fy-green:#28a979;--fy-orange:#d98a32;--fy-red:#c95b55;--fy-ink:#173f56;--fy-muted:#587485;--fy-line:#d6e6ed;--fy-bg:#f7fbfd}
+.fy-intro{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:13px 0 15px}.fy-intro-card{border:1px solid var(--fy-line);border-radius:17px;padding:15px 16px;background:linear-gradient(145deg,#f5fafc,#fff);box-shadow:0 5px 16px rgba(28,91,120,.05)}.fy-intro-card h3{margin:0 0 7px;font-size:17px;color:var(--fy-ink)}.fy-intro-card p{margin:0;font-size:12.5px;line-height:1.5;color:#4d6a7a}.fy-intro-card.team{border-top:4px solid var(--fy-blue)}.fy-intro-card.personal{border-top:4px solid var(--fy-green)}
+.fy-links{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 17px}.fy-links a{display:inline-flex;align-items:center;gap:6px;padding:8px 10px;border-radius:12px;border:1px solid #cfe0e8;background:#eef7fa;color:#145f82;text-decoration:none;font-size:11.5px;font-weight:900}.fy-links a:hover{background:#e3f2f7}
+.fy-section-lead{border:1px solid var(--fy-line);border-radius:16px;padding:14px 15px;margin:12px 0;background:linear-gradient(135deg,#edf7fb,#fbfdfe);color:#31566a}.fy-section-lead strong{display:block;color:#0f638c;margin-bottom:5px}.fy-section-lead.green{background:linear-gradient(135deg,#e9f8f2,#f9fcfb);border-color:#c8e8d9;color:#315b50}.fy-section-lead.green strong{color:#087350}.fy-section-lead.orange{background:linear-gradient(135deg,#fff4e4,#fffaf2);border-color:#efd4ae;color:#674a28}.fy-section-lead.orange strong{color:#975516}.fy-section-lead.red{background:linear-gradient(135deg,#fff0ee,#fff9f8);border-color:#ecc9c4;color:#70433e}.fy-section-lead.red strong{color:#a94f47}
+.formation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0 15px}.formation-card{overflow:hidden;border:1px solid var(--fy-line);border-radius:18px;background:#fff;box-shadow:0 5px 16px rgba(28,91,120,.05)}.formation-card.attack{border-top:4px solid var(--fy-orange)}.formation-card.defense{border-top:4px solid var(--fy-blue)}.formation-card .head{padding:12px 13px 9px}.formation-card h3{font-size:17px;margin:0 0 4px;color:var(--fy-ink)}.formation-card .sub{font-size:11.5px;color:var(--fy-muted);line-height:1.4}.formation-card img{display:block;width:100%;height:280px;object-fit:cover;object-position:top;background:#0d3a60}.formation-card .body{padding:10px 13px 13px}.ratio-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:7px}.ratio-row span{padding:5px 8px;border-radius:999px;background:#eaf4f8;border:1px solid #d3e5ec;color:#245d77;font-size:10.5px;font-weight:900}.formation-card p{margin:0;font-size:11.5px;line-height:1.48;color:#496473}
+.entry-check{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:10px 0 18px}.entry-check div{border:1px solid #dde9ee;border-radius:13px;padding:10px;background:#fafcfd;color:#36586a;font-size:11.2px;line-height:1.4}.entry-check b{display:block;color:#0f638c;margin-bottom:3px}
+.value-ladder{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0 14px}.value-card{border:1px solid var(--fy-line);border-radius:15px;padding:13px 11px;background:#fff;position:relative;overflow:hidden}.value-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--fy-blue)}.value-card:nth-child(2):before{background:#43a9ce}.value-card:nth-child(3):before{background:#6cae8e}.value-card:nth-child(4):before{background:#d89a4a}.value-card .num{display:block;font-size:24px;font-weight:1000;color:#123f58;letter-spacing:-.6px}.value-card b{font-size:11.5px;color:#1d506a}.value-card p{font-size:10.5px;color:#6b8290;margin:4px 0 0;line-height:1.35}
+.foundry-figure{margin:13px 0 18px;border:1px solid var(--fy-line);border-radius:17px;padding:8px;background:#f7fbfd;box-shadow:0 4px 14px rgba(28,91,120,.04)}.foundry-figure img{display:block;width:100%;height:auto;border-radius:12px;background:#edf4f8}.foundry-figure figcaption{font-size:10.5px;line-height:1.45;color:#6b8190;padding:8px 4px 2px}
+.data-panel{border:1px solid #d7e6ed;border-radius:15px;margin:12px 0 17px;overflow:hidden;background:#fbfdfe}.data-panel summary{cursor:pointer;list-style:none;padding:11px 13px;font-size:12px;font-weight:900;color:#176487;background:#edf7fa}.data-panel summary::-webkit-details-marker{display:none}.data-panel summary:after{content:'＋';float:right;color:#4d8ca8}.data-panel[open] summary:after{content:'−'}.data-panel .table-scroll{margin:0;border:0;border-radius:0}
+.afk-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}.afk-card{border:1px solid #c9e8da;border-radius:17px;padding:14px;background:linear-gradient(135deg,#eaf8f3,#fbfefd);color:#315b50}.afk-card .score{display:block;font-size:24px;font-weight:1000;color:#087350}.afk-card b{display:block;font-size:12px;margin:2px 0 5px}.afk-card p{font-size:11px;line-height:1.45;margin:0}.march-slots{display:flex;gap:5px;flex-wrap:wrap;margin:8px 0 2px}.march-slots span{padding:4px 6px;border-radius:8px;background:#d8f0e6;color:#17654d;font-weight:900;font-size:9.5px}
+.object-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0 18px}.object-card{margin:0;border:1px solid var(--fy-line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 4px 14px rgba(28,91,120,.04)}.object-card img{display:block;width:100%;height:220px;object-fit:cover;object-position:top;background:#eaf2f6}.object-card figcaption{padding:10px 11px 12px;font-size:10.7px;line-height:1.42;color:#5a7585}.object-card figcaption b{display:block;color:#164d69;font-size:11.5px;margin-bottom:3px}.object-card .rate{color:#087350;font-weight:1000}
+.service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 18px}.service-card{display:grid;grid-template-columns:112px 1fr;border:1px solid #efd7b6;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#fff8ed,#fff);min-height:150px}.service-card img{width:112px;height:100%;object-fit:cover;object-position:top}.service-card .body{padding:11px 12px}.service-card h3{margin:0 0 4px;font-size:14px;color:#71491f}.service-card .effect{display:block;font-size:11px;font-weight:1000;color:#a25a16;margin-bottom:5px}.service-card p{font-size:10.8px;line-height:1.42;color:#6e5a42;margin:0}
+.compare-strip{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:12px 0 17px}.compare-box{border-radius:15px;padding:13px 14px;border:1px solid var(--fy-line);background:#f8fbfc}.compare-box h3{font-size:14px;margin:0 0 6px;color:var(--fy-ink)}.compare-box ul{margin:0;padding-left:17px;color:#4c6878;font-size:11px;line-height:1.5}.compare-box.points{border-top:4px solid var(--fy-green)}.compare-box.win{border-top:4px solid var(--fy-orange)}
+.workshop-split,.merc-split{display:grid;grid-template-columns:.86fr 1.14fr;gap:12px;align-items:start;margin:12px 0 16px}.workshop-split .foundry-figure,.merc-split .foundry-figure{margin:0}.metric-box{border:1px solid #cae6dc;border-radius:17px;background:linear-gradient(135deg,#edf9f4,#fff);padding:14px}.metric-box .metric{font-size:26px;font-weight:1000;color:#087350}.metric-box h3{font-size:15px;margin:0 0 7px;color:#174f40}.metric-box p{font-size:11.5px;color:#456b5f;line-height:1.5;margin:4px 0}.metric-box .formula{margin:10px 0;padding:9px 10px;border-radius:11px;background:#dff3ea;color:#17654d;font-weight:900;font-size:11.5px}
+.merc-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:11px 0}.merc-flow div{position:relative;border:1px solid #ecd6bb;border-radius:13px;padding:10px;background:#fffaf2;color:#6e563b;font-size:10.8px;line-height:1.4}.merc-flow b{display:block;color:#9a591d;margin-bottom:3px}.merc-flow div:not(:last-child):after{content:'→';position:absolute;right:-8px;top:50%;transform:translateY(-50%);width:17px;height:17px;border-radius:50%;background:#fff4e3;color:#b56a25;display:grid;place-items:center;font-weight:1000;z-index:2}
+.resource-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}.resource-card{border:1px solid var(--fy-line);border-radius:15px;padding:12px;background:#fff}.resource-card .ico{font-size:23px}.resource-card b{display:block;color:#164d69;font-size:12px;margin:5px 0}.resource-card p{font-size:10.7px;color:#5f7887;line-height:1.45;margin:0}
+.match-plan{counter-reset:step;list-style:none;margin:12px 0;padding:0;display:grid;gap:7px}.match-plan li{counter-increment:step;position:relative;padding:11px 12px 11px 45px;border:1px solid #dce8ed;border-radius:14px;background:#fafcfd;color:#36586a;font-size:11.5px;line-height:1.45}.match-plan li:before{content:counter(step);position:absolute;left:11px;top:10px;width:24px;height:24px;border-radius:8px;background:#e1f1f7;color:#12688e;display:grid;place-items:center;font-weight:1000;font-size:11px}
+.related-lite{margin:18px 0 4px;padding:14px;border:1px solid var(--fy-line);border-radius:17px;background:linear-gradient(145deg,#f4f9fb,#fff)}.related-lite h3{margin:0 0 9px;color:var(--fy-ink);font-size:15px}.related-lite .fy-links{margin:0}
+@media(max-width:780px){.service-card{grid-template-columns:94px 1fr}.service-card img{width:94px}.workshop-split,.merc-split{grid-template-columns:1fr}.formation-card img{height:240px}}
+@media(max-width:620px){.fy-intro,.formation-grid,.afk-grid,.service-grid,.compare-strip{grid-template-columns:1fr}.entry-check,.value-ladder{grid-template-columns:repeat(2,minmax(0,1fr))}.object-grid{grid-template-columns:1fr}.object-card{display:grid;grid-template-columns:128px 1fr}.object-card img{height:100%;min-height:150px}.service-card{grid-template-columns:112px 1fr}.service-card img{width:112px}.merc-flow,.resource-grid{grid-template-columns:1fr}.merc-flow div:not(:last-child):after{content:'↓';right:50%;top:auto;bottom:-12px;transform:translateX(50%)}.formation-card img{height:auto;max-height:460px;object-fit:cover}.fy-links a{flex:1 1 150px;justify-content:center}.value-card .num{font-size:21px}}
+@media(max-width:390px){.entry-check,.value-ladder{grid-template-columns:1fr}.object-card{grid-template-columns:108px 1fr}.service-card{grid-template-columns:96px 1fr}.service-card img{width:96px}}
+html[data-theme="dark"]{--fy-ink:#eef9ff;--fy-muted:#aec6d3;--fy-line:#28546e;--fy-bg:#0a2942}
+html[data-theme="dark"] .fy-intro-card,html[data-theme="dark"] .formation-card,html[data-theme="dark"] .value-card,html[data-theme="dark"] .foundry-figure,html[data-theme="dark"] .object-card,html[data-theme="dark"] .resource-card,html[data-theme="dark"] .compare-box,html[data-theme="dark"] .related-lite,html[data-theme="dark"] .match-plan li{background:linear-gradient(145deg,#0d334f,#0a2942);border-color:#28546e;box-shadow:0 8px 22px rgba(0,0,0,.16)}
+html[data-theme="dark"] .fy-intro-card p,html[data-theme="dark"] .formation-card p,html[data-theme="dark"] .object-card figcaption,html[data-theme="dark"] .resource-card p,html[data-theme="dark"] .compare-box ul,html[data-theme="dark"] .foundry-figure figcaption,html[data-theme="dark"] .match-plan li{color:#abc4d2}
+html[data-theme="dark"] .fy-links a{background:#103956;border-color:#2b5b75;color:#9de3ff}html[data-theme="dark"] .fy-links a:hover{background:#124461}
+html[data-theme="dark"] .fy-section-lead{background:linear-gradient(135deg,#0e3856,#0a2944);border-color:#2a5b76;color:#c8ddea}html[data-theme="dark"] .fy-section-lead strong{color:#90e1ff}html[data-theme="dark"] .fy-section-lead.green{background:linear-gradient(135deg,#0d4143,#0a2c3d);border-color:#2c746c;color:#c9e8df}html[data-theme="dark"] .fy-section-lead.green strong{color:#76e5b9}html[data-theme="dark"] .fy-section-lead.orange{background:linear-gradient(135deg,#44351f,#132f40);border-color:#745a32;color:#ead6b9}html[data-theme="dark"] .fy-section-lead.orange strong{color:#ffd48d}html[data-theme="dark"] .fy-section-lead.red{background:linear-gradient(135deg,#472b2d,#132f40);border-color:#7c4d50;color:#ebc8c8}html[data-theme="dark"] .fy-section-lead.red strong{color:#ffaaaa}
+html[data-theme="dark"] .formation-card .sub{color:#abc4d2}html[data-theme="dark"] .ratio-row span{background:#103956;border-color:#2b5b75;color:#c9e3ef}html[data-theme="dark"] .entry-check div{background:#0c314c;border-color:#28546e;color:#bcd2dd}html[data-theme="dark"] .entry-check b{color:#8de0ff}
+html[data-theme="dark"] .value-card .num,html[data-theme="dark"] .value-card b,html[data-theme="dark"] .object-card figcaption b,html[data-theme="dark"] .resource-card b,html[data-theme="dark"] .compare-box h3,html[data-theme="dark"] .related-lite h3{color:#eef9ff}html[data-theme="dark"] .object-card .rate{color:#76e5b9}
+html[data-theme="dark"] .data-panel{background:#0a2942;border-color:#28546e}html[data-theme="dark"] .data-panel summary{background:#103956;color:#9de3ff}
+html[data-theme="dark"] .afk-card,html[data-theme="dark"] .metric-box{background:linear-gradient(135deg,#0d4143,#0a2c3d);border-color:#2c746c;color:#c9e8df}html[data-theme="dark"] .afk-card .score,html[data-theme="dark"] .metric-box .metric{color:#76e5b9}html[data-theme="dark"] .afk-card p,html[data-theme="dark"] .metric-box p{color:#c0dfd6}html[data-theme="dark"] .march-slots span,html[data-theme="dark"] .metric-box .formula{background:#123f3e;color:#89e6c0}
+html[data-theme="dark"] .service-card{background:linear-gradient(135deg,#44351f,#132f40);border-color:#745a32}html[data-theme="dark"] .service-card h3{color:#ffe1aa}html[data-theme="dark"] .service-card .effect{color:#ffc778}html[data-theme="dark"] .service-card p{color:#e0cdb0}
+html[data-theme="dark"] .merc-flow div{background:#3f3424;border-color:#715a37;color:#e0cdb0}html[data-theme="dark"] .merc-flow b{color:#ffd18c}html[data-theme="dark"] .merc-flow div:not(:last-child):after{background:#122e40;color:#ffd18c}
+html[data-theme="dark"] .match-plan li:before{background:#104966;color:#9fe7ff}
 </style>
-<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script></head>
+<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
+</head>
 <body data-root="../../">
 <header class="site-top">
   <a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a>
@@ -37,54 +58,71 @@
 <section class="guide-hero">
   <div class="eyebrow">🎯 СОБЫТИЯ И РЕЖИМЫ</div>
   <h1>БИТВА ЗА ЛИТЕЙНУЮ</h1>
-  <p>Очки, AFK-фарм, объекты, мастерские, наёмники и боевая логика</p>
-  <div class="hero-meta"><span class="pill">Подготовлено SuBL · август 2026</span></div>
+  <p>PvP за объекты, командные бонусы и экономика маршей: как выигрывать матч и не оставлять личные очки на столе</p>
+  <div class="hero-meta"><span class="pill">Подготовлено SuBL · обновлено сентябрь 2026</span></div>
 </section>
 
-<div class="guide-toolbar">
-  <a class="action-link" href="../../index.html#guides">← Все гайды</a>
-  
-</div>
+<div class="guide-toolbar"><a class="action-link" href="../../index.html#guides">← Все гайды</a></div>
 
 <details class="toc" open="">
 <summary>Содержание</summary>
 <div class="toc-list">
-  <a href="#prep">1. До входа: две формации и чистый город</a>
-  <a href="#points">2. Очки объектов: личные и командные</a>
-  <a href="#afk">3. AFK-фарм личных очков</a>
-  <a href="#scoring-objects">4. Главные объекты для набора очков</a>
-  <a href="#service-objects">5. Почему служебные объекты дают мало пассива</a>
-  <a href="#workshops">6. Оружейные мастерские</a>
-  <a href="#mercs">7. Наёмники против гарнизонов</a>
-  <a href="#combat">8. Телепорты, бой и лечение</a>
-  <a href="#plan">9. Короткий план матча</a>
+  <a href="#core">1. Литейная: две задачи одновременно</a>
+  <a href="#prep">2. До входа: АТК, ЗАЩ и готовность города</a>
+  <a href="#points">3. Карта ценности объектов</a>
+  <a href="#afk">4. AFK-фарм и распределение 6 маршей</a>
+  <a href="#scoring-objects">5. Главные объекты, приносящие очки</a>
+  <a href="#service-objects">6. Служебные объекты: мало очков, много пользы</a>
+  <a href="#workshops">7. Оружейные мастерские</a>
+  <a href="#mercs">8. Наёмники против гарнизонов</a>
+  <a href="#combat">9. Телепорты, бой и лечение</a>
+  <a href="#plan">10. Алгоритм матча</a>
 </div>
 </details>
 
 <article class="article">
-<aside class="callout">
-  <strong>Главный принцип</strong>
-  <p>Победа альянса важнее личного рейтинга. Но механика Литейной позволяет одновременно приносить команде очки и стабильно фармить личные — если правильно распределять марши по объектам.</p>
-</aside>
-
-<h2 id="prep">1. До входа: две формации и чистый город</h2>
-<div class="table-scroll">
-<table>
-<tr><th>Формация</th><th>Состав и назначение</th></tr>
-<tr><td>АТК</td><td>Джесси первой + 2 любых героя. Войска 50/20/30. Для присоединения к атакующим ралли.</td></tr>
-<tr><td>ЗАЩ</td><td>Патрик первым + 2 любых героя. Войска 50/20/30. Для гарнизонов и обороны.</td></tr>
-</table>
+<h2 id="core">1. Литейная: две задачи одновременно</h2>
+<p class="body-p lead">Литейная — это полноценное PvP за объекты, но поверх него работает отдельная экономика очков. Сильная игра строится не вокруг выбора «команда или личка», а вокруг правильного распределения маршей между боем, гарнизонами и сбором.</p>
+<div class="fy-intro">
+  <div class="fy-intro-card team"><h3>🏆 Победа команды</h3><p>Склад, Котельная, Транзит и Наёмники могут давать мало личного пассива, но их бонусы меняют темп всего матча. Критический служебный объект иногда важнее Литейной с её 900 личных очков/мин.</p></div>
+  <div class="fy-intro-card personal"><h3>⭐ Личные очки</h3><p>Для пассивного набора приоритет другой: Королевская литейная → Прототипы → Ремонтники → служебные объекты. Свободный марш без задачи — почти всегда потерянные очки.</p></div>
 </div>
-<ul class="bullets">
-  <li>Первый экспедиционный навык Джесси и Патрика желательно иметь минимум 3 уровня, лучше выше.</li>
-  <li>Перед входом не должно быть маршей вне города, раненых в обычном лазарете, горящей баррикады и чужих подкреплений в Посольстве — иначе игра может не пустить на поле боя.</li>
-</ul>
+<div class="fy-links">
+  <a href="../combat/pvp-objects.html">🩸 PvP за объекты — формации и гарнизоны</a>
+  <a href="../combat/combat-system.html">⚔️ Боевая система — состав марша и статы</a>
+</div>
 
-<h2 id="points">2. Очки объектов: личные и командные</h2>
-<p class="body-p">Каждый стационарный объект даёт разовые очки за захват и пассивные очки за удержание. Личные значения составляют половину командных.</p>
+<h2 id="prep">2. До входа: АТК, ЗАЩ и готовность города</h2>
+<div class="formation-grid">
+  <section class="formation-card attack">
+    <div class="head"><h3>⚔️ АТК — забрать объект</h3><div class="sub">Для присоединения к атакующим ралли и активного выбивания гарнизона</div></div>
+    <img src="../../assets/guides/pvp/attack-jessie.webp" alt="Пример атакующей PvP-формации с героем атаки первым" loading="lazy"/>
+    <div class="body"><div class="ratio-row"><span>Джесси / Джассер первым</span><span>50 / 20 / 30</span></div><p>Задача атакующей формации — быстро продавить объект. После успешного захвата её не оставляем как постоянную защиту.</p></div>
+  </section>
+  <section class="formation-card defense">
+    <div class="head"><h3>🛡️ ЗАЩ — удержать объект</h3><div class="sub">После захвата меняем атакующие навыки на защитные</div></div>
+    <img src="../../assets/guides/pvp/defense-patrick.webp" alt="Пример защитной PvP-формации с Патриком первым героем" loading="lazy"/>
+    <div class="body"><div class="ratio-row"><span>Сергей / Патрик первым</span><span>60 / 40 / 0</span></div><p>Для удержания объекта используем защитный первый навык и более плотный фронт.</p></div>
+  </section>
+</div>
+<div class="fy-section-lead green"><strong>Первый экспедиционный навык</strong>У героев присоединения он должен быть прокачан минимум до 3 уровня, лучше выше. На Литейной неправильный первый герой — это не косметика, а потерянный командный бонус в ралли или гарнизоне.</div>
+<div class="entry-check">
+  <div><b>Марши дома</b>Перед входом не оставляем отряды на ресурсах, в рейдах и других активностях.</div>
+  <div><b>Лазарет</b>Обычные раненые не должны блокировать вход на поле боя.</div>
+  <div><b>Баррикада</b>Горящий город лучше привести в порядок заранее.</div>
+  <div><b>Посольство</b>Чужие подкрепления перед входом убираем.</div>
+</div>
 
-<div class="table-scroll wide">
-<table>
+<h2 id="points">3. Карта ценности объектов</h2>
+<p class="body-p">Стационарные объекты дают разовые очки за захват и постоянные очки за удержание. Личный пассив равен половине командного, но <b>личная доходность и командная ценность — не одно и то же</b>.</p>
+<div class="value-ladder">
+  <div class="value-card"><span class="num">900</span><b>Литейная</b><p>личных очков/мин</p></div>
+  <div class="value-card"><span class="num">600</span><b>Прототип</b><p>личных очков/мин</p></div>
+  <div class="value-card"><span class="num">300</span><b>Ремонтник</b><p>личных очков/мин</p></div>
+  <div class="value-card"><span class="num">120</span><b>Служебные</b><p>личных очков/мин</p></div>
+</div>
+<details class="data-panel"><summary>Точные очки захвата и удержания</summary>
+<div class="table-scroll wide"><table>
 <tr><th>Объект</th><th>Команда / захват</th><th>Команда / удерж.</th><th>Личные / захват</th><th>Личные / удерж.</th></tr>
 <tr><td>Королевская литейная</td><td>9 000</td><td>1 800/мин</td><td>4 500</td><td>900/мин</td></tr>
 <tr><td>Прототипный объект ×2</td><td>6 000</td><td>1 200/мин</td><td>3 000</td><td>600/мин</td></tr>
@@ -93,143 +131,93 @@
 <tr><td>Лагерь наёмников</td><td>1 200</td><td>240/мин</td><td>600</td><td>120/мин</td></tr>
 <tr><td>Котельная</td><td>1 200</td><td>240/мин</td><td>600</td><td>120/мин</td></tr>
 <tr><td>Транзитная станция</td><td>1 200</td><td>240/мин</td><td>600</td><td>120/мин</td></tr>
-</table>
+</table></div></details>
+<figure class="foundry-figure"><img src="../../assets/guides/foundry/score.webp" alt="Поле боя Литейной с 7 560 командных очков в минуту при полном контроле" loading="lazy"/><figcaption><b>Контрольная цифра:</b> полный контроль карты даёт +7 560 командных очков в минуту.</figcaption></figure>
+<div class="fy-section-lead orange"><strong>После перехвата здания</strong>Часть накопленных временных очков может рассыпаться рядом как припасы Арсенала. Их подбирает любая сторона, поэтому после смены владельца сразу смотрим пространство вокруг объекта — не отдаём выпавшие очки обратно противнику.</div>
+
+<h2 id="afk">4. AFK-фарм и распределение 6 маршей</h2>
+<p class="body-p">Если активный бой прямо сейчас не требует всех ваших маршей, пассивный доход можно считать почти как экономику производства.</p>
+<div class="afk-grid">
+  <div class="afk-card"><span class="score">2 400/мин</span><b>До стабильного контроля центра</b><div class="march-slots"><span>Прототип</span><span>Прототип</span><span>Ремонтник</span><span>Ремонтник</span><span>Ремонтник</span><span>Ремонтник</span></div><p>2 Прототипа + 4 Ремонтных комплекса. Хорошая пассивная схема, если Литейная ещё закрыта или центр постоянно отбивают.</p></div>
+  <div class="afk-card"><span class="score">3 000/мин</span><b>Когда центр можно удерживать</b><div class="march-slots"><span>Литейная</span><span>Прототип</span><span>Прототип</span><span>Ремонтник</span><span>Ремонтник</span><span>Ремонтник</span></div><p>Литейная + 2 Прототипа + 3 Ремонтника. Теоретический максимум для шести гарнизонных маршей по лучшим личным пассивам.</p></div>
 </div>
-
-<aside class="callout">
-  <strong>Контрольная цифра</strong>
-  <p>Если одна сторона контролирует всю карту, сумма пассивных командных очков равна <span class="foundry-key">7 560/мин</span>.</p>
-</aside>
-
-<figure class="foundry-figure">
-  <img src="../../assets/guides/foundry/score.webp" alt="Поле боя Литейной: 7 560 командных очков в минуту при полном контроле" loading="lazy"/>
-  <figcaption>Полный контроль карты: +7 560 командных очков в минуту.</figcaption>
-</figure>
-
-<p class="body-p">При потере здания часть накопленных временных очков может рассыпаться рядом в виде припасов Арсенала. Их может подобрать любая сторона, поэтому после смены владельца объекта важно сразу проверять пространство вокруг него.</p>
-
-<h2 id="afk">3. AFK-фарм личных очков: куда ставить марши</h2>
-<p class="body-p">Для AFK-фарма важен прежде всего пассив за удержание. По личным очкам в минуту порядок простой:</p>
-
-<div class="table-scroll">
-<table>
-<tr><th>Приоритет</th><th>Объект</th><th>Личные очки/мин</th></tr>
-<tr><td>1</td><td>Королевская литейная</td><td>900</td></tr>
-<tr><td>2</td><td>Прототипный объект</td><td>600</td></tr>
-<tr><td>3</td><td>Ремонтный комплекс</td><td>300</td></tr>
-<tr><td>4</td><td>Служебные объекты</td><td>120</td></tr>
-</table>
-</div>
-
-<aside class="callout">
-  <strong>Лучший пассивный набор на 6 маршей</strong>
-  <p>Пока центральная Литейная недоступна или не удерживается: <b>2 Прототипа + 4 Ремонтных комплекса = 2 400 личных очков/мин</b>.</p>
-  <p>Когда Литейная доступна и её можно стабильно держать: <b>Литейная + 2 Прототипа + 3 Ремонтника = 3 000 личных очков/мин</b>.</p>
-</aside>
-
 <ul class="bullets">
-  <li>Это идеальная схема при непрерывном контроле объектов. Реальный результат ниже из-за переходов, выбивания гарнизонов и смены владельца.</li>
-  <li>Если центр постоянно отбивают, безопасное удержание Прототипов и Ремонтников может быть выгоднее по фактическому аптайму.</li>
-  <li>Слабый игрок может приносить много пользы, занимая свободные места в гарнизонах объектов с высоким пассивным доходом, пока сильные марши команды ведут активный бой.</li>
+  <li>Это идеальные цифры при непрерывном контроле. Реальный доход ниже из-за переходов, выбивания гарнизонов и смены владельца.</li>
+  <li>Безопасный Прототип или Ремонтник может дать больше фактических очков, чем центральная Литейная, которую вас постоянно заставляют покидать.</li>
+  <li>Слабый игрок полезен, если занимает свободное место в хорошем гарнизоне и освобождает сильные марши союзников для активного боя.</li>
 </ul>
 
-<h2 id="scoring-objects">4. Карточки главных очковых объектов</h2>
-<p class="body-p">Для личного пассивного фарма центральные и ремонтные объекты выгоднее служебных.</p>
-<div class="foundry-shot-grid three">
-  <figure class="foundry-shot"><img src="../../assets/guides/foundry/foundry.webp" alt="Королевская литейная" loading="lazy"/><figcaption><b>Королевская литейная</b> — 900 личных очков/мин.</figcaption></figure>
-  <figure class="foundry-shot"><img src="../../assets/guides/foundry/prototype.webp" alt="Прототипный объект" loading="lazy"/><figcaption><b>Прототип</b> — 600 личных очков/мин.</figcaption></figure>
-  <figure class="foundry-shot"><img src="../../assets/guides/foundry/repair.webp" alt="Ремонтный комплекс" loading="lazy"/><figcaption><b>Ремонтный комплекс</b> — 300 личных очков/мин.</figcaption></figure>
+<h2 id="scoring-objects">5. Главные объекты, приносящие очки</h2>
+<div class="object-grid">
+  <figure class="object-card"><img src="../../assets/guides/foundry/foundry.webp" alt="Королевская литейная" loading="lazy"/><figcaption><b>Королевская литейная</b><span class="rate">900 личных/мин</span>. Самый дорогой пассивный объект карты, но обычно и самый спорный.</figcaption></figure>
+  <figure class="object-card"><img src="../../assets/guides/foundry/prototype.webp" alt="Прототипный объект" loading="lazy"/><figcaption><b>Прототипный объект ×2</b><span class="rate">600 личных/мин</span>. Отличное сочетание доходности и относительной стабильности.</figcaption></figure>
+  <figure class="object-card"><img src="../../assets/guides/foundry/repair.webp" alt="Ремонтный комплекс" loading="lazy"/><figcaption><b>Ремонтный комплекс ×4</b><span class="rate">300 личных/мин</span>. Основа спокойного пассивного набора и хорошее место для вторичных маршей.</figcaption></figure>
+</div>
+<div class="compare-strip">
+  <div class="compare-box points"><h3>⭐ Если нужна личка</h3><ul><li>Литейная → Прототипы → Ремонтники.</li><li>Стабильный аптайм важнее красивой цифры объекта.</li><li>Свободные места в гарнизонах — бесплатные очки.</li></ul></div>
+  <div class="compare-box win"><h3>🏆 Если нужна победа</h3><ul><li>Смотрим не только на пассив.</li><li>Служебный бонус может решить следующий захват.</li><li>Не бросаем Склад или Транзит ради +300 личных/мин.</li></ul></div>
 </div>
 
-<h2 id="service-objects">5. Почему «боевые» объекты дают мало пассивных очков</h2>
-<p class="body-p">У Склада вооружения, Котельной, Транзита и Лагеря наёмников всего 120 личных очков/мин. Их ценность — не в личном фарме, а в бонусе для всей команды.</p>
-
-<div class="table-scroll wide">
-<table>
-<tr><th>Объект</th><th>Личные/мин</th><th>Почему всё равно важен</th></tr>
-<tr><td>Склад вооружения</td><td>120</td><td>Урон войск +15%; получаемый урон −15%.</td></tr>
-<tr><td>Котельная</td><td>120</td><td>Необходимое время контроля объекта −50%.</td></tr>
-<tr><td>Транзитная станция</td><td>120</td><td>Перезарядка бесплатного продвинутого телепорта −50%.</td></tr>
-<tr><td>Лагерь наёмников</td><td>120</td><td>Позволяет отправлять до 4 ударных отрядов по вражеским зданиям; волны усиливаются и ослабляют атаку/защиту врага.</td></tr>
-</table>
+<h2 id="service-objects">6. Служебные объекты: мало очков, много пользы</h2>
+<p class="body-p">Все четыре дают лишь <b>120 личных очков/мин</b>. Их смысл — создать преимущество для всей команды.</p>
+<div class="service-grid">
+  <section class="service-card"><img src="../../assets/guides/foundry/warehouse.webp" alt="Склад вооружения" loading="lazy"/><div class="body"><h3>Склад вооружения</h3><span class="effect">+15% урона · −15% входящего урона</span><p>Прямой боевой бонус. В плотном матче может быть важнее любого объекта, приносящего очки.</p></div></section>
+  <section class="service-card"><img src="../../assets/guides/foundry/boiler.webp" alt="Котельная" loading="lazy"/><div class="body"><h3>Котельная</h3><span class="effect">Время контроля объекта −50%</span><p>Ускоряет превращение захвата в полноценное владение. Особенно полезна при частых перехватах.</p></div></section>
+  <section class="service-card"><img src="../../assets/guides/foundry/transit.webp" alt="Центральная транзитная станция" loading="lazy"/><div class="body"><h3>Транзитная станция</h3><span class="effect">Откат бесплатного телепорта −50%</span><p>Повышает мобильность всей команды: быстрее меняем фланг, подкрепляем объект и выходим из фокуса.</p></div></section>
+  <section class="service-card"><img src="../../assets/guides/foundry/merc.webp" alt="Лагерь наёмников" loading="lazy"/><div class="body"><h3>Лагерь наёмников</h3><span class="effect">До 4 ударных отрядов по зданиям</span><p>Инструмент давления на плотный гарнизон. Нужен не ради 120/мин, а чтобы открыть дорогу к более ценному объекту.</p></div></section>
 </div>
+<div class="fy-section-lead orange"><strong>Главная ошибка по объектам</strong>Сравнивать Склад с Ремонтником только как <b>120 против 300</b>. Личная доходность — лишь одна метрика. Если +15% урона помогает команде забрать Литейную и два Прототипа, Склад окупается многократно.</div>
 
-<aside class="callout">
-  <strong>Вывод</strong>
-  <p>Если задача — только личный пассив, служебный объект хуже Ремонтника в 2,5 раза, Прототипа в 5 раз и Литейной в 7,5 раза. Но для победы команды эти здания могут быть важнее чистых очков.</p>
-</aside>
-
-<div class="foundry-shot-grid">
-  <figure class="foundry-shot"><img src="../../assets/guides/foundry/warehouse.webp" alt="Склад вооружения" loading="lazy"/><figcaption><b>Склад вооружения</b>: +15% наносимого урона, −15% получаемого.</figcaption></figure>
-  <figure class="foundry-shot"><img src="../../assets/guides/foundry/boiler.webp" alt="Котельная" loading="lazy"/><figcaption><b>Котельная</b>: время контроля объекта −50%.</figcaption></figure>
-  <figure class="foundry-shot"><img src="../../assets/guides/foundry/transit.webp" alt="Центральная транзитная станция" loading="lazy"/><figcaption><b>Транзитная станция</b>: перезарядка бесплатного продвинутого телепорта −50%.</figcaption></figure>
-  <figure class="foundry-shot"><img src="../../assets/guides/foundry/merc.webp" alt="Лагерь наёмников" loading="lazy"/><figcaption><b>Лагерь наёмников</b>: до четырёх ударных отрядов по вражеским зданиям.</figcaption></figure>
+<h2 id="workshops">7. Оружейные мастерские: свободный марш тоже должен работать</h2>
+<div class="workshop-split">
+  <figure class="foundry-figure"><img src="../../assets/guides/foundry/workshop.webp" alt="Оружейная мастерская: вместимость 4 800 и время сбора 20 минут" loading="lazy"/><figcaption>Оружейная мастерская: 4 800 очков за 20 минут сбора.</figcaption></figure>
+  <div class="metric-box"><h3>Экономика одной плитки</h3><span class="metric">240/мин</span><div class="formula">4 800 ÷ 20 минут = 240 очков Арсенала/мин</div><p>Мастерская хуже хорошего гарнизона, но лучше марша, который просто стоит в городе.</p><p><b>Приоритет:</b> критический гарнизон → выгодный гарнизон на объекте, приносящем очки → мастерская → бездействие.</p></div>
 </div>
-
-<h2 id="workshops">6. Оружейные мастерские: что выгоднее «копать»</h2>
-<p class="body-p">Оружейная мастерская имеет вместимость <b>4 800</b> и время сбора <b>20:00</b>. Это даёт ориентир <b>240 очков Арсенала в минуту</b> непрерывного сбора одной полной плитки.</p>
-
-<figure class="foundry-figure">
-  <img src="../../assets/guides/foundry/workshop.webp" alt="Оружейная мастерская: вместимость 4 800, время сбора 20 минут" loading="lazy"/>
-  <figcaption>Оружейная мастерская: 4 800 очков за 20 минут сбора.</figcaption>
-</figure>
-
 <ul class="bullets">
-  <li>Плитки особенно полезны для свободных маршей: они дают очки без необходимости штурмовать или удерживать стационарный объект.</li>
-  <li>Если хороший очковый объект уже занят союзниками, свободный марш лучше отправить собирать 4 800, чем держать его без дела.</li>
-  <li>При равной безопасности приоритет для AFK остаётся за гарнизоном Литейной / Прототипа / Ремонтника; мастерские — способ монетизировать лишние марши и паузы между боями.</li>
+  <li>Если хорошие стационарные объекты уже заполнены союзниками, отправляем свободные марши собирать мастерские.</li>
+  <li>Не снимаем ради плитки марш с критического гарнизона, который приносит больше очков или держит командный бонус.</li>
+  <li>Мастерские особенно удобны в паузах между боями и для игроков, которые не могут постоянно микроконтролить карту.</li>
 </ul>
 
-<aside class="callout">
-  <strong>Практическое правило</strong>
-  <p>Не держите свободный марш в городе, если рядом безопасно лежит мастерская. Но не снимайте ради плитки марш с критического гарнизона, который приносит больше очков или держит важный командный бонус.</p>
-</aside>
-
-<h2 id="mercs">7. Наёмники: зачем они нужны против Литейной</h2>
-<p class="body-p">Лагерь наёмников — не источник высокого пассивного дохода, а инструмент давления. После его захвата можно отправлять по занятым врагом зданиям до четырёх ударных отрядов. Новые волны наносят всё больше урона и одновременно снижают атаку и защиту противника.</p>
-
-<div class="foundry-shot-grid">
-  <figure class="foundry-shot"><img src="../../assets/guides/foundry/merc.webp" alt="Полная карточка Лагеря наёмников" loading="lazy"/><figcaption>Лагерь наёмников и его командный эффект.</figcaption></figure>
-  <figure class="foundry-shot"><img src="../../assets/guides/foundry/merc-mail.webp" alt="Отчёт атаки наёмников: 123 тяжелораненых из 1226" loading="lazy"/><figcaption>Пример удара: 123 тяжелораненых из 1 226 войск гарнизона.</figcaption></figure>
+<h2 id="mercs">8. Наёмники: размягчить гарнизон перед атакой</h2>
+<div class="merc-split">
+  <figure class="foundry-figure"><img src="../../assets/guides/foundry/merc-mail.webp" alt="Отчёт удара наёмников по гарнизону" loading="lazy"/><figcaption>Один зафиксированный удар: 123 тяжелораненых из 1 226 войск. Это пример конкретной волны, а не универсальная формула.</figcaption></figure>
+  <div>
+    <div class="fy-section-lead orange" style="margin-top:0"><strong>Наёмники — не фармилка</strong>Сам Лагерь даёт всего 120 личных/мин. Его задача — помочь отобрать объект, который стоит гораздо дороже по очкам или по командному эффекту.</div>
+    <div class="merc-flow"><div><b>1. Захватили Лагерь</b>Получили доступ к ударным отрядам.</div><div><b>2. Давим гарнизон</b>До четырёх волн ослабляют занятое врагом здание.</div><div><b>3. Входим сами</b>После размягчения отправляем атаку или ралли.</div></div>
+  </div>
 </div>
-
 <ul class="bullets">
-  <li>Один зафиксированный удар дал 123 тяжелораненых из 1 226 — примерно 10%. Это пример конкретной атаки, а не универсальная формула для всех волн.</li>
-  <li>Главная задача наёмников — размягчить сильный гарнизон перед вашей атакой или ралли.</li>
-  <li>Особенно логично использовать их против центральной Литейной или другого объекта, который противник держит плотным гарнизоном.</li>
-  <li>Сам Лагерь даёт только 120 личных/мин, но его влияние может помочь отобрать объект, приносящий 600–900 личных/мин и значительно больше командных.</li>
+  <li>Особенно логично использовать наёмников против центральной Литейной и других плотно забитых гарнизонов.</li>
+  <li>Новые волны усиливаются и одновременно снижают атаку/защиту противника.</li>
+  <li>Удар наёмников — подготовка к вашей атаке, а не замена нормальному PvP.</li>
 </ul>
 
-<h2 id="combat">8. Телепорты, движение, очки за бой и лечение</h2>
-<ul class="bullets">
-  <li>Транзитная станция сокращает восстановление бесплатного продвинутого телепорта на 50% — это напрямую повышает мобильность команды.</li>
-  <li>Не телепортируйтесь к объекту без плана выхода и без понимания, кто вас прикроет.</li>
-  <li>Событийные ускорения марша и телепорты тратьте ради захвата, подкрепления или выхода из фокуса, а не просто ради скорости.</li>
-  <li>Войска на Литейной не погибают и восстанавливаются после завершения боя. Поэтому универсальные и лечебные ускорения — командное стратегическое решение, а не обязательная трата.</li>
-</ul>
+<h2 id="combat">9. Телепорты, бой и лечение</h2>
+<div class="resource-grid">
+  <div class="resource-card"><span class="ico">🌀</span><b>Телепорт</b><p>Тратим ради смены фланга, захвата, подкрепления или выхода из фокуса. Транзит сокращает откат бесплатного продвинутого телепорта на 50%.</p></div>
+  <div class="resource-card"><span class="ico">💨</span><b>Ускорение марша</b><p>Используем, когда несколько секунд реально меняют захват или успеваем закрыть гарнизон перед ударом.</p></div>
+  <div class="resource-card"><span class="ico">🏥</span><b>Лечение</b><p>Войска на Литейной не погибают окончательно и восстанавливаются после события. Большие траты ускорений лечения — командное решение, а не автоматическая обязанность.</p></div>
+</div>
+<div class="fy-section-lead red"><strong>Личные очки от PvP</strong>За одного и того же побеждённого противника <b>в атаке начисляется в 2 раза больше личных очков, чем в защите</b>. Активному игроку выгодно атаковать, когда это не ломает командную задачу. Специально отдавать важный объект ради перезахвата или личного рейтинга не нужно.</div>
+<div class="fy-links"><a href="../combat/pvp-objects.html#sync">⏱️ Синхронизация ударов и подкреплений</a><a href="../combat/combat-system.html#report">📊 Как читать боевой отчёт</a></div>
 
-<aside class="callout">
-  <strong>Личные очки от боя</strong>
-  <p><b>В атаке за одного и того же побеждённого противника начисляется в 2 раза больше личных очков, чем в защите.</b> Поэтому активному игроку выгоднее самому атаковать, когда это не мешает командной задаче. Специально отдавать важный объект ради перезахвата или личного рейтинга не стоит.</p>
-</aside>
+<h2 id="plan">10. Алгоритм матча</h2>
+<ol class="match-plan">
+  <li><b>На старте</b> быстро занимаем свободные внешние объекты. Пустая цель не требует долгого ралли.</li>
+  <li><b>Разделяем марши:</b> сильные — в активный PvP, остальные — в лучшие доступные гарнизоны для пассивного дохода.</li>
+  <li><b>Для личного пассива:</b> Литейная → Прототипы → Ремонтники → служебные объекты.</li>
+  <li><b>Свободный марш</b> отправляем в Оружейную мастерскую, если он не нужен на более выгодном или критическом объекте.</li>
+  <li><b>Склад, Котельную, Транзит и Наёмников</b> оцениваем по влиянию на команду, а не по их 120 личным/мин.</li>
+  <li><b>Наёмниками</b> размягчаем плотный гарнизон перед собственной атакой или ралли.</li>
+  <li><b>После смены владельца</b> проверяем припасы Арсенала вокруг объекта и сразу подбираем их.</li>
+  <li><b>После захвата</b> не оставляем атакующие первые навыки в защите: сразу меняем первых героев присоединения на защитных.</li>
+  <li><b>Телепорты, лечение и ускорения</b> тратим там, где они реально меняют результат матча.</li>
+</ol>
+<div class="fy-section-lead green"><strong>Самая короткая памятка</strong>Нужны личные очки — держите самые дорогие по пассиву объекты. Нужна победа — контролируйте служебные бонусы и своевременно перестраивайте марши. Свободный марш без задачи — почти всегда упущенные очки.</div>
 
-<h2 id="plan">9. Короткий план матча</h2>
-<p class="body-p">1. На старте быстро занимайте доступные внешние объекты и не ждите ралли для пустых целей.</p>
-<p class="body-p">2. Сильные марши — в активную атаку: атакующий получает в 2 раза больше личных очков за побеждённого противника, чем защитник. Остальные марши — в гарнизоны лучших доступных объектов для пассивного набора очков.</p>
-<p class="body-p">3. Для пассивного фарма приоритет: Литейная → Прототипы → Ремонтники → служебные объекты.</p>
-<p class="body-p">4. Свободные марши направляйте в Оружейные мастерские, если они не нужны для более прибыльного или критического гарнизона.</p>
-<p class="body-p">5. Склад, Котельную, Транзит и Лагерь наёмников оценивайте по командному эффекту, а не по их 120 личным очкам/мин.</p>
-<p class="body-p">6. Наёмниками ослабляйте плотные вражеские гарнизоны перед атакой.</p>
-<p class="body-p">7. После смены владельца объекта подбирайте выпавшие припасы Арсенала и не отдавайте их противнику.</p>
-<p class="body-p">8. Телепорты, лечение и ускорения тратьте только там, где они реально меняют результат боя.</p>
-
-<aside class="callout">
-  <strong>Самая короткая памятка</strong>
-  <p>Нужны личные очки — держите самые дорогие по личному пассиву объекты. Нужна победа — не игнорируйте низкоочковые служебные здания, потому что их бонусы меняют весь бой. Свободный марш без задачи — почти всегда упущенные очки.</p>
-</aside>
+<div class="related-lite"><h3>Связанные руководства</h3><div class="fy-links"><a href="../combat/pvp-objects.html">🩸 PvP за объекты</a><a href="../combat/combat-system.html">⚔️ Боевая система</a><a href="../combat/heroes.html">🧬 Герои</a><a href="../combat/hero-gear.html">🛡️ Снаряжение героев</a></div></div>
 </article>
-
-
 </main>
 
 <a class="back-top" href="#" id="backTop">↑</a>
@@ -239,16 +227,8 @@
 <a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a>
 <button data-search-open=""><span class="ico">🔎</span><span>Поиск</span></button>
 </nav>
-
-<div class="search-modal" id="searchModal">
-<div class="search-box">
-<div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: Флинт, КО, Литейная…" type="search"/><button class="search-close" data-search-close="">×</button></div>
-<div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div>
-</div>
-</div>
-
+<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: Литейная, гарнизон, телепорт…" type="search"/><button class="search-close" data-search-close="">×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
 <script src="../../assets/js/search-index.js?v=34"></script>
 <script src="../../assets/js/app.js?v=24"></script>
-
 </body>
 </html>
