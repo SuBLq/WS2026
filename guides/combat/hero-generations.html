@@ -26,38 +26,37 @@
 .section-intro{margin:0 0 11px;color:#466475;font-size:12.5px;line-height:1.55}
 .generation-master-wrap{margin:12px 0 18px;border:1px solid #d7e5ec;border-radius:17px;background:#fff;overflow:hidden;box-shadow:0 5px 18px rgba(28,91,120,.04)}
 .generation-master-scroll{overflow-x:auto}
-.generation-master{width:100%;min-width:790px;border-collapse:collapse}
+.generation-master{width:100%;min-width:790px;border-collapse:separate;border-spacing:0}
 .generation-master thead th{padding:10px 11px;background:#edf5f8;color:#28586f;font-size:11px;text-align:left;border-bottom:1px solid #d7e5ec;white-space:nowrap}
-.generation-master td{padding:10px 11px;border-bottom:1px solid #e8eff2;vertical-align:middle;color:#365769;font-size:11.5px;line-height:1.4}
+.generation-master td{padding:10px 11px;border-bottom:1px solid #e8eff2;vertical-align:middle;color:#365769;font-size:11.5px;line-height:1.4;background:#fff}
 .generation-divider th{padding:11px 12px;background:linear-gradient(90deg,#e9f5fa,#f7fbfd);color:#125f84;text-align:left;font-size:13px;letter-spacing:.01em;border-top:1px solid #d5e6ed;border-bottom:1px solid #d5e6ed}
 .generation-divider:first-child th{border-top:0}
-.hero-status{width:185px;border-left:5px solid transparent}
-.hero-status strong{display:block;font-size:12px;margin-bottom:3px}
-.hero-status span{display:block;font-size:9.8px;font-weight:800;line-height:1.2}
-.hero-status-need{background:#eaf7ef;border-left-color:#2b9b5e;color:#086b3e!important}
-.hero-status-maybe{background:#fff6e8;border-left-color:#d88918;color:#8b4e00!important}
-.hero-status-no{background:#fff0ef;border-left-color:#d9534f;color:#99241f!important}
-.hero-status-bad{background:#171d22;border-left-color:#050708;color:#fff!important}
-.hero-status-bad strong,.hero-status-bad span{color:#fff}
+.hero-status{width:220px;padding:8px 10px;background:transparent}
+.hero-line{display:inline-flex;align-items:center;max-width:100%;min-height:34px;padding:7px 12px;border-radius:14px;border:1px solid transparent;font-size:11.2px;font-weight:800;line-height:1.2;box-shadow:inset 0 1px 0 rgba(255,255,255,.18);white-space:nowrap;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.hero-line-name{font-weight:900}
+.hero-line-status{font-weight:800}
+.hero-line-need{background:rgba(25,148,86,.14);border-color:rgba(25,148,86,.38);color:#087342}
+.hero-line-maybe{background:rgba(216,137,24,.15);border-color:rgba(216,137,24,.40);color:#9a5500}
+.hero-line-no{background:rgba(211,73,68,.13);border-color:rgba(211,73,68,.38);color:#a5261f}
+.hero-line-bad{background:rgba(23,29,34,.12);border-color:rgba(23,29,34,.32);color:#171d22}
 .stats-cell,.stars-cell{white-space:nowrap}
 .source-note{border:1px solid #d8e7ee;border-radius:15px;background:#f7fbfd;padding:13px 14px;margin:12px 0 16px;color:#3d5e70;font-size:12px;line-height:1.5}
 .source-note strong{display:block;color:#145f82;margin-bottom:4px}
-@media(max-width:760px){.rank-legend{grid-template-columns:1fr 1fr}.generation-master{min-width:720px}.hero-status{width:170px}}
+@media(max-width:760px){.rank-legend{grid-template-columns:1fr 1fr}.generation-master{min-width:720px}.hero-status{width:205px;padding:8px}.hero-line{font-size:10.8px;padding:7px 10px}}
 html[data-theme="dark"] .gen-disclaimer,html[data-theme="dark"] .legend-item,html[data-theme="dark"] .generation-master-wrap,html[data-theme="dark"] .source-note{background:linear-gradient(145deg,#0d334f,#0a2942);border-color:#26536e;color:#bfd3df}
 html[data-theme="dark"] .gen-disclaimer strong,html[data-theme="dark"] .source-note strong{color:#8ce1ff}
 html[data-theme="dark"] .legend-item p{color:#a9bfcc}
 html[data-theme="dark"] .generation-master thead th{background:#10344c;color:#b9d9e8;border-color:#28526a}
-html[data-theme="dark"] .generation-master td{color:#bfd3df;border-color:#244a60}
+html[data-theme="dark"] .generation-master td{color:#bfd3df;border-color:#244a60;background:#0b2d44}
 html[data-theme="dark"] .generation-divider th{background:linear-gradient(90deg,#123b55,#0b2d44);color:#8ce1ff;border-color:#28526a}
-html[data-theme="dark"] .hero-status-need{background:#123f32;color:#89e6b6!important;border-left-color:#42bd78}
-html[data-theme="dark"] .hero-status-maybe{background:#4a3518;color:#ffd38d!important;border-left-color:#e3a13d}
-html[data-theme="dark"] .hero-status-no{background:#4b2525;color:#ffaaa5!important;border-left-color:#e06661}
-html[data-theme="dark"] .hero-status-bad{background:#050708;color:#fff!important;border-left-color:#68747c}
 html[data-theme="dark"] .rank-need{background:#123f32;color:#89e6b6;border-color:#266a51}
 html[data-theme="dark"] .rank-maybe{background:#4a3518;color:#ffd38d;border-color:#785625}
 html[data-theme="dark"] .rank-no{background:#4b2525;color:#ffaaa5;border-color:#7d3937}
 html[data-theme="dark"] .rank-bad{background:#050708;color:#fff;border-color:#48545c}
-html[data-theme="dark"] 
+html[data-theme="dark"] .hero-line-need{background:rgba(66,189,120,.16);border-color:rgba(66,189,120,.42);color:#8fe7b8}
+html[data-theme="dark"] .hero-line-maybe{background:rgba(227,161,61,.16);border-color:rgba(227,161,61,.42);color:#ffd38d}
+html[data-theme="dark"] .hero-line-no{background:rgba(224,102,97,.15);border-color:rgba(224,102,97,.40);color:#ffaaa5}
+html[data-theme="dark"] .hero-line-bad{background:rgba(255,255,255,.07);border-color:rgba(180,195,205,.24);color:#e5edf2}
 </style>
 <script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
 </head>
@@ -85,28 +84,28 @@ html[data-theme="dark"]
 <tbody>
 <tr class="generation-divider" id="g1"><th colspan="5">Поколение 1</th></tr>
 <tr class="hero-row hero-row-need">
-<td class="hero-status hero-status-need"><strong>Молли</strong><span>Нужен</span></td>
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Молли</span><span class="hero-line-status">, нужен</span></div></td>
 <td>Бесплатно</td>
 <td>Копейщики</td>
 <td class="stats-cell">200,16% / 200,16%</td>
 <td class="stars-cell">Качается естественно</td>
 </tr>
 <tr class="hero-row hero-row-no">
-<td class="hero-status hero-status-no"><strong>Зинман</strong><span>Не нужен</span></td>
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Зинман</span><span class="hero-line-status">, не нужен</span></div></td>
 <td>Колесо</td>
 <td>Лучники</td>
 <td class="stats-cell">200,16% / 200,16%</td>
 <td class="stars-cell">3★; дальше не гнаться</td>
 </tr>
 <tr class="hero-row hero-row-bad">
-<td class="hero-status hero-status-bad"><strong>Наталия</strong><span>Плохое вложение</span></td>
+<td class="hero-status hero-status-bad"><div class="hero-line hero-line-bad"><span class="hero-line-name">Наталия</span><span class="hero-line-status">, плохое вложение</span></div></td>
 <td>Первый платёж / VIP</td>
 <td>Пехота</td>
 <td class="stats-cell">200,16% / 200,16%</td>
 <td class="stars-cell">Актуальна только для китов</td>
 </tr>
 <tr class="hero-row hero-row-bad">
-<td class="hero-status hero-status-bad"><strong>Джеронимо</strong><span>Плохое вложение</span></td>
+<td class="hero-status hero-status-bad"><div class="hero-line hero-line-bad"><span class="hero-line-name">Джеронимо</span><span class="hero-line-status">, плохое вложение</span></div></td>
 <td>VIP</td>
 <td>Пехота</td>
 <td class="stats-cell">260,20% / 260,20%</td>
@@ -114,21 +113,21 @@ html[data-theme="dark"]
 </tr>
 <tr class="generation-divider" id="g2"><th colspan="5">Поколение 2</th></tr>
 <tr class="hero-row hero-row-need">
-<td class="hero-status hero-status-need"><strong>Флинт</strong><span>Нужен</span></td>
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Флинт</span><span class="hero-line-status">, нужен</span></div></td>
 <td>Колесо Фортуны</td>
 <td>Пехота</td>
 <td class="stats-cell">240,19% / 240,19%</td>
 <td class="stars-cell">5★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Алонсо</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Алонсо</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Зал Героев</td>
 <td>Лучники</td>
 <td class="stats-cell">240,19% / 240,19%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-no">
-<td class="hero-status hero-status-no"><strong>Филли</strong><span>Не нужен</span></td>
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Филли</span><span class="hero-line-status">, не нужен</span></div></td>
 <td>Донат / ивенты</td>
 <td>Копейщики</td>
 <td class="stats-cell">240,19% / 240,19%</td>
@@ -136,21 +135,21 @@ html[data-theme="dark"]
 </tr>
 <tr class="generation-divider" id="g3"><th colspan="5">Поколение 3</th></tr>
 <tr class="hero-row hero-row-need">
-<td class="hero-status hero-status-need"><strong>Мия</strong><span>Нужен</span></td>
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Мия</span><span class="hero-line-status">, нужен</span></div></td>
 <td>Колесо Фортуны</td>
 <td>Копейщики</td>
 <td class="stats-cell">290,23% / 290,23%</td>
 <td class="stars-cell">5★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Грег</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Грег</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Зал Героев</td>
 <td>Лучники</td>
 <td class="stats-cell">290,23% / 290,23%</td>
 <td class="stars-cell">3★ → 4★</td>
 </tr>
 <tr class="hero-row hero-row-no">
-<td class="hero-status hero-status-no"><strong>Логан</strong><span>Не нужен</span></td>
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Логан</span><span class="hero-line-status">, не нужен</span></div></td>
 <td>Донат / ивенты</td>
 <td>Пехота</td>
 <td class="stats-cell">290,23% / 290,23%</td>
@@ -158,21 +157,21 @@ html[data-theme="dark"]
 </tr>
 <tr class="generation-divider" id="g4"><th colspan="5">Поколение 4</th></tr>
 <tr class="hero-row hero-row-need">
-<td class="hero-status hero-status-need"><strong>Линн</strong><span>Нужен</span></td>
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Линн</span><span class="hero-line-status">, нужен</span></div></td>
 <td>Колесо Фортуны</td>
 <td>Лучники</td>
 <td class="stats-cell">370,29% / 370,29%</td>
 <td class="stars-cell">4★ → 5★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Рейна</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Рейна</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Зал Героев</td>
 <td>Копейщики</td>
 <td class="stats-cell">370,29% / 370,29%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-no">
-<td class="hero-status hero-status-no"><strong>Ахмос</strong><span>Не нужен</span></td>
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Ахмос</span><span class="hero-line-status">, не нужен</span></div></td>
 <td>Донат / ивенты</td>
 <td>Пехота</td>
 <td class="stats-cell">370,29% / 370,29%</td>
@@ -180,21 +179,21 @@ html[data-theme="dark"]
 </tr>
 <tr class="generation-divider" id="g5"><th colspan="5">Поколение 5</th></tr>
 <tr class="hero-row hero-row-need">
-<td class="hero-status hero-status-need"><strong>Гектор</strong><span>Нужен</span></td>
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Гектор</span><span class="hero-line-status">, нужен</span></div></td>
 <td>Колесо Фортуны</td>
 <td>Пехота</td>
 <td class="stats-cell">444,35% / 444,35%</td>
 <td class="stars-cell">5★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Гвен</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Гвен</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Зал Героев</td>
 <td>Лучники</td>
 <td class="stats-cell">444,35% / 444,35%</td>
 <td class="stars-cell">3★ → 4★</td>
 </tr>
 <tr class="hero-row hero-row-no">
-<td class="hero-status hero-status-no"><strong>Нора</strong><span>Не нужен</span></td>
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Нора</span><span class="hero-line-status">, не нужен</span></div></td>
 <td>Донат / ивенты</td>
 <td>Копейщики</td>
 <td class="stats-cell">444,35% / 444,35%</td>
@@ -202,21 +201,21 @@ html[data-theme="dark"]
 </tr>
 <tr class="generation-divider" id="g6"><th colspan="5">Поколение 6</th></tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Рене</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Рене</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Колесо Фортуны</td>
 <td>Копейщики</td>
 <td class="stats-cell">540,43% / 540,43%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>У Мин</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">У Мин</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Зал Героев</td>
 <td>Пехота</td>
 <td class="stats-cell">540,43% / 540,43%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-no">
-<td class="hero-status hero-status-no"><strong>Уэйн</strong><span>Не нужен</span></td>
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Уэйн</span><span class="hero-line-status">, не нужен</span></div></td>
 <td>Донат / ивенты</td>
 <td>Лучники</td>
 <td class="stats-cell">540,43% / 540,43%</td>
@@ -224,21 +223,21 @@ html[data-theme="dark"]
 </tr>
 <tr class="generation-divider" id="g7"><th colspan="5">Поколение 7</th></tr>
 <tr class="hero-row hero-row-need">
-<td class="hero-status hero-status-need"><strong>Брэдли</strong><span>Нужен</span></td>
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Брэдли</span><span class="hero-line-status">, нужен</span></div></td>
 <td>Колесо Фортуны</td>
 <td>Лучники</td>
 <td class="stats-cell">650,52% / 650,52%</td>
 <td class="stars-cell">5★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Эдит</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Эдит</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Донат / ивенты</td>
 <td>Пехота</td>
 <td class="stats-cell">650,52% / 650,52%</td>
 <td class="stars-cell">3★ → 4★</td>
 </tr>
 <tr class="hero-row hero-row-no">
-<td class="hero-status hero-status-no"><strong>Гордон</strong><span>Не нужен</span></td>
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Гордон</span><span class="hero-line-status">, не нужен</span></div></td>
 <td>Зал Героев</td>
 <td>Копейщики</td>
 <td class="stats-cell">650,52% / 650,52%</td>
@@ -246,21 +245,21 @@ html[data-theme="dark"]
 </tr>
 <tr class="generation-divider" id="g8"><th colspan="5">Поколение 8</th></tr>
 <tr class="hero-row hero-row-need">
-<td class="hero-status hero-status-need"><strong>Гатот</strong><span>Нужен</span></td>
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Гатот</span><span class="hero-line-status">, нужен</span></div></td>
 <td>Колесо Фортуны</td>
 <td>Пехота</td>
 <td class="stats-cell">780,62% / 780,62%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Соня</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Соня</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Донат / ивенты</td>
 <td>Копейщики</td>
 <td class="stats-cell">780,62% / 780,62%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-no">
-<td class="hero-status hero-status-no"><strong>Хендрик</strong><span>Не нужен</span></td>
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Хендрик</span><span class="hero-line-status">, не нужен</span></div></td>
 <td>Зал Героев</td>
 <td>Лучники</td>
 <td class="stats-cell">780,62% / 780,62%</td>
@@ -268,21 +267,21 @@ html[data-theme="dark"]
 </tr>
 <tr class="generation-divider" id="g9"><th colspan="5">Поколение 9</th></tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Фред</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Фред</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Колесо Фортуны</td>
 <td>Копейщики</td>
 <td class="stats-cell">940,75% / 940,75%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Магнус</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Магнус</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Зал Героев</td>
 <td>Пехота</td>
 <td class="stats-cell">940,75% / 940,75%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-no">
-<td class="hero-status hero-status-no"><strong>Ксура</strong><span>Не нужен</span></td>
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Ксура</span><span class="hero-line-status">, не нужен</span></div></td>
 <td>Донат / ивенты</td>
 <td>Лучники</td>
 <td class="stats-cell">940,75% / 940,75%</td>
@@ -290,21 +289,21 @@ html[data-theme="dark"]
 </tr>
 <tr class="generation-divider" id="g10"><th colspan="5">Поколение 10</th></tr>
 <tr class="hero-row hero-row-need">
-<td class="hero-status hero-status-need"><strong>Бланшетт</strong><span>Нужен</span></td>
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Бланшетт</span><span class="hero-line-status">, нужен</span></div></td>
 <td>Колесо Фортуны</td>
 <td>Лучники</td>
 <td class="stats-cell">1 110,88% / 1 110,88%</td>
 <td class="stars-cell">5★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Фрейя</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Фрейя</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Зал Героев</td>
 <td>Копейщики</td>
 <td class="stats-cell">1 110,88% / 1 110,88%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-no">
-<td class="hero-status hero-status-no"><strong>Грегори</strong><span>Не нужен</span></td>
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Грегори</span><span class="hero-line-status">, не нужен</span></div></td>
 <td>Донат / ивенты</td>
 <td>Пехота</td>
 <td class="stats-cell">1 110,88% / 1 110,88%</td>
@@ -312,21 +311,21 @@ html[data-theme="dark"]
 </tr>
 <tr class="generation-divider" id="g11"><th colspan="5">Поколение 11</th></tr>
 <tr class="hero-row hero-row-need">
-<td class="hero-status hero-status-need"><strong>Элеонора</strong><span>Нужен</span></td>
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Элеонора</span><span class="hero-line-status">, нужен</span></div></td>
 <td>Колесо Фортуны</td>
 <td>Пехота</td>
 <td class="stats-cell">1 281,02% / 1 281,02%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Руфус</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Руфус</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Зал Героев</td>
 <td>Лучники</td>
 <td class="stats-cell">1 281,02% / 1 281,02%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-no">
-<td class="hero-status hero-status-no"><strong>Ллойд</strong><span>Не нужен</span></td>
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Ллойд</span><span class="hero-line-status">, не нужен</span></div></td>
 <td>Донат / ивенты</td>
 <td>Копейщики</td>
 <td class="stats-cell">1 281,02% / 1 281,02%</td>
@@ -334,21 +333,21 @@ html[data-theme="dark"]
 </tr>
 <tr class="generation-divider" id="g12"><th colspan="5">Поколение 12</th></tr>
 <tr class="hero-row hero-row-need">
-<td class="hero-status hero-status-need"><strong>Карол</strong><span>Нужен</span></td>
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Карол</span><span class="hero-line-status">, нужен</span></div></td>
 <td>Колесо Фортуны</td>
 <td>Копейщики</td>
 <td class="stats-cell">1 451,16% / 1 451,16%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Хервор</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Хервор</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Зал Героев</td>
 <td>Пехота</td>
 <td class="stats-cell">1 451,16% / 1 451,16%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-no">
-<td class="hero-status hero-status-no"><strong>Лигея</strong><span>Не нужен</span></td>
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Лигея</span><span class="hero-line-status">, не нужен</span></div></td>
 <td>Донат / ивенты</td>
 <td>Лучники</td>
 <td class="stats-cell">1 451,16% / 1 451,16%</td>
@@ -356,21 +355,21 @@ html[data-theme="dark"]
 </tr>
 <tr class="generation-divider" id="g13"><th colspan="5">Поколение 13</th></tr>
 <tr class="hero-row hero-row-need">
-<td class="hero-status hero-status-need"><strong>Вулканус</strong><span>Нужен</span></td>
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Вулканус</span><span class="hero-line-status">, нужен</span></div></td>
 <td>Колесо Фортуны</td>
 <td>Лучники</td>
 <td class="stats-cell">1 621,29% / 1 621,29%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Гизела</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Гизела</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Донат / ивенты</td>
 <td>Пехота</td>
 <td class="stats-cell">1 621,29% / 1 621,29%</td>
 <td class="stars-cell">3★ → 4★</td>
 </tr>
 <tr class="hero-row hero-row-no">
-<td class="hero-status hero-status-no"><strong>Флора</strong><span>Не нужен</span></td>
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Флора</span><span class="hero-line-status">, не нужен</span></div></td>
 <td>Зал Героев</td>
 <td>Копейщики</td>
 <td class="stats-cell">1 621,29% / 1 621,29%</td>
@@ -378,21 +377,21 @@ html[data-theme="dark"]
 </tr>
 <tr class="generation-divider" id="g14"><th colspan="5">Поколение 14</th></tr>
 <tr class="hero-row hero-row-need">
-<td class="hero-status hero-status-need"><strong>Кара</strong><span>Нужен</span></td>
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Кара</span><span class="hero-line-status">, нужен</span></div></td>
 <td>Колесо Фортуны</td>
 <td>Лучники</td>
 <td class="stats-cell">1 791,43% / 1 791,43%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Элиф</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Элиф</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Зал Героев</td>
 <td>Пехота</td>
 <td class="stats-cell">1 791,43% / 1 791,43%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-no">
-<td class="hero-status hero-status-no"><strong>Доминик</strong><span>Не нужен</span></td>
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Доминик</span><span class="hero-line-status">, не нужен</span></div></td>
 <td>Донат / ивенты</td>
 <td>Копейщики</td>
 <td class="stats-cell">1 791,43% / 1 791,43%</td>
@@ -400,21 +399,21 @@ html[data-theme="dark"]
 </tr>
 <tr class="generation-divider" id="g15"><th colspan="5">Поколение 15</th></tr>
 <tr class="hero-row hero-row-need">
-<td class="hero-status hero-status-need"><strong>Эстрелла</strong><span>Нужен</span></td>
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Эстрелла</span><span class="hero-line-status">, нужен</span></div></td>
 <td>Колесо Фортуны</td>
 <td>Копейщики</td>
 <td class="stats-cell">1 961,56% / 1 961,56%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Хэнк</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Хэнк</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Зал Героев</td>
 <td>Пехота</td>
 <td class="stats-cell">1 961,56% / 1 961,56%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-no">
-<td class="hero-status hero-status-no"><strong>Вивека</strong><span>Не нужен</span></td>
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Вивека</span><span class="hero-line-status">, не нужен</span></div></td>
 <td>Донат / ивенты</td>
 <td>Лучники</td>
 <td class="stats-cell">1 961,56% / 1 961,56%</td>
@@ -422,21 +421,21 @@ html[data-theme="dark"]
 </tr>
 <tr class="generation-divider" id="g16"><th colspan="5">Поколение 16</th></tr>
 <tr class="hero-row hero-row-need">
-<td class="hero-status hero-status-need"><strong>Айслинг</strong><span>Нужен</span></td>
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Айслинг</span><span class="hero-line-status">, нужен</span></div></td>
 <td>Колесо Фортуны</td>
 <td>Лучники</td>
 <td class="stats-cell">2 131,70% / 2 131,70%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Урсар</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Урсар</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Зал Героев</td>
 <td>Копейщики</td>
 <td class="stats-cell">2 131,70% / 2 131,70%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Зигель</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Зигель</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Донат / ивенты</td>
 <td>Пехота</td>
 <td class="stats-cell">2 131,70% / 2 131,70%</td>
@@ -444,21 +443,21 @@ html[data-theme="dark"]
 </tr>
 <tr class="generation-divider" id="g17"><th colspan="5">Поколение 17</th></tr>
 <tr class="hero-row hero-row-need">
-<td class="hero-status hero-status-need"><strong>Эйден</strong><span>Нужен</span></td>
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Эйден</span><span class="hero-line-status">, нужен</span></div></td>
 <td>Колесо Фортуны</td>
 <td>Пехота</td>
 <td class="stats-cell">2 301,84% / 2 301,84%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Элеанор</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Элеанор</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Зал Героев</td>
 <td>Лучники</td>
 <td class="stats-cell">2 301,84% / 2 301,84%</td>
 <td class="stars-cell">4★</td>
 </tr>
 <tr class="hero-row hero-row-maybe">
-<td class="hero-status hero-status-maybe"><strong>Берта</strong><span>Нужен по возможности</span></td>
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Берта</span><span class="hero-line-status">, нужен по возможности</span></div></td>
 <td>Донат / ивенты</td>
 <td>Копейщики</td>
 <td class="stats-cell">2 301,84% / 2 301,84%</td>
