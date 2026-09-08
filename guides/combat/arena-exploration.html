@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#0f5f8f"/>
+<meta name="description" content="Арена и Освоение в Whiteout Survival: расстановка героев, логика целей, навыки и характеристики Освоения, экипировка, попытки, награды и магазин Арены."/>
+<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
+<link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
+<link href="../../assets/css/content.css?v=24" rel="stylesheet"/>
+<title>АРЕНА И ОСВОЕНИЕ · Whiteout Survival</title>
+<style>
+.arena-lead{display:grid;grid-template-columns:1.14fr .86fr;gap:14px;align-items:stretch;margin:14px 0 18px}
+.arena-lead-card{border:1px solid #d6e5ec;border-radius:17px;background:linear-gradient(145deg,#f3f9fc,#fff);padding:16px;box-shadow:0 5px 17px rgba(28,91,120,.05)}
+.arena-lead-card strong{display:block;color:#125f84;font-size:15px;margin-bottom:7px}.arena-lead-card p{margin:0;color:#35596c;font-size:13px;line-height:1.56}
+.arena-mini-figure{margin:0;border:1px solid #d7e5ec;border-radius:17px;background:#f6fafc;padding:8px;overflow:hidden}.arena-mini-figure>.arena-shot-media{border-radius:11px;overflow:hidden;background:#0b2d48}.arena-mini-figure>.arena-shot-media img{display:block;width:100%;height:auto;object-fit:cover;object-position:50% 45%}.arena-mini-figure figcaption{font-size:10.5px;line-height:1.42;color:#6b8190;padding:8px 4px 2px}
+.arena-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:13px 0 16px}.arena-shot{margin:0;border:1px solid #d7e5ec;border-radius:17px;padding:8px;background:linear-gradient(145deg,#f7fbfd,#fff);box-shadow:0 5px 16px rgba(28,91,120,.04);overflow:hidden}.arena-shot-media{position:relative;border-radius:12px;overflow:hidden;background:#0b2d48}.arena-shot img{display:block;width:100%;height:auto}.arena-shot figcaption{font-size:11px;line-height:1.48;color:#597383;padding:9px 5px 3px}.arena-shot figcaption b{color:#173f56}
+.arena-battle{margin:14px 0;border:1px solid #d7e5ec;border-radius:18px;background:linear-gradient(145deg,#f6fafc,#fff);padding:9px;overflow:hidden;box-shadow:0 5px 16px rgba(28,91,120,.04)}.arena-battle-window{position:relative;overflow:hidden;border-radius:12px;aspect-ratio:1152/1180;background:#0b2d48}.arena-battle-window>img{position:absolute;inset:0 auto auto 0;width:100%;height:auto;display:block}.arena-battle-window svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.arena-battle figcaption{font-size:11px;line-height:1.5;color:#597383;padding:9px 5px 3px}.arena-battle figcaption b{color:#173f56}
+.arena-principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0 15px}.arena-principle{border:1px solid #d8e7ee;background:#f8fbfd;border-radius:15px;padding:13px}.arena-principle b{display:block;color:#0f638c;font-size:12px;margin-bottom:5px}.arena-principle p{margin:0;font-size:11.5px;line-height:1.48;color:#496473}
+.arena-formation{display:grid;grid-template-columns:minmax(250px,.82fr) minmax(0,1.18fr);gap:15px;align-items:start;margin:13px 0 16px}.arena-formation figure{margin:0;border:1px solid #d7e5ec;border-radius:17px;background:#f7fbfd;padding:8px}.arena-formation figure img{display:block;width:100%;height:auto;border-radius:11px}.arena-formation figcaption{font-size:10.5px;line-height:1.45;color:#6b8190;padding:8px 4px 2px}.arena-formation-copy{display:grid;gap:9px}.arena-rule{border:1px solid #d8e7ee;border-radius:15px;padding:13px 14px;background:linear-gradient(145deg,#f5fafc,#fff);color:#35576a;font-size:12.5px;line-height:1.52}.arena-rule strong{display:block;color:#145f82;margin-bottom:4px}.arena-rule.warn{background:linear-gradient(145deg,#fff5e8,#fffaf3);border-color:#efd3aa;color:#654928}.arena-rule.warn strong{color:#9a571c}.arena-rule.good{background:linear-gradient(145deg,#ebf8f3,#f9fdfb);border-color:#cce8dc;color:#31594e}.arena-rule.good strong{color:#087350}
+.arena-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:12px 0 15px}.arena-hero-card{border:1px solid #d8e7ee;border-radius:16px;padding:14px;background:linear-gradient(145deg,#f6fafc,#fff)}.arena-hero-card h3{margin:0 0 7px;color:#173f56;font-size:16px}.arena-hero-card p{margin:0;color:#456476;font-size:12.5px;line-height:1.53}.hero-chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}.hero-chips span{border-radius:999px;background:#edf6fa;border:1px solid #d5e7ee;color:#235f7b;font-size:11px;font-weight:800;padding:5px 8px}
+.arena-economy{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:13px 0 16px}.arena-economy-card{border:1px solid #d8e7ee;border-radius:16px;background:#f8fbfd;padding:14px}.arena-economy-card b{display:block;color:#12648d;margin-bottom:5px}.arena-economy-card p{font-size:12px;line-height:1.5;color:#476779;margin:0}
+.arena-routine{counter-reset:arena;display:grid;gap:8px;margin:12px 0}.arena-routine div{counter-increment:arena;position:relative;padding:11px 12px 11px 46px;border:1px solid #dfe9ee;border-radius:14px;background:#fafcfd;color:#2f5062;font-size:12.5px;line-height:1.48}.arena-routine div:before{content:counter(arena);position:absolute;left:12px;top:11px;width:24px;height:24px;border-radius:8px;display:grid;place-items:center;background:#e2f2f8;color:#12688e;font-size:11px;font-weight:900}
+.arena-note{border:1px solid #cde3ec;background:linear-gradient(135deg,#edf8fc,#fbfdfe);border-radius:16px;padding:14px 15px;margin:13px 0;color:#31566a;font-size:12.5px;line-height:1.52}.arena-note strong{display:block;color:#0f638c;margin-bottom:5px}.arena-note.warn{background:linear-gradient(135deg,#fff4e4,#fffaf2);border-color:#efd4ac;color:#674a28}.arena-note.warn strong{color:#9b5515}
+@media(max-width:760px){.arena-lead,.arena-formation{grid-template-columns:1fr}.arena-compare,.arena-hero-grid,.arena-economy{grid-template-columns:1fr}.arena-principles{grid-template-columns:1fr}.arena-mini-figure img{max-height:none;object-fit:contain}.arena-formation figure{max-width:580px;margin-inline:auto}}
+html[data-theme="dark"] .arena-lead-card,html[data-theme="dark"] .arena-mini-figure,html[data-theme="dark"] .arena-shot,html[data-theme="dark"] .arena-battle,html[data-theme="dark"] .arena-principle,html[data-theme="dark"] .arena-formation figure,html[data-theme="dark"] .arena-rule,html[data-theme="dark"] .arena-hero-card,html[data-theme="dark"] .arena-economy-card,html[data-theme="dark"] .arena-routine div,html[data-theme="dark"] .arena-note{background:linear-gradient(145deg,#0d334f,#0a2942);border-color:#26536e;color:#c7dce7;box-shadow:0 8px 22px rgba(0,0,0,.16)}
+html[data-theme="dark"] .arena-lead-card strong,html[data-theme="dark"] .arena-shot figcaption b,html[data-theme="dark"] .arena-battle figcaption b,html[data-theme="dark"] .arena-principle b,html[data-theme="dark"] .arena-rule strong,html[data-theme="dark"] .arena-hero-card h3,html[data-theme="dark"] .arena-economy-card b,html[data-theme="dark"] .arena-note strong{color:#8ce1ff}html[data-theme="dark"] .arena-lead-card p,html[data-theme="dark"] .arena-mini-figure figcaption,html[data-theme="dark"] .arena-shot figcaption,html[data-theme="dark"] .arena-battle figcaption,html[data-theme="dark"] .arena-principle p,html[data-theme="dark"] .arena-rule,html[data-theme="dark"] .arena-hero-card p,html[data-theme="dark"] .arena-economy-card p{color:#b5ccda}html[data-theme="dark"] .hero-chips span{background:#103956;border-color:#285a75;color:#c9e3ef}html[data-theme="dark"] .arena-rule.warn,html[data-theme="dark"] .arena-note.warn{background:linear-gradient(145deg,#44351f,#132f40);border-color:#745a32;color:#ead6b9}html[data-theme="dark"] .arena-rule.warn strong,html[data-theme="dark"] .arena-note.warn strong{color:#ffd48d}html[data-theme="dark"] .arena-rule.good{background:linear-gradient(145deg,#0d4143,#0a2c3d);border-color:#2c746c;color:#c9e8df}html[data-theme="dark"] .arena-rule.good strong{color:#76e5b9}html[data-theme="dark"] .arena-routine div:before{background:#104966;color:#9fe7ff}
+</style>
+<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
+</head>
+<body data-root="../../">
+<header class="site-top">
+  <a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a>
+  <div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div>
+</header>
+
+<main class="guide-wrap">
+<section class="guide-hero">
+  <div class="eyebrow">🏟️ БОЙ И ГЕРОИ</div>
+  <h1>АРЕНА И ОСВОЕНИЕ</h1>
+  <p>Расстановка, логика целей, нужные навыки и характеристики, экипировка героев и как забирать максимум из попыток и наград Арены</p>
+  <div class="hero-meta"><span class="pill">Краткий гайд</span><span class="pill">Арена</span><span class="pill">Освоение</span></div>
+</section>
+
+<div class="guide-toolbar"><a class="action-link" href="../../index.html#guides">← Все гайды</a></div>
+
+<details class="toc" open>
+<summary>Содержание</summary>
+<div class="toc-list">
+  <a href="#same">1. Один боевой режим</a>
+  <a href="#formation">2. Расстановка и ротация</a>
+  <a href="#targeting">3. Кто кого бьёт</a>
+  <a href="#heroes">4. Герои и снаряжение</a>
+  <a href="#attempts">5. Попытки и рейтинг</a>
+  <a href="#shop">6. Магазин Арены</a>
+  <a href="#routine">7. Короткий алгоритм</a>
+</div>
+</details>
+
+<article class="article">
+<aside class="callout"><strong>Коротко</strong><p><b>Арена и Освоение используют одну и ту же механику боя, но условия в них разные.</b> В обоих режимах важны позиции героев, порядок целей, навыки Освоения и снаряжение.</p></aside>
+
+<h2 id="same">1. Арена и Освоение — одна боевая система</h2>
+<div class="arena-lead">
+  <div class="arena-lead-card"><p><b>Арена требует надёжности:</b> попытки ограничены, а каждая ошибка влияет на рейтинг. <b>В Освоении можно пытаться сколько угодно</b>, поэтому там нормально много раз менять позиции и подбирать решение под конкретный этап.</p><p style="margin-top:10px">При этом механика позиций, выбора целей и навыков остаётся общей для обоих режимов.</p></div>
+  <figure class="arena-mini-figure"><div class="arena-shot-media"><img src="../../assets/guides/arena/exploration-stage-marked.webp" alt="Этап Освоения Whiteout Survival" loading="lazy"/></div><figcaption>У Арены и Освоения разные условия боя. На Арене вы чаще встречаете актуальных героев игроков и сравнительно близкие по силе команды. В Освоении боты нередко сильно превосходят вас по чистой силе, но стоят неудачно — и эту расстановку нужно разбирать позициями и порядком целей. Победа при почти двукратном отставании по силе здесь вполне нормальна.</figcaption></figure>
+</div>
+
+<p class="body-p">Для этих двух режимов смотрим на <b>навыки Освоения</b> — левый столбик на экране героя — и на <b>блок «Освоение»</b> в общей таблице показателей героя. Правая колонка навыков и блок «Экспедиция» к этому руководству не относятся.</p>
+<div class="arena-compare">
+  <figure class="arena-shot">
+    <div class="arena-shot-media">
+      <img src="../../assets/guides/arena/flint-skills-marked.webp" alt="Навыки Флинта: слева Освоение, справа Экспедиция" loading="lazy"/>
+    </div>
+    <figcaption><b>На этом экране смотрим левую колонку.</b> Это навыки Освоения. Для Арены и Освоения важны именно они.</figcaption>
+  </figure>
+  <figure class="arena-shot">
+    <div class="arena-shot-media">
+      <img src="../../assets/guides/arena/flint-stats-marked.webp" alt="Общие показатели Флинта с блоками Освоение и Экспедиция" loading="lazy"/>
+    </div>
+    <figcaption><b>Для Арены и Освоения в общей таблице показателей смотрим блок «Освоение».</b></figcaption>
+  </figure>
+</div>
+<div class="arena-note"><strong>Не смешивайте разные режимы</strong>Один и тот же герой может по-разному работать в Арене, Освоении, походах и ралли. Для этого руководства важны только навыки Освоения и блок «Освоение» в характеристиках.</div>
+
+<h2 id="formation">2. Расстановка влияет на результат</h2>
+<div class="arena-formation">
+  <figure><img src="../../assets/guides/arena/formation.webp" alt="Основная рабочая расстановка пяти героев на Арене" loading="lazy"/><figcaption><b>Базовая расстановка для Арены:</b> два героя фронта и три героя задней линии. Обычно достаточно одной проверенной схемы, которую вы меняете только под конкретную задачу.</figcaption></figure>
+  <div class="arena-formation-copy">
+    <div class="arena-rule good"><strong>На Арене нужна надёжная схема</strong>Нет смысла переставлять пятёрку перед каждым соперником без причины. Держите одну рабочую расстановку, в которой понятно, кто принимает первый урон, кто живёт дольше и как распределяется стартовый фокус.</div>
+    <div class="arena-rule"><strong>В Освоении позиции нужно крутить</strong>Если этап не проходится, меняйте героев местами. Один сдвиг может изменить первую цель противника, время смерти фронта и момент применения ваших навыков.</div>
+    <div class="arena-rule warn"><strong>Иногда сильного героя лучше убрать в левый угол</strong>В Освоении это позволяет дольше сохранить ключевого героя живым. При такой расстановке до него часто добираются последним. Это не постоянная схема, а вариант под конкретный этап.</div>
+  </div>
+</div>
+
+<h2 id="targeting">3. Кто кого бьёт</h2>
+<p class="body-p">Перед боем смотрите не только на мощь, но и на <b>позиции противника</b>. У задней линии есть конкретные стартовые цели. Если понимать эту схему, проще заранее увидеть, кто попадёт под фокус и кого стоит переставить.</p>
+
+<figure class="arena-battle">
+  <div class="arena-battle-window">
+    <img src="../../assets/guides/arena/battle-start.webp" alt="Схема стартовых целей задней линии на Арене"/>
+  </div>
+  <figcaption><b>Старт боя.</b> Стартовый фокус определяется позицией героя на поле, а не самим героем. Для каждого слота он постоянный: линии показывают, кого атакуют герои задней линии из этих трёх позиций.</figcaption>
+</figure>
+
+<figure class="arena-battle">
+  <div class="arena-battle-window">
+    <img src="../../assets/guides/arena/battle-backline.webp" alt="Порядок применения навыков по задней линии после смерти фронта"/>
+  </div>
+  <figcaption><b>После смерти фронта навыки идут по задней линии справа налево.</b> Эта логика одинаковая для обеих сторон: и у противника, и у игрока порядок целей идёт 1 → 2 → 3.</figcaption>
+</figure>
+
+<div class="arena-principles">
+  <div class="arena-principle"><b>Следите за первым фокусом</b><p>Если один герой сразу получает слишком много урона, часто проще переставить его, чем пытаться компенсировать это общей силой.</p></div>
+  <div class="arena-principle"><b>Смотрите, когда умирает фронт</b><p>После смерти фронта бой меняется: открывается задняя линия, и навыки начинают идти по порядку справа налево.</p></div>
+  <div class="arena-principle"><b>В Освоении иногда полезен ручной запуск навыков</b><p>Если навык вот-вот уйдёт в почти мёртвую цель, можно на короткий момент отключить автоприменение, подождать долю секунды и включить его снова, чтобы удар пришёлся по другой цели.</p></div>
+</div>
+
+<h2 id="heroes">4. Герои и снаряжение</h2>
+<div class="arena-hero-grid">
+  <div class="arena-hero-card"><h3>Нужны актуальные герои</h3><p>Для Арены и Освоения особенно важны <b>мифические герои хотя бы от 3★</b> с прокачанными навыками Освоения. Если герои устарели, одной удачной расстановкой разницу обычно не закрыть.</p><div class="hero-chips"><span>Флинт</span><span>Алонсо</span><span>Молли</span><span>Мия</span><span>Сергей</span><span>Патрик</span><span>Джесси</span><span>Джина</span></div></div>
+  <div class="arena-hero-card"><h3>Снаряжение нужно всей пятёрке</h3><p>Три основных героя держим в хорошем снаряжении. Двух второстепенных тоже нужно одеть хотя бы примерно на <b>+20 / +30</b>, чтобы они не были полностью бесполезными и успевали дать навык.</p></div>
+</div>
+<div class="arena-note warn"><strong>Список героев — пример</strong>С появлением новых поколений состав Арены меняется. Смысл остаётся тем же: нужны актуальные герои, звёзды, навыки Освоения, характеристики и правильная позиция на поле.</div>
+
+<h2 id="attempts">5. Попытки Арены</h2>
+<p class="body-p">Арена — режим на дистанцию. Здесь выгоднее стабильно забирать понятные победы, чем тратить попытки на спорные бои.</p>
+<div class="arena-economy">
+  <div class="arena-economy-card"><b>Тратьте попытки ближе к расчёту</b><p>Чем позже вы поднимаетесь в рейтинге, тем меньше времени остаётся соперникам, чтобы опустить вас обратно. Ориентируйтесь на таймер расчёта в самой Арене.</p></div>
+  <div class="arena-economy-card"><b>За гемы — 1, максимум 2 дополнительные попытки</b><p>Покупать их стоит только тогда, когда есть безопасные цели. Бои «50 на 50» здесь невыгодны.</p></div>
+</div>
+<div class="arena-compare">
+  <figure class="arena-shot">
+    <div class="arena-shot-media">
+      <img src="../../assets/guides/arena/arena-daily-marked.webp" alt="Ежедневные награды Арены" loading="lazy"/>
+    </div>
+    <figcaption><b>Ежедневные награды.</b> Имеет смысл тратить попытки ближе к моменту расчёта, чтобы у соперников было меньше времени опустить вас по рейтингу.</figcaption>
+  </figure>
+  <figure class="arena-shot">
+    <div class="arena-shot-media">
+      <img src="../../assets/guides/arena/arena-season-marked.webp" alt="Сезонные награды Арены" loading="lazy"/>
+    </div>
+    <figcaption><b>Сезонные награды.</b> В финальный день сезона попытки лучше тратить в последние минуты перед расчётом. Так проще подняться как можно выше и оставить соперникам меньше времени, чтобы выбить вас из нужного топа.</figcaption>
+  </figure>
+</div>
+<ul class="bullets">
+  <li>Перед атакой смотрим <b>не только мощь</b>, но и пятёрку соперника и её позиции.</li>
+  <li>Выбираем тех, кого <b>гарантированно побеждаем</b>. Попытка ценнее сомнительного шанса на несколько дополнительных мест.</li>
+  <li>Если безопасных целей нет — обновляем список и ждём следующего удобного окна, а не идём в заведомо плохой матч.</li>
+  <li>В последний день сезона не сливаем попытки заранее: финальный рейтинг ценнее обычного дневного подъёма.</li>
+</ul>
+
+<h2 id="shop">6. Магазин Арены</h2>
+<p class="body-p">Главная ценность Арены — её магазин. Основная покупка здесь — <b>ящик с мифическим снаряжением героя на выбор</b>. Его стоит забирать регулярно: это один из важных источников мифического снаряжения.</p>
+<figure class="arena-shot" style="max-width:590px;margin:13px auto 16px">
+  <div class="arena-shot-media">
+    <img src="../../assets/guides/arena/arena-shop-marked.webp" alt="Магазин Арены с ящиком мифического снаряжения" loading="lazy"/>
+  </div>
+  <figcaption><b>Ящик с мифическим снаряжением — главный приоритет магазина Арены.</b> Конкретная цена на скриншоте не важна. Важно регулярно выкупать сам предмет.</figcaption>
+</figure>
+
+<h2 id="routine">7. Короткий алгоритм</h2>
+<div class="arena-routine">
+  <div>Соберите основную пятёрку: актуальные герои, желательно мифические от <b>3★</b>, с прокачанными навыками Освоения.</div>
+  <div>Оденьте всех пятерых: три главных героя — хорошо, два остальных — хотя бы в рабочее снаряжение примерно <b>+20 / +30</b>.</div>
+  <div>На Арене держите проверенную основную расстановку <b>2 фронта + 3 задняя линия</b>. Перед сложным соперником смотрите, куда уйдёт стартовый фокус.</div>
+  <div>В Освоении меняйте позиции героев и при необходимости используйте ручной запуск навыков, если это позволяет не тратить умение в почти мёртвую цель.</div>
+  <div>Попытки Арены тратьте ближе к расчёту наград. Дополнительно за гемы — обычно <b>1, максимум 2</b>, только под понятные победы.</div>
+  <div>На последнем дне сезона оставляйте запас попыток для финального подъёма.</div>
+  <div>В магазине регулярно забирайте <b>ящик с мифическим снаряжением</b>.</div>
+</div>
+
+<aside class="callout"><strong>Итог</strong><p>Арена и Освоение завязаны на одни и те же вещи: <b>пятёрка героев, их позиции, порядок целей, навыки Освоения и снаряжение</b>. Поэтому одна перестановка или один вовремя удержанный навык иногда дают больше, чем прирост общей силы.</p></aside>
+</article>
+</main>
+
+<a class="back-top" href="#" id="backTop">↑</a>
+<nav class="bottom-nav"><a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open=""><span class="ico">🔎</span><span>Поиск</span></button></nav>
+<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: Арена, Освоение, Флинт, снаряжение…" type="search"/><button class="search-close" data-search-close="">×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
+<script src="../../assets/js/search-index.js?v=35"></script><script src="../../assets/js/app.js?v=24"></script>
+</body>
+</html>
