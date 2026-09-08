@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="#0f5f8f" name="theme-color"/>
+<meta content="Герои Whiteout Survival по поколениям: приоритеты вложений для F2P и малого/среднего доната, источники героев и рабочая звёздность." name="description"/>
+<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
+<link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
+<link href="../../assets/css/content.css?v=24" rel="stylesheet"/>
+<title>ГЕРОИ ПО ПОКОЛЕНИЯМ · Whiteout Survival</title>
+<style>
+.gen-disclaimer{margin:14px 0;border:1px solid #d6e6ed;border-radius:17px;padding:15px 16px;background:linear-gradient(145deg,#f4f9fc,#fff);color:#35596c;font-size:12.5px;line-height:1.55}
+.gen-disclaimer strong{display:block;color:#125f84;font-size:14px;margin-bottom:5px}
+.rank-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0 18px}
+.legend-item{border:1px solid #dbe8ee;border-radius:14px;padding:10px;background:#f9fbfc}
+.legend-item .rank{margin-bottom:6px}.legend-item p{font-size:10.8px;line-height:1.42;margin:0;color:#617986}
+.rank{display:inline-flex;align-items:center;min-height:27px;padding:4px 9px;border-radius:999px;font-weight:900;font-size:10.5px;line-height:1.2;border:1px solid transparent}
+.rank-need{background:#dff4e8;color:#087342;border-color:#b8e2c9}
+.rank-maybe{background:#fff0da;color:#9a5500;border-color:#efd09f}
+.rank-no{background:#ffe6e4;color:#a5261f;border-color:#efc0bc}
+.rank-bad{background:#171d22;color:#fff;border-color:#171d22}
+.section-intro{margin:0 0 11px;color:#466475;font-size:12.5px;line-height:1.55}
+.generation-master-wrap{margin:12px 0 18px;border:1px solid #d7e5ec;border-radius:17px;background:#fff;overflow:hidden;box-shadow:0 5px 18px rgba(28,91,120,.04)}
+.generation-master-scroll{overflow-x:auto}
+.generation-master{width:100%;min-width:790px;border-collapse:separate;border-spacing:0}
+.generation-master thead th{padding:10px 11px;background:#edf5f8;color:#28586f;font-size:11px;text-align:left;border-bottom:1px solid #d7e5ec;white-space:nowrap}
+.generation-master td{padding:10px 11px;border-bottom:1px solid #e8eff2;vertical-align:middle;color:#365769;font-size:11.5px;line-height:1.4;background:#fff}
+.generation-divider th{padding:11px 12px;background:linear-gradient(90deg,#e9f5fa,#f7fbfd);color:#125f84;text-align:left;font-size:13px;letter-spacing:.01em;border-top:1px solid #d5e6ed;border-bottom:1px solid #d5e6ed}
+.generation-divider:first-child th{border-top:0}
+.hero-status{width:220px;padding:8px 10px;background:transparent}
+.hero-line{display:inline-flex;align-items:center;max-width:100%;min-height:34px;padding:7px 12px;border-radius:14px;border:1px solid transparent;font-size:11.2px;font-weight:800;line-height:1.2;box-shadow:inset 0 1px 0 rgba(255,255,255,.18);white-space:nowrap;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.hero-line-name{font-weight:900}
+.hero-line-status{font-weight:800}
+.hero-line-need{background:rgba(25,148,86,.14);border-color:rgba(25,148,86,.38);color:#087342}
+.hero-line-maybe{background:rgba(216,137,24,.15);border-color:rgba(216,137,24,.40);color:#9a5500}
+.hero-line-no{background:rgba(211,73,68,.13);border-color:rgba(211,73,68,.38);color:#a5261f}
+.hero-line-bad{background:rgba(23,29,34,.12);border-color:rgba(23,29,34,.32);color:#171d22}
+.stats-cell,.stars-cell{white-space:nowrap}
+.source-note{border:1px solid #d8e7ee;border-radius:15px;background:#f7fbfd;padding:13px 14px;margin:12px 0 16px;color:#3d5e70;font-size:12px;line-height:1.5}
+.source-note strong{display:block;color:#145f82;margin-bottom:4px}
+@media(max-width:760px){.rank-legend{grid-template-columns:1fr 1fr}.generation-master{min-width:720px}.hero-status{width:205px;padding:8px}.hero-line{font-size:10.8px;padding:7px 10px}}
+html[data-theme="dark"] .gen-disclaimer,html[data-theme="dark"] .legend-item,html[data-theme="dark"] .generation-master-wrap,html[data-theme="dark"] .source-note{background:linear-gradient(145deg,#0d334f,#0a2942);border-color:#26536e;color:#bfd3df}
+html[data-theme="dark"] .gen-disclaimer strong,html[data-theme="dark"] .source-note strong{color:#8ce1ff}
+html[data-theme="dark"] .legend-item p{color:#a9bfcc}
+html[data-theme="dark"] .generation-master thead th{background:#10344c;color:#b9d9e8;border-color:#28526a}
+html[data-theme="dark"] .generation-master td{color:#bfd3df;border-color:#244a60;background:#0b2d44}
+html[data-theme="dark"] .generation-divider th{background:linear-gradient(90deg,#123b55,#0b2d44);color:#8ce1ff;border-color:#28526a}
+html[data-theme="dark"] .rank-need{background:#123f32;color:#89e6b6;border-color:#266a51}
+html[data-theme="dark"] .rank-maybe{background:#4a3518;color:#ffd38d;border-color:#785625}
+html[data-theme="dark"] .rank-no{background:#4b2525;color:#ffaaa5;border-color:#7d3937}
+html[data-theme="dark"] .rank-bad{background:#050708;color:#fff;border-color:#48545c}
+html[data-theme="dark"] .hero-line-need{background:rgba(66,189,120,.16);border-color:rgba(66,189,120,.42);color:#8fe7b8}
+html[data-theme="dark"] .hero-line-maybe{background:rgba(227,161,61,.16);border-color:rgba(227,161,61,.42);color:#ffd38d}
+html[data-theme="dark"] .hero-line-no{background:rgba(224,102,97,.15);border-color:rgba(224,102,97,.40);color:#ffaaa5}
+html[data-theme="dark"] .hero-line-bad{background:rgba(255,255,255,.07);border-color:rgba(180,195,205,.24);color:#e5edf2}
+</style>
+<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
+</head>
+<body data-guide-kind="heroes" data-root="../../">
+<header class="site-top"><a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a><div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div></header>
+<main class="guide-wrap">
+<section class="guide-hero"><div class="eyebrow">🧭 ОСНОВЫ ИГРЫ · ГЕРОИ</div><h1>ГЕРОИ ПО ПОКОЛЕНИЯМ</h1><p>Приоритет вложений, характеристики и рекомендуемая звёздность каждого поколения</p><div class="hero-meta"><span class="pill">Подготовлено SuBL</span></div></section>
+<div class="guide-toolbar"><a class="action-link" href="../../index.html#guides">← Все гайды</a></div>
+<details class="toc" open=""><summary>Содержание</summary><div class="toc-list"><a href="#table">Таблица по поколениям</a></div></details>
+<article class="article">
+<div class="gen-disclaimer"><strong>Для кого эти рекомендации</strong>Все приоритеты рассчитаны на <b>F2P</b> и игроков с <b>малым или средним донатом</b>. При крупном донате логика вложений меняется: можно одновременно развивать несколько дорогих героев одного поколения.</div>
+<aside class="callout"><strong>Как читать характеристики</strong><p>«Атака / защита» — базовые экспедиционные проценты героя на максимальных 5★, без снаряжения героя, эксклюзивного снаряжения и других аккаунтных бонусов. Внутри одного поколения эти проценты у героев обычно одинаковы.</p></aside>
+<div class="rank-legend">
+<div class="legend-item"><span class="rank rank-need">Нужен</span><p>Основной приоритет поколения.</p></div>
+<div class="legend-item"><span class="rank rank-maybe">Нужен по возможности</span><p>Берём после основного приоритета, если хватает ресурсов.</p></div>
+<div class="legend-item"><span class="rank rank-no">Не нужен</span><p>Целенаправленно ресурсы не тратим.</p></div>
+<div class="legend-item"><span class="rank rank-bad">Плохое вложение</span><p>Для ограниченного бюджета вложение обычно не оправдано.</p></div>
+</div>
+<h2 id="table">Герои по поколениям</h2>
+<p class="section-intro">Герои сгруппированы по поколению. Цвет имени показывает приоритет вложений, рядом указаны источник, тип войск, базовые показатели на 5★ и рекомендуемая цель по звёздам.</p>
+<div class="generation-master-wrap">
+<div class="generation-master-scroll">
+<table class="generation-master">
+<thead><tr><th>Герой / приоритет</th><th>Основной источник</th><th>Тип войск</th><th>Атака / защита на 5★</th><th>Рекомендуемая цель</th></tr></thead>
+<tbody>
+<tr class="generation-divider" id="g1"><th colspan="5">Поколение 1</th></tr>
+<tr class="hero-row hero-row-need">
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Молли</span><span class="hero-line-status">, нужен</span></div></td>
+<td>Бесплатно</td>
+<td>Копейщики</td>
+<td class="stats-cell">200,16% / 200,16%</td>
+<td class="stars-cell">Качается естественно</td>
+</tr>
+<tr class="hero-row hero-row-no">
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Зинман</span><span class="hero-line-status">, не нужен</span></div></td>
+<td>Колесо</td>
+<td>Лучники</td>
+<td class="stats-cell">200,16% / 200,16%</td>
+<td class="stars-cell">3★; дальше не гнаться</td>
+</tr>
+<tr class="hero-row hero-row-bad">
+<td class="hero-status hero-status-bad"><div class="hero-line hero-line-bad"><span class="hero-line-name">Наталия</span><span class="hero-line-status">, плохое вложение</span></div></td>
+<td>Первый платёж / VIP</td>
+<td>Пехота</td>
+<td class="stats-cell">200,16% / 200,16%</td>
+<td class="stars-cell">Актуальна только для китов</td>
+</tr>
+<tr class="hero-row hero-row-bad">
+<td class="hero-status hero-status-bad"><div class="hero-line hero-line-bad"><span class="hero-line-name">Джеронимо</span><span class="hero-line-status">, плохое вложение</span></div></td>
+<td>VIP</td>
+<td>Пехота</td>
+<td class="stats-cell">260,20% / 260,20%</td>
+<td class="stars-cell">Актуален только для китов</td>
+</tr>
+<tr class="generation-divider" id="g2"><th colspan="5">Поколение 2</th></tr>
+<tr class="hero-row hero-row-need">
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Флинт</span><span class="hero-line-status">, нужен</span></div></td>
+<td>Колесо Фортуны</td>
+<td>Пехота</td>
+<td class="stats-cell">240,19% / 240,19%</td>
+<td class="stars-cell">5★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Алонсо</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Зал Героев</td>
+<td>Лучники</td>
+<td class="stats-cell">240,19% / 240,19%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-no">
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Филли</span><span class="hero-line-status">, не нужен</span></div></td>
+<td>Донат / ивенты</td>
+<td>Копейщики</td>
+<td class="stats-cell">240,19% / 240,19%</td>
+<td class="stars-cell">Не вкладываться</td>
+</tr>
+<tr class="generation-divider" id="g3"><th colspan="5">Поколение 3</th></tr>
+<tr class="hero-row hero-row-need">
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Мия</span><span class="hero-line-status">, нужен</span></div></td>
+<td>Колесо Фортуны</td>
+<td>Копейщики</td>
+<td class="stats-cell">290,23% / 290,23%</td>
+<td class="stars-cell">5★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Грег</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Зал Героев</td>
+<td>Лучники</td>
+<td class="stats-cell">290,23% / 290,23%</td>
+<td class="stars-cell">3★ → 4★</td>
+</tr>
+<tr class="hero-row hero-row-no">
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Логан</span><span class="hero-line-status">, не нужен</span></div></td>
+<td>Донат / ивенты</td>
+<td>Пехота</td>
+<td class="stats-cell">290,23% / 290,23%</td>
+<td class="stars-cell">3★, если собрался сам</td>
+</tr>
+<tr class="generation-divider" id="g4"><th colspan="5">Поколение 4</th></tr>
+<tr class="hero-row hero-row-need">
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Линн</span><span class="hero-line-status">, нужен</span></div></td>
+<td>Колесо Фортуны</td>
+<td>Лучники</td>
+<td class="stats-cell">370,29% / 370,29%</td>
+<td class="stars-cell">4★ → 5★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Рейна</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Зал Героев</td>
+<td>Копейщики</td>
+<td class="stats-cell">370,29% / 370,29%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-no">
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Ахмос</span><span class="hero-line-status">, не нужен</span></div></td>
+<td>Донат / ивенты</td>
+<td>Пехота</td>
+<td class="stats-cell">370,29% / 370,29%</td>
+<td class="stars-cell">3★</td>
+</tr>
+<tr class="generation-divider" id="g5"><th colspan="5">Поколение 5</th></tr>
+<tr class="hero-row hero-row-need">
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Гектор</span><span class="hero-line-status">, нужен</span></div></td>
+<td>Колесо Фортуны</td>
+<td>Пехота</td>
+<td class="stats-cell">444,35% / 444,35%</td>
+<td class="stars-cell">5★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Гвен</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Зал Героев</td>
+<td>Лучники</td>
+<td class="stats-cell">444,35% / 444,35%</td>
+<td class="stars-cell">3★ → 4★</td>
+</tr>
+<tr class="hero-row hero-row-no">
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Нора</span><span class="hero-line-status">, не нужен</span></div></td>
+<td>Донат / ивенты</td>
+<td>Копейщики</td>
+<td class="stats-cell">444,35% / 444,35%</td>
+<td class="stars-cell">3★ → 4★ только при естественном наборе</td>
+</tr>
+<tr class="generation-divider" id="g6"><th colspan="5">Поколение 6</th></tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Рене</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Колесо Фортуны</td>
+<td>Копейщики</td>
+<td class="stats-cell">540,43% / 540,43%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">У Мин</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Зал Героев</td>
+<td>Пехота</td>
+<td class="stats-cell">540,43% / 540,43%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-no">
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Уэйн</span><span class="hero-line-status">, не нужен</span></div></td>
+<td>Донат / ивенты</td>
+<td>Лучники</td>
+<td class="stats-cell">540,43% / 540,43%</td>
+<td class="stars-cell">3★</td>
+</tr>
+<tr class="generation-divider" id="g7"><th colspan="5">Поколение 7</th></tr>
+<tr class="hero-row hero-row-need">
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Брэдли</span><span class="hero-line-status">, нужен</span></div></td>
+<td>Колесо Фортуны</td>
+<td>Лучники</td>
+<td class="stats-cell">650,52% / 650,52%</td>
+<td class="stars-cell">5★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Эдит</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Донат / ивенты</td>
+<td>Пехота</td>
+<td class="stats-cell">650,52% / 650,52%</td>
+<td class="stars-cell">3★ → 4★</td>
+</tr>
+<tr class="hero-row hero-row-no">
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Гордон</span><span class="hero-line-status">, не нужен</span></div></td>
+<td>Зал Героев</td>
+<td>Копейщики</td>
+<td class="stats-cell">650,52% / 650,52%</td>
+<td class="stars-cell">3★ / пропуск</td>
+</tr>
+<tr class="generation-divider" id="g8"><th colspan="5">Поколение 8</th></tr>
+<tr class="hero-row hero-row-need">
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Гатот</span><span class="hero-line-status">, нужен</span></div></td>
+<td>Колесо Фортуны</td>
+<td>Пехота</td>
+<td class="stats-cell">780,62% / 780,62%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Соня</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Донат / ивенты</td>
+<td>Копейщики</td>
+<td class="stats-cell">780,62% / 780,62%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-no">
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Хендрик</span><span class="hero-line-status">, не нужен</span></div></td>
+<td>Зал Героев</td>
+<td>Лучники</td>
+<td class="stats-cell">780,62% / 780,62%</td>
+<td class="stars-cell">3★</td>
+</tr>
+<tr class="generation-divider" id="g9"><th colspan="5">Поколение 9</th></tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Фред</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Колесо Фортуны</td>
+<td>Копейщики</td>
+<td class="stats-cell">940,75% / 940,75%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Магнус</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Зал Героев</td>
+<td>Пехота</td>
+<td class="stats-cell">940,75% / 940,75%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-no">
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Ксура</span><span class="hero-line-status">, не нужен</span></div></td>
+<td>Донат / ивенты</td>
+<td>Лучники</td>
+<td class="stats-cell">940,75% / 940,75%</td>
+<td class="stars-cell">3★</td>
+</tr>
+<tr class="generation-divider" id="g10"><th colspan="5">Поколение 10</th></tr>
+<tr class="hero-row hero-row-need">
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Бланшетт</span><span class="hero-line-status">, нужен</span></div></td>
+<td>Колесо Фортуны</td>
+<td>Лучники</td>
+<td class="stats-cell">1 110,88% / 1 110,88%</td>
+<td class="stars-cell">5★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Фрейя</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Зал Героев</td>
+<td>Копейщики</td>
+<td class="stats-cell">1 110,88% / 1 110,88%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-no">
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Грегори</span><span class="hero-line-status">, не нужен</span></div></td>
+<td>Донат / ивенты</td>
+<td>Пехота</td>
+<td class="stats-cell">1 110,88% / 1 110,88%</td>
+<td class="stars-cell">3★</td>
+</tr>
+<tr class="generation-divider" id="g11"><th colspan="5">Поколение 11</th></tr>
+<tr class="hero-row hero-row-need">
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Элеонора</span><span class="hero-line-status">, нужен</span></div></td>
+<td>Колесо Фортуны</td>
+<td>Пехота</td>
+<td class="stats-cell">1 281,02% / 1 281,02%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Руфус</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Зал Героев</td>
+<td>Лучники</td>
+<td class="stats-cell">1 281,02% / 1 281,02%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-no">
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Ллойд</span><span class="hero-line-status">, не нужен</span></div></td>
+<td>Донат / ивенты</td>
+<td>Копейщики</td>
+<td class="stats-cell">1 281,02% / 1 281,02%</td>
+<td class="stars-cell">3★</td>
+</tr>
+<tr class="generation-divider" id="g12"><th colspan="5">Поколение 12</th></tr>
+<tr class="hero-row hero-row-need">
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Карол</span><span class="hero-line-status">, нужен</span></div></td>
+<td>Колесо Фортуны</td>
+<td>Копейщики</td>
+<td class="stats-cell">1 451,16% / 1 451,16%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Хервор</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Зал Героев</td>
+<td>Пехота</td>
+<td class="stats-cell">1 451,16% / 1 451,16%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-no">
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Лигея</span><span class="hero-line-status">, не нужен</span></div></td>
+<td>Донат / ивенты</td>
+<td>Лучники</td>
+<td class="stats-cell">1 451,16% / 1 451,16%</td>
+<td class="stars-cell">3★</td>
+</tr>
+<tr class="generation-divider" id="g13"><th colspan="5">Поколение 13</th></tr>
+<tr class="hero-row hero-row-need">
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Вулканус</span><span class="hero-line-status">, нужен</span></div></td>
+<td>Колесо Фортуны</td>
+<td>Лучники</td>
+<td class="stats-cell">1 621,29% / 1 621,29%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Гизела</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Донат / ивенты</td>
+<td>Пехота</td>
+<td class="stats-cell">1 621,29% / 1 621,29%</td>
+<td class="stars-cell">3★ → 4★</td>
+</tr>
+<tr class="hero-row hero-row-no">
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Флора</span><span class="hero-line-status">, не нужен</span></div></td>
+<td>Зал Героев</td>
+<td>Копейщики</td>
+<td class="stats-cell">1 621,29% / 1 621,29%</td>
+<td class="stars-cell">3★</td>
+</tr>
+<tr class="generation-divider" id="g14"><th colspan="5">Поколение 14</th></tr>
+<tr class="hero-row hero-row-need">
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Кара</span><span class="hero-line-status">, нужен</span></div></td>
+<td>Колесо Фортуны</td>
+<td>Лучники</td>
+<td class="stats-cell">1 791,43% / 1 791,43%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Элиф</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Зал Героев</td>
+<td>Пехота</td>
+<td class="stats-cell">1 791,43% / 1 791,43%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-no">
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Доминик</span><span class="hero-line-status">, не нужен</span></div></td>
+<td>Донат / ивенты</td>
+<td>Копейщики</td>
+<td class="stats-cell">1 791,43% / 1 791,43%</td>
+<td class="stars-cell">3★</td>
+</tr>
+<tr class="generation-divider" id="g15"><th colspan="5">Поколение 15</th></tr>
+<tr class="hero-row hero-row-need">
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Эстрелла</span><span class="hero-line-status">, нужен</span></div></td>
+<td>Колесо Фортуны</td>
+<td>Копейщики</td>
+<td class="stats-cell">1 961,56% / 1 961,56%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Хэнк</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Зал Героев</td>
+<td>Пехота</td>
+<td class="stats-cell">1 961,56% / 1 961,56%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-no">
+<td class="hero-status hero-status-no"><div class="hero-line hero-line-no"><span class="hero-line-name">Вивека</span><span class="hero-line-status">, не нужен</span></div></td>
+<td>Донат / ивенты</td>
+<td>Лучники</td>
+<td class="stats-cell">1 961,56% / 1 961,56%</td>
+<td class="stars-cell">3★</td>
+</tr>
+<tr class="generation-divider" id="g16"><th colspan="5">Поколение 16</th></tr>
+<tr class="hero-row hero-row-need">
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Айслинг</span><span class="hero-line-status">, нужен</span></div></td>
+<td>Колесо Фортуны</td>
+<td>Лучники</td>
+<td class="stats-cell">2 131,70% / 2 131,70%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Урсар</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Зал Героев</td>
+<td>Копейщики</td>
+<td class="stats-cell">2 131,70% / 2 131,70%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Зигель</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Донат / ивенты</td>
+<td>Пехота</td>
+<td class="stats-cell">2 131,70% / 2 131,70%</td>
+<td class="stars-cell">3★ → 4★</td>
+</tr>
+<tr class="generation-divider" id="g17"><th colspan="5">Поколение 17</th></tr>
+<tr class="hero-row hero-row-need">
+<td class="hero-status hero-status-need"><div class="hero-line hero-line-need"><span class="hero-line-name">Эйден</span><span class="hero-line-status">, нужен</span></div></td>
+<td>Колесо Фортуны</td>
+<td>Пехота</td>
+<td class="stats-cell">2 301,84% / 2 301,84%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Элеанор</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Зал Героев</td>
+<td>Лучники</td>
+<td class="stats-cell">2 301,84% / 2 301,84%</td>
+<td class="stars-cell">4★</td>
+</tr>
+<tr class="hero-row hero-row-maybe">
+<td class="hero-status hero-status-maybe"><div class="hero-line hero-line-maybe"><span class="hero-line-name">Берта</span><span class="hero-line-status">, нужен по возможности</span></div></td>
+<td>Донат / ивенты</td>
+<td>Копейщики</td>
+<td class="stats-cell">2 301,84% / 2 301,84%</td>
+<td class="stars-cell">3★ → 4★</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="source-note"><strong>Поколение 1 — отдельный случай</strong>Первое поколение ещё не делится чисто на «Колесо / Зал / ивенты», поэтому для него источники указаны отдельно.</div>
+<div class="source-note"><strong>Флинт</strong>4★ — нормальный промежуточный уровень, но желаемая цель — 5★. Для игрока с ограниченными ресурсами Флинт обычно остаётся основным пехотным фронтом до Гектора из G5.</div>
+<div class="source-note"><strong>Что означает рекомендуемая цель</strong>Это не требование прокачать каждого героя до указанного значения. Для зелёных и оранжевых героев это разумная цель вложений. Для красных и чёрных формулировки «не вкладываться», «если собрался сам» или «пропуск» означают, что универсальные мифические фрагменты на героя целенаправленно не тратим.</div>
+</article>
+</main>
+<a class="back-top" href="#" id="backTop">↑</a>
+<nav class="bottom-nav"><a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open=""><span class="ico">🔎</span><span>Поиск</span></button></nav>
+<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: Флинт, Алонсо, поколение…" type="search"/><button class="search-close" data-search-close="">×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
+<script src="../../assets/js/search-index.js?v=35"></script><script src="../../assets/js/app.js?v=24"></script>
+</body></html>
