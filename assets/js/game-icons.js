@@ -19,10 +19,10 @@
     [/first-svs\.html$/,'svs.png'],
     [/crazy-joe\.html$/,'mad-joe.png'],
     [/ice-mine\.html$/,'ice-mine.png'],
-    [/snowbusters\.html$/,'coal.png'],
+    [/snowbusters\.html$/,'snowbusters.png'],
     [/foundry\.html$/,'fort.png'],
     [/alliance-mobilization\.html$/,'alliance.png'],
-    [/bear-hunt\.html$/,'rally.png'],
+    [/bear-hunt\.html$/,'bear-hunt.png'],
     [/wandering-theater\.html$/,'ticket.png'],
     [/furnace\.html$/,'furnace.png'],
     [/buildings\.html$/,'construction.png'],
@@ -76,12 +76,22 @@
       const icon=iconForHref(card.getAttribute('href'));
       card.dataset.gameIconReady='1';
       if(!icon)return;
-      const num=card.querySelector('.num');
-      const kicker=document.createElement('div');
-      kicker.className='guide-card-kicker';
-      kicker.appendChild(shell('guide-card-icon',icon));
-      if(num){stripLeadingEmoji(num);num.parentNode.insertBefore(kicker,num);kicker.appendChild(num)}
-      else card.insertBefore(kicker,card.firstChild);
+      const title=card.querySelector('h3');
+      const desc=card.querySelector('p');
+      const oldKicker=card.querySelector('.guide-card-kicker'); if(oldKicker) oldKicker.remove();
+      const oldNum=card.querySelector('.num'); if(oldNum) oldNum.remove();
+      const head=document.createElement('div');
+      head.className='guide-card-head';
+      head.appendChild(shell('guide-card-icon',icon));
+      const body=document.createElement('div');
+      body.className='guide-card-body';
+      if(title) body.appendChild(title);
+      if(desc) body.appendChild(desc);
+      head.appendChild(body);
+      const arrow=card.querySelector('.arrow');
+      if(arrow && arrow.nextSibling) card.insertBefore(head, arrow.nextSibling);
+      else if(arrow) card.appendChild(head);
+      else card.prepend(head);
       card.classList.add('has-game-icon');
     });
   }
@@ -136,7 +146,7 @@
   function loadCss(){
     if(document.querySelector('link[data-game-icons-css]'))return;
     const l=document.createElement('link');
-    l.rel='stylesheet';l.href=root+'assets/css/game-icons.css?v=3';l.dataset.gameIconsCss='1';
+    l.rel='stylesheet';l.href=root+'assets/css/game-icons.css?v=5';l.dataset.gameIconsCss='1';
     document.head.appendChild(l);
   }
 

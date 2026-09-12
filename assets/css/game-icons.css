@@ -8,15 +8,40 @@
 }
 .game-icon-shell img{display:block;object-fit:contain;filter:drop-shadow(0 4px 4px rgba(10,40,59,.14))}
 
-/* Homepage cards: the pictogram is now a primary visual anchor. */
-.guide-card-kicker{display:flex;align-items:center;gap:12px;padding-right:24px;margin:0 0 10px}
-.guide-card-icon{width:72px;height:72px;border-radius:19px;padding:4px}
-.guide-card-icon img{width:64px;height:64px}
-.guide-card.has-game-icon .num{margin:0;max-width:none;line-height:1.2}
-.guide-card.has-game-icon h3{margin-top:5px}
-.guide-card.has-game-icon{min-height:158px}
+/* Homepage cards: icon, title and description form one clear navigation row. */
+.guide-card.has-game-icon{
+  padding:17px 18px;
+  min-height:126px;
+  border-radius:18px;
+}
+.guide-card-head{
+  display:grid;
+  grid-template-columns:82px minmax(0,1fr);
+  align-items:center;
+  gap:16px;
+  min-height:90px;
+  padding-right:24px;
+}
+.guide-card-icon{
+  width:82px;height:82px;border-radius:21px;padding:5px;
+  align-self:center;
+}
+.guide-card-icon img{width:72px;height:72px}
+.guide-card-body{min-width:0;align-self:center}
+.guide-card.has-game-icon .num{display:none!important}
+.guide-card.has-game-icon h3{
+  margin:0;
+  font-size:19px;
+  line-height:1.14;
+  letter-spacing:-.018em;
+}
+.guide-card.has-game-icon p{
+  margin:7px 0 0;
+  font-size:12.7px;
+  line-height:1.48;
+}
+.guide-card.has-game-icon .arrow{top:15px;right:15px;font-size:18px}
 .tool-card .guide-card-icon{background:linear-gradient(145deg,rgba(220,248,247,.97),rgba(234,247,255,.84));border-color:rgba(104,182,190,.40)}
-
 /* Guide title marker. Large on desktop and intentionally prominent on phones. */
 .guide-hero.has-game-icon{padding-right:158px;min-height:150px}
 .guide-hero-icon{
@@ -47,10 +72,13 @@ html[data-theme="dark"] .game-icon-shell{background:linear-gradient(145deg,rgba(
 html[data-theme="dark"] .guide-hero-icon{background:linear-gradient(145deg,rgba(255,255,255,.15),rgba(9,49,77,.20));border-color:rgba(181,229,249,.22)}
 
 @media(max-width:620px){
-  .guide-card-kicker{gap:10px;margin-bottom:9px;padding-right:20px}
-  .guide-card-icon{width:62px;height:62px;border-radius:17px;padding:3px}
-  .guide-card-icon img{width:56px;height:56px}
-  .guide-card.has-game-icon{min-height:0;padding:14px 14px}
+  .guide-card.has-game-icon{padding:15px 14px;min-height:118px}
+  .guide-card-head{grid-template-columns:76px minmax(0,1fr);gap:14px;min-height:86px;padding-right:21px;align-items:center}
+  .guide-card-icon{width:76px;height:76px;border-radius:20px;padding:4px}
+  .guide-card-icon img{width:68px;height:68px}
+  .guide-card.has-game-icon h3{font-size:18px;line-height:1.16}
+  .guide-card.has-game-icon p{margin-top:6px;font-size:12.6px;line-height:1.46}
+  .guide-card.has-game-icon .arrow{top:12px;right:12px;font-size:17px}
 
   /* On phones the title pictogram becomes a normal first row instead of squeezing the heading. */
   .guide-hero.has-game-icon{padding-right:16px;min-height:0}
@@ -68,8 +96,12 @@ html[data-theme="dark"] .guide-hero-icon{background:linear-gradient(145deg,rgba(
 }
 
 @media(max-width:370px){
-  .guide-card-icon{width:58px;height:58px}
-  .guide-card-icon img{width:52px;height:52px}
+  .guide-card.has-game-icon{padding:14px 13px;min-height:112px}
+  .guide-card-head{grid-template-columns:68px minmax(0,1fr);gap:12px;min-height:80px;padding-right:18px}
+  .guide-card-icon{width:68px;height:68px;border-radius:18px;padding:4px}
+  .guide-card-icon img{width:60px;height:60px}
+  .guide-card.has-game-icon h3{font-size:17px}
+  .guide-card.has-game-icon p{font-size:12px;line-height:1.44}
   .guide-hero-icon{width:84px;height:84px;border-radius:22px}
   .guide-hero-icon img{width:74px;height:74px}
   .cross-guide-game-icon{width:44px;height:44px}
