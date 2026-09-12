@@ -1,0 +1,66 @@
+/* Game pictogram layer — generated assets used as navigation and semantic markers. */
+.game-icon-shell{display:grid;place-items:center;flex:0 0 auto;background:linear-gradient(145deg,rgba(232,247,253,.94),rgba(244,250,252,.72));border:1px solid rgba(132,190,215,.42);box-shadow:inset 0 1px 0 rgba(255,255,255,.72),0 5px 14px rgba(19,73,101,.08);overflow:hidden}
+.game-icon-shell img,.game-inline-icon,.search-result-game-icon{display:block;object-fit:contain;filter:drop-shadow(0 3px 3px rgba(10,40,59,.12))}
+
+/* Home cards */
+.guide-card-kicker{display:flex;align-items:center;gap:9px;padding-right:22px;margin:0 0 7px}
+.guide-card-icon{width:45px;height:45px;border-radius:13px;padding:3px}
+.guide-card-icon img{width:39px;height:39px}
+.guide-card.has-game-icon .num{margin:0;max-width:none;line-height:1.2}
+.guide-card.has-game-icon h3{margin-top:4px}
+.guide-card.has-game-icon{min-height:132px}
+.tool-card .guide-card-icon{background:linear-gradient(145deg,rgba(220,248,247,.95),rgba(234,247,255,.8));border-color:rgba(104,182,190,.38)}
+
+/* Hero marker on guide pages */
+.guide-hero.has-game-icon{padding-right:106px}
+.guide-hero-icon{position:absolute;z-index:2;right:18px;top:18px;width:72px;height:72px;border-radius:20px;padding:5px;background:linear-gradient(145deg,rgba(255,255,255,.20),rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 9px 24px rgba(0,34,57,.14);backdrop-filter:blur(4px)}
+.guide-hero-icon img{width:62px;height:62px;filter:drop-shadow(0 5px 5px rgba(0,25,44,.2))}
+.guide-hero.has-game-icon .eyebrow,.guide-hero.has-game-icon h1,.guide-hero.has-game-icon p,.guide-hero.has-game-icon .hero-meta{position:relative;z-index:3}
+
+/* Section headings */
+.article h2.game-heading{display:flex;align-items:center;gap:9px;padding-top:8px}
+.game-heading-icon{width:31px;height:31px;border-radius:10px;padding:2px;margin-top:-1px}
+.game-heading-icon img{width:26px;height:26px}
+
+/* High-signal labels inside guide cards/callouts */
+.game-label-icon{display:inline-grid;place-items:center;vertical-align:middle;width:25px;height:25px;margin-right:6px;border-radius:8px;padding:1px;background:rgba(224,244,251,.78);border:1px solid rgba(132,190,215,.34)}
+.game-label-icon img{width:21px;height:21px;object-fit:contain;filter:drop-shadow(0 2px 2px rgba(10,40,59,.10))}
+.callout strong.has-game-label,.mine-note strong.has-game-label,.account-note strong.has-game-label,.resource-head h3.has-game-label,.svs-side-card b.has-game-label,.result-card strong.has-game-label,.money-card b.has-game-label,.balance-card b.has-game-label{display:flex!important;align-items:center;gap:1px}
+
+/* Related links */
+.related a.has-game-icon{display:flex;align-items:center;gap:8px}
+.related-game-icon{width:30px;height:30px;border-radius:9px;padding:2px}
+.related-game-icon img{width:25px;height:25px}
+
+/* Search */
+.search-item.has-game-icon{position:relative;padding-left:54px;min-height:62px}
+.search-result-game-icon{position:absolute;left:12px;top:12px;width:32px;height:32px}
+
+/* Optional category icon replacement when a page uses it explicitly */
+.category-icon.game-category-icon{padding:3px;font-size:0}
+.category-icon.game-category-icon img{width:31px;height:31px;object-fit:contain;filter:drop-shadow(0 2px 2px rgba(10,40,59,.10))}
+
+html[data-theme="dark"] .game-icon-shell{background:linear-gradient(145deg,rgba(17,62,89,.92),rgba(10,42,67,.92));border-color:rgba(72,151,189,.44);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 6px 18px rgba(0,0,0,.17)}
+html[data-theme="dark"] .game-label-icon{background:rgba(16,61,89,.82);border-color:rgba(72,151,189,.40)}
+html[data-theme="dark"] .guide-hero-icon{background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(9,49,77,.18));border-color:rgba(181,229,249,.20)}
+
+@media(max-width:620px){
+  .guide-card-kicker{gap:8px;margin-bottom:6px}
+  .guide-card-icon{width:41px;height:41px;border-radius:12px}
+  .guide-card-icon img{width:35px;height:35px}
+  .guide-card.has-game-icon{min-height:0;padding:12px 13px}
+  .guide-hero.has-game-icon{padding-right:78px}
+  .guide-hero-icon{right:12px;top:12px;width:55px;height:55px;border-radius:16px;padding:4px}
+  .guide-hero-icon img{width:47px;height:47px}
+  .article h2.game-heading{gap:7px}
+  .game-heading-icon{width:27px;height:27px;border-radius:9px}
+  .game-heading-icon img{width:23px;height:23px}
+  .game-label-icon{width:23px;height:23px;margin-right:5px}
+  .game-label-icon img{width:19px;height:19px}
+}
+
+@media(max-width:370px){
+  .guide-hero.has-game-icon{padding-right:68px}
+  .guide-hero-icon{width:49px;height:49px;border-radius:14px}
+  .guide-hero-icon img{width:41px;height:41px}
+}

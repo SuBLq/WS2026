@@ -142,4 +142,13 @@
   }
   registerSiteWorker();
 
+  // Load the shared pictogram layer after the base UI is ready.
+  if(!document.querySelector('script[data-game-icons-js]')){
+    const gameIcons=document.createElement('script');
+    gameIcons.src=root+'assets/js/game-icons.js?v=1';
+    gameIcons.async=false;
+    gameIcons.dataset.gameIconsJs='1';
+    document.body.appendChild(gameIcons);
+  }
+
 })();
