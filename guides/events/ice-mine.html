@@ -4,66 +4,68 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <meta name="theme-color" content="#0f5f8f"/>
-<meta name="description" content="Рудник Ледяного Огня — две рабочие стратегии: активный фарм для большинства и удержание шахт III уровня для китов."/>
+<meta name="description" content="Рудник Ледяного Огня в Whiteout Survival: навыки, патрули, россыпи орихалка, Прорывы жил, телепорты и две рабочие стратегии."/>
 <link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="../../manifest.webmanifest" rel="manifest"/>
 <link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
 <link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
 <link href="../../assets/css/content.css?v=24" rel="stylesheet"/>
 <title>РУДНИК ЛЕДЯНОГО ОГНЯ · Whiteout Survival</title>
+<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
 <style>
-.mine-note{border:1px solid #d8e7ee;background:#f5fbfe;border-radius:15px;padding:14px 15px;margin:13px 0}.mine-note strong{display:block;color:#0f638c;margin-bottom:5px}.mine-note.warn{background:#fff8ed;border-color:#f0d3aa}.mine-note.warn strong{color:#9b5515}.mine-note.good{background:#effaf6;border-color:#c9e8da}.mine-note.good strong{color:#087350}.mini-kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}.mini-kpi>div{border:1px solid #d8e7ee;border-radius:14px;padding:11px;background:#f8fbfc}.mini-kpi b{display:block;font-size:17px;color:#0f638c}.mini-kpi span{font-size:11px;color:#6c8290}.route{font-weight:900;letter-spacing:.04em;color:#0f638c}.split-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}.split-card{border:1px solid #d8e7ee;border-radius:15px;padding:13px;background:#f8fbfc}.split-card h3{margin:0 0 7px;font-size:15px;color:#25445a}.split-card p{margin:5px 0;font-size:13px;line-height:1.5}.muted{color:#6b808e}.rank-row{display:flex;flex-wrap:wrap;gap:7px;margin:9px 0}.rank-chip{border:1px solid #d8e7ee;background:#fff;border-radius:999px;padding:6px 9px;font-size:11px;font-weight:800;color:#34566a}@media(max-width:620px){.mini-kpi,.split-cards{grid-template-columns:1fr}}
+.mine-intro{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(270px,.88fr);gap:15px;align-items:start;margin:14px 0 18px}.mine-intro-copy{display:grid;gap:10px}.mine-card{padding:14px 15px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(135deg,rgba(32,143,188,.08),rgba(56,101,170,.04))}.mine-card strong{display:block;margin-bottom:5px;color:var(--ink);font-size:14px}.mine-card p{margin:0;color:var(--ink);font-size:12.5px;line-height:1.55}
+.mine-shot{margin:0;padding:8px;border:1px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden}.mine-shot img{display:block;width:100%;height:auto;border-radius:12px}.mine-shot figcaption{padding:8px 4px 2px;color:var(--muted);font-size:10.5px;line-height:1.42}
+.mine-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:12px 0 18px}.mine-kpi{padding:12px;border:1px solid var(--line);border-radius:15px;background:var(--card)}.mine-kpi b{display:block;color:#12648d;font-size:16px;margin-bottom:3px}.mine-kpi span{display:block;color:var(--ink);font-size:11px;line-height:1.38}
+.mine-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:13px 0 18px}.mine-duo .mine-shot{height:100%}.mine-duo .mine-shot img{height:100%;max-height:560px;object-fit:contain;background:#082c48}
+.mine-skills{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:13px 0 18px}.mine-route{position:relative;padding:15px;border:1px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden}.mine-route:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:#5e98b5}.mine-route.normal:before{background:#2592c2}.mine-route.whale:before{background:#7861c7}.mine-route .tag{display:inline-flex;margin-bottom:9px;padding:4px 8px;border-radius:999px;font-size:9.5px;font-weight:900;letter-spacing:.02em}.mine-route.normal .tag{background:rgba(37,146,194,.12);border:1px solid rgba(37,146,194,.28);color:#1476a0}.mine-route.whale .tag{background:rgba(120,97,199,.12);border:1px solid rgba(120,97,199,.28);color:#684bb7}.mine-route h3{margin:0 0 6px;color:var(--ink);font-size:15px}.mine-route .path{display:block;margin:7px 0 9px;color:#12648d;font-size:16px;font-weight:950;letter-spacing:.035em}.mine-route p{margin:0;color:var(--ink);font-size:12px;line-height:1.5}
+.mine-note{border:1px solid var(--line);background:var(--card);border-radius:16px;padding:13px 14px;margin:12px 0;color:var(--ink);font-size:12px;line-height:1.5}.mine-note strong{display:block;color:#12648d;margin-bottom:4px}.mine-note.warn{background:linear-gradient(135deg,rgba(214,138,35,.10),rgba(255,255,255,0));border-color:rgba(214,138,35,.28)}.mine-note.warn strong{color:#9b5c0d}.mine-note.good{background:linear-gradient(135deg,rgba(46,156,112,.10),rgba(255,255,255,0));border-color:rgba(46,156,112,.28)}.mine-note.good strong{color:#16754e}
+.mine-phase-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0 18px}.mine-phase{padding:13px;border:1px solid var(--line);border-radius:15px;background:var(--card)}.mine-phase .time{display:inline-flex;margin-bottom:7px;padding:4px 8px;border-radius:999px;background:rgba(32,143,188,.11);border:1px solid rgba(32,143,188,.25);color:#1476a0;font-size:10px;font-weight:900}.mine-phase b{display:block;margin-bottom:5px;color:var(--ink);font-size:12.5px}.mine-phase p{margin:0;color:var(--ink);font-size:11.5px;line-height:1.47}
+.breakout-layout{display:grid;grid-template-columns:minmax(270px,.82fr) minmax(0,1.18fr);gap:15px;align-items:start;margin:13px 0 18px}.wave-box{display:grid;gap:10px}.wave-series{padding:13px 14px;border:1px solid var(--line);border-radius:16px;background:var(--card)}.wave-series strong{display:block;color:#12648d;font-size:13px;margin-bottom:7px}.wave-times{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:7px}.wave-times span{display:inline-flex;padding:5px 9px;border-radius:999px;background:rgba(32,143,188,.10);border:1px solid rgba(32,143,188,.23);color:#1476a0;font-size:11px;font-weight:900}.wave-times .hot{background:rgba(214,138,35,.12);border-color:rgba(214,138,35,.30);color:#9b5c0d}.wave-series p{margin:0;color:var(--ink);font-size:11.5px;line-height:1.48}
+.teleport-card{padding:14px 15px;border:1px solid rgba(214,138,35,.28);border-radius:17px;background:linear-gradient(135deg,rgba(214,138,35,.11),rgba(32,143,188,.04))}.teleport-card strong{display:block;color:#9b5c0d;margin-bottom:5px;font-size:13px}.teleport-card p{margin:0;color:var(--ink);font-size:12px;line-height:1.52}
+.mine-steps{counter-reset:mine;display:grid;gap:8px;margin:12px 0 17px}.mine-step{counter-increment:mine;position:relative;padding:11px 12px 11px 46px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);font-size:12.3px;line-height:1.48}.mine-step:before{content:counter(mine);position:absolute;left:12px;top:11px;width:24px;height:24px;border-radius:8px;display:grid;place-items:center;background:rgba(32,143,188,.12);color:#1476a0;font-size:11px;font-weight:900}
+.mine-whale{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 18px}.mine-whale-card{padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--card)}.mine-whale-card h3{margin:0 0 6px;color:var(--ink);font-size:14px}.mine-whale-card p{margin:0;color:var(--ink);font-size:12px;line-height:1.5}.mine-whale-card .big{display:block;margin-bottom:5px;color:#12648d;font-size:17px;font-weight:950}
+.result-layout{display:grid;grid-template-columns:minmax(260px,.78fr) minmax(0,1.22fr);gap:15px;align-items:start;margin:13px 0 18px}.result-copy{display:grid;gap:9px}.result-card{padding:12px 13px;border:1px solid var(--line);border-radius:15px;background:var(--card);color:var(--ink);font-size:12px;line-height:1.5}.result-card strong{display:block;color:#12648d;margin-bottom:4px}
+html[data-theme="dark"] .mine-card,html[data-theme="dark"] .mine-kpi,html[data-theme="dark"] .mine-shot,html[data-theme="dark"] .mine-route,html[data-theme="dark"] .mine-note,html[data-theme="dark"] .mine-phase,html[data-theme="dark"] .wave-series,html[data-theme="dark"] .mine-step,html[data-theme="dark"] .mine-whale-card,html[data-theme="dark"] .result-card{background:linear-gradient(135deg,#0b2942,#0c3550);border-color:#225878}html[data-theme="dark"] .mine-card{background:linear-gradient(135deg,#0b3149,#132b49)}html[data-theme="dark"] .mine-kpi b,html[data-theme="dark"] .mine-note strong,html[data-theme="dark"] .wave-series strong,html[data-theme="dark"] .mine-whale-card .big,html[data-theme="dark"] .result-card strong{color:#8ce1ff}html[data-theme="dark"] .mine-route.normal .tag,html[data-theme="dark"] .mine-phase .time,html[data-theme="dark"] .wave-times span{background:rgba(37,146,194,.16);border-color:rgba(96,200,239,.33);color:#94e5ff}html[data-theme="dark"] .mine-route.whale .tag{background:rgba(120,97,199,.17);border-color:rgba(162,144,229,.35);color:#c7b8ff}html[data-theme="dark"] .mine-route .path{color:#8ce1ff}html[data-theme="dark"] .mine-note.warn,html[data-theme="dark"] .teleport-card{background:linear-gradient(135deg,#4a3518,#0b3149);border-color:#785625}html[data-theme="dark"] .mine-note.warn strong,html[data-theme="dark"] .teleport-card strong,html[data-theme="dark"] .wave-times .hot{color:#ffd38d}html[data-theme="dark"] .mine-note.good{background:linear-gradient(135deg,#123f32,#0b3149);border-color:#266a51}html[data-theme="dark"] .mine-note.good strong{color:#89e6b6}html[data-theme="dark"] .wave-times .hot{background:rgba(214,138,35,.18);border-color:#785625}html[data-theme="dark"] .mine-step:before{background:#123e57;color:#9be5ff}
+@media(max-width:760px){.mine-intro,.breakout-layout,.result-layout{grid-template-columns:1fr}.mine-kpis{grid-template-columns:1fr 1fr}.mine-duo,.mine-skills,.mine-whale{grid-template-columns:1fr}.mine-phase-grid{grid-template-columns:1fr}.mine-shot{max-width:520px;margin-inline:auto}.breakout-layout>.mine-shot,.result-layout>.mine-shot{max-width:460px}}
 </style>
-<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script></head>
+</head>
 <body data-root="../../">
-<header class="site-top">
-  <a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a>
-  <div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div>
-</header>
+<header class="site-top"><a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a><div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div></header>
 <main class="guide-wrap">
-<section class="guide-hero">
-  <div class="eyebrow">🎯 СОБЫТИЯ И РЕЖИМЫ</div>
-  <h1>РУДНИК ЛЕДЯНОГО ОГНЯ</h1>
-  <p>Две рабочие стратегии: активный фарм для большинства и удержание шахт III уровня для китов</p>
-  <div class="hero-meta"><span class="pill">Подготовлено SuBL · при участии Berange · август 2026</span></div>
-</section>
-<div class="guide-toolbar">
-  <a class="action-link" href="../../index.html#guides">← Все гайды</a>
-  
-</div>
-<details class="toc" open>
-<summary>Содержание</summary>
-<div class="toc-list">
-  <a href="#base">1. База механики</a>
-  <a href="#skills">2. Все пять уровней навыков</a>
-  <a href="#normal">3. Стратегия для большинства игроков</a>
-  <a href="#normal-check">4. Чек-лист обычного игрока</a>
-  <a href="#whale">5. Стратегия для китов — Berange</a>
-  <a href="#smelter">6. Плавильня</a>
-  <a href="#limits">7. Когда китовая стратегия не работает</a>
-  <a href="#choice">8. Какую стратегию выбрать</a>
-</div>
-</details>
+<section class="guide-hero"><div class="eyebrow">🎯 СОБЫТИЯ И РЕЖИМЫ</div><h1>РУДНИК ЛЕДЯНОГО ОГНЯ</h1><p>Темп, навыки, Прорывы жил и телепорты без лишнего PvP</p><div class="hero-meta"><span class="pill">Подготовлено SuBL · при участии Berange · сентябрь 2026</span></div></section>
+<div class="guide-toolbar"><a class="action-link" href="../../index.html#guides">← Все гайды</a></div>
+<details class="toc" open><summary>Содержание</summary><div class="toc-list"><a href="#basics">Что приносит орихалк</a><a href="#skills">Навыки</a><a href="#normal">Стратегия для большинства</a><a href="#breakthrough">Прорывы жил и телепорты</a><a href="#whale">Стратегия для сильных аккаунтов</a><a href="#smelter">Плавильня</a><a href="#result">Итог и ориентиры</a></div></details>
 <article class="article">
-<aside class="callout"><strong>Главная цель: орихалк, а не PvP</strong><p>Рудник — 30-минутная гонка эффективности. Войска здесь не погибают, но проигравшие герои получают около 5 минут восстановления. Даже победная драка съедает бесценное время марша.</p></aside>
 
-<h2 id="base">1. База механики</h2>
-<div class="table-scroll"><table>
-<tr><th>Объект</th><th>Ёмкость</th><th>Базовая скорость</th></tr>
-<tr><td>Жила I уровня</td><td>8 640</td><td>8/с</td></tr>
-<tr><td>Жила II уровня</td><td>17 280</td><td>16/с</td></tr>
-<tr><td>Жила III уровня</td><td>34 560</td><td>32/с</td></tr>
-<tr><td>Прорыв жил («вулкан»)</td><td>4 000</td><td>200/с</td></tr>
-</table></div>
-<ul class="bullets">
-<li>Прорывы жил появляются двумя сериями; удобнее ориентироваться на предупреждающий баннер. Типовые отметки на обратном таймере — около 20/19/18 и 10/9/8 минут.</li>
-<li>После первой победы над охраной жилы рядом появляются россыпи орихалка. Подбирайте свои и чужие свободные россыпи.</li>
-<li>Бесплатный продвинутый телепорт имеет собственный откат. Пока он восстанавливается, можно осознанно использовать обычный продвинутый телепорт.</li>
-<li>Обычный городской бонус скорости сбора в Руднике не работает. Боевые статы, VIP, исследования, предметы и облики продолжают действовать.</li>
-</ul>
+<div class="mine-intro">
+  <div class="mine-intro-copy">
+    <aside class="callout"><strong>Главная цель — орихалк, а не драки</strong><p>Рудник длится 30 минут. Почти всё решение сводится к темпу: марши должны постоянно приносить орихалк, а PvP имеет смысл только тогда, когда его выгода очевидно выше потерянного времени.</p></aside>
+    <div class="mine-card"><strong>Для большинства игроков работает мобильная схема</strong><p>Патрули, ежеминутный вход в жилу после третьего левого навыка, россыпи орихалка и максимальная работа на Прорывах жил. Центр для этого не обязателен.</p></div>
+    <div class="mine-card"><strong>Сильные аккаунты могут играть иначе</strong><p>Если вас почти не выбивают из жил III уровня, выгодно превратить силу аккаунта в постоянную добычу несколькими маршами и отдельно бороться за Плавильню.</p></div>
+  </div>
+  <figure class="mine-shot"><img src="../../assets/guides/ice-mine/result-screen.webp" alt="Окно результата после Рудника Ледяного Огня" loading="lazy"/><figcaption>После боя игра показывает итоговый орихалк, место и награды. На скриншоте — 437 792 орихалка и второе место.</figcaption></figure>
+</div>
 
-<h2 id="skills">2. Все пять уровней навыков</h2>
-<p class="body-p">На полную ветку требуется суммарно <b>5 400 Frostfire XP</b>. Ошибочно выбранный навык сбросить нельзя.</p>
+<h2 id="basics">1. Что именно приносит орихалк</h2>
+<div class="mine-kpis">
+  <div class="mine-kpi"><b>8/с</b><span>Жила I уровня · ёмкость 8 640</span></div>
+  <div class="mine-kpi"><b>16/с</b><span>Жила II уровня · ёмкость 17 280</span></div>
+  <div class="mine-kpi"><b>32/с</b><span>Жила III уровня · ёмкость 34 560</span></div>
+  <div class="mine-kpi"><b>200/с</b><span>Прорыв жил · 4 000 орихалка</span></div>
+</div>
+<p class="body-p">Кроме самих жил, на карте появляются <b>россыпи орихалка</b>. Они не требуют долгой добычи, поэтому их стоит подбирать по пути между патрулями, жилами и Прорывами.</p>
+<div class="mine-duo">
+  <figure class="mine-shot"><img src="../../assets/guides/ice-mine/orichalcum-selected.webp" alt="Выделенная россыпь орихалка на карте Рудника" loading="lazy"/><figcaption>Выделенная россыпь. Если она свободна и находится по пути, её обычно выгодно забрать.</figcaption></figure>
+  <figure class="mine-shot"><img src="../../assets/guides/ice-mine/orichalcum-map.webp" alt="Россыпи орихалка и жилы на карте Рудника" loading="lazy"/><figcaption>Не стойте без дела после возврата маршей: карта постоянно даёт новые короткие цели рядом с городом.</figcaption></figure>
+</div>
+<div class="mine-note warn"><strong>Проигрыш в бою стоит времени</strong>Войска здесь не погибают, но проигравшие герои получают примерно 5 минут восстановления. Даже выигранная драка может оказаться невыгодной, если марш долго летел и ничего не добывал.</div>
+
+<h2 id="skills">2. Навыки Ледяного Огня</h2>
+<p class="body-p">На открытие всех пяти уровней нужно суммарно <b>5 400 опыта Ледяного Огня</b>. Сбросить выбранные навыки в ходе матча нельзя.</p>
+<div class="mine-duo">
+  <figure class="mine-shot"><img src="../../assets/guides/ice-mine/skill-tree-empty.webp" alt="Пустое дерево навыков Ледяного Огня" loading="lazy"/><figcaption>В начале уровни дерева закрыты. Опыт приходит прежде всего за патрули.</figcaption></figure>
+  <figure class="mine-shot"><img src="../../assets/guides/ice-mine/skill-tree-upgraded.webp" alt="Прокачанное дерево навыков Ледяного Огня" loading="lazy"/><figcaption>Пример уже прокачанной ветки. Выбор левой или правой стороны на каждом уровне определяет весь дальнейший темп.</figcaption></figure>
+</div>
 <div class="table-scroll wide"><table>
 <tr><th>Ур. / XP</th><th>Левая ветка</th><th>Правая ветка</th></tr>
 <tr><td>1 / 200</td><td>+1 080 орихалка каждую минуту.</td><td>+1 500 орихалка за каждого побеждённого патрульного.</td></tr>
@@ -72,100 +74,57 @@
 <tr><td>4 / 1 500</td><td>+15% эффективности добычи при занятии жил.</td><td>−30% времени восстановления героев после поражения.</td></tr>
 <tr><td>5 / 2 300</td><td>Активный: +66% урона отправленных войск на 60 сек; откат 5 мин.</td><td>Активный: +50% скорости добычи отправленных войск на 60 сек; откат 5 мин.</td></tr>
 </table></div>
-<div class="mine-note warn"><strong>Критически важно: +5 000 сами не капают</strong>Навык III уровня слева требует нового успешного входа в жилу после минутного отката. Если оставить марш стоять внутри, автоматических +5 000 не будет. Пропустили перезаход — потеряли эти 5 000.</div>
-
-<h3>Две ветки — две разные экономики</h3>
-<div class="split-cards">
-<div class="split-card"><h3>Большинство игроков</h3><p class="route">ПРАВО → ПРАВО → ЛЕВО → ЛЕВО → ПРАВО</p><p>Патрули дают орихалк, скорость марша повышает темп, затем включаются +5 000/мин и максимальный фарм Прорывов.</p></div>
-<div class="split-card"><h3>Киты / топ-сила лобби</h3><p class="route">ЛЕВО → ЛЕВО → ЛЕВО → ЛЕВО → ПРАВО</p><p>После прокачки выгоднее превратить силу аккаунта в постоянное удержание III шахт несколькими маршами.</p></div>
+<div class="mine-skills">
+  <section class="mine-route normal"><span class="tag">ДЛЯ БОЛЬШИНСТВА</span><h3>Темп и Прорывы</h3><span class="path">П → П → Л → Л → П</span><p>Первые два правых ускоряют фарм патрулей и перемещения. Затем берём +5 000 за успешный вход в жилу, усиление добычи и активный бонус скорости сбора.</p></section>
+  <section class="mine-route whale"><span class="tag">ДЛЯ ТОП-СИЛЫ ЛОББИ</span><h3>Постоянное удержание жил</h3><span class="path">Л → Л → Л → Л → П</span><p>Ветка рассчитана на ситуацию, когда вы способны почти без помех удерживать несколько жил III уровня и постоянно добывать ими.</p></section>
 </div>
+<div class="mine-note warn"><strong>+5 000 не начисляются автоматически</strong>Третий левый навык срабатывает только при новом успешном занятии жилы после минутного отката. Стоять внутри одной и той же жилы и ждать очередные +5 000 бесполезно: нужен реальный выход и новый вход.</div>
 
 <h2 id="normal">3. Стратегия для большинства игроков</h2>
-<h3>Этап 1. Старт: патрули до ключевых навыков</h3>
-<ol>
-<li>С первых секунд разводите свободные марши по патрулям. В начале XP важнее долгого стояния в обычной жиле.</li>
-<li>Берите <b>ПРАВО → ПРАВО</b>. Первый навык превращает патрули ещё и в +1 500 орихалка; второй ускоряет перемещения на 25%.</li>
-<li>После открытия третьего навыка берите <b>ЛЕВО</b>. Один марш становится «минутным»: раз в 60 секунд входит в обычную жилу, получает +5 000 и сразу выходит.</li>
-<li>Остальные марши продолжают патрули. Четвёртый навык — <b>ЛЕВО</b>, пятый — <b>ПРАВО</b>.</li>
-</ol>
-<h3>Этап 2. Минутный ритм</h3>
-<ul class="bullets">
-<li>Цикл простой: патрули → прошло 60 секунд → вход/выход в ближайшую обычную жилу → снова патрули.</li>
-<li>Не оставляйте минутный марш припаркованным в жиле в ожидании автоматических +5 000.</li>
-<li>Если на жиле есть бот-охрана, победите её, заберите россыпи и не задерживайтесь.</li>
-<li><b>PvP — крайне нежелательно.</b> Даже победная драка отнимает время марша, которое могло уйти в патрули, минутный перезаход или Прорывы. Поражение ещё и блокирует участвовавших героев примерно на 5 минут.</li>
-</ul>
-<h3>Этап 3. Прорывы жил («вулканы»)</h3>
-<ul class="bullets">
-<li>Прорыв даёт 4 000 орихалка при базовой скорости 200/с — это краткое, но самое быстрое окно добычи.</li>
-<li>Не тратьте активный пятый навык просто по кулдауну: его максимальная ценность — волна вулканов.</li>
-<li>Выработали все вулканы рядом — бесплатно телепортируйтесь к другому плотному кластеру.</li>
-<li>Если бесплатный телепорт на откате, а в другом секторе явно много свободных вулканов, один платный продвинутый телепорт может быть рациональной тратой. Оценивайте, успеете ли окупить перелёт.</li>
-</ul>
-<div class="mine-note good"><strong>Приоритет окна</strong>Во время Прорыва обычная рутина прекращается: активируйте пятый ПРАВЫЙ навык, прекращайте патрули и отправляйте все доступные марши на вулканы.</div>
-<h3>Нужен ли центр?</h3>
-<ul class="bullets">
-<li><b>Нет.</b> Для обычного игрока центр часто означает больше конкуренции, атак и блокировок героев.</li>
-<li>Если по краям много патрулей, обычных жил для минутного касания и доступных вулканов, можно играть там до конца.</li>
-<li>Плавильню трогайте только если точно понимаете, что получите больше, чем потеряете по темпу.</li>
-</ul>
-<div class="mine-note"><strong>Край карты — нормальная позиция</strong>Практика SuBL: места топ-1, топ-3 и топ-5 получались вообще без центра — по схеме «патрули → ежеминутный перезаход → Прорывы под активный навык и телепорты».</div>
-<div class="mine-note good"><strong>Практический результат SuBL</strong>Если схема выполняется хотя бы без крупных провалов, около <b>400 000</b> орихалка — реалистичный нижний ориентир вообще без PvP и без необходимости рисковать маршами в центре. При удачных перелётах между плотными группами Прорывов <b>475–500 тысяч</b> вполне реальны и позволяют претендовать на топ-5 с 14-дневной рамкой «Синее пламя».</div>
+<div class="mine-phase-grid">
+  <div class="mine-phase"><span class="time">СТАРТ</span><b>Разведите марши по патрулям</b><p>В начале опыт важнее долгого стояния в обычной жиле. Наша задача — быстрее открыть ключевые уровни дерева.</p></div>
+  <div class="mine-phase"><span class="time">ПОСЛЕ III НАВЫКА</span><b>Запускаем минутный ритм</b><p>Один марш раз в 60 секунд входит в обычную жилу ради +5 000 и сразу возвращается к патрулям или другим целям.</p></div>
+  <div class="mine-phase"><span class="time">ПОСЛЕ V НАВЫКА</span><b>Активный бонус бережём под Прорывы</b><p>Не нажимайте ускорение добычи просто по откату. Максимальная отдача обычно получается во время волн вулканов.</p></div>
+</div>
+<div class="mine-steps">
+  <div class="mine-step">Свободные марши постоянно работают: патруль, минутный вход в жилу, россыпь или Прорыв.</div>
+  <div class="mine-step">После третьего левого навыка следите за минутным откатом и делайте новый успешный вход в обычную жилу ради +5 000.</div>
+  <div class="mine-step">Россыпи орихалка рядом с маршрутом забирайте по пути, не превращая их в отдельный длинный марш через полкарты.</div>
+  <div class="mine-step">PvP избегайте, если нет понятной причины драться. В Руднике время марша почти всегда ценнее случайной победы.</div>
+  <div class="mine-step">Когда начинается Прорыв, обычная рутина временно прекращается: все доступные марши переходят на вулканы.</div>
+</div>
 
-<h2 id="normal-check">4. Короткий чек-лист обычного игрока</h2>
-<ol>
-<li>Все марши постоянно заняты: патруль, минутное касание или Прорыв.</li>
-<li>Навыки: <b>П → П → Л → Л → П</b>.</li>
-<li>После III навыка — новый вход в жилу каждые 60 секунд ради +5 000.</li>
-<li>Россыпи орихалка собираются постоянно.</li>
-<li>На Прорыве — все марши на вулканы, активный правый навык включён.</li>
-<li>Нет вулканов рядом — бесплатный телепорт; при очевидной выгоде допустим один платный.</li>
-<li>Центр игнорируется, если край карты даёт более стабильный темп.</li>
-<li>PvP избегаем: почти никакая случайная драка не окупает потерянное время марша.</li>
-</ol>
+<h2 id="breakthrough">4. Прорывы жил и телепорты</h2>
+<div class="breakout-layout">
+  <figure class="mine-shot"><img src="../../assets/guides/ice-mine/vein-breakthrough.webp" alt="Объявление о появлении Прорыва жил" loading="lazy"/><figcaption>Перед каждой серией игра показывает предупреждение. Прорывы появляются в случайных местах и живут недолго.</figcaption></figure>
+  <div class="wave-box">
+    <div class="wave-series"><strong>Первая серия</strong><div class="wave-times"><span>20:00</span><span>19:00</span><span class="hot">18:00 · 3-я волна</span></div><p>Три последовательные волны по обратному таймеру события.</p></div>
+    <div class="wave-series"><strong>Вторая серия</strong><div class="wave-times"><span>10:00</span><span>09:00</span><span class="hot">08:00 · 3-я волна</span></div><p>Ещё три волны. К этому моменту особенно важно не тратить телепорт без причины.</p></div>
+    <div class="teleport-card"><strong>Телепорт чаще всего выгоднее оставить на третью волну</strong><p>Сначала выедаем все доступные вулканы вокруг текущей позиции. Когда локальная зона почти пустая, перелетаем туда, где на карте видно большое скопление ещё не тронутых Прорывов. Обычно на третьей волне такой перелёт даёт больше, чем ранний телепорт в первой или второй.</p></div>
+  </div>
+</div>
+<div class="mine-note good"><strong>Рабочая последовательность на волне</strong>Включить пятый правый навык → отправить все свободные марши в ближайшие вулканы → быстро собрать локальный кластер → на третьей волне при необходимости телепортироваться к крупной нетронутой группе и продолжить фарм уже там.</div>
+<div class="mine-note"><strong>Бесплатный и обычный продвинутый телепорт</strong>Бесплатный телепорт имеет собственный откат. Если он недоступен, а на другом участке видно действительно большое количество свободных вулканов, обычный продвинутый телепорт может окупиться. Это не обязательная трата — сначала оцените, сколько целей вы реально успеете забрать.</div>
 
-<h2 id="whale">5. Стратегия для китов — Berange</h2>
-<div class="mine-note"><strong>Для кого она работает</strong>Схема рассчитана примерно на топ-5 по силе конкретного лобби и предполагает, что большинство игроков не может регулярно выбивать вас из шахт III уровня.</div>
-<h3>До входа</h3>
-<ul class="bullets">
-<li>По методике Berange перед событием включаются доступные 10% боевые баффы — прежде всего для удержания III шахт.</li>
-<li>Если вы не самый сильный кит, заранее смотрите расстановку. Например, топ-3 выгодно занимать сектор центра на противоположной стороне от двух более сильных игроков.</li>
-</ul>
-<h3>Этап 1. Быстро прокачать всю ветку</h3>
-<ul class="bullets">
-<li>Маршрут: <b>ЛЕВО → ЛЕВО → ЛЕВО → ЛЕВО → ПРАВО</b>.</li>
-<li>В начале всё равно фармим патрули, пока не открыты все пять навыков.</li>
-<li>Первый левый навык даёт +1 080/мин пассивно. Второй добавляет 12 000 войск во вместимость каждого марша.</li>
-<li>Третий и четвёртый дают минутные +5 000 и +15% к добыче. Пятый правый — активное ускорение сбора.</li>
-</ul>
-<h3>Этап 2. Телепорт к центру и рассадка</h3>
-<ol>
-<li>Сразу после пятого навыка телепортируйтесь рядом с Плавильней и максимально близко к шахте III уровня.</li>
-<li>Активируйте пятый ПРАВЫЙ навык.</li>
-<li>Основной марш — в ближайшую III шахту. Остальные пять — по ближайшим доступным III шахтам.</li>
-<li>Пять маршей оставьте постоянно работать. Основной — ежеминутный перезаход ради +5 000, россыпи и ближайший вулкан между срабатываниями.</li>
-<li>Когда шахты выработаются и марши вернутся, снова активируйте навык и повторите рассадку.</li>
-</ol>
-<h3>Экономика пяти постоянных маршей</h3>
+<h2 id="whale">5. Стратегия для сильных аккаунтов</h2>
+<p class="body-p">Эта схема имеет смысл не потому, что игрок донатит, а потому что конкретное лобби почти не может выбивать его из жил III уровня. Если вас регулярно выгоняют, мобильная стратегия выше обычно выгоднее.</p>
+<div class="mine-whale">
+  <div class="mine-whale-card"><span class="big">Л → Л → Л → Л → П</span><h3>Сначала всё равно фармим патрули</h3><p>До открытия всех пяти навыков нужен быстрый опыт. После этого телепортируемся к центру и рассаживаем марши по ближайшим жилам III уровня.</p></div>
+  <div class="mine-whale-card"><span class="big">5 постоянных + 1 активный</span><h3>Не дёргаем всю рассадку ради каждого вулкана</h3><p>Пять маршей стабильно добывают в III жилах. Основной марш делает минутные перезаходы, забирает ближайшие россыпи и свободные вулканы.</p></div>
+</div>
 <div class="table-scroll"><table>
 <tr><th>Показатель</th><th>Значение</th></tr>
-<tr><td>Базовая III шахта</td><td>32/с</td></tr>
+<tr><td>Базовая III жила</td><td>32/с</td></tr>
 <tr><td>С IV левым навыком (+15%)</td><td>36,8/с</td></tr>
 <tr><td>С V правым (+50%)</td><td>≈52,8/с → интерфейс около 53/с</td></tr>
 <tr><td>Один марш при 53/с</td><td>≈3 180/мин</td></tr>
 <tr><td>Пять маршей</td><td>≈15 900/мин</td></tr>
 <tr><td>Плюс I левый навык</td><td>+1 080/мин пассивно</td></tr>
 </table></div>
-<div class="mine-note good"><strong>Смысл схемы</strong>Даже если отдельный вулкан быстрее, у кита пять маршей почти без остановки добывают в III шахтах. Не нужно срывать всю расстановку ради каждой вспышки: активным остаётся один основной марш.</div>
-<h3>Вулканы для кита</h3>
-<ul class="bullets">
-<li>Пять постоянных маршей не дёргаем. Основным держим минутный +5 000 и в промежутке забираем ближайший свободный вулкан.</li>
-<li>На следующей волне — снова ближайший вулкан тем же активным маршом. Далёкий или спорный вулкан не обязан окупать потерю позиции.</li>
-<li>Россыпи орихалка рядом с центром тоже подбираются активным маршом.</li>
-</ul>
+<div class="mine-note good"><strong>Почему это работает</strong>Отдельный вулкан добывается быстрее, но пять маршей в III жилах работают почти непрерывно. Для сильного аккаунта стабильная добыча часто ценнее постоянной гонки через всю карту.</div>
 
-<h2 id="smelter">6. Плавильня: когда киту стоит идти в центр</h2>
-<p class="body-p">Плавильня открывается на последние <b>7 минут</b> матча и награждает по месту в рейтинге суммарного времени удержания.</p>
+<h2 id="smelter">6. Плавильня</h2>
+<p class="body-p">Плавильня открывается на последние <b>7 минут</b> и даёт дополнительный орихалк по месту в рейтинге суммарного времени удержания.</p>
 <div class="table-scroll wide"><table>
 <tr><th>Место</th><th>Бонус</th><th>Место</th><th>Бонус</th></tr>
 <tr><td>1</td><td>100 000</td><td>6</td><td>40 000</td></tr>
@@ -174,42 +133,28 @@
 <tr><td>4</td><td>55 000</td><td>9</td><td>25 000</td></tr>
 <tr><td>5</td><td>50 000</td><td>10</td><td>20 000</td></tr>
 </table></div>
-<ul class="bullets">
-<li>Когда Плавильня открывается, основной марш летит туда на ускорениях: даже у сильного игрока может быть конкурент сильнее, и несколько секунд решают первый вход.</li>
-<li>Если вас никто не пробивает, ориентир Berange — удержать около четырёх минут, затем вернуть основной марш к добыче.</li>
-<li>Не успели занять или быстро выбили — не ломайте матч. Возвращайтесь к III шахтам.</li>
-</ul>
-<div class="mine-note good"><strong>Почему именно четыре минуты</strong>Плавильня доступна только 7 минут. Четыре минуты — больше половины окна. Поскольку одновременно её держит только один игрок, после ваших 4:00 на всех остальных вместе остаётся максимум 3:00. Обойти вас по суммарному времени уже физически невозможно, поэтому марш выгоднее вернуть в добычу.</div>
-<div class="mine-note"><strong>Практический результат Berange</strong>Ориентир по его матчам: около <b>530 000</b> орихалка без бонуса Плавильни и около <b>630 000</b>, когда удаётся взять первое место по времени удержания.</div>
+<div class="mine-whale">
+  <div class="mine-whale-card"><h3>Если вы реально можете удерживать центр</h3><p>Основной марш летит в Плавильню сразу после открытия. Несколько секунд на первом входе могут решить итоговое место по времени удержания.</p></div>
+  <div class="mine-whale-card"><h3>Ориентир — около четырёх минут</h3><p>Четыре минуты — больше половины семиминутного окна. Если удержали их непрерывно, на остальных игроков остаётся максимум три минуты суммарно, и ваш результат уже нельзя обойти по времени.</p></div>
+</div>
+<div class="mine-note warn"><strong>Не ломайте матч ради Плавильни</strong>Если вас быстро выбили или центр явно держит более сильный игрок, возвращайте марш к добыче. Потерять несколько минут на бессмысленные попытки обычно хуже, чем продолжить фарм III жил и Прорывов.</div>
 
-<h2 id="limits">7. Почему китовую стратегию нельзя копировать вслепую</h2>
-<ul class="bullets">
-<li>Вся экономика держится на том, что ваши III шахты почти никто не отбирает.</li>
-<li>Проигрыш на жиле блокирует участвовавших героев примерно на 5 минут.</li>
-<li>Если вас регулярно выбивают, вы теряете эффект рассадки под активным навыком и начинаете играть хуже, чем через патрули + минутное касание + Прорывы.</li>
-<li>Главный критерий — не «донатил ли я», а можете ли вы стабильно удерживать III шахты против конкретного лобби.</li>
-</ul>
+<h2 id="result">7. Итог и ориентиры</h2>
+<div class="result-layout">
+  <figure class="mine-shot"><img src="../../assets/guides/ice-mine/result-screen.webp" alt="Награды и место после завершения Рудника" loading="lazy"/><figcaption>Пример итогового окна после завершения Рудника.</figcaption></figure>
+  <div class="result-copy">
+    <div class="result-card"><strong>Обычный игрок</strong>Рабочая схема: <b>П → П → Л → Л → П</b>, патрули, минутный перезаход, россыпи и полный приоритет Прорывов. Центр не обязателен.</div>
+    <div class="result-card"><strong>Сильный аккаунт</strong>Если III жилы удерживаются стабильно: <b>Л → Л → Л → Л → П</b>, постоянная рассадка по жилам и один активный марш.</div>
+    <div class="result-card"><strong>Практические ориентиры</strong>По опыту SuBL, около <b>400 000</b> орихалка достижимы без обязательного PvP; удачные телепорты по Прорывам могут поднимать результат к <b>475–500 тысячам</b>. В варианте Berange ориентир был около <b>530 000</b> без бонуса Плавильни и около <b>630 000</b> при первом месте за удержание.</div>
+  </div>
+</div>
+<aside class="callout"><strong>Коротко</strong><p>Для большинства Рудник выигрывается не силой, а темпом: не простаивать, не тратить время на ненужные драки, каждую минуту забирать +5 000 после открытия навыка и особенно правильно сыграть шесть волн Прорывов на 20/19/18 и 10/9/8 минутах.</p></aside>
 
-<h2 id="choice">8. Итог: какую стратегию выбрать</h2>
-<div class="table-scroll"><table>
-<tr><th>Ситуация</th><th>Выбор</th></tr>
-<tr><td>Не уверены, что удержите III шахты</td><td>Обычная: П → П → Л → Л → П; край карты, патрули, +5 000/мин, вулканы.</td></tr>
-<tr><td>Сильный аккаунт, но в лобби есть заметно сильнее</td><td>Обычная либо осторожная китовая на противоположной стороне центра.</td></tr>
-<tr><td>Топ-5 по силе лобби, III шахты удерживаются</td><td>Китовая: Л → Л → Л → Л → П; пять постоянных шахт + один активный марш.</td></tr>
-<tr><td>Самый сильный игрок лобби</td><td>Китовая + ускоренный заход в Плавильню и борьба за 100 000 бонуса.</td></tr>
-</table></div>
-<aside class="callout"><strong>Одна фраза на память</strong><p>Обычный игрок выигрывает темпом и мобильностью. Кит выигрывает тем, что превращает силу аккаунта в непрерывную добычу сразу несколькими маршами. В обеих стратегиях минутные +5 000 требуют реального перезахода в жилу.</p></aside>
 </article>
 </main>
 <a class="back-top" href="#" id="backTop">↑</a>
-<nav class="bottom-nav">
-<a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a>
-<a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a>
-<a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a>
-<button data-search-open><span class="ico">🔎</span><span>Поиск</span></button>
-</nav>
-<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: Рудник, Литейная, герои…" type="search"/><button class="search-close" data-search-close>×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
-<script src="../../assets/js/search-index.js?v=35"></script>
-<script src="../../assets/js/app.js?v=24"></script>
+<nav class="bottom-nav"><a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open><span class="ico">🔎</span><span>Поиск</span></button></nav>
+<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: Рудник, Прорыв, вулканы, орихалк…" type="search"/><button class="search-close" data-search-close>×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
+<script src="../../assets/js/search-index.js?v=36"></script><script src="../../assets/js/app.js?v=24"></script>
 </body>
 </html>
