@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#0f5f8f"/>
+<meta name="description" content="Колесо Фортуны в Whiteout Survival: сколько гемов нужно на 120 круток, сколько фрагментов ждать, почему важны книги навыков и какого героя выбирать."/>
+<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
+<link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
+<link href="../../assets/css/content.css?v=24" rel="stylesheet"/>
+<title>КОЛЕСО ФОРТУНЫ · Whiteout Survival</title>
+<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
+<style>
+.wheel-intro{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);gap:15px;align-items:start;margin:14px 0 18px}.wheel-copy{display:grid;gap:10px}.wheel-card{padding:14px 15px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(135deg,rgba(223,153,28,.10),rgba(22,118,166,.05))}.wheel-card strong{display:block;margin-bottom:5px;color:var(--ink);font-size:14px}.wheel-card p{margin:0;color:var(--ink);font-size:12.5px;line-height:1.55}.wheel-shot{margin:0;padding:8px;border:1px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden}.wheel-shot img{display:block;width:100%;height:auto;border-radius:12px}.wheel-shot figcaption{padding:8px 4px 2px;color:var(--muted);font-size:10.5px;line-height:1.42}
+.wheel-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0 18px}.wheel-fact{padding:12px 13px;border:1px solid var(--line);border-radius:15px;background:var(--card)}.wheel-fact b{display:block;margin-bottom:4px;color:#12648d;font-size:12px}.wheel-fact strong{display:block;color:var(--ink);font-size:17px;margin-bottom:4px}.wheel-fact p{margin:0;color:var(--ink);font-size:11.5px;line-height:1.48}
+.wheel-math{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:13px 0 18px}.wheel-math-card{padding:15px;border:1px solid var(--line);border-radius:18px;background:var(--card)}.wheel-math-card h3{margin:0 0 8px;color:var(--ink);font-size:15px}.wheel-formula{padding:11px 12px;border-radius:13px;background:rgba(223,153,28,.10);border:1px solid rgba(223,153,28,.23);font-size:13px;line-height:1.5;color:var(--ink);font-weight:800}.wheel-math-card p{margin:9px 0 0;color:var(--ink);font-size:12px;line-height:1.52}.wheel-math-card .small{color:var(--muted);font-size:10.8px}
+.wheel-choice{display:grid;grid-template-columns:minmax(250px,.78fr) minmax(0,1.22fr);gap:15px;align-items:start;margin:13px 0 18px}.wheel-choice-copy{display:grid;gap:9px}.wheel-rule{padding:12px 13px;border:1px solid var(--line);border-radius:15px;background:var(--card);color:var(--ink);font-size:12px;line-height:1.5}.wheel-rule strong{display:block;color:#12648d;margin-bottom:4px}.wheel-rule.warn{background:linear-gradient(135deg,rgba(194,67,61,.08),rgba(255,255,255,0));border-color:rgba(194,67,61,.22)}.wheel-rule.warn strong{color:#a33a35}.wheel-rule.good{background:linear-gradient(135deg,rgba(42,151,102,.09),rgba(255,255,255,0));border-color:rgba(42,151,102,.24)}.wheel-rule.good strong{color:#15744e}.wheel-link{display:inline-flex;align-items:center;gap:6px;margin-top:6px;color:#12648d;font-weight:850;text-decoration:none}.wheel-link:hover{text-decoration:underline}
+.wheel-books{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 18px}.wheel-book{padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--card)}.wheel-book b{display:block;color:#12648d;margin-bottom:5px}.wheel-book p{margin:0;color:var(--ink);font-size:12px;line-height:1.5}
+.wheel-check{counter-reset:wheel;display:grid;gap:8px;margin:12px 0}.wheel-check div{counter-increment:wheel;position:relative;padding:11px 12px 11px 46px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);font-size:12.5px;line-height:1.48}.wheel-check div:before{content:counter(wheel);position:absolute;left:12px;top:11px;width:24px;height:24px;border-radius:8px;display:grid;place-items:center;background:rgba(223,153,28,.13);color:#94600b;font-size:11px;font-weight:900}
+html[data-theme="dark"] .wheel-card{background:linear-gradient(135deg,#433416,#0b3149);border-color:#315573}html[data-theme="dark"] .wheel-shot,html[data-theme="dark"] .wheel-fact,html[data-theme="dark"] .wheel-math-card,html[data-theme="dark"] .wheel-rule,html[data-theme="dark"] .wheel-book,html[data-theme="dark"] .wheel-check div{background:linear-gradient(135deg,#0b2942,#0c3550);border-color:#225878}html[data-theme="dark"] .wheel-fact b,html[data-theme="dark"] .wheel-rule strong,html[data-theme="dark"] .wheel-book b,html[data-theme="dark"] .wheel-link{color:#8ce1ff}html[data-theme="dark"] .wheel-formula{background:rgba(223,153,28,.14);border-color:rgba(239,178,72,.30)}html[data-theme="dark"] .wheel-rule.warn{background:linear-gradient(135deg,#442522,#0b3149);border-color:#693b38}html[data-theme="dark"] .wheel-rule.warn strong{color:#ffaaa5}html[data-theme="dark"] .wheel-rule.good{background:linear-gradient(135deg,#123b30,#0b3149);border-color:#29634f}html[data-theme="dark"] .wheel-rule.good strong{color:#89e6b6}html[data-theme="dark"] .wheel-check div:before{background:#4a3518;color:#ffd38d}
+@media(max-width:760px){.wheel-intro,.wheel-choice{grid-template-columns:1fr}.wheel-facts{grid-template-columns:1fr}.wheel-math,.wheel-books{grid-template-columns:1fr}.wheel-shot{max-width:520px;margin-inline:auto}.wheel-choice>.wheel-shot{max-width:480px}}
+</style>
+</head>
+<body data-root="../../">
+<header class="site-top"><a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a><div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div></header>
+<main class="guide-wrap">
+<section class="guide-hero"><div class="eyebrow">🧭 ОСНОВЫ ИГРЫ · ПРОЧЕЕ</div><h1>КОЛЕСО ФОРТУНЫ</h1><p>Главный способ превращать гемы в актуальных героев и книги навыков</p><div class="hero-meta"><span class="pill">Подготовлено SuBL · сентябрь 2026</span></div></section>
+<div class="guide-toolbar"><a class="action-link" href="../../index.html#guides">← Все гайды</a></div>
+<details class="toc" open=""><summary>Содержание</summary><div class="toc-list"><a href="#why">Зачем крутить</a><a href="#cost">Цена и фрагменты</a><a href="#hero">Какого героя выбирать</a><a href="#books">Книги навыков</a><a href="#check">Коротко</a></div></details>
+<article class="article">
+
+<div class="wheel-intro">
+  <div class="wheel-copy">
+    <aside class="callout"><strong>Главный расход гемов</strong><p>Для обычного F2P или игрока с небольшим донатом Колесо Фортуны — основной потребитель накопленных гемов и один из главных источников актуальных мифических героев.</p></aside>
+    <div class="wheel-card"><strong>Гемы лучше копить именно под Колесо</strong><p>Не размазывайте крупные траты по случайным магазинам и ускорениям. Полное Колесо стоит дорого, но даёт одновременно фрагменты героя, гарантированные награды шкалы и книги навыков.</p></div>
+    <div class="wheel-card"><strong>Донатить ради круток обычно не нужно</strong><p>При активной игре гемов приходит достаточно много. Практический ориентир для активного аккаунта — накоплений хватает примерно на 9 полных Колёс из 10, поэтому покупать наборы только ради круток невыгодно.</p></div>
+  </div>
+  <figure class="wheel-shot"><img src="../../assets/guides/lucky-wheel/wheel-main.webp" alt="Основной экран Колеса Фортуны" loading="lazy"/><figcaption>Главная цель — дойти до последней награды шкалы на 120 крутках. Крутки по 10 дают скидку.</figcaption></figure>
+</div>
+
+<h2 id="why">1. Что даёт Колесо</h2>
+<div class="wheel-facts">
+  <div class="wheel-fact"><b>Герой</b><strong>≈ 180 фрагментов</strong><p>Среднее ожидание за 120 круток с учётом гарантированных наград шкалы и случайных выпадений.</p></div>
+  <div class="wheel-fact"><b>Навыки</b><strong>Книги обоих типов</strong><p>Шкала даёт мифические книги навыков Освоения и Экспедиции — один из основных способов их стабильно получать.</p></div>
+  <div class="wheel-fact"><b>Цель</b><strong>120 круток</strong><p>Последняя награда шкалы находится именно здесь. После неё дополнительной гарантированной награды за 150 круток уже нет.</p></div>
+</div>
+
+<h2 id="cost">2. Сколько гемов нужно</h2>
+<div class="wheel-math">
+  <section class="wheel-math-card"><h3>Полное Колесо</h3><div class="wheel-formula">12 × 13 500 = 162 000 гемов</div><p>Одна крутка стоит 1500 гемов. Пакет из 10 круток стоит 13 500 — это скидка 10%. Поэтому бюджет на 120 круток без учёта бесплатных жетонов — <b>162 000 гемов</b>.</p><p class="small">Фактический расход может быть немного ниже, если использовать бесплатные жетоны Колеса.</p></section>
+  <section class="wheel-math-card"><h3>Сколько фрагментов ждать</h3><div class="wheel-formula">≈ 180 фрагментов за 162 000 гемов</div><p>По вероятностям Колеса 120 круток дают в среднем около <b>180 фрагментов</b>: 115 гарантированно со шкалы и около 65 случайно с самих круток.</p><p class="small">Это примерно 900 гемов за один фрагмент. Для простого планирования можно округлять до правила: <b>около 1 фрагмента на 1000 потраченных гемов</b>. Результат конкретного Колеса может быть выше или ниже.</p></section>
+</div>
+<aside class="callout"><strong>Не оценивайте Колесо по одному заходу</strong><p>Случайные фрагменты могут выпадать неравномерно. Ориентир «примерно один фрагмент на тысячу гемов» — средняя оценка на дистанции, а не гарантия конкретного результата.</p></aside>
+
+<h2 id="hero">3. Какого героя крутить</h2>
+<div class="wheel-choice">
+  <figure class="wheel-shot"><img src="../../assets/guides/lucky-wheel/hero-choice.webp" alt="Выбор героя в Колесе Фортуны" loading="lazy"/><figcaption>Героя Колеса можно менять. В актуальной версии доступны герой текущего Колеса и герои двух предыдущих Колёс.</figcaption></figure>
+  <div class="wheel-choice-copy">
+    <div class="wheel-rule good"><strong>По умолчанию берём актуального героя</strong>Новый герой обычно лучше соответствует текущему поколению и дольше остаётся полезным. Возвращаться к предыдущему имеет смысл, если вы не успели довести важного героя до рабочего состояния.</div>
+    <div class="wheel-rule"><strong>Рабочая цель — 4★</strong>Для обычного игрока 4★ — основной ориентир: на этом уровне герой уже полноценно работает и получает доступ к полной прокачке навыков. <a class="wheel-link" href="../combat/heroes.html#stars">Подробнее в руководстве «Герои» →</a></div>
+    <div class="wheel-rule warn"><strong>Не надо автоматически гнаться за 5★</strong>Пятая звезда стоит очень дорого. Сначала оцените, сколько поколений герой ещё будет у вас основным и не выгоднее ли сохранить гемы под следующее Колесо.</div>
+  </div>
+</div>
+
+<h2 id="books">4. Книги навыков — не побочная награда</h2>
+<div class="wheel-books">
+  <div class="wheel-book"><b>Навыки Освоения</b><p>Используются в Арене и Освоении. Герой без прокачанных навыков теряет значительную часть своей боевой ценности даже при хороших звёздах и снаряжении.</p></div>
+  <div class="wheel-book"><b>Навыки Экспедиции</b><p>Работают в боях с войсками: PvP, ралли, гарнизоны и другие походы. Колесо одновременно развивает героя и обеспечивает книги для его навыков.</p></div>
+</div>
+<aside class="callout"><strong>Шкала 120 круток особенно важна</strong><p>На этапах 5 / 15 / 35 / 70 / 120 вы получаете не только фрагменты героя, но и соответствующие награды книг навыков. Поэтому ценность полного Колеса заметно выше, чем просто сумма случайных секторов.</p></aside>
+
+<h2 id="check">5. Коротко</h2>
+<div class="wheel-check">
+  <div>Копите гемы прежде всего под <b>Колесо Фортуны</b>.</div>
+  <div>Крутите по <b>10 раз за 13 500 гемов</b>, а не одиночными крутками.</div>
+  <div>Полный ориентир — <b>120 круток и 162 000 гемов</b> до бесплатных жетонов.</div>
+  <div>По среднему результату рассчитывайте примерно на <b>180 фрагментов</b>, или около одного фрагмента на 1000 гемов.</div>
+  <div>Для большинства героев сначала целимся в <b>4★</b>, а не автоматически в 5★.</div>
+  <div>Не забывайте про книги навыков: без них даже хороший герой раскрыт не полностью.</div>
+  <div>Покупать донатные наборы специально ради круток обычно не нужно.</div>
+</div>
+
+</article>
+</main>
+<a class="back-top" href="#" id="backTop">↑</a>
+<nav class="bottom-nav"><a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open=""><span class="ico">🔎</span><span>Поиск</span></button></nav>
+<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: Колесо, гемы, 120 круток, 4★…" type="search"/><button class="search-close" data-search-close="">×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
+<script src="../../assets/js/search-index.js?v=36"></script><script src="../../assets/js/app.js?v=24"></script>
+</body>
+</html>
