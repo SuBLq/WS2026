@@ -1,15 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-<meta name="theme-color" content="#0f5f8f"/>
-<meta name="description" content="Битва за Литейную — PvP за объекты, очки, AFK-фарм, мастерские, наёмники, телепорты и командная логика."/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="#0f5f8f" name="theme-color"/>
+<meta content="Битва за Литейную — PvP за объекты, очки, AFK-фарм, мастерские, наёмники, телепорты и командная логика." name="description"/>
 <link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="../../manifest.webmanifest" rel="manifest"/>
 <link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
 <link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
-<link href="../../assets/css/content.css?v=24" rel="stylesheet"/>
+<link href="../../assets/css/content.css?v=25" rel="stylesheet"/>
 <title>БИТВА ЗА ЛИТЕЙНУЮ · Whiteout Survival</title>
 <style>
 :root{--fy-blue:#2d8fc0;--fy-cyan:#5fc8e8;--fy-green:#28a979;--fy-orange:#d98a32;--fy-red:#c95b55;--fy-ink:#173f56;--fy-muted:#587485;--fy-line:#d6e6ed;--fy-bg:#f7fbfd}
@@ -50,76 +51,70 @@ html[data-theme="dark"] .match-plan li:before{background:#104966;color:#9fe7ff}
 </head>
 <body data-root="../../">
 <header class="site-top">
-  <a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a>
-  <div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div>
+<a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a>
+<div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div>
 </header>
-
 <main class="guide-wrap">
 <section class="guide-hero">
-  <div class="eyebrow">🎯 СОБЫТИЯ И РЕЖИМЫ</div>
-  <h1>БИТВА ЗА ЛИТЕЙНУЮ</h1>
-  <p>PvP за объекты, командные бонусы и экономика маршей: как выигрывать матч и не оставлять личные очки на столе</p>
-  <div class="hero-meta"><span class="pill">Подготовлено SuBL · обновлено сентябрь 2026</span></div>
+<div class="eyebrow">🎯 СОБЫТИЯ И РЕЖИМЫ</div>
+<h1>БИТВА ЗА ЛИТЕЙНУЮ</h1>
+<p>PvP за объекты, командные бонусы и экономика маршей: как выигрывать матч и не оставлять личные очки на столе</p>
+<div class="hero-meta"><span class="pill">Подготовлено SuBL · обновлено сентябрь 2026</span></div>
 </section>
-
 <div class="guide-toolbar"><a class="action-link" href="../../index.html#guides">← Все гайды</a></div>
-
-<details class="toc" open="">
+<details class="toc">
 <summary>Содержание</summary>
 <div class="toc-list">
-  <a href="#core">1. Литейная: две задачи одновременно</a>
-  <a href="#prep">2. До входа: АТК, ЗАЩ и готовность города</a>
-  <a href="#points">3. Карта ценности объектов</a>
-  <a href="#afk">4. AFK-фарм и распределение 6 маршей</a>
-  <a href="#scoring-objects">5. Главные объекты, приносящие очки</a>
-  <a href="#service-objects">6. Служебные объекты: мало очков, много пользы</a>
-  <a href="#workshops">7. Оружейные мастерские</a>
-  <a href="#mercs">8. Наёмники против гарнизонов</a>
-  <a href="#combat">9. Телепорты, бой и лечение</a>
-  <a href="#plan">10. Алгоритм матча</a>
+<a href="#core">1. Литейная: две задачи одновременно</a>
+<a href="#prep">2. До входа: АТК, ЗАЩ и готовность города</a>
+<a href="#points">3. Карта ценности объектов</a>
+<a href="#afk">4. AFK-фарм и распределение 6 маршей</a>
+<a href="#scoring-objects">5. Главные объекты, приносящие очки</a>
+<a href="#service-objects">6. Служебные объекты: мало очков, много пользы</a>
+<a href="#workshops">7. Оружейные мастерские</a>
+<a href="#mercs">8. Наёмники против гарнизонов</a>
+<a href="#combat">9. Телепорты, бой и лечение</a>
+<a href="#plan">10. Алгоритм матча</a>
 </div>
 </details>
-
 <article class="article">
 <h2 id="core">1. Литейная: две задачи одновременно</h2>
 <p class="body-p lead">Литейная — это полноценное PvP за объекты, но поверх него работает отдельная экономика очков. Сильная игра строится не вокруг выбора «команда или личка», а вокруг правильного распределения маршей между боем, гарнизонами и сбором.</p>
 <div class="fy-intro">
-  <div class="fy-intro-card team"><h3>🏆 Победа команды</h3><p>Склад, Котельная, Транзит и Наёмники могут давать мало личного пассива, но их бонусы меняют темп всего матча. Критический служебный объект иногда важнее Литейной с её 900 личных очков/мин.</p></div>
-  <div class="fy-intro-card personal"><h3>⭐ Личные очки</h3><p>Для пассивного набора приоритет другой: Королевская литейная → Прототипы → Ремонтники → служебные объекты. Свободный марш без задачи — почти всегда потерянные очки.</p></div>
+<div class="fy-intro-card team"><h3>🏆 Победа команды</h3><p>Склад, Котельная, Транзит и Наёмники могут давать мало личного пассива, но их бонусы меняют темп всего матча. Критический служебный объект иногда важнее Литейной с её 900 личных очков/мин.</p></div>
+<div class="fy-intro-card personal"><h3>⭐ Личные очки</h3><p>Для пассивного набора приоритет другой: Королевская литейная → Прототипы → Ремонтники → служебные объекты. Свободный марш без задачи — почти всегда потерянные очки.</p></div>
 </div>
 <div class="fy-links">
-  <a href="../combat/pvp-objects.html">🩸 PvP за объекты — формации и гарнизоны</a>
-  <a href="../combat/combat-system.html">⚔️ Боевая система — состав марша и статы</a>
+<a href="../combat/pvp-objects.html">🩸 PvP за объекты — формации и гарнизоны</a>
+<a href="../combat/combat-system.html">⚔️ Боевая система — состав марша и статы</a>
 </div>
-
 <h2 id="prep">2. До входа: АТК, ЗАЩ и готовность города</h2>
 <div class="formation-grid">
-  <section class="formation-card attack">
-    <div class="head"><h3>⚔️ АТК — забрать объект</h3><div class="sub">Для присоединения к атакующим ралли и активного выбивания гарнизона</div></div>
-    <img src="../../assets/guides/pvp/attack-jessie.webp" alt="Пример атакующей PvP-формации с героем атаки первым" loading="lazy"/>
-    <div class="body"><div class="ratio-row"><span>Джесси / Джассер первым</span><span>50 / 20 / 30</span></div><p>Задача атакующей формации — быстро продавить объект. После успешного захвата её не оставляем как постоянную защиту.</p></div>
-  </section>
-  <section class="formation-card defense">
-    <div class="head"><h3>🛡️ ЗАЩ — удержать объект</h3><div class="sub">После захвата меняем атакующие навыки на защитные</div></div>
-    <img src="../../assets/guides/pvp/defense-patrick.webp" alt="Пример защитной PvP-формации с Патриком первым героем" loading="lazy"/>
-    <div class="body"><div class="ratio-row"><span>Сергей / Патрик первым</span><span>60 / 40 / 0</span></div><p>Для удержания объекта используем защитный первый навык и более плотный фронт.</p></div>
-  </section>
+<section class="formation-card attack">
+<div class="head"><h3>⚔️ АТК — забрать объект</h3><div class="sub">Для присоединения к атакующим ралли и активного выбивания гарнизона</div></div>
+<img alt="Пример атакующей PvP-формации с героем атаки первым" loading="lazy" src="../../assets/guides/pvp/attack-jessie.webp"/>
+<div class="body"><div class="ratio-row"><span>Джесси / Джассер первым</span><span>50 / 20 / 30</span></div><p>Задача атакующей формации — быстро продавить объект. После успешного захвата её не оставляем как постоянную защиту.</p></div>
+</section>
+<section class="formation-card defense">
+<div class="head"><h3>🛡️ ЗАЩ — удержать объект</h3><div class="sub">После захвата меняем атакующие навыки на защитные</div></div>
+<img alt="Пример защитной PvP-формации с Патриком первым героем" loading="lazy" src="../../assets/guides/pvp/defense-patrick.webp"/>
+<div class="body"><div class="ratio-row"><span>Сергей / Патрик первым</span><span>60 / 40 / 0</span></div><p>Для удержания объекта используем защитный первый навык и более плотный фронт.</p></div>
+</section>
 </div>
 <div class="fy-section-lead green"><strong>Первый экспедиционный навык</strong>У героев присоединения он должен быть прокачан минимум до 3 уровня, лучше выше. На Литейной неправильный первый герой — это не косметика, а потерянный командный бонус в ралли или гарнизоне.</div>
 <div class="entry-check">
-  <div><b>Марши дома</b>Перед входом не оставляем отряды на ресурсах, в рейдах и других активностях.</div>
-  <div><b>Лазарет</b>Обычные раненые не должны блокировать вход на поле боя.</div>
-  <div><b>Баррикада</b>Горящий город лучше привести в порядок заранее.</div>
-  <div><b>Посольство</b>Чужие подкрепления перед входом убираем.</div>
+<div><b>Марши дома</b>Перед входом не оставляем отряды на ресурсах, в рейдах и других активностях.</div>
+<div><b>Лазарет</b>Обычные раненые не должны блокировать вход на поле боя.</div>
+<div><b>Баррикада</b>Горящий город лучше привести в порядок заранее.</div>
+<div><b>Посольство</b>Чужие подкрепления перед входом убираем.</div>
 </div>
-
 <h2 id="points">3. Карта ценности объектов</h2>
 <p class="body-p">Стационарные объекты дают разовые очки за захват и постоянные очки за удержание. Личный пассив равен половине командного, но <b>личная доходность и командная ценность — не одно и то же</b>.</p>
 <div class="value-ladder">
-  <div class="value-card"><span class="num">900</span><b>Литейная</b><p>личных очков/мин</p></div>
-  <div class="value-card"><span class="num">600</span><b>Прототип</b><p>личных очков/мин</p></div>
-  <div class="value-card"><span class="num">300</span><b>Ремонтник</b><p>личных очков/мин</p></div>
-  <div class="value-card"><span class="num">120</span><b>Служебные</b><p>личных очков/мин</p></div>
+<div class="value-card"><span class="num">900</span><b>Литейная</b><p>личных очков/мин</p></div>
+<div class="value-card"><span class="num">600</span><b>Прототип</b><p>личных очков/мин</p></div>
+<div class="value-card"><span class="num">300</span><b>Ремонтник</b><p>личных очков/мин</p></div>
+<div class="value-card"><span class="num">120</span><b>Служебные</b><p>личных очков/мин</p></div>
 </div>
 <details class="data-panel"><summary>Точные очки захвата и удержания</summary>
 <div class="table-scroll wide"><table>
@@ -132,94 +127,85 @@ html[data-theme="dark"] .match-plan li:before{background:#104966;color:#9fe7ff}
 <tr><td>Котельная</td><td>1 200</td><td>240/мин</td><td>600</td><td>120/мин</td></tr>
 <tr><td>Транзитная станция</td><td>1 200</td><td>240/мин</td><td>600</td><td>120/мин</td></tr>
 </table></div></details>
-<figure class="foundry-figure"><img src="../../assets/guides/foundry/score.webp" alt="Поле боя Литейной с 7 560 командных очков в минуту при полном контроле" loading="lazy"/><figcaption><b>Контрольная цифра:</b> полный контроль карты даёт +7 560 командных очков в минуту.</figcaption></figure>
+<figure class="foundry-figure"><img alt="Поле боя Литейной с 7 560 командных очков в минуту при полном контроле" loading="lazy" src="../../assets/guides/foundry/score.webp"/><figcaption><b>Контрольная цифра:</b> полный контроль карты даёт +7 560 командных очков в минуту.</figcaption></figure>
 <div class="fy-section-lead orange"><strong>После перехвата здания</strong>Часть накопленных временных очков может рассыпаться рядом как припасы Арсенала. Их подбирает любая сторона, поэтому после смены владельца сразу смотрим пространство вокруг объекта — не отдаём выпавшие очки обратно противнику.</div>
-
 <h2 id="afk">4. AFK-фарм и распределение 6 маршей</h2>
 <p class="body-p">Если активный бой прямо сейчас не требует всех ваших маршей, пассивный доход можно считать почти как экономику производства.</p>
 <div class="afk-grid">
-  <div class="afk-card"><span class="score">2 400/мин</span><b>До стабильного контроля центра</b><div class="march-slots"><span>Прототип</span><span>Прототип</span><span>Ремонтник</span><span>Ремонтник</span><span>Ремонтник</span><span>Ремонтник</span></div><p>2 Прототипа + 4 Ремонтных комплекса. Хорошая пассивная схема, если Литейная ещё закрыта или центр постоянно отбивают.</p></div>
-  <div class="afk-card"><span class="score">3 000/мин</span><b>Когда центр можно удерживать</b><div class="march-slots"><span>Литейная</span><span>Прототип</span><span>Прототип</span><span>Ремонтник</span><span>Ремонтник</span><span>Ремонтник</span></div><p>Литейная + 2 Прототипа + 3 Ремонтника. Теоретический максимум для шести гарнизонных маршей по лучшим личным пассивам.</p></div>
+<div class="afk-card"><span class="score">2 400/мин</span><b>До стабильного контроля центра</b><div class="march-slots"><span>Прототип</span><span>Прототип</span><span>Ремонтник</span><span>Ремонтник</span><span>Ремонтник</span><span>Ремонтник</span></div><p>2 Прототипа + 4 Ремонтных комплекса. Хорошая пассивная схема, если Литейная ещё закрыта или центр постоянно отбивают.</p></div>
+<div class="afk-card"><span class="score">3 000/мин</span><b>Когда центр можно удерживать</b><div class="march-slots"><span>Литейная</span><span>Прототип</span><span>Прототип</span><span>Ремонтник</span><span>Ремонтник</span><span>Ремонтник</span></div><p>Литейная + 2 Прототипа + 3 Ремонтника. Теоретический максимум для шести гарнизонных маршей по лучшим личным пассивам.</p></div>
 </div>
 <ul class="bullets">
-  <li>Это идеальные цифры при непрерывном контроле. Реальный доход ниже из-за переходов, выбивания гарнизонов и смены владельца.</li>
-  <li>Безопасный Прототип или Ремонтник может дать больше фактических очков, чем центральная Литейная, которую вас постоянно заставляют покидать.</li>
-  <li>Слабый игрок полезен, если занимает свободное место в хорошем гарнизоне и освобождает сильные марши союзников для активного боя.</li>
+<li>Это идеальные цифры при непрерывном контроле. Реальный доход ниже из-за переходов, выбивания гарнизонов и смены владельца.</li>
+<li>Безопасный Прототип или Ремонтник может дать больше фактических очков, чем центральная Литейная, которую вас постоянно заставляют покидать.</li>
+<li>Слабый игрок полезен, если занимает свободное место в хорошем гарнизоне и освобождает сильные марши союзников для активного боя.</li>
 </ul>
-
 <h2 id="scoring-objects">5. Главные объекты, приносящие очки</h2>
 <div class="object-grid">
-  <figure class="object-card"><img src="../../assets/guides/foundry/foundry.webp" alt="Королевская литейная" loading="lazy"/><figcaption><b>Королевская литейная</b><span class="rate">900 личных/мин</span>. Самый дорогой пассивный объект карты, но обычно и самый спорный.</figcaption></figure>
-  <figure class="object-card"><img src="../../assets/guides/foundry/prototype.webp" alt="Прототипный объект" loading="lazy"/><figcaption><b>Прототипный объект ×2</b><span class="rate">600 личных/мин</span>. Отличное сочетание доходности и относительной стабильности.</figcaption></figure>
-  <figure class="object-card"><img src="../../assets/guides/foundry/repair.webp" alt="Ремонтный комплекс" loading="lazy"/><figcaption><b>Ремонтный комплекс ×4</b><span class="rate">300 личных/мин</span>. Основа спокойного пассивного набора и хорошее место для вторичных маршей.</figcaption></figure>
+<figure class="object-card"><img alt="Королевская литейная" loading="lazy" src="../../assets/guides/foundry/foundry.webp"/><figcaption><b>Королевская литейная</b><span class="rate">900 личных/мин</span>. Самый дорогой пассивный объект карты, но обычно и самый спорный.</figcaption></figure>
+<figure class="object-card"><img alt="Прототипный объект" loading="lazy" src="../../assets/guides/foundry/prototype.webp"/><figcaption><b>Прототипный объект ×2</b><span class="rate">600 личных/мин</span>. Отличное сочетание доходности и относительной стабильности.</figcaption></figure>
+<figure class="object-card"><img alt="Ремонтный комплекс" loading="lazy" src="../../assets/guides/foundry/repair.webp"/><figcaption><b>Ремонтный комплекс ×4</b><span class="rate">300 личных/мин</span>. Основа спокойного пассивного набора и хорошее место для вторичных маршей.</figcaption></figure>
 </div>
 <div class="compare-strip">
-  <div class="compare-box points"><h3>⭐ Если нужна личка</h3><ul><li>Литейная → Прототипы → Ремонтники.</li><li>Стабильный аптайм важнее красивой цифры объекта.</li><li>Свободные места в гарнизонах — бесплатные очки.</li></ul></div>
-  <div class="compare-box win"><h3>🏆 Если нужна победа</h3><ul><li>Смотрим не только на пассив.</li><li>Служебный бонус может решить следующий захват.</li><li>Не бросаем Склад или Транзит ради +300 личных/мин.</li></ul></div>
+<div class="compare-box points"><h3>⭐ Если нужна личка</h3><ul><li>Литейная → Прототипы → Ремонтники.</li><li>Стабильный аптайм важнее красивой цифры объекта.</li><li>Свободные места в гарнизонах — бесплатные очки.</li></ul></div>
+<div class="compare-box win"><h3>🏆 Если нужна победа</h3><ul><li>Смотрим не только на пассив.</li><li>Служебный бонус может решить следующий захват.</li><li>Не бросаем Склад или Транзит ради +300 личных/мин.</li></ul></div>
 </div>
-
 <h2 id="service-objects">6. Служебные объекты: мало очков, много пользы</h2>
 <p class="body-p">Все четыре дают лишь <b>120 личных очков/мин</b>. Их смысл — создать преимущество для всей команды.</p>
 <div class="service-grid">
-  <section class="service-card"><img src="../../assets/guides/foundry/warehouse.webp" alt="Склад вооружения" loading="lazy"/><div class="body"><h3>Склад вооружения</h3><span class="effect">+15% урона · −15% входящего урона</span><p>Прямой боевой бонус. В плотном матче может быть важнее любого объекта, приносящего очки.</p></div></section>
-  <section class="service-card"><img src="../../assets/guides/foundry/boiler.webp" alt="Котельная" loading="lazy"/><div class="body"><h3>Котельная</h3><span class="effect">Время контроля объекта −50%</span><p>Ускоряет превращение захвата в полноценное владение. Особенно полезна при частых перехватах.</p></div></section>
-  <section class="service-card"><img src="../../assets/guides/foundry/transit.webp" alt="Центральная транзитная станция" loading="lazy"/><div class="body"><h3>Транзитная станция</h3><span class="effect">Откат бесплатного телепорта −50%</span><p>Повышает мобильность всей команды: быстрее меняем фланг, подкрепляем объект и выходим из фокуса.</p></div></section>
-  <section class="service-card"><img src="../../assets/guides/foundry/merc.webp" alt="Лагерь наёмников" loading="lazy"/><div class="body"><h3>Лагерь наёмников</h3><span class="effect">До 4 ударных отрядов по зданиям</span><p>Инструмент давления на плотный гарнизон. Нужен не ради 120/мин, а чтобы открыть дорогу к более ценному объекту.</p></div></section>
+<section class="service-card"><img alt="Склад вооружения" loading="lazy" src="../../assets/guides/foundry/warehouse.webp"/><div class="body"><h3>Склад вооружения</h3><span class="effect">+15% урона · −15% входящего урона</span><p>Прямой боевой бонус. В плотном матче может быть важнее любого объекта, приносящего очки.</p></div></section>
+<section class="service-card"><img alt="Котельная" loading="lazy" src="../../assets/guides/foundry/boiler.webp"/><div class="body"><h3>Котельная</h3><span class="effect">Время контроля объекта −50%</span><p>Ускоряет превращение захвата в полноценное владение. Особенно полезна при частых перехватах.</p></div></section>
+<section class="service-card"><img alt="Центральная транзитная станция" loading="lazy" src="../../assets/guides/foundry/transit.webp"/><div class="body"><h3>Транзитная станция</h3><span class="effect">Откат бесплатного телепорта −50%</span><p>Повышает мобильность всей команды: быстрее меняем фланг, подкрепляем объект и выходим из фокуса.</p></div></section>
+<section class="service-card"><img alt="Лагерь наёмников" loading="lazy" src="../../assets/guides/foundry/merc.webp"/><div class="body"><h3>Лагерь наёмников</h3><span class="effect">До 4 ударных отрядов по зданиям</span><p>Инструмент давления на плотный гарнизон. Нужен не ради 120/мин, а чтобы открыть дорогу к более ценному объекту.</p></div></section>
 </div>
 <div class="fy-section-lead orange"><strong>Главная ошибка по объектам</strong>Сравнивать Склад с Ремонтником только как <b>120 против 300</b>. Личная доходность — лишь одна метрика. Если +15% урона помогает команде забрать Литейную и два Прототипа, Склад окупается многократно.</div>
-
 <h2 id="workshops">7. Оружейные мастерские: свободный марш тоже должен работать</h2>
 <div class="workshop-split">
-  <figure class="foundry-figure"><img src="../../assets/guides/foundry/workshop.webp" alt="Оружейная мастерская: вместимость 4 800 и время сбора 20 минут" loading="lazy"/><figcaption>Оружейная мастерская: 4 800 очков за 20 минут сбора.</figcaption></figure>
-  <div class="metric-box"><h3>Экономика одной плитки</h3><span class="metric">240/мин</span><div class="formula">4 800 ÷ 20 минут = 240 очков Арсенала/мин</div><p>Мастерская хуже хорошего гарнизона, но лучше марша, который просто стоит в городе.</p><p><b>Приоритет:</b> критический гарнизон → выгодный гарнизон на объекте, приносящем очки → мастерская → бездействие.</p></div>
+<figure class="foundry-figure"><img alt="Оружейная мастерская: вместимость 4 800 и время сбора 20 минут" loading="lazy" src="../../assets/guides/foundry/workshop.webp"/><figcaption>Оружейная мастерская: 4 800 очков за 20 минут сбора.</figcaption></figure>
+<div class="metric-box"><h3>Экономика одной плитки</h3><span class="metric">240/мин</span><div class="formula">4 800 ÷ 20 минут = 240 очков Арсенала/мин</div><p>Мастерская хуже хорошего гарнизона, но лучше марша, который просто стоит в городе.</p><p><b>Приоритет:</b> критический гарнизон → выгодный гарнизон на объекте, приносящем очки → мастерская → бездействие.</p></div>
 </div>
 <ul class="bullets">
-  <li>Если хорошие стационарные объекты уже заполнены союзниками, отправляем свободные марши собирать мастерские.</li>
-  <li>Не снимаем ради плитки марш с критического гарнизона, который приносит больше очков или держит командный бонус.</li>
-  <li>Мастерские особенно удобны в паузах между боями и для игроков, которые не могут постоянно микроконтролить карту.</li>
+<li>Если хорошие стационарные объекты уже заполнены союзниками, отправляем свободные марши собирать мастерские.</li>
+<li>Не снимаем ради плитки марш с критического гарнизона, который приносит больше очков или держит командный бонус.</li>
+<li>Мастерские особенно удобны в паузах между боями и для игроков, которые не могут постоянно микроконтролить карту.</li>
 </ul>
-
 <h2 id="mercs">8. Наёмники: размягчить гарнизон перед атакой</h2>
 <div class="merc-split">
-  <figure class="foundry-figure"><img src="../../assets/guides/foundry/merc-mail.webp" alt="Отчёт удара наёмников по гарнизону" loading="lazy"/><figcaption>Один зафиксированный удар: 123 тяжелораненых из 1 226 войск. Это пример конкретной волны, а не универсальная формула.</figcaption></figure>
-  <div>
-    <div class="fy-section-lead orange" style="margin-top:0"><strong>Наёмники — не фармилка</strong>Сам Лагерь даёт всего 120 личных/мин. Его задача — помочь отобрать объект, который стоит гораздо дороже по очкам или по командному эффекту.</div>
-    <div class="merc-flow"><div><b>1. Захватили Лагерь</b>Получили доступ к ударным отрядам.</div><div><b>2. Давим гарнизон</b>До четырёх волн ослабляют занятое врагом здание.</div><div><b>3. Входим сами</b>После размягчения отправляем атаку или ралли.</div></div>
-  </div>
+<figure class="foundry-figure"><img alt="Отчёт удара наёмников по гарнизону" loading="lazy" src="../../assets/guides/foundry/merc-mail.webp"/><figcaption>Один зафиксированный удар: 123 тяжелораненых из 1 226 войск. Это пример конкретной волны, а не универсальная формула.</figcaption></figure>
+<div>
+<div class="fy-section-lead orange" style="margin-top:0"><strong>Наёмники — не фармилка</strong>Сам Лагерь даёт всего 120 личных/мин. Его задача — помочь отобрать объект, который стоит гораздо дороже по очкам или по командному эффекту.</div>
+<div class="merc-flow"><div><b>1. Захватили Лагерь</b>Получили доступ к ударным отрядам.</div><div><b>2. Давим гарнизон</b>До четырёх волн ослабляют занятое врагом здание.</div><div><b>3. Входим сами</b>После размягчения отправляем атаку или ралли.</div></div>
+</div>
 </div>
 <ul class="bullets">
-  <li>Особенно логично использовать наёмников против центральной Литейной и других плотно забитых гарнизонов.</li>
-  <li>Новые волны усиливаются и одновременно снижают атаку/защиту противника.</li>
-  <li>Удар наёмников — подготовка к вашей атаке, а не замена нормальному PvP.</li>
+<li>Особенно логично использовать наёмников против центральной Литейной и других плотно забитых гарнизонов.</li>
+<li>Новые волны усиливаются и одновременно снижают атаку/защиту противника.</li>
+<li>Удар наёмников — подготовка к вашей атаке, а не замена нормальному PvP.</li>
 </ul>
-
 <h2 id="combat">9. Телепорты, бой и лечение</h2>
 <div class="resource-grid">
-  <div class="resource-card"><span class="ico">🌀</span><b>Телепорт</b><p>Тратим ради смены фланга, захвата, подкрепления или выхода из фокуса. Транзит сокращает откат бесплатного продвинутого телепорта на 50%.</p></div>
-  <div class="resource-card"><span class="ico">💨</span><b>Ускорение марша</b><p>Используем, когда несколько секунд реально меняют захват или успеваем закрыть гарнизон перед ударом.</p></div>
-  <div class="resource-card"><span class="ico">🏥</span><b>Лечение</b><p>Войска на Литейной не погибают окончательно и восстанавливаются после события. Большие траты ускорений лечения — командное решение, а не автоматическая обязанность.</p></div>
+<div class="resource-card"><span class="ico">🌀</span><b>Телепорт</b><p>Тратим ради смены фланга, захвата, подкрепления или выхода из фокуса. Транзит сокращает откат бесплатного продвинутого телепорта на 50%.</p></div>
+<div class="resource-card"><span class="ico">💨</span><b>Ускорение марша</b><p>Используем, когда несколько секунд реально меняют захват или успеваем закрыть гарнизон перед ударом.</p></div>
+<div class="resource-card"><span class="ico">🏥</span><b>Лечение</b><p>Войска на Литейной не погибают окончательно и восстанавливаются после события. Большие траты ускорений лечения — командное решение, а не автоматическая обязанность.</p></div>
 </div>
 <div class="fy-section-lead red"><strong>Личные очки от PvP</strong>За одного и того же побеждённого противника <b>в атаке начисляется в 2 раза больше личных очков, чем в защите</b>. Активному игроку выгодно атаковать, когда это не ломает командную задачу. Специально отдавать важный объект ради перезахвата или личного рейтинга не нужно.</div>
 <div class="fy-links"><a href="../combat/pvp-objects.html#sync">⏱️ Синхронизация ударов и подкреплений</a><a href="../combat/combat-system.html#report">📊 Как читать боевой отчёт</a></div>
-
 <h2 id="plan">10. Алгоритм матча</h2>
 <ol class="match-plan">
-  <li><b>На старте</b> быстро занимаем свободные внешние объекты. Пустая цель не требует долгого ралли.</li>
-  <li><b>Разделяем марши:</b> сильные — в активный PvP, остальные — в лучшие доступные гарнизоны для пассивного дохода.</li>
-  <li><b>Для личного пассива:</b> Литейная → Прототипы → Ремонтники → служебные объекты.</li>
-  <li><b>Свободный марш</b> отправляем в Оружейную мастерскую, если он не нужен на более выгодном или критическом объекте.</li>
-  <li><b>Склад, Котельную, Транзит и Наёмников</b> оцениваем по влиянию на команду, а не по их 120 личным/мин.</li>
-  <li><b>Наёмниками</b> размягчаем плотный гарнизон перед собственной атакой или ралли.</li>
-  <li><b>После смены владельца</b> проверяем припасы Арсенала вокруг объекта и сразу подбираем их.</li>
-  <li><b>После захвата</b> не оставляем атакующие первые навыки в защите: сразу меняем первых героев присоединения на защитных.</li>
-  <li><b>Телепорты, лечение и ускорения</b> тратим там, где они реально меняют результат матча.</li>
+<li><b>На старте</b> быстро занимаем свободные внешние объекты. Пустая цель не требует долгого ралли.</li>
+<li><b>Разделяем марши:</b> сильные — в активный PvP, остальные — в лучшие доступные гарнизоны для пассивного дохода.</li>
+<li><b>Для личного пассива:</b> Литейная → Прототипы → Ремонтники → служебные объекты.</li>
+<li><b>Свободный марш</b> отправляем в Оружейную мастерскую, если он не нужен на более выгодном или критическом объекте.</li>
+<li><b>Склад, Котельную, Транзит и Наёмников</b> оцениваем по влиянию на команду, а не по их 120 личным/мин.</li>
+<li><b>Наёмниками</b> размягчаем плотный гарнизон перед собственной атакой или ралли.</li>
+<li><b>После смены владельца</b> проверяем припасы Арсенала вокруг объекта и сразу подбираем их.</li>
+<li><b>После захвата</b> не оставляем атакующие первые навыки в защите: сразу меняем первых героев присоединения на защитных.</li>
+<li><b>Телепорты, лечение и ускорения</b> тратим там, где они реально меняют результат матча.</li>
 </ol>
 <div class="fy-section-lead green"><strong>Самая короткая памятка</strong>Нужны личные очки — держите самые дорогие по пассиву объекты. Нужна победа — контролируйте служебные бонусы и своевременно перестраивайте марши. Свободный марш без задачи — почти всегда упущенные очки.</div>
-
 <div class="related-lite"><h3>Связанные руководства</h3><div class="fy-links"><a href="../combat/pvp-objects.html">🩸 PvP за объекты</a><a href="../combat/combat-system.html">⚔️ Боевая система</a><a href="../combat/heroes.html">🧬 Герои</a><a href="../combat/hero-gear.html">🛡️ Снаряжение героев</a></div></div>
 </article>
 </main>
-
 <a class="back-top" href="#" id="backTop">↑</a>
 <nav class="bottom-nav">
 <a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a>
@@ -228,7 +214,7 @@ html[data-theme="dark"] .match-plan li:before{background:#104966;color:#9fe7ff}
 <button data-search-open=""><span class="ico">🔎</span><span>Поиск</span></button>
 </nav>
 <div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: Литейная, гарнизон, телепорт…" type="search"/><button class="search-close" data-search-close="">×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
-<script src="../../assets/js/search-index.js?v=35"></script>
+<script src="../../assets/js/search-index.js?v=36"></script>
 <script src="../../assets/js/app.js?v=26"></script>
 </body>
 </html>
