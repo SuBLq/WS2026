@@ -65,15 +65,23 @@
       const table=wrap.querySelector('table'); if(!table)return;
       const rows=Array.from(table.querySelectorAll('tr')); if(rows.length<2)return;
       const headers=Array.from(rows[0].querySelectorAll('th,td')).map(c=>c.textContent.trim());
-      if(headers.length<=3)return; // narrow tables stay real tables
       const isFurnaceGuide=/топка/i.test((document.querySelector('.guide-hero h1')||{}).textContent||'');
+      const isHeroGenerationTable=table.classList.contains('generation-master')||headers.some(h=>/герой/i.test(h))&&headers.some(h=>/источник/i.test(h));
       const bodyRows=rows.slice(1).filter(r=>r.querySelectorAll('td,th').length);
       if(!bodyRows.length)return;
       wrap.classList.add('mobile-cardized');
       const container=document.createElement('div');
       container.className=buildingGuide?'mobile-building-cards':'mobile-table-cards';
+      let currentGroup='';
       bodyRows.forEach((row,idx)=>{
-        const cells=Array.from(row.querySelectorAll('td,th')).map(c=>c.textContent.trim());
+        const cells=Array.from(row.querySelectorAll('td,th')).map(c=>c.textContent.trim().replace(/\s+/g,' '));
+        const dividerCell=row.querySelector('th[colspan]');
+        if(dividerCell&&cells[0]){
+          currentGroup=cells[0];
+          const group=document.createElement('div');group.className='mobile-table-group';group.textContent=currentGroup;
+          container.appendChild(group);
+          return;
+        }
         if(buildingGuide){
           const details=document.createElement('details');details.className='mobile-building-card';
           const summary=document.createElement('summary');
@@ -86,6 +94,32 @@
           summary.append(level,qt);details.appendChild(summary);
           details.appendChild(makeFields(headers,cells,[0]));
           container.appendChild(details);
+        }else if(isHeroGenerationTable){
+          const card=document.createElement('div');card.className='mobile-data-card mobile-hero-card';
+          if(row.className)card.className+=' '+row.className;
+          const heroCell=row.querySelector('.hero-line-name');
+          const statusCell=row.querySelector('.hero-line-status');
+          const title=document.createElement('div');title.className='mobile-card-title';
+          title.textContent=(heroCell?heroCell.textContent.trim():cells[0]||('Строка '+(idx+1))).replace(/^, /,'');
+          card.appendChild(title);
+          const meta=document.createElement('div');meta.className='mobile-card-subtitle';
+          const status=statusCell?statusCell.textContent.trim().replace(/^,\s*/,''):'';
+          meta.textContent=[currentGroup,status].filter(Boolean).join(' · ');
+          if(meta.textContent)card.appendChild(meta);
+          const chips=document.createElement('div');chips.className='mobile-hero-fields';
+          [
+            ['Источник',cells[1]],
+            ['Тип',cells[2]],
+            ['Статы 5★',cells[3]],
+            ['Цель',cells[4]]
+          ].forEach(([label,value])=>{
+            const item=document.createElement('div');item.className='mobile-hero-field';
+            const l=document.createElement('span');l.textContent=label;
+            const v=document.createElement('b');v.textContent=value||'—';
+            item.append(l,v);chips.appendChild(item);
+          });
+          card.appendChild(chips);
+          container.appendChild(card);
         }else{
           const card=document.createElement('div');card.className='mobile-data-card';
           const title=document.createElement('div');title.className='mobile-card-title';
