@@ -186,7 +186,14 @@ html[data-theme="dark"] details.spoiler>summary{color:#cae8f6}html[data-theme="d
 .guide-block{position:relative;margin:18px 0 22px;padding:18px 16px 17px;border:1px solid #cfe2eb;border-radius:16px;background:linear-gradient(145deg,#e8f4fa 0%,#f8fdff 46%,#dceff7 100%);box-shadow:0 6px 18px rgba(28,91,120,.06),inset 0 1px 0 rgba(255,255,255,.72);overflow:hidden}
 .guide-block:before{content:"";position:absolute;left:16px;right:16px;top:0;height:3px;border-radius:0 0 999px 999px;background:linear-gradient(90deg,#2b83aa 0%,#78d2eb 50%,#2d83ab 100%)}
 .guide-block:last-child{margin-bottom:0}
-.article .guide-block h2,.article .guide-block h2:first-child{border-top:0;margin:4px 0 10px;padding-top:0}
+.article .guide-block h2,.article .guide-block h2:first-child{display:block;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;margin:4px 0 10px!important;padding:0!important;color:#174f6a}
 html[data-theme="dark"] .guide-block{background:linear-gradient(145deg,#0e3856 0%,#09283f 50%,#061c31 100%);border-color:#2b5a73;box-shadow:0 9px 24px rgba(0,0,0,.18),inset 0 1px 0 rgba(126,220,255,.07)}
 html[data-theme="dark"] .guide-block:before{background:linear-gradient(90deg,#276f92 0%,#4fb2d0 50%,#2d83ab 100%)}
-@media(max-width:620px){.guide-block{margin:16px -2px 20px;padding:15px 12px 15px;border-radius:15px}.guide-block:before{left:12px;right:12px;height:3px}.article .guide-block h2,.article .guide-block h2:first-child{margin-top:3px}}
+html[data-theme="dark"] .article .guide-block h2,html[data-theme="dark"] .article .guide-block h2:first-child{color:#eff9ff}
+@media(max-width:620px){.guide-block{margin:16px -2px 20px;padding:15px 12px 15px;border-radius:15px}.guide-block:before{left:12px;right:12px;height:3px}.article .guide-block h2,.article .guide-block h2:first-child{margin-top:3px!important;font-size:17px;line-height:1.26}}
+
+/* Guide pages now let section cards float on the page background */
+.article,html[data-theme="dark"] .article{background:transparent;border:0;border-radius:0;padding:0;box-shadow:none}
+.article>.callout:first-child{margin-top:0}
+.article>.guide-block:first-child,.article>.callout:first-child+.guide-block{margin-top:0}
+@media(max-width:620px){.article,html[data-theme="dark"] .article{padding:0}.article>.guide-block:first-child,.article>.callout:first-child+.guide-block{margin-top:0}}
