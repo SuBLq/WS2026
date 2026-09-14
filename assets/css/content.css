@@ -181,3 +181,12 @@ details.spoiler[open]>summary:after{transform:rotate(90deg);background:#dceff7}
 html[data-theme="dark"] details.spoiler{background:linear-gradient(145deg,#0d304b,#0a2942);border-color:#28546d;box-shadow:0 6px 18px rgba(0,0,0,.12)}
 html[data-theme="dark"] details.spoiler>summary{color:#cae8f6}html[data-theme="dark"] details.spoiler>summary:after{background:#123e5b;color:#8bdcff}html[data-theme="dark"] details.spoiler[open]>summary{background:#10344f;border-bottom-color:#28546d}html[data-theme="dark"] details.spoiler[open]>summary:after{background:#174967}.spoiler-hint{color:#8ca7b5}
 @media(max-width:620px){details.spoiler{margin:10px 0 14px;border-radius:14px}details.spoiler>summary{padding:12px 12px;font-size:12px;gap:9px}.spoiler-body{padding:2px 11px 11px}}
+
+/* Reusable guide section cards */
+.guide-block{position:relative;margin:18px 0 22px;padding:18px 16px 17px;border:1px solid #cfe2eb;border-radius:16px;background:linear-gradient(145deg,#e8f4fa 0%,#f8fdff 46%,#dceff7 100%);box-shadow:0 6px 18px rgba(28,91,120,.06),inset 0 1px 0 rgba(255,255,255,.72);overflow:hidden}
+.guide-block:before{content:"";position:absolute;left:16px;right:16px;top:0;height:3px;border-radius:0 0 999px 999px;background:linear-gradient(90deg,#2b83aa 0%,#78d2eb 50%,#2d83ab 100%)}
+.guide-block:last-child{margin-bottom:0}
+.article .guide-block h2,.article .guide-block h2:first-child{border-top:0;margin:4px 0 10px;padding-top:0}
+html[data-theme="dark"] .guide-block{background:linear-gradient(145deg,#0e3856 0%,#09283f 50%,#061c31 100%);border-color:#2b5a73;box-shadow:0 9px 24px rgba(0,0,0,.18),inset 0 1px 0 rgba(126,220,255,.07)}
+html[data-theme="dark"] .guide-block:before{background:linear-gradient(90deg,#276f92 0%,#4fb2d0 50%,#2d83ab 100%)}
+@media(max-width:620px){.guide-block{margin:16px -2px 20px;padding:15px 12px 15px;border-radius:15px}.guide-block:before{left:12px;right:12px;height:3px}.article .guide-block h2,.article .guide-block h2:first-child{margin-top:3px}}
