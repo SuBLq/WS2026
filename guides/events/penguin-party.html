@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#0f5f8f"/>
+<meta name="description" content="Пингвинья вечеринка: Парк пингвинов, Ледяной взрыв, Профи вечеринок, Потерянная добыча, средние монеты, лопаты и магазин."/>
+<link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg"/>
+<link rel="manifest" href="../../manifest.webmanifest"/>
+<link rel="apple-touch-icon" href="../../assets/icons/icon-192.png"/>
+<link rel="stylesheet" href="../../assets/css/shell.css?v=24"/>
+<link rel="stylesheet" href="../../assets/css/content.css?v=30"/>
+<title>ПИНГВИНЬЯ ВЕЧЕРИНКА · Whiteout Survival</title>
+<style>
+.penguin-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:14px 0 2px}
+.penguin-stat{background:linear-gradient(180deg,#f3fbff,#eaf5fb);border:1px solid #cfe4ef;border-radius:16px;padding:12px 11px;box-shadow:0 3px 12px rgba(23,87,118,.05)}
+.penguin-stat .kicker{font-size:10px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:#5e7f92;margin-bottom:4px}
+.penguin-stat b{display:block;font-size:24px;line-height:1.05;color:#164a66}
+.penguin-stat span{display:block;font-size:11px;line-height:1.45;color:#506d7c;margin-top:5px}
+.penguin-alert{border:1px solid #ffd48c;background:linear-gradient(180deg,#fff7e8,#fff2d9);border-left:5px solid #ffb22e;border-radius:16px;padding:14px 14px;margin:14px 0}
+.penguin-alert strong{display:block;font-size:13px;color:#825400}
+.penguin-alert p{margin:5px 0 0;font-size:12.5px;line-height:1.55;color:#6f5a23}
+.calc-list{margin:8px 0 0;padding-left:18px;font-size:12.5px;line-height:1.55;color:#6f5a23}
+.calc-list li+li{margin-top:5px}
+.calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:10px 0 0}
+.calc-card{display:grid;gap:7px;align-content:start;background:rgba(255,255,255,.58);border:1px solid rgba(255,214,140,.68);border-radius:16px;padding:14px 14px;box-shadow:0 4px 14px rgba(77,52,7,.07)}
+.calc-label{display:block;font-size:13px;line-height:1.35;font-weight:800;color:#825400}
+.calc-metric{font-size:24px;line-height:1.05;font-weight:900;color:#8d5600}
+.calc-note{margin:0;font-size:12.5px;line-height:1.55;color:#6f5a23}
+.calc-note strong{color:#825400}
+.media-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}
+.screenshot{margin:12px 0;background:#f6fbfe;border:1px solid #d8e8f0;border-radius:18px;padding:10px}
+.screenshot img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid #d5e4ec;background:#fff}
+.screenshot figcaption{font-size:11.5px;line-height:1.45;color:#597281;margin-top:8px}
+.tip-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}
+.tip-card{background:#f8fcff;border:1px solid #dceaf1;border-radius:14px;padding:12px}
+.tip-card h3{margin:0 0 6px;font-size:14px;color:#1d556f}
+.tip-card p{margin:0;font-size:12.5px;line-height:1.55;color:#486373}
+.formula{font-size:12px;line-height:1.6;background:#f4f8fb;border:1px dashed #bdd6e4;border-radius:12px;padding:10px 12px;color:#486777;margin:10px 0}
+.priority-list{display:grid;gap:8px;margin:10px 0}
+.priority-row{display:flex;gap:10px;align-items:flex-start;background:#f7fbfd;border:1px solid #dbe9f0;border-radius:14px;padding:10px 12px}
+.priority-row .num{width:24px;height:24px;flex:0 0 24px;border-radius:999px;background:#1d89c0;color:#fff;display:grid;place-items:center;font-size:12px;font-weight:900;margin-top:1px}
+.priority-row b{display:block;font-size:13px;color:#1b546e;margin-bottom:3px}
+.priority-row p{margin:0;font-size:12px;line-height:1.5;color:#4f6877}
+.plan-steps{counter-reset:step;margin:12px 0;padding:0;list-style:none;display:grid;gap:10px}
+.plan-steps li{position:relative;padding:12px 12px 12px 46px;background:#f8fcff;border:1px solid #dbe9f0;border-radius:14px;font-size:12.8px;line-height:1.55;color:#2f4f61}
+.plan-steps li::before{counter-increment:step;content:counter(step);position:absolute;left:12px;top:11px;width:24px;height:24px;border-radius:999px;background:#0f7daf;color:#fff;font-weight:900;display:grid;place-items:center;font-size:12px}
+.mini-table td:first-child{font-weight:800;width:33%}
+.note-strip{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.note-chip{background:#edf6fb;border:1px solid #d4e7f1;border-radius:999px;padding:7px 10px;font-size:10.5px;font-weight:800;color:#3d667b}
+html[data-theme="dark"] .penguin-stat,html[data-theme="dark"] .tip-card,html[data-theme="dark"] .priority-row,html[data-theme="dark"] .plan-steps li{background:#0f2d42;border-color:#244d66}
+html[data-theme="dark"] .penguin-stat .kicker{color:#9fc3d7}
+html[data-theme="dark"] .penguin-stat b{color:#dbf2ff}
+html[data-theme="dark"] .penguin-stat span,html[data-theme="dark"] .tip-card p,html[data-theme="dark"] .priority-row p,html[data-theme="dark"] .plan-steps li{color:#c4d9e6}
+html[data-theme="dark"] .tip-card h3,html[data-theme="dark"] .priority-row b,html[data-theme="dark"] .guide-block h3{color:#dff2ff}
+html[data-theme="dark"] .screenshot{background:#0d2940;border-color:#264f68}
+html[data-theme="dark"] .screenshot img{border-color:#2b5168;background:#11314a}
+html[data-theme="dark"] .screenshot figcaption{color:#abc7d9}
+html[data-theme="dark"] .formula{background:#0c2435;border-color:#355f78;color:#b9d2de}
+html[data-theme="dark"] .penguin-alert{background:linear-gradient(180deg,#463516,#35270f);border-color:#a8791b}
+html[data-theme="dark"] .penguin-alert strong{color:#ffd479}
+html[data-theme="dark"] .penguin-alert p,html[data-theme="dark"] .calc-list{color:#f1dfb5}
+html[data-theme="dark"] .calc-card{background:rgba(255,255,255,.05);border-color:rgba(255,214,140,.34)}
+html[data-theme="dark"] .calc-label{color:#ffd479}
+html[data-theme="dark"] .calc-metric{color:#ffe39f}
+html[data-theme="dark"] .calc-note{color:#f4e5bf}
+html[data-theme="dark"] .calc-note strong{color:#ffe39f}
+html[data-theme="dark"] .note-chip{background:#11314a;border-color:#2b5168;color:#b6d4e6}
+@media(max-width:900px){.calc-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.penguin-summary,.media-grid,.tip-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.penguin-summary,.media-grid,.tip-grid,.calc-grid{grid-template-columns:1fr}.penguin-stat b{font-size:22px}.calc-metric{font-size:22px}}
+</style>
+<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
+</head>
+<body data-root="../../">
+<header class="site-top"><a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a><div class="site-top-actions"><button class="site-icon-btn" data-search-open>🔍 Поиск</button></div></header>
+<main class="guide-wrap">
+  <section class="guide-hero">
+    <div class="eyebrow">🎯 СОБЫТИЯ И РЕЖИМЫ</div>
+    <h1>ПИНГВИНЬЯ ВЕЧЕРИНКА</h1>
+    <p>Парк пингвинов, монеты, волшебные кольца, Ледяной взрыв, Потерянная добыча с лопатами и спокойная схема трат без суеты.</p>
+    <div class="hero-meta">
+      <span class="pill">Подготовлено SuBL · сентябрь 2026</span>
+      <span class="pill">Скриншоты разобраны вручную</span>
+      <span class="pill">Ключ: монеты считаем, лопатами думаем</span>
+    </div>
+  </section>
+
+  <div class="guide-toolbar">
+    <a class="action-link" href="../../index.html#guides">← Все гайды</a>
+  </div>
+
+  <details class="toc">
+    <summary>Содержание</summary>
+    <div class="toc-list">
+      <a href="#overview">1. Что главное в этом ивенте</a>
+      <a href="#park">2. Парк пингвинов: средние монеты и кольца</a>
+      <a href="#ice-blast">3. Ледяной взрыв и пропуск за 479 ₽</a>
+      <a href="#lost-loot">4. Потерянная добыча: ответственный за лопату</a>
+      <a href="#symphony">5. Фантазийная симфония</a>
+      <a href="#shop">6. Пингвиний магазин</a>
+      <a href="#plan">7. Короткий план на ивент</a>
+    </div>
+  </details>
+
+  <article class="article">
+    <aside class="callout">
+      <strong>Главная мысль</strong>
+      <p>Это не ивент, где нужно спешно сливать монеты. Шарики превращаем в монеты, монеты копим до конца события, а уже потом покупаем то, что реально нужно аккаунту.</p>
+    </aside>
+
+    <div class="penguin-summary">
+      <div class="penguin-stat"><div class="kicker">Среднее за 1 шарик</div><b>70,4</b><span>пингвиньих монеты за один бросок в Парке пингвинов</span></div>
+      <div class="penguin-stat"><div class="kicker">F2P ориентир</div><b>≈ 5 984</b><span>монет при ~85 шариках за весь ивент</span></div>
+      <div class="penguin-stat"><div class="kicker">Пропуск 479 ₽</div><b>≈ +1 478</b><span>монет только от +3 шариков в день, плюс удвоение ежедневных наград Ледяного взрыва</span></div>
+      <div class="penguin-stat"><div class="kicker">Лопаты бесплатно</div><b>90</b><span>за 3 дня, если просто делать ежедневки</span></div>
+    </div>
+
+    <section class="guide-block">
+      <h2 id="overview">1. Что главное в этом ивенте</h2>
+      <p class="body-p">По текущим вкладкам событие состоит из нескольких частей: <strong>Парк пингвинов</strong> — основной источник пингвиньих монет, <strong>Профи вечеринок</strong> — этапная шкала, <strong>Ледяной взрыв</strong> — отдельный блок с ежедневными заданиями и удвоением наград по пропуску, <strong>Фантазийная симфония</strong> — пазл с побочными наградами, <strong>Потерянная добыча</strong> — режим с лопатами, а <strong>Пингвиний магазин</strong> — место, где всё это в итоге тратится.</p>
+      <p class="body-p">Практически вся экономика крутится вокруг двух вещей: сколько шариков вы получите и сколько монет в среднем вынесете из Парка пингвинов. Отсюда и все решения по донату, приоритетам и темпу игры.</p>
+      <div class="note-strip">
+        <span class="note-chip">Событие идёт 7 дней</span>
+        <span class="note-chip">Магазин живёт дольше основного события</span>
+        <span class="note-chip">Монеты лучше тратить в конце</span>
+        <span class="note-chip">Лопаты открываются на 2-й день</span>
+      </div>
+      <div class="penguin-alert">
+        <strong>Отдельно выделяем ключевую цифру</strong>
+        <p><strong>70,4 монеты за 1 шарик</strong> — это рабочая опорная величина для всего ивента. Именно от неё удобно считать и выгоду пропуска, и ценность этапов, и общий ожидаемый результат.</p>
+      </div>
+    </section>
+
+    <section class="guide-block">
+      <h2 id="park">2. Парк пингвинов: средние монеты и волшебные кольца</h2>
+      <p class="body-p">Это центральная вкладка. Мы тратим ледяные шарики, запускаем их сверху и получаем <strong>пингвиньи монеты</strong>. По скрину с шансами базовые исходы такие: <strong>10 монет — 48%</strong>, <strong>70 — 28%</strong>, <strong>130 — 20%</strong>, <strong>500 — 4%</strong>.</p>
+      <div class="formula"><strong>Матожидание:</strong> 10×0,48 + 70×0,28 + 130×0,20 + 500×0,04 = <strong>70,4 монеты</strong> за один шарик.</div>
+      <div class="table-scroll mini-table">
+        <table>
+          <tr><th>Источник / сценарий</th><th>Шарики</th><th>Средние монеты</th><th>Комментарий</th></tr>
+          <tr><td>Профи вечеринок за 7 дней</td><td>35</td><td>≈ 2 464</td><td>По 5 шариков в день — стабильный бесплатный костяк.</td></tr>
+          <tr><td>Ориентир F2P за весь ивент</td><td>≈ 85</td><td>≈ 5 984</td><td>Порядок величины при регулярной игре и сборе наград.</td></tr>
+          <tr><td>Бонус от пропуска 479 ₽</td><td>+21</td><td>≈ +1 478</td><td>Только за удвоение 3 шариков в день в Ледяном взрыве.</td></tr>
+          <tr><td>Потеря от одного пропущенного дня</td><td>-3</td><td>≈ -211</td><td>Поздняя покупка пропуска режет его реальную ценность.</td></tr>
+        </table>
+      </div>
+      <figure class="screenshot">
+        <img src="../../assets/guides/penguin-party/park-overview.webp" alt="Парк пингвинов"/>
+        <figcaption><strong>Парк пингвинов.</strong> Сверху видны цели броска, снизу — базовые призовые лунки, а шкала понизу даёт дополнительные награды за количество бросков.</figcaption>
+      </figure>
+      <figure class="screenshot">
+        <img src="../../assets/guides/penguin-party/park-probabilities.webp" alt="Шансы наград выхода и волшебных колец"/>
+        <figcaption><strong>Шансы выхода и кольца.</strong> Верхняя часть — сами проценты на 10 / 70 / 130 / 500 монет. Ниже — описание волшебных колец.</figcaption>
+      </figure>
+      <p class="body-p">Каждый <strong>15-й бросок</strong> даёт награду из <strong>волшебного кольца</strong>. Это важный бонус к монетам: цепочки фиксированные, поэтому их стоит просто держать перед глазами, а не пытаться «угадывать удачу».</p>
+      <div class="media-grid">
+        <figure class="screenshot">
+          <img src="../../assets/guides/penguin-party/ring-left.webp" alt="Левая цепочка волшебного кольца"/>
+          <figcaption><strong>Левое кольцо.</strong> Полезно быстро оценить, насколько вам нужны пазлы, огненные кристаллы и гайки по этой дорожке.</figcaption>
+        </figure>
+        <figure class="screenshot">
+          <img src="../../assets/guides/penguin-party/ring-right.webp" alt="Правая цепочка волшебного кольца"/>
+          <figcaption><strong>Правое кольцо.</strong> Здесь другой набор — свитки, эликсир, кристаллы, сундуки и руководства.</figcaption>
+        </figure>
+      </div>
+      <aside class="callout">
+        <strong>Как относиться к кольцам</strong>
+        <p>Это не причина срочно тратить монеты или донатить «до следующего приза». Кольца — приятный фиксированный довесок к вашим броскам. Основную ценность всё равно даёт общий объём шариков и средние монеты.</p>
+      </aside>
+    </section>
+
+    <section class="guide-block">
+      <h2 id="ice-blast">3. Ледяной взрыв и пропуск за 479 ₽</h2>
+      <p class="body-p"><strong>Пропуск за 479 ₽ усиливает вкладку «Ледяной взрыв».</strong> Для математики события главное, что он удваивает ежедневные награды этого блока и даёт <strong>+3 ледяных шарика в день</strong>.</p>
+      <div class="media-grid">
+        <figure class="screenshot">
+          <img src="../../assets/guides/penguin-party/ice-blast-daily.webp" alt="Ледяной взрыв — ежедневные миссии"/>
+          <figcaption><strong>Ледяной взрыв: ежедневные миссии.</strong> На скрине видно, что часть дейликов выдаёт по одному ледяному шарику. Именно эти ежедневные шарики и удваиваются с покупкой первого платного столбика.</figcaption>
+        </figure>
+        <figure class="screenshot">
+          <img src="../../assets/guides/penguin-party/ice-blast-rewards.webp" alt="Ледяной взрыв — шкала наград"/>
+          <figcaption><strong>Ледяной взрыв: шкала наград.</strong> Здесь лежат дополнительные материалы и снежинки события. Это отдельный блок прогресса, а не «Профи вечеринок».</figcaption>
+        </figure>
+      </div>
+      <div class="tip-grid">
+        <div class="tip-card">
+          <h3>Что именно удваивается</h3>
+          <p>Главное для математики монет — <strong>3 ледяных шарика в день</strong>. Поверх этого удваиваются и ежедневные награды Ледяного взрыва в виде прочих ресурсов, но они уже не считаются напрямую в пингвиньих монетах.</p>
+        </div>
+        <div class="tip-card">
+          <h3>Что с «Профи вечеринок»</h3>
+          <p><strong>Профи вечеринок</strong> — это отдельная этапная шкала события со своими наградами за очки. Для расчёта выгоды пропуска ориентируемся именно на ежедневные шарики из <strong>Ледяного взрыва</strong>.</p>
+        </div>
+      </div>
+      <div class="penguin-alert">
+        <strong>Расчёт выгоды пропуска</strong>
+        <div class="calc-grid">
+          <div class="calc-card">
+            <div class="calc-label">Если взять пропуск в первый день</div>
+            <div class="calc-metric">+3 шарика в день</div>
+            <p class="calc-note">Это даёт удвоение ежедневных наград во вкладке <strong>Ледяной взрыв</strong> и работает с самого старта события.</p>
+          </div>
+          <div class="calc-card">
+            <div class="calc-label">За полный 7-дневный цикл</div>
+            <div class="calc-metric">+21 шарик ≈ +1 478 монет</div>
+            <p class="calc-note">Расчёт идёт по среднему значению <strong>70,4 пингвиньих монеты</strong> за один шарик.</p>
+          </div>
+          <div class="calc-card">
+            <div class="calc-label">Если купить позже</div>
+            <div class="calc-metric">-3 шарика ≈ -211 монет за день</div>
+            <p class="calc-note">Каждый пропущенный день срезает часть выгоды, и это ещё <strong>без учёта остальных удвоенных ресурсов</strong> Ледяного взрыва.</p>
+          </div>
+        </div>
+      </div>
+      <p class="body-p">Практический вывод простой: если вы вообще собирались брать этот пропуск, то <strong>покупать его надо в самом начале события</strong>. Тогда вы забираете и все дополнительные шарики, и полный объём удвоенных ежедневных наград.</p>
+      <figure class="screenshot">
+        <img src="../../assets/guides/penguin-party/party-pro.webp" alt="Профи вечеринок"/>
+        <figcaption><strong>Профи вечеринок.</strong> Ещё одна этапная шкала события с собственными наградами за очки.</figcaption>
+      </figure>
+    </section>
+
+    <section class="guide-block">
+      <h2 id="lost-loot">4. Потерянная добыча: ответственный за лопату</h2>
+      <p class="body-p">Эта вкладка открывается на <strong>2-й день</strong>. Здесь важно не копать наугад. Игра показывает силуэты оставшихся предметов, форму поля и уже выкопанные области — этого достаточно, чтобы сильно сократить количество пустых нажатий.</p>
+      <figure class="screenshot">
+        <img src="../../assets/guides/penguin-party/lost-loot-overview.webp" alt="Потерянная добыча"/>
+        <figcaption><strong>Потерянная добыча.</strong> Слева показаны силуэты оставшихся предметов, справа — кнопки заданий и наград. Прогресс идёт этапами.</figcaption>
+      </figure>
+      <div class="media-grid">
+        <figure class="screenshot">
+          <img src="../../assets/guides/penguin-party/daily-missions.webp" alt="Ежедневные миссии на лопаты"/>
+          <figcaption><strong>Ежедневки на лопаты.</strong> По скрину видно 4 задания на день: рейд на Полярный ужас, +30 000 мощи войск, любая покупка и вход в игру.</figcaption>
+        </figure>
+        <figure class="screenshot">
+          <img src="../../assets/guides/penguin-party/daily-missions-done.webp" alt="Закрытые ежедневные миссии на лопаты"/>
+          <figcaption><strong>Сколько лопат дают.</strong> Без доната в день выходит <strong>30 лопат</strong> (10 + 10 + 10). Задание на любую покупку добавляет ещё <strong>20</strong>. За 3 дня это <strong>90</strong> бесплатно или <strong>150</strong> при ежедневной любой покупке.</figcaption>
+        </figure>
+      </div>
+      <figure class="screenshot">
+        <img src="../../assets/guides/penguin-party/lost-loot-stage-preview-extended.webp" alt="Награды этапов Потерянной добычи"/>
+        <figcaption><strong>Шкала этапов Потерянной добычи.</strong> <strong>16-й этап</strong> — это первый этап с сундуком, а не конец дорожки. Дальше шкала продолжается: сундуки и этапы с дополнительными наградами чередуются дальше по прогрессу.</figcaption>
+      </figure>
+      <div class="media-grid">
+        <figure class="screenshot">
+          <img src="../../assets/guides/penguin-party/lost-loot-chest-rewards.webp" alt="Награды сундука Потерянной добычи"/>
+          <figcaption><strong>Что лежит в сундуке.</strong> В сундуке можно выбрать одну из наград: островное здание, мифические общие фрагменты героя, камни эссенции, ящики удачи со снаряжением героя или ускорения.</figcaption>
+        </figure>
+        <figure class="screenshot">
+          <img src="../../assets/guides/penguin-party/lost-loot-island-building.webp" alt="Островное здание из сундука"/>
+          <figcaption><strong>Островное здание из сундука.</strong> «Гостиница „Песня моряка“» — объект 5×5 категории «великие», лимит 1, даёт <strong>+0,5% к атаке войск</strong>.</figcaption>
+        </figure>
+      </div>
+
+      <h3>Как копать правильно</h3>
+      <div class="priority-list">
+        <div class="priority-row"><div class="num">1</div><div><b>Сначала смотрим на форму предметов</b><p>Длинные узкие предметы, широкие предметы и компактные силуэты занимают разные клетки. Уже на старте часть поля автоматически отпадает.</p></div></div>
+        <div class="priority-row"><div class="num">2</div><div><b>Исключаем невозможные зоны</b><p>Если предмет не помещается по длине, не может пройти через уже выкопанную область или упирается в границу — эти клетки для него пустые по определению.</p></div></div>
+        <div class="priority-row"><div class="num">3</div><div><b>Бьём в клетки с максимальной информацией</b><p>Лучше открывать клетки, которые пересекают сразу несколько допустимых размещений предмета, чем тыкать в глухой угол без ценности для развилки.</p></div></div>
+        <div class="priority-row"><div class="num">4</div><div><b>После находки одного предмета пересчитываем поле</b><p>Освобождённые клетки убирают часть комбинаций для остальных силуэтов. На поздних этапах это особенно заметно.</p></div></div>
+      </div>
+
+      <div class="media-grid">
+        <figure class="screenshot">
+          <img src="../../assets/guides/penguin-party/lost-loot-stage3.webp" alt="Этап 3 Потерянной добычи"/>
+          <figcaption><strong>Пример: этап 3.</strong> На доске две формы: одна длинная и узкая, другая более компактная. Здесь важнее не гадать направление предмета, а смотреть, какие клетки подходят сразу для нескольких возможных ориентаций. Центральная перемычка и боковые стойки дают разное число допустимых размещений, поэтому первые удары лучше делать туда, где они сильнее сокращают число вариантов.</figcaption>
+        </figure>
+        <figure class="screenshot">
+          <img src="../../assets/guides/penguin-party/lost-loot-stage7.webp" alt="Этап 7 Потерянной добычи"/>
+          <figcaption><strong>Пример: этап 7.</strong> После открытия центральной части поле заметно упрощается. Остаются длинный нож и более широкий булавовидный предмет, поэтому дальше выгодно проверять клетки, которые одновременно подходят под несколько возможных положений. Так вы быстрее отсекаете пустые зоны и тратите меньше лопат на случайные тычки.</figcaption>
+        </figure>
+      </div>
+      <aside class="callout">
+        <strong>Суть геометрии</strong>
+        <p>Мы не пытаемся угадать точное место «на чуйке». Мы последовательно уменьшаем число легальных размещений. Чем причудливее форма доски, тем сильнее помогает логика, а не удача.</p>
+      </aside>
+    </section>
+
+    <section class="guide-block">
+      <h2 id="symphony">5. Фантазийная симфония</h2>
+      <p class="body-p">Это пазл-вкладка с дополнительными наградами. Логика простая: выполняем миссии, получаем кусочки, вставляем их в поле, забираем промежуточные сундуки и финальную награду за полный пазл.</p>
+      <figure class="screenshot">
+        <img src="../../assets/guides/penguin-party/symphony.webp" alt="Фантазийная симфония"/>
+        <figcaption><strong>Фантазийная симфония.</strong> Пазл, боковые и нижние сундуки, а также финальная награда после полного закрытия миссий. По сути — приятный бонус к общей активности в ивенте.</figcaption>
+      </figure>
+      <p class="body-p">Особой скрытой математики здесь нет. Просто закрываем миссии без фанатизма и забираем всё, что даёт событие. Это побочный источник ресурсов, а не место, где нужно принимать сложные решения.</p>
+    </section>
+
+    <section class="guide-block">
+      <h2 id="shop">6. Пингвиний магазин</h2>
+      <p class="body-p">Именно сюда в итоге превращаются ваши броски. Ассортимент может немного отличаться по возрасту государства, поэтому универсальное правило такое: <strong>не тратим монеты сразу</strong>, а копим до конца и только потом покупаем нужный дефицит.</p>
+      <figure class="screenshot">
+        <img src="../../assets/guides/penguin-party/shop.webp" alt="Пингвиний магазин"/>
+        <figcaption><strong>Пингвиний магазин.</strong> Здесь видны разные типы наград: декоративка, огненные кристаллы, пазлы, сундуки, материалы и прочие дефицитные позиции. Именно поэтому спешить с тратами не нужно.</figcaption>
+      </figure>
+      <div class="penguin-alert">
+        <strong>Ключевая рекомендация по монетам</strong>
+        <p><strong>Монеты пингвина копим, а тратим в конце.</strong> За время события меняется понимание собственных потребностей: кому-то в итоге важнее пазлы, кому-то огненные кристаллы, кому-то редкие материалы. Ранние импульсивные покупки обычно хуже продуманной финальной траты.</p>
+      </div>
+      <div class="priority-list">
+        <div class="priority-row"><div class="num">1</div><div><b>Сначала дефицит</b><p>Покупаем то, что действительно тормозит аккаунт прямо сейчас: редкие материалы, огненные кристаллы, пазлы, особые сундуки, руководства и прочее узкое место.</p></div></div>
+        <div class="priority-row"><div class="num">2</div><div><b>Потом долгие цели</b><p>Если у вас есть цель на постоянный внешний вид, табличку, эмоцию или другой коллекционный предмет — закладываем это заранее, а не внезапно в конце.</p></div></div>
+        <div class="priority-row"><div class="num">3</div><div><b>Остаток — по счёту</b><p>Когда главный дефицит закрыт, добираем на остаток самый полезный универсальный ресурс.</p></div></div>
+      </div>
+    </section>
+
+    <section class="guide-block">
+      <h2 id="plan">7. Короткий план на ивент</h2>
+      <ol class="plan-steps">
+        <li>Каждый день закрываем основную активность события и забираем шарики, а в <strong>Ледяном взрыве</strong> не забываем про ежедневки.</li>
+        <li>В <strong>Парке пингвинов</strong> держим в голове средний ориентир <strong>70,4 монеты за шарик</strong> и не строим ожидания на единичных удачных бросках.</li>
+        <li>Если берём пропуск за <strong>479 ₽</strong>, делаем это <strong>в самом начале</strong>, чтобы не терять дополнительные <strong>3 шарика в день</strong> и удвоенные ежедневные награды Ледяного взрыва.</li>
+        <li>Во вкладке <strong>Потерянная добыча</strong> не копаем вслепую: смотрим на формы, вычёркиваем невозможные клетки и только потом тратим лопаты.</li>
+        <li><strong>Фантазийную симфонию</strong> просто добираем по пути — без отдельного форсажа.</li>
+        <li><strong>Монеты пингвина копим до конца</strong>, затем спокойно открываем магазин и покупаем именно то, что нужно аккаунту после всех расчётов.</li>
+      </ol>
+      <p class="source-note">Материал собран по текущим игровым скриншотам и ручному разбору вкладок события. Если локализация или мелкие цифры на вашем сервере немного отличаются, базовый приоритет остаётся тем же: считаем средние монеты, рано оцениваем выгоду пропуска и копаем лопатами по геометрии.</p>
+    </section>
+  </article>
+
+  <section class="related">
+    <h2>См. также</h2>
+    <div class="related-grid">
+      <a href="../../guides/events/wandering-theater.html">Бродячий театр</a>
+      <a href="../../guides/events/snowbusters.html">Снегоуборщики</a>
+      <a href="../../guides/development/shops-currencies.html">Магазины и валюты</a>
+      <a href="../../guides/development/account-development.html">Развитие аккаунта</a>
+    </div>
+  </section>
+</main>
+<a class="back-top" id="backTop" href="#">↑</a>
+<nav class="bottom-nav"><a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open><span class="ico">🔎</span><span>Поиск</span></button></nav>
+<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input id="searchInput" type="search" autocomplete="off" placeholder="Поиск: Флинт, КО, Литейная…"/><button class="search-close" data-search-close>×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
+<script src="../../assets/js/search-index.js?v=46"></script>
+<script src="../../assets/js/app.js?v=28"></script>
+</body>
+</html>
