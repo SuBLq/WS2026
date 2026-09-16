@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#0f5f8f"/>
+<meta name="description" content="Зимняя осада: два отряда, гарнизоны, Надзиратели, мораль, звёзды, подготовка R4/R5 и тактика атаки."/>
+<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
+<link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
+<link href="../../assets/css/content.css?v=30" rel="stylesheet"/>
+<title>ЗИМНЯЯ ОСАДА · Whiteout Survival</title>
+<style>
+:root{--ws-blue:#1185bd;--ws-cyan:#43bee7;--ws-green:#2d9a67;--ws-orange:#dc8a24;--ws-red:#c94d4d;--ws-purple:#7458c6;--ws-gold:#d49a1e}
+/* Базовые карточки намеренно нейтральные: цвет используется как акцент, а не как фон всей страницы. */
+.ws-zero{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}.ws-zero-card{border:1px solid #cde2ee;background:linear-gradient(180deg,#f8fcff,#edf7fc);border-radius:16px;padding:12px 13px;box-shadow:0 4px 13px rgba(25,74,102,.035)}.ws-zero-card b{display:block;color:#14597b;font-size:13px;margin-bottom:5px}.ws-zero-card p{margin:0;color:#486574;font-size:11.8px;line-height:1.5}.ws-zero-card.player{border-left:4px solid var(--ws-green)}.ws-zero-card.attack{border-left:4px solid var(--ws-purple)}.ws-zero-card.lock{border-left:4px solid var(--ws-orange)}.ws-zero-card.order{border-left:4px solid var(--ws-blue)}
+.squad-jobs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0;padding:12px;border:1px solid #c9dfeb;border-radius:18px;background:linear-gradient(135deg,#edf8ff,#f8fcff);box-shadow:0 6px 18px rgba(19,92,127,.045)}.squad-job{border-radius:15px;padding:13px;border:1px solid #d8e7ef;background:#fff}.squad-job.finish{border-left:5px solid var(--ws-green)}.squad-job.break{border-left:5px solid var(--ws-purple)}.squad-job .eyebrow-mini{font-size:9px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#6e8795}.squad-job b{display:block;margin:4px 0 5px;font-size:15px;color:#174f69}.squad-job p{margin:0;font-size:12px;line-height:1.5;color:#4f6876}.squad-job strong{color:#173f56}.squad-jobs-note{grid-column:1/-1;margin:0;border-radius:12px;background:#fff8ec;border:1px solid #efd8b0;border-left:4px solid var(--ws-orange);font-size:11.5px;line-height:1.5;color:#6d5737;padding:9px 10px}
+.phase-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:12px 0}.phase{border:1px solid #d5e6ef;border-radius:14px;background:#f7fbfd;padding:10px}.phase .day{font-size:9px;font-weight:900;color:#5a7a8b;text-transform:uppercase}.phase b{display:block;margin-top:3px;font-size:12.5px;color:#174f6a}.phase span{display:block;margin-top:4px;font-size:10.5px;line-height:1.4;color:#58717f}
+.screenshot{margin:12px 0;background:#f7fbfd;border:1px solid #d8e8f0;border-radius:18px;padding:10px}.screenshot img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid #d5e4ec;background:#fff}.screenshot figcaption{font-size:11.4px;line-height:1.48;color:#5b7482;margin-top:8px}.media-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}
+.mechanic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}.mechanic{border-radius:16px;padding:12px;border:1px solid #d7e6ee;background:#f8fcfe}.mechanic .icon{font-size:21px}.mechanic b{display:block;margin:5px 0 4px;font-size:13px;color:#1a5671}.mechanic p{margin:0;font-size:11.7px;line-height:1.48;color:#506a79}.mechanic.star{border-top:4px solid #e7ad2b}.mechanic.heart{border-top:4px solid #d7a43b}.mechanic.morale{border-top:4px solid #41a66f}
+.math-strip{display:flex;gap:12px;align-items:center;background:linear-gradient(135deg,#edf8ff,#f6fbff);border:1px solid #cfe4ef;border-radius:16px;padding:12px;margin:12px 0}.math-big{flex:0 0 auto;min-width:86px;text-align:center}.math-big strong{display:block;font-size:28px;line-height:1;color:#12658d}.math-big span{font-size:9.5px;font-weight:900;color:#648393;text-transform:uppercase}.math-strip p{margin:0;font-size:11.8px;line-height:1.5;color:#486676}.math-strip.stars{background:linear-gradient(135deg,#fff8e9,#fffdf8);border-color:#ead6a7}.math-strip.stars .math-big strong{color:#9a690f}.math-strip.stars .math-big span{color:#806f4b}.math-strip.stars p{color:#665b45}
+.squad-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}.squad-card{border:1px solid #d5e7ef;border-radius:18px;background:#f8fcff;padding:13px;box-shadow:0 5px 16px rgba(30,82,107,.035)}.squad-card.primary{border-top:4px solid #1688bb}.squad-card.secondary{border-top:4px solid #55a86f}.squad-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}.squad-head b{font-size:14px;color:#154f6c}.ratio{white-space:nowrap;border-radius:999px;background:#e7f4fb;border:1px solid #cce4f0;color:#176589;font-size:10px;font-weight:900;padding:5px 8px}.heroes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.hero-chip{border:1px solid #d8e8ef;background:#fff;border-radius:12px;padding:9px 7px;text-align:center}.hero-chip .class{display:block;font-size:16px}.hero-chip b{display:block;font-size:11.5px;color:#2d5165;margin-top:4px}.squad-card p{margin:9px 0 0;font-size:11.5px;line-height:1.5;color:#526b78}
+.role-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}.role-card{border-radius:16px;padding:13px;border:1px solid #d8e7ef;background:#f8fcfe}.role-card.player{border-left:4px solid var(--ws-green)}.role-card.officer{border-left:4px solid var(--ws-orange)}.role-card h3{margin:0 0 6px;font-size:14px;color:#174e68}.role-card p,.role-card li{font-size:11.8px;line-height:1.5;color:#506a79}.role-card ul{margin:7px 0 0;padding-left:18px}.role-card li+li{margin-top:4px}
+/* Как в гайде по СвС: цветные плашки только для действительно важных тезисов. */
+.callout.ws-key,.callout.ws-info,.callout.ws-safe,.callout.ws-warning,.callout.ws-command{border-radius:16px;padding:13px 14px}.callout.ws-key{border-left:4px solid #4aa9d6;background:linear-gradient(135deg,#eef9fe,#fff)}.callout.ws-key strong{color:#0f638c}.callout.ws-info{border-left:4px solid #4aa9d6;background:linear-gradient(135deg,#eef9fe,#fff)}.callout.ws-info strong{color:#0f638c}.callout.ws-safe{border-left:4px solid #43a665;background:linear-gradient(135deg,#effaf3,#fff)}.callout.ws-safe strong{color:#33754c}.callout.ws-warning{border-left:4px solid #d48a35;background:linear-gradient(135deg,#fff6e8,#fff)}.callout.ws-warning strong{color:#92591e}.callout.ws-command{border-left:4px solid #8066c2;background:linear-gradient(135deg,#f3efff,#fff)}.callout.ws-command strong{color:#604d9d}.callout.ws-key p,.callout.ws-info p,.callout.ws-safe p,.callout.ws-warning p,.callout.ws-command p{color:#526977}
+.morale-track{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;margin:10px 0}.morale-step{border-radius:11px;background:#eaf6ef;border:1px solid #cee7d8;padding:8px 3px;text-align:center;font-size:11px;font-weight:900;color:#287049}.morale-step.finish{background:#fff6df;border-color:#e8cf91;color:#8b6418}
+/* Единственный крупный цветной блок внутри боевой механики — сброс морали после сердца. */
+.morale-reset{margin:14px 0;border:1px solid #c7d8ee;border-left:6px solid var(--ws-purple);border-radius:18px;background:linear-gradient(135deg,#f3efff 0%,#eef9fe 100%);padding:14px 15px;box-shadow:0 7px 20px rgba(59,77,132,.08)}.morale-reset-title{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:900;color:#58458f}.morale-reset-title .reset-icon{font-size:22px}.morale-reset-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:8px;align-items:center;margin:11px 0}.morale-reset-step{border:1px solid #d4dfe9;border-radius:13px;background:rgba(255,255,255,.82);padding:10px;text-align:center}.morale-reset-step b{display:block;font-size:16px;color:#315d7a}.morale-reset-step span{display:block;margin-top:3px;font-size:10.5px;line-height:1.35;color:#5a7180}.morale-reset-arrow{font-size:20px;font-weight:900;color:#8066c2}.morale-reset p{margin:0;font-size:12.5px;line-height:1.55;color:#526977}.morale-reset p strong{color:#58458f}
+.battle-flow{display:grid;gap:8px;margin:12px 0}.battle-step{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:start;border:1px solid #d8e7ef;border-radius:14px;background:#f8fcfe;padding:10px 11px}.battle-num{width:30px;height:30px;border-radius:999px;display:grid;place-items:center;background:#1987bb;color:#fff;font-weight:900}.battle-step b{display:block;color:#174f69;font-size:12.8px}.battle-step p{margin:3px 0 0;color:#526b79;font-size:11.7px;line-height:1.48}.battle-step.warning .battle-num{background:var(--ws-orange)}.battle-step.breaker .battle-num{background:var(--ws-purple)}.battle-step.finish .battle-num{background:var(--ws-green)}
+.danger-list{display:grid;gap:8px;margin:12px 0}.danger{border:1px solid #efc7c7;border-left:4px solid var(--ws-red);border-radius:14px;background:#fff7f7;padding:10px 12px}.danger b{display:block;color:#9b3737;font-size:12.5px}.danger p{margin:3px 0 0;color:#725252;font-size:11.6px;line-height:1.46}.danger.warning{border-left-color:#d87839;background:#fff8f0;border-color:#edcdb6}.danger.warning b{color:#92551f}.danger.warning p{color:#70594a}.danger.economy{border-left-color:#d87839;background:#fff8f0;border-color:#edcdb6}.danger.economy b{color:#92551f}.danger.economy p{color:#70594a}
+.small-note{font-size:10.8px;line-height:1.45;color:#65808f;margin-top:8px}.tagline{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 9px;font-size:9.5px;font-weight:900;background:#e9f5fb;color:#176489;border:1px solid #cfe5f0}
+/* Тёмная тема: нейтральный фон карточек и явный светлый текст — без тёмного текста на тёмных плашках. */
+html[data-theme="dark"] .ws-zero-card,html[data-theme="dark"] .phase,html[data-theme="dark"] .mechanic,html[data-theme="dark"] .squad-card,html[data-theme="dark"] .role-card,html[data-theme="dark"] .battle-step{background:linear-gradient(145deg,#0e3552,#0a2942);border-color:#285a76}
+html[data-theme="dark"] .squad-jobs{background:linear-gradient(135deg,#0c2940,#0b344c);border-color:#28536c}html[data-theme="dark"] .squad-job{background:#0b2639;border-color:#28506a}
+html[data-theme="dark"] .ws-zero-card b,html[data-theme="dark"] .squad-job b,html[data-theme="dark"] .phase b,html[data-theme="dark"] .mechanic b,html[data-theme="dark"] .squad-head b,html[data-theme="dark"] .role-card h3,html[data-theme="dark"] .battle-step b{color:#e4f4fb}
+html[data-theme="dark"] .ws-zero-card p,html[data-theme="dark"] .squad-job p,html[data-theme="dark"] .phase span,html[data-theme="dark"] .mechanic p,html[data-theme="dark"] .squad-card p,html[data-theme="dark"] .role-card p,html[data-theme="dark"] .role-card li,html[data-theme="dark"] .battle-step p{color:#c8dce6}
+html[data-theme="dark"] .ws-zero-card strong,html[data-theme="dark"] .squad-job strong,html[data-theme="dark"] .squad-card strong,html[data-theme="dark"] .role-card strong,html[data-theme="dark"] .battle-step strong{color:#f0f8fc}
+html[data-theme="dark"] .squad-job .eyebrow-mini,html[data-theme="dark"] .phase .day{color:#9fc3d7}
+html[data-theme="dark"] .math-strip,html[data-theme="dark"] .math-strip.stars{background:linear-gradient(135deg,#0d2940,#10364f);border-color:#285675}html[data-theme="dark"] .math-big strong{color:#9edfff}html[data-theme="dark"] .math-big span{color:#a5bdc9}html[data-theme="dark"] .math-strip p{color:#c1d8e4}
+html[data-theme="dark"] .squad-jobs-note{background:#40331e;border-color:#745a32;color:#f0dcae}html[data-theme="dark"] .squad-jobs-note strong{color:#ffe2a9}
+html[data-theme="dark"] .ratio,html[data-theme="dark"] .tagline{background:#113650;border-color:#2c5b76;color:#b7e7ff}html[data-theme="dark"] .hero-chip{background:#0b2638;border-color:#315b71}html[data-theme="dark"] .hero-chip b{color:#d9edf7}
+html[data-theme="dark"] .callout.ws-key,html[data-theme="dark"] .callout.ws-info,html[data-theme="dark"] .callout.ws-safe,html[data-theme="dark"] .callout.ws-warning,html[data-theme="dark"] .callout.ws-command{background:linear-gradient(135deg,#0e3552,#0a2942)}html[data-theme="dark"] .callout.ws-key,html[data-theme="dark"] .callout.ws-info{border-left-color:#4aa9d6}html[data-theme="dark"] .callout.ws-safe{border-left-color:#43a665}html[data-theme="dark"] .callout.ws-warning{border-left-color:#d48a35}html[data-theme="dark"] .callout.ws-command{border-left-color:#8066c2}html[data-theme="dark"] .callout.ws-key p,html[data-theme="dark"] .callout.ws-info p,html[data-theme="dark"] .callout.ws-safe p,html[data-theme="dark"] .callout.ws-warning p,html[data-theme="dark"] .callout.ws-command p{color:#c8dce6}html[data-theme="dark"] .callout.ws-key strong,html[data-theme="dark"] .callout.ws-info strong{color:#84dcff}html[data-theme="dark"] .callout.ws-safe strong{color:#9be0b7}html[data-theme="dark"] .callout.ws-warning strong{color:#ffd59a}html[data-theme="dark"] .callout.ws-command strong{color:#d3c8ff}
+html[data-theme="dark"] .morale-step{background:#123c31;border-color:#28624d;color:#9be0b7}html[data-theme="dark"] .morale-step.finish{background:#4a3b20;border-color:#806a36;color:#f4d994}
+html[data-theme="dark"] .morale-reset{background:linear-gradient(135deg,#242747,#0d3857);border-color:#4d5f85;border-left-color:#8d79cc}html[data-theme="dark"] .morale-reset-title{color:#e1d9ff}html[data-theme="dark"] .morale-reset-step{background:#102f45;border-color:#3b6078}html[data-theme="dark"] .morale-reset-step b{color:#e4f4fb}html[data-theme="dark"] .morale-reset-step span,html[data-theme="dark"] .morale-reset p{color:#c8dce6}html[data-theme="dark"] .morale-reset p strong{color:#f0ebff}html[data-theme="dark"] .morale-reset-arrow{color:#c7b8ff}
+html[data-theme="dark"] .danger{background:#3b2024;border-color:#744046}html[data-theme="dark"] .danger b{color:#ffb2b2}html[data-theme="dark"] .danger p{color:#e9c5c5}html[data-theme="dark"] .danger.warning,html[data-theme="dark"] .danger.economy{background:#40311f;border-color:#745535}html[data-theme="dark"] .danger.warning b,html[data-theme="dark"] .danger.economy b{color:#ffd09a}html[data-theme="dark"] .danger.warning p,html[data-theme="dark"] .danger.economy p{color:#ead5bc}
+html[data-theme="dark"] .screenshot{background:#0d2940;border-color:#264f68}html[data-theme="dark"] .screenshot img{border-color:#2b5168;background:#11314a}html[data-theme="dark"] .screenshot figcaption{color:#abc7d9}
+@media(max-width:760px){.phase-row{grid-template-columns:repeat(2,minmax(0,1fr))}.mechanic-grid{grid-template-columns:1fr 1fr}.squad-grid,.role-grid,.media-grid{grid-template-columns:1fr}.morale-track{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:620px){.ws-zero,.squad-jobs{grid-template-columns:1fr}.squad-jobs-note{grid-column:1}.phase-row{grid-template-columns:1fr}.mechanic-grid{grid-template-columns:1fr}.math-strip{align-items:flex-start}.heroes{grid-template-columns:1fr 1fr 1fr}.morale-track{grid-template-columns:repeat(4,minmax(0,1fr))}.morale-reset-flow{grid-template-columns:1fr}.morale-reset-arrow{transform:rotate(90deg);justify-self:center}}
+</style>
+<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
+</head>
+<body data-root="../../">
+<header class="site-top"><a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a><div class="site-top-actions"><button class="site-icon-btn" data-search-open>🔍 Поиск</button></div></header>
+<main class="guide-wrap">
+<section class="guide-hero"><div class="eyebrow">🎯 СОБЫТИЯ И РЕЖИМЫ · АЛЬЯНС</div><h1>ЗИМНЯЯ ОСАДА</h1><p>Два самостоятельных отряда, четыре крепости, мораль защитников и одна общая задача: выбивать звёзды противника организованно.</p><div class="hero-meta"><span class="pill">Подготовлено SuBL · сентябрь 2026</span></div></section>
+<div class="guide-toolbar"><a class="action-link" href="../../index.html#guides">← Все гайды</a></div>
+<details class="toc"><summary>Содержание</summary><div class="toc-list">
+<a href="#zero">0. Простая инструкция каждому</a><a href="#basics">1. Как устроена Зимняя осада</a><a href="#squads">2. Какие два отряда собирать</a><a href="#player">3. Подготовка обычного игрока</a><a href="#officers">4. Подготовка R4/R5</a><a href="#scout">5. Разведка</a><a href="#battle">6. Боевая фаза</a><a href="#errors">7. Критические ошибки</a>
+</div></details>
+<article class="article">
+<section class="guide-block"><h2 id="zero">0. Простая инструкция каждому</h2>
+<div class="ws-zero">
+<div class="ws-zero-card player"><b>Собери два нормальных отряда</b><p>Не «сильный + остатки». Оба отряда потом отдельно защищаются и отдельно атакуют.</p></div>
+<div class="ws-zero-card order"><b>По умолчанию — 50 / 20 / 30</b><p>Пехота / копейщики / стрелки. Это рабочая отправная точка, дальше корректируем только по отчётам.</p></div>
+<div class="ws-zero-card lock"><b>До конца четверга всё проверь</b><p>Герои, их навыки, снаряжение и боевые бонусы фиксируются после подготовки. Специально тратить накопления ради Осады не нужно — основной запас бережём на СвС.</p></div>
+<div class="ws-zero-card player"><b>Не переживай за свои войска</b><p>В событии используются системные войска твоего открытого уровня. Реальные войска города не умирают.</p></div>
+<div class="ws-zero-card attack"><b>Цель выбираешь ты — но по команде</b><p>В доступной крепости можно выбрать конкретного защитника. Бьём того, кого обозначили R4/R5, а не самого удобного соперника.</p></div>
+<div class="ws-zero-card attack"><b>Потрать попытки обоих отрядов</b><p>У каждого отряда до 10 атак за день. Даже если твой гарнизон уже выбит, атаковать всё равно можно.</p></div>
+</div>
+<div class="squad-jobs">
+<div class="squad-job finish"><span class="eyebrow-mini">Отряд 1 · сильнейший</span><b>Добивает цель</b><p>Береги основной отряд для момента, когда нужному защитнику уже <strong>просадили мораль</strong>. Его задача — выиграть бой и снять сердце.</p></div>
+<div class="squad-job break"><span class="eyebrow-mini">Отряд 2 · рабочий</span><b>Сносит мораль сильнейшим врагам</b><p>Если цель слишком сильна для прямой победы, второй отряд отправляем в неё первым. Даже поражение полезно, если оно <strong>ослабляет защитника для добивания</strong>.</p></div>
+<p class="squad-jobs-note"><strong>Простая схема:</strong> второй отряд ломает сильную цель → первый отряд добивает. Если конкретный бой требует другой очередности, следуем команде R4/R5.</p>
+</div>
+<aside class="callout ws-key"><strong>Самое важное про героев</strong><p>Здесь нет логики «первого героя» как при присоединении к рейду. Это самостоятельный бой 1×1: работают экспедиционные навыки всей тройки. Поэтому Сергей во втором отряде полезен как полноценный защитный герой, а не потому, что стоит первым.</p></aside>
+</section>
+
+<section class="guide-block"><h2 id="basics">1. Как устроена Зимняя осада</h2>
+<p class="body-p">«Зимняя осада» — ежемесячное событие альянс против альянса. На поле у каждой стороны четыре крепости. Каждый игрок готовит <strong>два отдельных отряда</strong>, размещает их в своих крепостях, а в субботу этими же отрядами атакует гарнизоны соперника.</p>
+<div class="phase-row">
+<div class="phase preview"><div class="day">Пн–Вт</div><b>Предпросмотр</b><span>Проверяем участие и готовим игроков.</span></div>
+<div class="phase prep"><div class="day">Ср–Чт</div><b>Подготовка</b><span>Собираем 2 отряда, ставим гарнизоны, назначаем Надзирателей.</span></div>
+<div class="phase scout"><div class="day">Пт</div><b>Разведка</b><span>Смотрим гарнизоны и выбираем первую крепость для полной зачистки.</span></div>
+<div class="phase battle"><div class="day">Сб</div><b>Битва</b><span>Тратим атаки по общей команде.</span></div>
+<div class="phase results"><div class="day">Вс</div><b>Итоги</b><span>Результат, награды и разбор.</span></div>
+</div>
+<p class="body-p">Для участия альянс должен входить в топ-20 государства по мощи, а игроку нужен минимум 25-й уровень Топки. Событие стартует раз в месяц на неделе «Сражения альянсов».</p>
+<figure class="screenshot"><img src="../../assets/guides/winter-siege/overview.webp" alt="Главный экран события Зимняя осада"/><figcaption><strong>Главный экран.</strong> Здесь видны стадия события, лига альянса, магазин, рейтинг, награды и переход к подготовке.</figcaption></figure>
+
+<h3>Звёзды, сердца и мораль</h3>
+<div class="mechanic-grid">
+<div class="mechanic star"><div class="icon">⭐</div><b>Звёзды = счёт</b><p>Отряд приносит звёзды своей крепости. Они исчезают только после полного выбивания этого отряда из защиты.</p></div>
+<div class="mechanic heart"><div class="icon">❤️</div><b>Сердца = жизни</b><p>Обычный отряд имеет 4 сердца, Надзиратель — 5. Победа атакующего снимает одно сердце.</p></div>
+<div class="mechanic morale"><div class="icon">🙂</div><b>Мораль = сила защиты</b><p>Защитник начинает с 100%. Его боевые характеристики умножаются на текущую мораль.</p></div>
+</div>
+<div class="morale-reset">
+<div class="morale-reset-title"><span class="reset-icon">❤️↻</span>Снятие сердца полностью сбрасывает ослабление</div>
+<div class="morale-reset-flow">
+<div class="morale-reset-step"><b>60–80%</b><span>мораль уже просажена</span></div>
+<div class="morale-reset-arrow">→</div>
+<div class="morale-reset-step"><b>−1 ❤️</b><span>добивающий выигрывает бой</span></div>
+<div class="morale-reset-arrow">→</div>
+<div class="morale-reset-step"><b>100%</b><span>мораль защитника восстановлена</span></div>
+</div>
+<p><strong>Это ключевая механика Осады:</strong> сняли одно сердце — не считайте, что противник остался ослабленным. Для следующего сердца сильную цель обычно приходится снова просаживать по морали с самого начала.</p>
+</div>
+<figure class="screenshot"><img src="../../assets/guides/winter-siege/garrison.webp" alt="Список гарнизона Зимней осады со звёздами сердцами и моралью"/><figcaption><strong>Гарнизон усиленной крепости.</strong> Надзиратель сверху имеет 5 сердец и ×6 звёзд, обычные отряды — 4 сердца и ×3. Справа видна текущая мораль.</figcaption></figure>
+<div class="math-strip stars"><div class="math-big"><strong>66</strong><span>звёзд на скрине</span></div><p>В усиленной крепости стоят 21 отряд: <strong>20 обычных × 3 звезды + Надзиратель × 6 = 66</strong>. Поэтому усиленную крепость нельзя бездумно отдавать слабым составам — каждая потеря там дороже.</p></div>
+<p class="body-p">Обычная крепость даёт обычному отряду 1 звезду, Надзирателю — 2. Усиленная даёт 3 и 6 соответственно. В каждой крепости помещается максимум 30 гарнизонных отрядов; если желающих больше, в защите остаются Надзиратель и сильнейшие отряды.</p>
+<aside class="callout ws-key"><strong>Как определяется победитель</strong><p>Если альянс первым выбивает все защитные отряды соперника и обнуляет его звёзды — бой заканчивается победой. Если к концу субботы звёзды остались у обеих сторон, выигрывает тот, у кого их больше. При равенстве важен момент, когда сторона достигла текущего количества звёзд: преимущество у той, которая дошла до него позже.</p></aside>
+</section>
+
+<section class="guide-block"><h2 id="squads">2. Какие два отряда собирать</h2>
+<p class="body-p">Оба состава должны быть полноценными самостоятельными PvP-отрядами. Герой не может одновременно входить в обе тройки. Для государства, где второе поколение уже открыто, а третье только начинает появляться, рабочий пример выглядит так:</p>
+<div class="squad-grid">
+<div class="squad-card primary"><div class="squad-head"><b>Отряд 1 · основной</b><span class="ratio">50 / 20 / 30</span></div><div class="heroes"><div class="hero-chip"><span class="class">🛡️</span><b>Флинт</b></div><div class="hero-chip"><span class="class">⚔️</span><b>Молли</b></div><div class="hero-chip"><span class="class">🏹</span><b>Алонсо</b></div></div><p>Флинт держит фронт, Алонсо даёт сильный боевой контроль и урон, а хорошо развитая Молли остаётся нормальным копейщиком, пока поздние герои ещё не набрали звёзды.</p></div>
+<div class="squad-card secondary"><div class="squad-head"><b>Отряд 2 · рабочий</b><span class="ratio">50 / 20 / 30</span></div><div class="heroes"><div class="hero-chip"><span class="class">🛡️</span><b>Сергей</b></div><div class="hero-chip"><span class="class">⚔️</span><b>Мия 3★</b></div><div class="hero-chip"><span class="class">🏹</span><b>Бахити</b></div></div><p>Сергей даёт второму составу живучесть, Бахити — нормального стрелка, а Мия даже на ранней стадии может занять слот копейщика, если уже не уступает вашим более старым героям по реальной силе.</p></div>
+</div>
+<aside class="callout ws-warning"><strong>Мия 3★ — не обязательна</strong><p>Если ваша Мия пока объективно слабее Молли, Джесси или Филли по звёздам, навыкам и итоговой мощи отряда — не форсим её только из-за поколения. Ставим того героя, который сейчас реально делает второй состав сильнее.</p></aside>
+<div class="role-grid">
+<div class="role-card player"><h3>Если Филли хорошо развита</h3><p>Можно собрать <strong>Флинт + Филли + Алонсо</strong> в первый отряд, а Молли отправить во второй вместо слабой Мии. Главное — не складывать всех лучших героев в одну тройку, оставляя вторую пустой.</p></div>
+<div class="role-card player"><h3>Формации для старта</h3><p><strong>50 / 20 / 30</strong> — универсальная точка. Если второй состав слишком быстро разваливается по пехоте, можно тестировать <strong>60 / 20 / 20</strong>. Экзотические 60/40/0 и похожие схемы используем уже после чтения собственных боевых отчётов.</p></div>
+</div>
+<aside class="callout ws-info"><strong>Почему Сергей здесь нормален</strong><p>В обычном присоединении к рейду важен первый экспедиционный навык первого героя. В «Зимней осаде» бой идёт один отряд против одного отряда, поэтому эта логика не действует. Сергей ценен своими защитными экспедиционными навыками всей тройки, а не позицией в списке.</p></aside>
+</section>
+
+<section class="guide-block"><h2 id="player">3. Подготовка обычного игрока</h2>
+<div class="role-grid"><div class="role-card player"><h3>До конца четверга</h3><ul><li>Собрать оба полноценных отряда.</li><li>Надеть боевое снаряжение на используемых героев.</li><li>Если какие-то боевые улучшения <strong>и так были запланированы</strong>, закончить их до фиксации отрядов.</li><li><strong>Специально ради Зимней осады ресурсы не сливаем:</strong> ускорения, материалы снаряжения, талисманы и другие накопления прежде всего бережём на Подготовку к СвС.</li><li>Поставить оба отряда в доступные крепости — R4/R5 потом могут перенести их.</li></ul></div><div class="role-card player"><h3>Что фиксируется</h3><p>Во время подготовки мощь пересчитывается. После её окончания составы и боевые бонусы блокируются. Перестановка снаряжения или апгрейд уже в пятницу/субботу не усилит зарегистрированный отряд.</p></div></div>
+<aside class="callout ws-safe"><strong>Войска не жалко</strong><p>Зимняя осада не расходует ваши реальные войска города. Система выдаёт войска уровня, соответствующего вашему открытому уровню войск и огненных уровней. Поэтому «не атакую, чтобы не было потерь» — здесь просто лишняя осторожность.</p></aside>
+</section>
+
+<section class="guide-block"><h2 id="officers">4. Подготовка R4/R5</h2>
+<p class="body-p">У офицеров здесь гораздо больше работы, чем у рядового игрока. Основная задача — не просто набрать сильные отряды, а превратить их в <strong>четыре нормальных гарнизона</strong> и заранее организовать субботнюю атаку.</p>
+<figure class="screenshot"><img src="../../assets/guides/winter-siege/command.webp" alt="Экран управления крепостями и отрядами Зимней осады"/><figcaption><strong>Экран управления.</strong> Видны четыре крепости, заполнение гарнизонов, звёзды, назначенный Надзиратель и два отряда одного игрока. Именно здесь R4/R5 балансируют защиту.</figcaption></figure>
+<div class="battle-flow">
+<div class="battle-step info"><div class="battle-num">1</div><div><b>Дожать регистрацию</b><p>Проверить, чтобы активные игроки выставили оба отряда. Один незарегистрированный сильный игрок — это сразу потерянные звёзды и до 20 будущих атак.</p></div></div>
+<div class="battle-step warning"><div class="battle-num">2</div><div><b>Не переполнить одну крепость</b><p>Лимит — 30 защитных отрядов. Лишние слабые составы выпадут из гарнизона. При этом обычные крепости нельзя оставлять тонкими: полностью очищенная любая из них открывает противнику доступ к усиленной.</p></div></div>
+<div class="battle-step finish"><div class="battle-num">3</div><div><b>Сильнейших — в усиленную, но без фанатизма</b><p>В усиленной крепости каждый обычный отряд стоит 3 звезды, Надзиратель — 6. Там выгодно держать сильных, но не ценой пустых обычных крепостей.</p></div></div>
+<div class="battle-step info"><div class="battle-num">4</div><div><b>Назначить четыре Надзирателя вручную</b><p>Выбрать можно только среди пяти сильнейших отрядов конкретной крепости. Если забыть, игра сама назначит самый сильный отряд при начале разведки.</p></div></div>
+<div class="battle-step focus"><div class="battle-num">5</div><div><b>К пятнице выбрать первую крепость и цели</b><p>Все три обычные крепости ведут к одной усиленной, поэтому ищем не «лучшую ветку», а <strong>самую дешёвую для полной зачистки переднюю крепость</strong>. Затем заранее задаём порядок конкретных защитников.</p></div></div>
+</div>
+</section>
+
+<section class="guide-block"><h2 id="scout">5. Разведка: пятница — день офицеров</h2>
+<p class="body-p">В пятницу атаковать нельзя, зато видно гарнизоны соперника. Все три обычные крепости ведут к одной усиленной, поэтому задача разведки — выбрать <strong>самую удобную для полной зачистки переднюю крепость</strong> и заранее определить порядок конкретных целей.</p>
+<div class="role-grid"><div class="role-card officer"><h3>Что смотрит R4/R5</h3><ul><li>Какая из трёх обычных крепостей реально проще <strong>полностью</strong> очищается.</li><li>Сколько там отрядов, а не только сколько звёзд.</li><li>Кто Надзиратель и насколько он сильнее остальных.</li><li>Какие сильнейшие защитники потребуют серии атак на мораль.</li><li>В каком порядке разбирать конкретные отряды, чтобы не размазывать попытки по всему гарнизону.</li></ul></div><div class="role-card player"><h3>Что делает обычный игрок</h3><p>Открывает указанную крепость, выбирает названный R4/R5 отряд противника и атакует его своим назначенным составом. Более слабый соперник рядом не повод менять цель самостоятельно.</p></div></div>
+</section>
+
+<section class="guide-block"><h2 id="battle">6. Боевая фаза: ломаем мораль, снимаем сердца</h2>
+<p class="body-p">Каждый из двух отрядов начинает с <strong>3 попыток атаки</strong>. Затем восстанавливается по одной каждые 2 часа, всего можно восстановить ещё 7. Итого — <strong>до 10 атак одним отрядом и до 20 атак с игрока</strong> за субботу.</p>
+<div class="math-strip attacks"><div class="math-big"><strong>20</strong><span>атак на игрока</span></div><p>Два отряда × максимум 10 атак. Даже отряд, который не попал в топ-30 гарнизона или уже был уничтожен в защите, всё равно может использовать свои атаки.</p></div>
+<h3>Как работает «ломатель → добивающий»</h3>
+<p class="body-p">В открытой крепости вы сами выбираете конкретный гарнизонный отряд противника. Атакующий бьётся на своей полной силе, а сила защитника зависит от морали. Поэтому сильнейшие цели часто разбирают серией: сначала более слабые составы снижают мораль, затем основной отряд добивает и снимает сердце.</p>
+<div class="morale-track"><div class="morale-step">100%</div><div class="morale-step">90%</div><div class="morale-step">80%</div><div class="morale-step">75%</div><div class="morale-step">70%</div><div class="morale-step">65%</div><div class="morale-step finish">60%</div></div>
+<div class="morale-reset">
+<div class="morale-reset-title"><span class="reset-icon">❤️↻</span>После каждого снятого сердца мораль снова 100%</div>
+<div class="morale-reset-flow">
+<div class="morale-reset-step"><b>Ломаем</b><span>опускаем мораль сильной цели</span></div>
+<div class="morale-reset-arrow">→</div>
+<div class="morale-reset-step"><b>Снимаем ❤️</b><span>добивающий выигрывает бой</span></div>
+<div class="morale-reset-arrow">→</div>
+<div class="morale-reset-step"><b>Ломаем заново</b><span>следующий цикл начинается со 100%</span></div>
+</div>
+<p>Защитник быстро падает до 80%, затем мораль убывает по 5% до минимальных 60%. Но <strong>после потери сердца мораль полностью восстанавливается до 100%</strong>. Поэтому сильного защитника с несколькими сердцами приходится разбирать отдельными циклами: просадили мораль → сняли сердце → снова просаживаем → снимаем следующее.</p>
+</div>
+<div class="battle-flow">
+<div class="battle-step focus"><div class="battle-num">1</div><div><b>Все бьют одну крепость</b><p>Полуразобранные три крепости хуже одной полностью очищенной. Пока в крепости жив хотя бы один гарнизонный отряд, путь дальше не считается очищенным.</p></div></div>
+<div class="battle-step focus"><div class="battle-num">2</div><div><b>Все бьют одного защитника</b><p>Звёзды исчезают только когда у конкретного отряда кончатся сердца. Размазывание атак по десяти целям почти не меняет счёт.</p></div></div>
+<div class="battle-step breaker"><div class="battle-num">3</div><div><b>Рабочие вторые отряды ломают мораль</b><p>Если защитник слишком силён, сначала отправляем в него более слабые составы. Их поражения снижают мораль цели и подготавливают её для основного удара.</p></div></div>
+<div class="battle-step finish"><div class="battle-num">4</div><div><b>Основные первые отряды добивают</b><p>Когда мораль просажена достаточно, сильный состав идёт за победой и снимает сердце. После этого мораль защитника возвращается к 100%, и при необходимости цикл повторяется.</p></div></div>
+<div class="battle-step info"><div class="battle-num">5</div><div><b>Читаем отчёты</b><p>После первых боёв уже видно реальные статы и результат. Если цель оказалась намного сильнее или слабее разведочной цифры, порядок атак можно скорректировать.</p></div></div>
+</div>
+<aside class="callout ws-command"><strong>Слабый игрок здесь не бесполезен</strong><p>Если ваш отряд не способен снять сердце сильному защитнику напрямую, его попытка всё равно может опустить мораль и подготовить победу следующему игроку. Главное — делать это по команде, а не на случайной цели.</p></aside>
+</section>
+
+<section class="guide-block"><h2 id="errors">7. Критические и обычные ошибки</h2>
+<div class="danger-list">
+<div class="danger critical"><b>Выставить только один отряд</b><p>Теряется половина атак и потенциальная защита. Второй состав должен быть реальным, а не «что осталось».</p></div>
+<div class="danger warning"><b>Собрать героев по логике рейда</b><p>Джесси «первой на атаку» или Сергей «первым на защиту» здесь не являются отдельной механикой. В 1×1 работают все три экспедиционных героя.</p></div>
+<div class="danger warning"><b>Переполнить одну крепость</b><p>В гарнизон попадут только Надзиратель и сильнейшие до лимита. Остальные отряды останутся без защитных звёзд.</p></div>
+<div class="danger critical"><b>Оставить фронтовую крепость пустой</b><p>Противник дешёво открывает себе маршрут к следующей точке.</p></div>
+<div class="danger critical"><b>Размазать атаки по разным целям</b><p>Неснятые сердца не снимают звёзды. Это самая дорогая организационная ошибка.</p></div>
+<div class="danger warning"><b>Сразу бросать сильнейшего в 100% мораль</b><p>Иногда он всё равно проиграет. Сначала более дешёвыми атаками просаживаем защитника, потом используем добивающего.</p></div>
+<div class="danger critical"><b>Продолжать бой так, будто после сердца мораль осталась низкой</b><p><strong>После каждого снятого сердца мораль защитника снова становится 100%.</strong> Если цель сильная, следующий добивающий не должен идти сразу: сначала снова просаживаем мораль, затем снимаем следующее сердце.</p></div>
+<div class="danger economy"><b>Сливать накопления специально под Осаду</b><p>После подготовки бонусы всё равно фиксируются, но это не повод форсить развитие ради одного события. Делайте только запланированные улучшения, а основной запас сохраняйте на СвС.</p></div>
+<div class="danger critical"><b>Не потратить попытки до конца субботы</b><p>Неиспользованные атаки не помогают альянсу. Даже слабый отряд может работать по морали.</p></div>
+</div>
+</section>
+</article>
+<section class="related"><h2>См. также</h2><div class="related-grid"><a href="../combat/combat-system.html">Боевая система</a><a href="../combat/pvp-objects.html">PvP за объекты</a><a href="foundry.html">Битва за Литейную</a><a href="../combat/heroes.html">Герои</a></div></section>
+</main>
+<a class="back-top" id="backTop" href="#">↑</a>
+<nav class="bottom-nav"><a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open><span class="ico">🔎</span><span>Поиск</span></button></nav>
+<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input id="searchInput" type="search" autocomplete="off" placeholder="Поиск: Флинт, КО, Литейная…"/><button class="search-close" data-search-close>×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
+<script src="../../assets/js/search-index.js?v=47"></script><script src="../../assets/js/app.js?v=28"></script>
+</body></html>
