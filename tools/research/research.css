@@ -16,7 +16,7 @@
 .route-action{border:1px solid #cddfe7;background:#f6fafc;color:#246986;border-radius:9px;padding:7px 9px;font-size:10px;font-weight:850;cursor:pointer;white-space:nowrap}
 .route-action:hover{background:#eaf4f8}.route-action.danger{color:#a04742;border-color:#ead5d2;background:#fff8f7}.route-action:disabled{opacity:.42;cursor:default}
 .route-goal{border:1px solid #bad8e7;background:linear-gradient(180deg,#f1f8fc,#f8fbfd);border-radius:16px;padding:13px;box-shadow:0 5px 18px rgba(18,92,130,.07)}
-.route-goal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.route-goal-kicker{font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:#3680a2;font-weight:900}.route-goal-name{font-size:15px;font-weight:900;margin-top:2px;overflow-wrap:anywhere}.route-goal-level{font-size:12px;color:#577687;margin-top:4px}.route-goal-level b{color:#176fa5}.goal-chip{--kind:#176fa5;background:#dfeefa!important;color:#176fa5!important}
+.route-goal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.route-goal-kicker{font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:#3680a2;font-weight:900}.route-goal-name{font-size:15px;font-weight:900;margin-top:2px;overflow-wrap:anywhere}.route-goal-level{font-size:12px;color:#577687;margin-top:4px}.route-goal-level b{color:#176fa5}.goal-chip{--kind:#176fa5;background:#dfeefa;color:#176fa5}
 .goal-needs{margin-top:10px;padding-top:9px;border-top:1px solid #dceaf0;display:grid;gap:5px}.goal-needs>b{font-size:10px;color:#567586}.goal-needs>div{display:flex;flex-wrap:wrap;gap:5px}.goal-needs span{font-size:9.5px;line-height:1.25;color:#446878;background:#e8f2f7;border-radius:999px;padding:5px 7px}
 .prereq-summary{margin-top:4px;border:1px solid #d8e5ea;background:#f6fafb;border-radius:14px;padding:10px}.prereq-summary-top>div{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap}.prereq-summary strong{font-size:12px}.prereq-summary-top span{font-size:10px;color:var(--muted)}
 .price-line{display:flex;align-items:baseline;gap:6px 9px;flex-wrap:wrap;margin-top:8px;padding-top:8px;border-top:1px dashed #d9e6eb;font-size:9.5px;line-height:1.35;color:#526f7f}.price-label{font-weight:900;color:#315e74}.price-time{font-weight:850;color:#204f67}.price-time em{font-style:normal;font-weight:650;color:#7b8f9a}.price-resources{display:flex;gap:5px 9px;flex-wrap:wrap;width:100%;color:#557484}.price-resources span{white-space:nowrap}.price-resources b{font-weight:800;color:#6b7f8d}.muted-price{color:#82939d}
@@ -80,7 +80,7 @@ html[data-theme="dark"] .segmented button{color:#91aec0}
 html[data-theme="dark"] .segmented button.active{background:#123b59;color:#9ee6ff;box-shadow:none}
 html[data-theme="dark"] .goal-level,html[data-theme="dark"] .goal-preview,html[data-theme="dark"] .goal-preview-cost,html[data-theme="dark"] .prereq-chain,html[data-theme="dark"] .route-item,html[data-theme="dark"] .kpi,html[data-theme="dark"] .resources>div{background:#0d2e49;border-color:#214a67}
 html[data-theme="dark"] .goal-preview-title strong,html[data-theme="dark"] .route-name,html[data-theme="dark"] .kpi strong,html[data-theme="dark"] .resources strong{color:#eff9ff}
-html[data-theme="dark"] .goal-preview-title>b,html[data-theme="dark"] .goal-chip{background:#104665!important;color:#95e5ff!important}
+html[data-theme="dark"] .goal-preview-title>b,html[data-theme="dark"] .goal-chip{background:#104665;color:#95e5ff}
 html[data-theme="dark"] .goal-preview-label,html[data-theme="dark"] .price-label,html[data-theme="dark"] .prereq-chain-title strong{color:#a5d6e9}
 html[data-theme="dark"] .price-line,html[data-theme="dark"] .price-resources{color:#a4bdcc;border-color:#24516e}
 html[data-theme="dark"] .price-time{color:#ccecff}html[data-theme="dark"] .price-time em{color:#829fb2}html[data-theme="dark"] .price-resources b{color:#8fa9ba}
@@ -89,7 +89,7 @@ html[data-theme="dark"] .prereq-chain-list .route-item{background:#0b2942;border
 html[data-theme="dark"] .route-item.kind-goal{background:#0d3554}.route-item.kind-manual{}
 html[data-theme="dark"] .route-item.kind-manual{background:#0c3540}
 html[data-theme="dark"] .kind-chip{background:#123a54;color:#9bdcf5}
-html[data-theme="dark"] .route-levels{border-color:#1d415b!important}
+html[data-theme="dark"] .route-levels{border-color:#1d415b}
 html[data-theme="dark"] .route-action{background:#0e3552;border-color:#285875;color:#acdff1}
 html[data-theme="dark"] .route-action:hover{background:#12405e}
 html[data-theme="dark"] .route-action.danger{background:#44252a;border-color:#744047;color:#ffb1a9}
@@ -196,56 +196,56 @@ html[data-theme="dark"] .route-card .empty{color:#9ab5c7}
 .btn.primary{background:linear-gradient(135deg,#0e75a4 0%,#18a3cb 100%);box-shadow:0 5px 14px rgba(17,130,175,.18)}
 
 html[data-theme="dark"] .profile-card{
-  background:linear-gradient(145deg,#0b2942 0%,#0c344e 100%)!important;
+  background:linear-gradient(145deg,#0b2942 0%,#0c344e 100%);
 }
 html[data-theme="dark"] .target-card{
-  background:linear-gradient(145deg,#0b2942 0%,#102d51 100%)!important;
+  background:linear-gradient(145deg,#0b2942 0%,#102d51 100%);
 }
 html[data-theme="dark"] .totals-card{
-  background:linear-gradient(135deg,#0b3544 0%,#0d4a4d 58%,#0b3442 100%)!important;
-  border-color:#27666d!important;
+  background:linear-gradient(135deg,#0b3544 0%,#0d4a4d 58%,#0b3442 100%);
+  border-color:#27666d;
 }
 html[data-theme="dark"] .route-card{
-  background:linear-gradient(155deg,#0b2942 0%,#0b263f 60%,#102944 100%)!important;
+  background:linear-gradient(155deg,#0b2942 0%,#0b263f 60%,#102944 100%);
 }
 html[data-theme="dark"] .goal-preview{
-  background:linear-gradient(145deg,#0d3855 0%,#0b2b47 100%)!important;
-  border-color:#2b6381!important;
+  background:linear-gradient(145deg,#0d3855 0%,#0b2b47 100%);
+  border-color:#2b6381;
 }
 html[data-theme="dark"] .goal-preview-cost{
-  background:linear-gradient(145deg,#0d314c,#0a2942)!important;
-  border-color:#285a75!important;
+  background:linear-gradient(145deg,#0d314c,#0a2942);
+  border-color:#285a75;
 }
 html[data-theme="dark"] .segmented button.active{
-  background:linear-gradient(135deg,#14486a,#176b91)!important;
-  color:#e7f8ff!important;
+  background:linear-gradient(135deg,#14486a,#176b91);
+  color:#e7f8ff;
 }
 html[data-theme="dark"] .btn.primary{
-  background:linear-gradient(135deg,#1175a5,#20a8ce)!important;
-  box-shadow:0 6px 16px rgba(11,115,163,.28)!important;
+  background:linear-gradient(135deg,#1175a5,#20a8ce);
+  box-shadow:0 6px 16px rgba(11,115,163,.28);
 }
 html[data-theme="dark"] .route-card .route-goal{
-  color:#edf8ff!important;
-  background:linear-gradient(135deg,#0f3d5d 0%,#0b2d49 58%,#102b4d 100%)!important;
-  border-color:#347395!important;
-  box-shadow:0 9px 24px rgba(0,0,0,.22)!important;
+  color:#edf8ff;
+  background:linear-gradient(135deg,#0f3d5d 0%,#0b2d49 58%,#102b4d 100%);
+  border-color:#347395;
+  box-shadow:0 9px 24px rgba(0,0,0,.22);
 }
-html[data-theme="dark"] .route-card .route-goal-kicker{color:#72d8fa!important}
-html[data-theme="dark"] .route-card .route-goal-name{color:#f4fbff!important}
-html[data-theme="dark"] .route-card .route-goal-level{color:#b5cedc!important}
-html[data-theme="dark"] .route-card .route-goal-level b{color:#7ee4ff!important}
-html[data-theme="dark"] .route-card .goal-needs{border-color:#2c607b!important}
-html[data-theme="dark"] .route-card .goal-needs>b{color:#b9d7e6!important}
+html[data-theme="dark"] .route-card .route-goal-kicker{color:#72d8fa}
+html[data-theme="dark"] .route-card .route-goal-name{color:#f4fbff}
+html[data-theme="dark"] .route-card .route-goal-level{color:#b5cedc}
+html[data-theme="dark"] .route-card .route-goal-level b{color:#7ee4ff}
+html[data-theme="dark"] .route-card .goal-needs{border-color:#2c607b}
+html[data-theme="dark"] .route-card .goal-needs>b{color:#b9d7e6}
 html[data-theme="dark"] .route-card .goal-needs span{
-  color:#d5edf7!important;
-  background:linear-gradient(135deg,#123d5a,#104761)!important;
-  border-color:#2f6682!important;
+  color:#d5edf7;
+  background:linear-gradient(135deg,#123d5a,#104761);
+  border-color:#2f6682;
 }
-html[data-theme="dark"] .route-card .route-goal .price-label{color:#8be1fb!important}
-html[data-theme="dark"] .route-card .route-goal .price-time{color:#e7f7ff!important}
-html[data-theme="dark"] .route-card .route-goal .price-time em{color:#9bb8c8!important}
-html[data-theme="dark"] .route-card .route-goal .price-resources{color:#c1d8e3!important}
-html[data-theme="dark"] .route-card .route-goal .price-resources b{color:#f2f9fc!important}
+html[data-theme="dark"] .route-card .route-goal .price-label{color:#8be1fb}
+html[data-theme="dark"] .route-card .route-goal .price-time{color:#e7f7ff}
+html[data-theme="dark"] .route-card .route-goal .price-time em{color:#9bb8c8}
+html[data-theme="dark"] .route-card .route-goal .price-resources{color:#c1d8e3}
+html[data-theme="dark"] .route-card .route-goal .price-resources b{color:#f2f9fc}
 html[data-theme="dark"] .prereq-chain-head{
-  background:linear-gradient(135deg,#0f3955,#0c304c)!important;
+  background:linear-gradient(135deg,#0f3955,#0c304c);
 }

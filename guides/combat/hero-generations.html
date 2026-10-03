@@ -1,74 +1,41 @@
-﻿<!DOCTYPE html>
-
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="#0f5f8f" name="theme-color"/>
-<meta content="Герои Whiteout Survival по поколениям: приоритеты вложений для F2P и малого/среднего доната, источники героев и рабочая звёздность." name="description"/>
-<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../../manifest.webmanifest" rel="manifest"/>
-<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
-<link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
-<link href="../../assets/css/content.css?v=30" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#126d91">
+<meta name="description" content="Герои Whiteout Survival по поколениям: приоритеты вложений для F2P и малого/среднего доната, источники героев и рабочая звёздность.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ГЕРОИ ПО ПОКОЛЕНИЯМ · Whiteout Survival">
+<meta property="og:description" content="Герои Whiteout Survival по поколениям: приоритеты вложений для F2P и малого/среднего доната, источники героев и рабочая звёздность.">
 <title>ГЕРОИ ПО ПОКОЛЕНИЯМ · Whiteout Survival</title>
-<style>
-.gen-disclaimer{margin:14px 0;border:1px solid #d6e6ed;border-radius:17px;padding:15px 16px;background:linear-gradient(145deg,#f4f9fc,#fff);color:#35596c;font-size:12.5px;line-height:1.55}
-.gen-disclaimer strong{display:block;color:#125f84;font-size:14px;margin-bottom:5px}
-.rank-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0 18px}
-.legend-item{border:1px solid #dbe8ee;border-radius:14px;padding:10px;background:#f9fbfc}
-.legend-item .rank{margin-bottom:6px}.legend-item p{font-size:10.8px;line-height:1.42;margin:0;color:#617986}
-.rank{display:inline-flex;align-items:center;min-height:27px;padding:4px 9px;border-radius:999px;font-weight:900;font-size:10.5px;line-height:1.2;border:1px solid transparent}
-.rank-need{background:#dff4e8;color:#087342;border-color:#b8e2c9}
-.rank-maybe{background:#fff0da;color:#9a5500;border-color:#efd09f}
-.rank-no{background:#ffe6e4;color:#a5261f;border-color:#efc0bc}
-.rank-bad{background:#171d22;color:#fff;border-color:#171d22}
-.section-intro{margin:0 0 11px;color:#466475;font-size:12.5px;line-height:1.55}
-.generation-master-wrap{margin:12px 0 18px;border:1px solid #d7e5ec;border-radius:17px;background:#fff;overflow:hidden;box-shadow:0 5px 18px rgba(28,91,120,.04)}
-.generation-master-scroll{overflow-x:auto}
-.generation-master{width:100%;min-width:790px;border-collapse:separate;border-spacing:0}
-.generation-master thead th{padding:10px 11px;background:#edf5f8;color:#28586f;font-size:11px;text-align:left;border-bottom:1px solid #d7e5ec;white-space:nowrap}
-.generation-master td{padding:10px 11px;border-bottom:1px solid #e8eff2;vertical-align:middle;color:#365769;font-size:11.5px;line-height:1.4;background:#fff}
-.generation-divider th{padding:11px 12px;background:linear-gradient(90deg,#e9f5fa,#f7fbfd);color:#125f84;text-align:left;font-size:13px;letter-spacing:.01em;border-top:1px solid #d5e6ed;border-bottom:1px solid #d5e6ed}
-.generation-divider:first-child th{border-top:0}
-.hero-status{width:220px;padding:8px 10px;background:transparent}
-.hero-line{display:inline-flex;align-items:center;max-width:100%;min-height:34px;padding:7px 12px;border-radius:14px;border:1px solid transparent;font-size:11.2px;font-weight:800;line-height:1.2;box-shadow:inset 0 1px 0 rgba(255,255,255,.18);white-space:nowrap;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
-.hero-line-name{font-weight:900}
-.hero-line-status{font-weight:800}
-.hero-line-need{background:rgba(25,148,86,.14);border-color:rgba(25,148,86,.38);color:#087342}
-.hero-line-maybe{background:rgba(216,137,24,.15);border-color:rgba(216,137,24,.40);color:#9a5500}
-.hero-line-no{background:rgba(211,73,68,.13);border-color:rgba(211,73,68,.38);color:#a5261f}
-.hero-line-bad{background:rgba(23,29,34,.12);border-color:rgba(23,29,34,.32);color:#171d22}
-.stats-cell,.stars-cell{white-space:nowrap}
-.source-note{border:1px solid #d8e7ee;border-radius:15px;background:#f7fbfd;padding:13px 14px;margin:12px 0 16px;color:#3d5e70;font-size:12px;line-height:1.5}
-.source-note strong{display:block;color:#145f82;margin-bottom:4px}
-@media(max-width:760px){.rank-legend{grid-template-columns:1fr 1fr}.generation-master{min-width:720px}.hero-status{width:205px;padding:8px}.hero-line{font-size:10.8px;padding:7px 10px}}
-html[data-theme="dark"] .gen-disclaimer,html[data-theme="dark"] .legend-item,html[data-theme="dark"] .generation-master-wrap,html[data-theme="dark"] .source-note{background:linear-gradient(145deg,#0d334f,#0a2942);border-color:#26536e;color:#bfd3df}
-html[data-theme="dark"] .gen-disclaimer strong,html[data-theme="dark"] .source-note strong{color:#8ce1ff}
-html[data-theme="dark"] .legend-item p{color:#a9bfcc}
-html[data-theme="dark"] .generation-master thead th{background:#10344c;color:#b9d9e8;border-color:#28526a}
-html[data-theme="dark"] .generation-master td{color:#bfd3df;border-color:#244a60;background:#0b2d44}
-html[data-theme="dark"] .generation-divider th{background:linear-gradient(90deg,#123b55,#0b2d44);color:#8ce1ff;border-color:#28526a}
-html[data-theme="dark"] .rank-need{background:#123f32;color:#89e6b6;border-color:#266a51}
-html[data-theme="dark"] .rank-maybe{background:#4a3518;color:#ffd38d;border-color:#785625}
-html[data-theme="dark"] .rank-no{background:#4b2525;color:#ffaaa5;border-color:#7d3937}
-html[data-theme="dark"] .rank-bad{background:#050708;color:#fff;border-color:#48545c}
-html[data-theme="dark"] .hero-line-need{background:rgba(66,189,120,.16);border-color:rgba(66,189,120,.42);color:#8fe7b8}
-html[data-theme="dark"] .hero-line-maybe{background:rgba(227,161,61,.16);border-color:rgba(227,161,61,.42);color:#ffd38d}
-html[data-theme="dark"] .hero-line-no{background:rgba(224,102,97,.15);border-color:rgba(224,102,97,.40);color:#ffaaa5}
-html[data-theme="dark"] .hero-line-bad{background:rgba(255,255,255,.07);border-color:rgba(180,195,205,.24);color:#e5edf2}
-</style>
-<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
+<link rel="icon" href="../../assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../../assets/icons/icon-192.png">
+<script src="../../assets/js/theme.js?v=4299827f73"></script>
+<link rel="stylesheet" href="../../assets/css/shell.css?v=9113c68b9c">
+<link rel="stylesheet" href="../../assets/css/content.css?v=759843efec">
+<link rel="stylesheet" href="../../assets/css/pages/guides-combat-hero-generations.css?v=8d5d99f7b9">
+<link rel="stylesheet" href="../../assets/css/interface.css?v=3ecc262c14">
 </head>
-<body data-guide-kind="heroes" data-root="../../">
-<header class="site-top"><a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a><div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div></header>
-<main class="guide-wrap">
-<section class="guide-hero"><div class="eyebrow">🧭 ОСНОВЫ ИГРЫ · ГЕРОИ</div><h1>ГЕРОИ ПО ПОКОЛЕНИЯМ</h1><p>Приоритет вложений, характеристики и рекомендуемая звёздность каждого поколения</p><div class="hero-meta"><span class="pill">Подготовлено SuBL</span></div></section>
-<div class="guide-toolbar"><a class="action-link" href="../../index.html#guides">← Все гайды</a></div>
+<body data-guide-kind="heroes" data-root="../../" data-page-kind="guide" data-page-url="guides/combat/hero-generations.html" data-search-index="../../assets/js/search-index.js?v=879a7f632a" data-catalog="../../assets/js/catalog-data.js?v=a180d1d8cb">
+<a class="skip-link" href="#mainContent">Перейти к содержимому</a>
+<header class="site-top">
+  <a class="site-brand" href="../../index.html" aria-label="Whiteout Survival — главная"><span class="site-brand-mark" aria-hidden="true">W</span><span>Whiteout<span class="brand-second"> Survival</span><small>справочник SuBL</small></span></a>
+  <div class="site-top-actions">
+    
+    <button class="site-icon-btn theme-toggle" data-theme-toggle type="button" aria-label="Переключить тему"><span class="theme-icon" aria-hidden="true">◐</span></button>
+    <button class="site-icon-btn" data-search-open type="button" aria-label="Открыть поиск"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg></button>
+  </div>
+</header>
+
+<main class="guide-wrap" id="mainContent">
+<section class="guide-hero has-game-icon"><img class="guide-title-icon" src="../../assets/icons/game/heroes.png" alt="" width="48" height="48"><div class="eyebrow">🧭 ОСНОВЫ ИГРЫ · ГЕРОИ</div><h1>Герои по поколениям</h1><p>Приоритет вложений, характеристики и рекомендуемая звёздность каждого поколения</p><div class="hero-meta"><span class="pill">Подготовлено SuBL</span></div></section><div class="guide-actions"><a class="action-link" href="../../index.html#guides">← Все гайды</a><button class="action-link" data-favorite type="button" aria-pressed="false">☆ В избранное</button><button class="action-link" data-offline-save type="button" aria-label="Сохранить гайд офлайн">↓ Офлайн</button></div>
+<div class="guide-toolbar"></div>
 <details class="toc"><summary>Содержание</summary><div class="toc-list"><a href="#table">Таблица по поколениям</a></div></details>
 <article class="article">
 <div class="gen-disclaimer"><strong>Для кого эти рекомендации</strong>Все приоритеты рассчитаны на <b>F2P</b> и игроков с <b>малым или средним донатом</b>. При крупном донате логика вложений меняется: можно одновременно развивать несколько дорогих героев одного поколения.</div>
-<aside class="callout"><strong>Как читать характеристики</strong><p>«Атака / защита» — базовые экспедиционные проценты героя на максимальных 5★, без снаряжения героя, эксклюзивного снаряжения и других аккаунтных бонусов. Внутри одного поколения эти проценты у героев обычно одинаковы.</p></aside>
+<aside class="callout guide-summary"><strong>Как читать характеристики</strong><p>«Атака / защита» — базовые экспедиционные проценты героя на максимальных 5★, без снаряжения героя, эксклюзивного снаряжения и других аккаунтных бонусов. Внутри одного поколения эти проценты у героев обычно одинаковы.</p><button type="button" class="text-button" data-copy-summary>Скопировать совет</button></aside>
 <div class="rank-legend">
 <div class="legend-item"><span class="rank rank-need">Нужен</span><p>Основной приоритет поколения.</p></div>
 <div class="legend-item"><span class="rank rank-maybe">Нужен по возможности</span><p>Берём после основного приоритета, если хватает ресурсов.</p></div>
@@ -473,8 +440,27 @@ html[data-theme="dark"] .hero-line-bad{background:rgba(255,255,255,.07);border-c
 <div class="source-note"><strong>Что означает рекомендуемая цель</strong>Это не требование прокачать каждого героя до указанного значения. Для зелёных и оранжевых героев это разумная цель вложений. Для красных и чёрных формулировки «не вкладываться», «если собрался сам» или «пропуск» означают, что универсальные мифические фрагменты на героя целенаправленно не тратим.</div></section>
 </article>
 </main>
-<a class="back-top" href="#" id="backTop">↑</a>
-<nav class="bottom-nav"><a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open=""><span class="ico">🔎</span><span>Поиск</span></button></nav>
-<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: Флинт, Алонсо, поколение…" type="search"/><button class="search-close" data-search-close="">×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
-<script src="../../assets/js/search-index.js?v=42"></script><script src="../../assets/js/app.js?v=28"></script>
-</body></html>
+<a class="back-top" href="#mainContent" id="backTop" aria-label="К началу статьи">↑</a>
+<nav class="bottom-nav" aria-label="Основная навигация">
+  <a href="../../index.html" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3Z M9 20v-7h6v7"></path></svg><span>Главная</span></a>
+  <a href="../../index.html#guides" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h7l2 2 2-2h7v16h-7l-2 1-2-1H3Z M12 6v15"></path></svg><span>Гайды</span></a>
+  <a href="../../index.html#tools" ><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"></rect><path d="M8 7h8 M8 12h2 M14 12h2 M8 17h2 M14 17h2"></path></svg><span>Расчёты</span></a>
+  <a href="../../index.html#library" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v19l-6-4-6 4Z"></path></svg><span>Избранное</span></a>
+</nav>
+
+<div id="searchModal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" hidden>
+  <div class="search-box">
+    <div class="search-title-row"><h2 id="searchTitle">Найти в справочнике</h2><button class="search-close" data-search-close type="button" aria-label="Закрыть поиск">×</button></div>
+    <div class="search-head"><label class="visually-hidden" for="searchInput">Название, герой или событие</label><input id="searchInput" type="search" placeholder="Медведь, Флинт, строительство…" autocomplete="off" enterkeyhint="search"></div>
+    <p class="search-status" id="searchStatus" role="status" aria-live="polite"></p>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
+
+<script defer src="../../assets/js/search.js?v=abc984bc6b"></script>
+<script defer src="../../assets/js/library.js?v=09cf33f0c5"></script>
+<script defer src="../../assets/js/tables.js?v=4c7277d582"></script>
+<script defer src="../../assets/js/offline.js?v=b87e685010"></script>
+<script defer src="../../assets/js/app.js?v=f7850ce940"></script>
+</body>
+</html>

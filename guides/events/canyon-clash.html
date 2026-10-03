@@ -1,53 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="#0f5f8f" name="theme-color"/>
-<meta content="Практический гайд по Битве в каньоне в Whiteout Survival: три отряда, топливо, очередь боёв, Форты, Ледяная цитадель и отдельная инструкция для R4/R5." name="description"/>
-<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../../manifest.webmanifest" rel="manifest"/>
-<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
-<link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
-<link href="../../assets/css/content.css?v=30" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#126d91">
+<meta name="description" content="Практический гайд по Битве в каньоне в Whiteout Survival: три отряда, топливо, очередь боёв, Форты, Ледяная цитадель и отдельная инструкция для R4/R5.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="БИТВА В КАНЬОНЕ · Whiteout Survival">
+<meta property="og:description" content="Практический гайд по Битве в каньоне в Whiteout Survival: три отряда, топливо, очередь боёв, Форты, Ледяная цитадель и отдельная инструкция для R4/R5.">
 <title>БИТВА В КАНЬОНЕ · Whiteout Survival</title>
-<style>
-.canyon-page{--cy-blue:#1e7fa7;--cy-blue2:#36a9bd;--cy-line:#cfe2ea;--cy-ink:#173f56;--cy-muted:#567181;--cy-soft:#eef8fb;--cy-gold:#b97c25;--cy-green:#31845b;--cy-red:#b14d4d}
-.canyon-lead{display:grid;grid-template-columns:1.3fr .7fr;gap:11px;margin:13px 0 3px}
-.canyon-lead-card{padding:14px 15px;border:1px solid var(--cy-line);border-radius:17px;background:linear-gradient(145deg,#f4fbfd,#fff);color:#34596c;line-height:1.5;font-size:12.5px}
-.canyon-lead-card strong{display:block;margin-bottom:5px;color:#0f638c;font-size:15px}.canyon-lead-card.score{display:grid;place-items:center;text-align:center;background:linear-gradient(145deg,#e9f7fb,#f9fdff)}.canyon-lead-card.score b{display:block;font-size:30px;line-height:1;color:#0f638c}.canyon-lead-card.score span{margin-top:6px;color:#567584;font-size:11px;font-weight:800}
-.section-band{display:flex;align-items:center;gap:9px;margin:25px 0 10px;padding:11px 13px;border:1px solid #cbdfe8;border-radius:15px;background:linear-gradient(135deg,#eaf6fb,#f8fcfe);color:#174c68;font-size:16px;font-weight:950}.section-band.officer{background:linear-gradient(135deg,#fff5e7,#fffdfa);border-color:#ead3aa;color:#79531d}.section-band small{display:block;margin-left:auto;color:#698592;font-size:10px;font-weight:850;letter-spacing:.07em;text-transform:uppercase}
-.timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:13px 0}.time-card{position:relative;padding:12px 11px;border:1px solid var(--cy-line);border-radius:14px;background:#fff;min-height:105px}.time-card .t{display:inline-block;margin-bottom:6px;padding:4px 7px;border-radius:999px;background:#eaf6fa;color:#17688c;font-size:10px;font-weight:950}.time-card b{display:block;margin-bottom:4px;color:#173f56;font-size:12.5px}.time-card p{margin:0;color:#567181;font-size:11px;line-height:1.42}.time-card.hot{border-top:4px solid #c8842b}.time-card.final{border-top:4px solid #3b86a7}
-.key-rule{margin:13px 0;padding:14px 15px;border-left:5px solid #2b8aac;border-radius:14px;background:linear-gradient(135deg,#eaf7fb,#fff);color:#315a6d;font-size:13px;line-height:1.52}.key-rule strong{display:block;margin-bottom:4px;color:#0d5f84;font-size:14px}.key-rule.warn{border-left-color:#c4832d;background:linear-gradient(135deg,#fff5e6,#fffdf8);color:#664d2f}.key-rule.warn strong{color:#8b591a}.key-rule.danger{border-left-color:#b44e4e;background:linear-gradient(135deg,#fff0f0,#fffafa);color:#704141}.key-rule.danger strong{color:#8f3232}.key-rule.good{border-left-color:#3a9362;background:linear-gradient(135deg,#edf9f1,#fff);color:#365e48}.key-rule.good strong{color:#2d734d}
-.squad-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:13px 0}.squad-card{padding:12px;border:1px solid var(--cy-line);border-radius:15px;background:#fff}.squad-card .num{display:grid;place-items:center;width:30px;height:30px;margin-bottom:7px;border-radius:10px;background:#eaf5f9;color:#17688c;font-size:12px;font-weight:950}.squad-card b{display:block;margin-bottom:4px;color:#173f56;font-size:12.5px}.squad-card p{margin:0;color:#557181;font-size:11px;line-height:1.43}.squad-card.primary{border-top:4px solid #c9832d}.squad-card.hold{border-top:4px solid #3289ab}.squad-card.flex{border-top:4px solid #55936b}
-.mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}.mini-card{padding:12px 13px;border:1px solid var(--cy-line);border-radius:14px;background:#fff;color:#496979;font-size:11.5px;line-height:1.46}.mini-card b{display:block;margin-bottom:4px;color:#175f80;font-size:12px}.mini-card.yes{border-left:4px solid #3a9362}.mini-card.no{border-left:4px solid #bd5757}
-.value-ladder{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin:12px 0}.value-card{padding:11px 9px;border:1px solid var(--cy-line);border-radius:13px;background:#fff;text-align:center}.value-card strong{display:block;color:#0f638c;font-size:18px}.value-card b{display:block;margin-top:3px;color:#204d63;font-size:10.5px}.value-card span{display:block;margin-top:3px;color:#78909c;font-size:9.5px}.value-card.top{border-top:4px solid #c7832b}.value-card.center{border-top:4px solid #3b89a9}
-.route-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:13px 0}.route-step{position:relative;padding:11px;border:1px solid var(--cy-line);border-radius:14px;background:#fff;color:#466878;font-size:11px;line-height:1.43}.route-step b{display:block;margin-bottom:4px;color:#146488;font-size:11px}.route-step:not(:last-child):after{content:"→";position:absolute;right:-10px;top:50%;transform:translateY(-50%);z-index:2;display:grid;place-items:center;width:19px;height:19px;border-radius:50%;background:#e8f5f9;color:#3184a8;font-weight:950}
-.shot-placeholder{margin:13px 0;border:1px solid #cddfe7;border-radius:17px;background:#f7fbfd;padding:8px}.shot-box{display:grid;place-items:center;min-height:190px;padding:20px;border:2px dashed #a8c6d4;border-radius:12px;background:repeating-linear-gradient(135deg,#edf6fa,#edf6fa 14px,#f6fbfd 14px,#f6fbfd 28px);text-align:center;color:#507586}.shot-box b{display:block;margin-bottom:6px;color:#1d6686;font-size:13px}
-.fuel-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:12px 0}.fuel-card{padding:12px;border:1px solid var(--cy-line);border-radius:15px;background:#fff}.fuel-card b{display:block;margin-bottom:5px;color:#155f82;font-size:12.5px}.fuel-card p{margin:0;color:#536f7e;font-size:11.5px;line-height:1.45}.fuel-card.guardian{background:linear-gradient(145deg,#edf9f4,#fff);border-color:#c9e4d4}.fuel-card.guardian b{color:#2e7650}
-.queue-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:12px 0}.queue-item{padding:10px;border:1px solid var(--cy-line);border-radius:12px;background:#fff;text-align:center}.queue-item span{display:block;font-size:9.5px;font-weight:900;color:#6b8592;text-transform:uppercase}.queue-item b{display:block;margin-top:4px;color:#174e68;font-size:11.5px}
-.job-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}.job-card{padding:12px;border:1px solid var(--cy-line);border-radius:15px;background:#fff}.job-card h3{margin:0 0 5px!important;font-size:13px!important;color:#164f6b}.job-card ul{margin:0;padding-left:17px;color:#526f7e;font-size:11px;line-height:1.48}.job-card li+li{margin-top:4px}
-.command-list-simple{display:grid;gap:7px;margin:12px 0}.command-line{display:grid;grid-template-columns:92px 1fr;gap:10px;padding:10px 11px;border:1px solid var(--cy-line);border-radius:12px;background:#fff}.command-line b{color:#0f638c;font-size:11px}.command-line span{color:#526f7e;font-size:11.5px;line-height:1.42}
-.officer-box{margin:13px 0;padding:14px;border:1px solid #e5cfaa;border-radius:16px;background:linear-gradient(145deg,#fff8ed,#fff)}.officer-box h3{margin:0 0 8px!important;color:#81551f!important;font-size:14px!important}.officer-box p{margin:0;color:#6a563e;font-size:11.5px;line-height:1.48}.officer-box p+p{margin-top:7px}
-.checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:12px 0}.check{padding:10px 11px;border:1px solid var(--cy-line);border-radius:12px;background:#fff;color:#4e6e7d;font-size:11.5px;line-height:1.42}.check b{color:#155f82}
-@media(max-width:760px){.canyon-lead{grid-template-columns:1fr}.timeline{grid-template-columns:repeat(2,minmax(0,1fr))}.value-ladder{grid-template-columns:repeat(3,minmax(0,1fr))}.route-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.route-step:nth-child(2):after{display:none}}
-@media(max-width:620px){.section-band{align-items:flex-start}.section-band small{display:none}.squad-grid,.mini-grid,.fuel-grid,.job-grid,.checklist{grid-template-columns:1fr}.timeline,.value-ladder,.route-flow,.queue-strip{grid-template-columns:1fr}.route-step:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-13px;transform:translateX(50%)}.route-step:nth-child(2):after{display:grid}.shot-box{min-height:145px}.command-line{grid-template-columns:1fr;gap:3px}}
-html[data-theme="dark"] .canyon-lead-card,html[data-theme="dark"] .time-card,html[data-theme="dark"] .squad-card,html[data-theme="dark"] .mini-card,html[data-theme="dark"] .value-card,html[data-theme="dark"] .route-step,html[data-theme="dark"] .fuel-card,html[data-theme="dark"] .queue-item,html[data-theme="dark"] .job-card,html[data-theme="dark"] .command-line,html[data-theme="dark"] .check{background:linear-gradient(145deg,#0d334f,#09283f);border-color:#28566f;color:#c6dbe6}html[data-theme="dark"] .canyon-lead-card strong,html[data-theme="dark"] .canyon-lead-card.score b,html[data-theme="dark"] .canyon-lead-card.score span,html[data-theme="dark"] .time-card b,html[data-theme="dark"] .squad-card b,html[data-theme="dark"] .mini-card b,html[data-theme="dark"] .value-card strong,html[data-theme="dark"] .value-card b,html[data-theme="dark"] .route-step b,html[data-theme="dark"] .fuel-card b,html[data-theme="dark"] .queue-item b,html[data-theme="dark"] .job-card h3,html[data-theme="dark"] .command-line b,html[data-theme="dark"] .check b,html[data-theme="dark"] .key-rule strong{color:#eaf7fd}html[data-theme="dark"] .time-card p,html[data-theme="dark"] .squad-card p,html[data-theme="dark"] .mini-card,html[data-theme="dark"] .route-step,html[data-theme="dark"] .fuel-card p,html[data-theme="dark"] .job-card ul,html[data-theme="dark"] .command-line span,html[data-theme="dark"] .check{color:#abc4d2}html[data-theme="dark"] .section-band{background:linear-gradient(135deg,#103851,#0a2b42);border-color:#28566f;color:#e5f5fc}html[data-theme="dark"] .section-band.officer{background:linear-gradient(135deg,#44351f,#132f40);border-color:#745a32;color:#f5d59a}html[data-theme="dark"] .section-band small{color:#a9c8d7}html[data-theme="dark"] .section-band.officer small{color:#d9bd89}html[data-theme="dark"] .key-rule{background:linear-gradient(135deg,#0d3b56,#0a293f);color:#c7dce7}html[data-theme="dark"] .key-rule.warn{background:linear-gradient(135deg,#44351f,#132f40);color:#ead6b9}html[data-theme="dark"] .key-rule.danger{background:linear-gradient(135deg,#4a252b,#122d40);color:#efc5c8}html[data-theme="dark"] .key-rule.good{background:linear-gradient(135deg,#163d32,#0a2d3d);color:#c8e7d6}html[data-theme="dark"] .key-rule.warn strong{color:#ffd58b}html[data-theme="dark"] .key-rule.danger strong{color:#ffb8bf}html[data-theme="dark"] .key-rule.good strong{color:#9de0bb}html[data-theme="dark"] .shot-placeholder{background:#08263b;border-color:#28566f}html[data-theme="dark"] .shot-box{background:repeating-linear-gradient(135deg,#0e334b,#0e334b 14px,#0b2a40 14px,#0b2a40 28px);border-color:#3f7189;color:#abc8d6}html[data-theme="dark"] .shot-box b{color:#8eddf8}html[data-theme="dark"] .fuel-card.guardian{background:linear-gradient(145deg,#113d34,#0a2b3c);border-color:#2f6d58}html[data-theme="dark"] .officer-box{background:linear-gradient(145deg,#44351f,#132f40);border-color:#745a32}html[data-theme="dark"] .officer-box h3{color:#ffd58b!important}html[data-theme="dark"] .officer-box p{color:#e7d2b6}
-
-.canyon-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0}.canyon-slide{margin:0;min-width:0}.canyon-slide a{display:block;border:1px solid var(--cy-line);border-radius:12px;overflow:hidden}.canyon-slide img{display:block;width:100%;height:auto}.canyon-slide figcaption{padding:8px 2px;color:var(--cy-ink);font-size:12px;line-height:1.5}.canyon-slide a:focus-visible{outline:3px solid #db9b3b;outline-offset:4px}html[data-theme="dark"] .canyon-slide figcaption{color:#c6dbe6}.canyon-zoom{padding:0;border:0;width:96vw;max-width:1463px;max-height:95dvh;background:#102840;color:white}.canyon-zoom::backdrop{background:#000b}.canyon-zoom img{display:block;width:100%;height:auto}.canyon-zoom-bar{position:sticky;top:0;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:10px 14px;background:#102840}.canyon-zoom-bar a{color:#c5e7ff}.canyon-zoom-bar button{font:inherit;padding:8px 12px;cursor:pointer;background:#eaf4fc;border:0;border-radius:6px;color:#143a60}@media(max-width:620px){.canyon-gallery{grid-template-columns:1fr}.canyon-zoom{width:100vw;max-height:100dvh;margin:auto}}
-</style>
-<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
+<link rel="icon" href="../../assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../../assets/icons/icon-192.png">
+<script src="../../assets/js/theme.js?v=4299827f73"></script>
+<link rel="stylesheet" href="../../assets/css/shell.css?v=9113c68b9c">
+<link rel="stylesheet" href="../../assets/css/content.css?v=759843efec">
+<link rel="stylesheet" href="../../assets/css/pages/guides-events-canyon-clash.css?v=7e32caed20">
+<link rel="stylesheet" href="../../assets/css/interface.css?v=3ecc262c14">
 </head>
-<body class="canyon-page" data-root="../../">
-<header class="site-top"><a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a><div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div></header>
-<main class="guide-wrap">
-<section class="guide-hero">
+<body class="canyon-page" data-root="../../" data-page-kind="guide" data-page-url="guides/events/canyon-clash.html" data-search-index="../../assets/js/search-index.js?v=879a7f632a" data-catalog="../../assets/js/catalog-data.js?v=a180d1d8cb">
+<a class="skip-link" href="#mainContent">Перейти к содержимому</a>
+<header class="site-top">
+  <a class="site-brand" href="../../index.html" aria-label="Whiteout Survival — главная"><span class="site-brand-mark" aria-hidden="true">W</span><span>Whiteout<span class="brand-second"> Survival</span><small>справочник SuBL</small></span></a>
+  <div class="site-top-actions">
+    
+    <button class="site-icon-btn theme-toggle" data-theme-toggle type="button" aria-label="Переключить тему"><span class="theme-icon" aria-hidden="true">◐</span></button>
+    <button class="site-icon-btn" data-search-open type="button" aria-label="Открыть поиск"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg></button>
+  </div>
+</header>
+
+<main class="guide-wrap" id="mainContent">
+<section class="guide-hero has-game-icon"><img class="guide-title-icon" src="../../assets/icons/game/fort.png" alt="" width="48" height="48">
 <div class="eyebrow">🏰 СОБЫТИЯ И РЕЖИМЫ</div>
-<h1>БИТВА В КАНЬОНЕ</h1>
+<h1>Битва в каньоне</h1>
 <p>Практическая инструкция: что делать обычному игроку, как не сжигать топливо впустую и как R4/R5 управлять картой, Фортами и Ледяной цитаделью</p>
 <div class="hero-meta"><span class="pill">3 альянса</span><span class="pill">60 минут</span><span class="pill">3 отряда</span></div>
-</section>
-<div class="guide-toolbar"><a class="action-link" href="../../index.html#guides">← Все гайды</a></div>
+</section><div class="guide-actions"><a class="action-link" href="../../index.html#guides">← Все гайды</a><button class="action-link" data-favorite type="button" aria-pressed="false">☆ В избранное</button><button class="action-link" data-offline-save type="button" aria-label="Сохранить гайд офлайн">↓ Офлайн</button></div><aside class="callout guide-summary"><strong>Самая важная мысль</strong><p><b>В Каньоне выигрывают очками с карты, а не количеством убийств.</b> Убийства сами по себе очков не дают. Любой бой имеет смысл только тогда, когда он помогает взять объект, удержать маршрут или не дать сопернику зарабатывать.</p><button type="button" class="text-button" data-copy-summary>Скопировать совет</button></aside>
+<div class="guide-toolbar"></div>
 <details class="toc">
 <summary>Содержание</summary>
 <div class="toc-list">
@@ -73,7 +62,7 @@ html[data-theme="dark"] .canyon-lead-card,html[data-theme="dark"] .time-card,htm
 </div>
 </details>
 <article class="article">
-<aside class="callout"><strong>Самая важная мысль</strong><p><b>В Каньоне выигрывают очками с карты, а не количеством убийств.</b> Убийства сами по себе очков не дают. Любой бой имеет смысл только тогда, когда он помогает взять объект, удержать маршрут или не дать сопернику зарабатывать.</p></aside>
+
 <div class="canyon-lead"><div class="canyon-lead-card"><strong>Что нужно помнить весь матч</strong>Три отряда должны работать на разных задачах. Не стойте всей армией в одной очереди, не катайтесь по карте без цели и не тратьте топливо просто потому, что кнопка активна.</div><div class="canyon-lead-card score"><div><b>50 000</b><span>бонусных очков за Цитадель в финале</span></div></div></div>
 
 <div class="section-band" id="player">ЧАСТЬ I · ОБЫЧНОМУ ИГРОКУ <small>что нажимать и зачем</small></div>
@@ -118,7 +107,7 @@ html[data-theme="dark"] .canyon-lead-card,html[data-theme="dark"] .time-card,htm
 <div class="value-card"><strong>60</strong><b>Крепости / аэропорты</b><span>очков/мин</span></div>
 </div>
 <p class="body-p">Стартовый Бастион также даёт высокий пассивный доход, но для игрока это прежде всего точка появления и воскрешения. Рабочий приоритет на поле: <b>маршрут → Форт → крупные объекты → всё остальное</b>.</p>
-<p class="body-p"><b>Крепость и Форт — разные здания.</b> Крепость даёт 60 очков в минуту, Форт — 1 800. Нажмите на слайд, чтобы увеличить карту.</p><div class="canyon-gallery"><figure class="canyon-slide" id="slide-01-overview"><a href="../../assets/guides/canyon/01-overview.webp" data-canyon-zoom aria-label="Увеличить: Карта, Цепь руин, Руины и Крепость"><img src="../../assets/guides/canyon/01-overview.webp" alt="Карта, Цепь руин, Руины и Крепость" width="1463" height="2450" loading="lazy" decoding="async"/></a><figcaption>Карта, Цепь руин, Руины и Крепость</figcaption></figure><figure class="canyon-slide" id="slide-02-citadel"><a href="../../assets/guides/canyon/02-citadel.webp" data-canyon-zoom aria-label="Увеличить: Ледяная цитадель: расположение и карточка"><img src="../../assets/guides/canyon/02-citadel.webp" alt="Ледяная цитадель: расположение и карточка" width="1463" height="2180" loading="lazy" decoding="async"/></a><figcaption>Ледяная цитадель: расположение и карточка</figcaption></figure><figure class="canyon-slide" id="slide-03-forts"><a href="../../assets/guides/canyon/03-forts.webp" data-canyon-zoom aria-label="Увеличить: Все три Форта и карточка объекта"><img src="../../assets/guides/canyon/03-forts.webp" alt="Все три Форта и карточка объекта" width="1463" height="2180" loading="lazy" decoding="async"/></a><figcaption>Все три Форта и карточка объекта</figcaption></figure><figure class="canyon-slide" id="slide-04-airports"><a href="../../assets/guides/canyon/04-airports.webp" data-canyon-zoom aria-label="Увеличить: Все 18 Аэропортов и карточка объекта"><img src="../../assets/guides/canyon/04-airports.webp" alt="Все 18 Аэропортов и карточка объекта" width="1463" height="2180" loading="lazy" decoding="async"/></a><figcaption>Все 18 Аэропортов и карточка объекта</figcaption></figure></div>
+<p class="body-p"><b>Крепость и Форт — разные здания.</b> Крепость даёт 60 очков в минуту, Форт — 1 800. Нажмите на слайд, чтобы увеличить карту.</p><div class="canyon-gallery"><figure class="canyon-slide" id="slide-01-overview"><a href="../../assets/guides/canyon/01-overview.webp" data-canyon-zoom aria-label="Увеличить: Карта, Цепь руин, Руины и Крепость"><img src="../../assets/guides/canyon/01-overview.webp" alt="Карта, Цепь руин, Руины и Крепость" width="1463" height="2450" loading="lazy" decoding="async" srcset="../../assets/guides/canyon/01-overview-mobile.webp 720w, ../../assets/guides/canyon/01-overview.webp 1463w" sizes="(max-width: 620px) calc(100vw - 64px), 800px"></a><figcaption>Карта, Цепь руин, Руины и Крепость</figcaption></figure><figure class="canyon-slide" id="slide-02-citadel"><a href="../../assets/guides/canyon/02-citadel.webp" data-canyon-zoom aria-label="Увеличить: Ледяная цитадель: расположение и карточка"><img src="../../assets/guides/canyon/02-citadel.webp" alt="Ледяная цитадель: расположение и карточка" width="1463" height="2180" loading="lazy" decoding="async" srcset="../../assets/guides/canyon/02-citadel-mobile.webp 720w, ../../assets/guides/canyon/02-citadel.webp 1463w" sizes="(max-width: 620px) calc(100vw - 64px), 800px"></a><figcaption>Ледяная цитадель: расположение и карточка</figcaption></figure><figure class="canyon-slide" id="slide-03-forts"><a href="../../assets/guides/canyon/03-forts.webp" data-canyon-zoom aria-label="Увеличить: Все три Форта и карточка объекта"><img src="../../assets/guides/canyon/03-forts.webp" alt="Все три Форта и карточка объекта" width="1463" height="2180" loading="lazy" decoding="async" srcset="../../assets/guides/canyon/03-forts-mobile.webp 720w, ../../assets/guides/canyon/03-forts.webp 1463w" sizes="(max-width: 620px) calc(100vw - 64px), 800px"></a><figcaption>Все три Форта и карточка объекта</figcaption></figure><figure class="canyon-slide" id="slide-04-airports"><a href="../../assets/guides/canyon/04-airports.webp" data-canyon-zoom aria-label="Увеличить: Все 18 Аэропортов и карточка объекта"><img src="../../assets/guides/canyon/04-airports.webp" alt="Все 18 Аэропортов и карточка объекта" width="1463" height="2180" loading="lazy" decoding="async" srcset="../../assets/guides/canyon/04-airports-mobile.webp 720w, ../../assets/guides/canyon/04-airports.webp 1463w" sizes="(max-width: 620px) calc(100vw - 64px), 800px"></a><figcaption>Все 18 Аэропортов и карточка объекта</figcaption></figure></div>
 </section>
 
 <section class="guide-block">
@@ -228,11 +217,33 @@ html[data-theme="dark"] .canyon-lead-card,html[data-theme="dark"] .time-card,htm
 </article>
 <section class="related"><h2>Связанные материалы</h2><div class="related-grid"><a href="foundry.html">Битва за Литейную</a><a href="../combat/war-rules.html">Правила войны</a><a href="../combat/combat-system.html">Боевая система</a><a href="../combat/pvp-objects.html">PvP за объекты</a></div></section>
 </main>
-<a class="back-top" href="#" id="backTop">↑</a>
-<nav class="bottom-nav"><a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open=""><span class="ico">🔎</span><span>Поиск</span></button></nav>
-<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: Каньон, топливо, Цитадель, Хранитель…" type="search"/><button class="search-close" data-search-close="">×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
-<script src="../../assets/js/search-index.js?v=49"></script><script src="../../assets/js/app.js?v=28"></script>
-<dialog class="canyon-zoom" aria-label="Увеличенный слайд карты"><div class="canyon-zoom-bar"><a class="canyon-original" href="#">Открыть изображение</a><button type="button" class="canyon-close">Закрыть ×</button></div><img alt=""/></dialog>
-<script src="../../assets/js/canyon-gallery.js?v=1"></script>
+
+
+
+
+<dialog class="canyon-zoom" aria-label="Увеличенный слайд карты"><div class="canyon-zoom-bar"><a class="canyon-original" href="#">Открыть изображение</a><button type="button" class="canyon-close">Закрыть ×</button></div><img alt="" loading="lazy" decoding="async"></dialog>
+<a class="back-top" href="#mainContent" id="backTop" aria-label="К началу статьи">↑</a>
+<nav class="bottom-nav" aria-label="Основная навигация">
+  <a href="../../index.html" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3Z M9 20v-7h6v7"></path></svg><span>Главная</span></a>
+  <a href="../../index.html#guides" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h7l2 2 2-2h7v16h-7l-2 1-2-1H3Z M12 6v15"></path></svg><span>Гайды</span></a>
+  <a href="../../index.html#tools" ><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"></rect><path d="M8 7h8 M8 12h2 M14 12h2 M8 17h2 M14 17h2"></path></svg><span>Расчёты</span></a>
+  <a href="../../index.html#library" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v19l-6-4-6 4Z"></path></svg><span>Избранное</span></a>
+</nav>
+
+<div id="searchModal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" hidden>
+  <div class="search-box">
+    <div class="search-title-row"><h2 id="searchTitle">Найти в справочнике</h2><button class="search-close" data-search-close type="button" aria-label="Закрыть поиск">×</button></div>
+    <div class="search-head"><label class="visually-hidden" for="searchInput">Название, герой или событие</label><input id="searchInput" type="search" placeholder="Медведь, Флинт, строительство…" autocomplete="off" enterkeyhint="search"></div>
+    <p class="search-status" id="searchStatus" role="status" aria-live="polite"></p>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
+
+<script defer src="../../assets/js/search.js?v=abc984bc6b"></script>
+<script defer src="../../assets/js/library.js?v=09cf33f0c5"></script>
+<script defer src="../../assets/js/tables.js?v=4c7277d582"></script>
+<script defer src="../../assets/js/offline.js?v=b87e685010"></script>
+<script defer src="../../assets/js/app.js?v=f7850ce940"></script>
+<script defer src="../../assets/js/canyon-gallery.js?v=0f8f363d83"></script>
 </body>
 </html>

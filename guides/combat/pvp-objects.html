@@ -1,50 +1,42 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="#0f5f8f" name="theme-color"/>
-<meta content="PvP за объекты в Whiteout Survival: Джесси и Джассер в атаке, Сергей, Патрик и Бахити в защите, формации 50/20/30 и 60/40/0, СвС, замена в свой гарнизон, пополнение и синхронные удары." name="description"/>
-<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../../manifest.webmanifest" rel="manifest"/>
-<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
-<link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
-<link href="../../assets/css/content.css?v=30" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#126d91">
+<meta name="description" content="PvP за объекты в Whiteout Survival: Джесси и Джассер в атаке, Сергей, Патрик и Бахити в защите, формации 50/20/30 и 60/40/0, СвС, замена в свой гарнизон, пополнение и синхронные удары.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PVP ЗА ОБЪЕКТЫ · Whiteout Survival">
+<meta property="og:description" content="PvP за объекты в Whiteout Survival: Джесси и Джассер в атаке, Сергей, Патрик и Бахити в защите, формации 50/20/30 и 60/40/0, СвС, замена в свой гарнизон, пополнение и синхронные удары.">
 <title>PVP ЗА ОБЪЕКТЫ · Whiteout Survival</title>
-<style>
-.pvp-note{border:1px solid #d8e7ee;background:linear-gradient(135deg,#eef8fc 0%,#f9fcfe 78%);border-radius:15px;padding:14px 15px;margin:13px 0;color:#31566a;box-shadow:0 5px 16px rgba(28,91,120,.05)}
-.pvp-note strong{display:block;color:#0f638c;margin-bottom:5px}.pvp-note.good{background:linear-gradient(135deg,#e9f8f2 0%,#f7fcfa 78%);border-color:#c9e8da;color:#315b50}.pvp-note.good strong{color:#087350}.pvp-note.warn{background:linear-gradient(135deg,#fff4e4 0%,#fffaf2 78%);border-color:#f0d3aa;color:#674a28}.pvp-note.warn strong{color:#9b5515}
-.role-divider{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:15px 16px;border:1px solid #d8e7ee;border-radius:17px;margin:16px 0 12px;background:linear-gradient(145deg,#f4f9fb 0%,#fff 100%);box-shadow:0 4px 14px rgba(28,91,120,.04)}.role-divider h3{margin:0 0 6px;font-size:19px;color:#123f58}.role-divider p{margin:0;font-size:13px;line-height:1.55;color:#496473;max-width:620px}.role-divider .ratio{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.ratio span{font-size:11px;font-weight:900;padding:5px 8px;border-radius:999px;background:#eaf4f8;color:#245d77;border:1px solid #d4e5ec}.role-divider.attack{border-top:4px solid #d89539}.role-divider.defense{border-top:4px solid #3d98bd}
-.shot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 14px}.pvp-shot{margin:0;border:1px solid #d7e5ec;border-radius:15px;padding:8px;background:linear-gradient(145deg,#f7fbfd,#fff);box-shadow:0 4px 14px rgba(28,91,120,.04);overflow:hidden}.pvp-shot img{display:block;width:100%;height:auto;border-radius:10px;background:#eaf2f6}.pvp-shot figcaption{font-size:10.5px;line-height:1.4;color:#6b8190;padding:7px 3px 2px}
-.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:10px 0 8px}.skill-card{border:1px solid #d7e5ec;border-radius:15px;overflow:hidden;background:#fff}.skill-card img{display:block;width:100%;height:auto}.skill-card p{font-size:11.5px;line-height:1.48;color:#496473;margin:0;padding:10px 11px 12px}.skill-card b{color:#173f56}
-.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:13px 0}.flow-step{position:relative;border:1px solid #d8e7ee;background:#f7fbfd;border-radius:13px;padding:11px 10px;font-size:11.5px;line-height:1.4;color:#36596d}.flow-step b{display:block;color:#0f638c;margin-bottom:3px;font-size:11px}.flow-step:not(:last-child):after{content:'→';position:absolute;right:-8px;top:50%;transform:translateY(-50%);z-index:2;color:#4c94b4;font-weight:900;background:#eef5f8;border-radius:50%;width:17px;height:17px;display:grid;place-items:center}
-.command-list{counter-reset:cmd;list-style:none;padding:0;margin:9px 0}.command-list li{counter-increment:cmd;position:relative;padding:10px 10px 10px 42px;margin:7px 0;border:1px solid #dfe9ee;border-radius:13px;background:#fafcfd;font-size:13px;line-height:1.5;color:#29495b}.command-list li:before{content:counter(cmd);position:absolute;left:11px;top:10px;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;background:#e1f1f7;color:#12688e;font-size:11px;font-weight:900}
-.example-box{border:1px solid #c9e0ea;background:linear-gradient(135deg,#f0f8fb,#fbfdfe);border-radius:16px;margin:13px 0;padding:14px}.example-box strong{display:block;color:#145f82;margin-bottom:9px}.example-row{display:grid;grid-template-columns:130px 1fr;gap:10px;padding:7px 0;border-top:1px solid #dfeaf0;font-size:12px;line-height:1.45;color:#365568}.example-row:first-of-type{border-top:0}.example-row b{color:#173f56}.example-result{margin-top:10px;padding:10px 11px;border-radius:11px;background:#e7f6ef;color:#225c4a;font-size:12px;line-height:1.48}
-.battle-figure,.sync-figure,.collage-figure{margin:14px 0;border:1px solid #d7e5ec;border-radius:16px;padding:9px;background:#f6fafc}.battle-figure img,.sync-figure img,.collage-figure img{display:block;width:100%;height:auto;border-radius:11px}.battle-figure figcaption,.sync-figure figcaption,.collage-figure figcaption{font-size:10.5px;line-height:1.45;color:#6b8190;padding:8px 4px 2px}
-.sync-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:12px;align-items:start}.mini-title{margin:16px 0 8px;font-size:16px;color:#173f56}
-@media(max-width:780px){.role-divider,.sync-grid{grid-template-columns:1fr;display:grid}.role-divider .ratio{justify-content:flex-start}}
-@media(max-width:620px){.shot-grid,.skill-grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.flow-step:not(:last-child):after{content:'↓';right:50%;top:auto;bottom:-12px;transform:translateX(50%)}.example-row{grid-template-columns:1fr;gap:2px}}
-html[data-theme="dark"] .pvp-note{color:#c8ddea;background:linear-gradient(135deg,#0e3856 0%,#0a2944 78%);border-color:#2a5b76;box-shadow:0 8px 22px rgba(0,0,0,.17)}html[data-theme="dark"] .pvp-note strong{color:#90e1ff}html[data-theme="dark"] .pvp-note.good{color:#c9e8df;background:linear-gradient(135deg,#0d4143 0%,#0a2c3d 82%);border-color:#2c746c}html[data-theme="dark"] .pvp-note.good strong{color:#76e5b9}html[data-theme="dark"] .pvp-note.warn{color:#ead6b9;background:linear-gradient(135deg,#44351f 0%,#132f40 82%);border-color:#745a32}html[data-theme="dark"] .pvp-note.warn strong{color:#ffd48d}
-html[data-theme="dark"] .role-divider,html[data-theme="dark"] .pvp-shot,html[data-theme="dark"] .skill-card,html[data-theme="dark"] .flow-step,html[data-theme="dark"] .example-box,html[data-theme="dark"] .battle-figure,html[data-theme="dark"] .sync-figure,html[data-theme="dark"] .collage-figure,html[data-theme="dark"] .command-list li{background:linear-gradient(145deg,#0d334f,#0a2942);border-color:#26536e;color:#c7dce7}html[data-theme="dark"] .role-divider h3,html[data-theme="dark"] .skill-card b,html[data-theme="dark"] .example-row b,html[data-theme="dark"] .mini-title{color:#eff9ff}html[data-theme="dark"] .role-divider p,html[data-theme="dark"] .skill-card p,html[data-theme="dark"] .example-row,html[data-theme="dark"] .pvp-shot figcaption,html[data-theme="dark"] .battle-figure figcaption,html[data-theme="dark"] .sync-figure figcaption,html[data-theme="dark"] .collage-figure figcaption{color:#abc4d2}html[data-theme="dark"] .ratio span{background:#103956;border-color:#285a75;color:#c9e3ef}html[data-theme="dark"] .flow-step b,html[data-theme="dark"] .example-box strong{color:#7edcff}html[data-theme="dark"] .flow-step:not(:last-child):after{background:#071e33;color:#7edcff}html[data-theme="dark"] .example-row{border-color:#214967}html[data-theme="dark"] .example-result{background:#0d4143;color:#c9e8df}html[data-theme="dark"] .command-list li:before{background:#104966;color:#9fe7ff}
-</style>
-<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
+<link rel="icon" href="../../assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../../assets/icons/icon-192.png">
+<script src="../../assets/js/theme.js?v=4299827f73"></script>
+<link rel="stylesheet" href="../../assets/css/shell.css?v=9113c68b9c">
+<link rel="stylesheet" href="../../assets/css/content.css?v=759843efec">
+<link rel="stylesheet" href="../../assets/css/pages/guides-combat-pvp-objects.css?v=81d582833f">
+<link rel="stylesheet" href="../../assets/css/interface.css?v=3ecc262c14">
 </head>
-<body data-root="../../">
+<body data-root="../../" data-page-kind="guide" data-page-url="guides/combat/pvp-objects.html" data-search-index="../../assets/js/search-index.js?v=879a7f632a" data-catalog="../../assets/js/catalog-data.js?v=a180d1d8cb">
+<a class="skip-link" href="#mainContent">Перейти к содержимому</a>
 <header class="site-top">
-<a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a>
-<div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div>
+  <a class="site-brand" href="../../index.html" aria-label="Whiteout Survival — главная"><span class="site-brand-mark" aria-hidden="true">W</span><span>Whiteout<span class="brand-second"> Survival</span><small>справочник SuBL</small></span></a>
+  <div class="site-top-actions">
+    
+    <button class="site-icon-btn theme-toggle" data-theme-toggle type="button" aria-label="Переключить тему"><span class="theme-icon" aria-hidden="true">◐</span></button>
+    <button class="site-icon-btn" data-search-open type="button" aria-label="Открыть поиск"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg></button>
+  </div>
 </header>
-<main class="guide-wrap">
-<section class="guide-hero">
+
+<main class="guide-wrap" id="mainContent">
+<section class="guide-hero has-game-icon"><img class="guide-title-icon" src="../../assets/icons/game/fort.png" alt="" width="48" height="48">
 <div class="eyebrow">⚔️ БОЕВАЯ СИСТЕМА</div>
-<h1>PVP ЗА ОБЪЕКТЫ</h1>
+<h1>PvP за объекты</h1>
 <p>Как собирать атакующие и защитные отряды, как менять гарнизон после захвата и как задавать общий тайминг удара по объекту</p>
 <div class="hero-meta"><span class="pill">Альянсовая тактика</span><span class="pill">Черновик</span></div>
-</section>
-<div class="guide-toolbar">
-<a class="action-link" href="../../index.html#guides">← Все гайды</a>
-</div>
+</section><div class="guide-actions"><a class="action-link" href="../../index.html#guides">← Все гайды</a><button class="action-link" data-favorite type="button" aria-pressed="false">☆ В избранное</button><button class="action-link" data-offline-save type="button" aria-label="Сохранить гайд офлайн">↓ Офлайн</button></div><aside class="callout guide-summary"><strong>Основа схемы</strong><p>В атаку участники идут с <b>Джесси</b> или <b>Джассером</b> первым героем и формацией <b>50 / 20 / 30</b>. Для удержания объекта нужен <b>Сергей</b>, <b>Патрик</b> или <b>Бахити</b> первым героем и формация <b>60 / 40 / 0</b>. На <b>СвС</b> нельзя вести параллельные атаки по разным объектам, но после захвата <b>можно и нужно</b> отправлять марши в <b>свой гарнизон</b> для замены и пополнения.</p><button type="button" class="text-button" data-copy-summary>Скопировать совет</button></aside>
+<div class="guide-toolbar"></div>
 <details class="toc">
 <summary>Содержание</summary>
 <div class="toc-list">
@@ -62,16 +54,16 @@ html[data-theme="dark"] .role-divider,html[data-theme="dark"] .pvp-shot,html[dat
 </div>
 </details>
 <article class="article">
-<aside class="callout"><strong>Основа схемы</strong><p>В атаку участники идут с <b>Джесси</b> или <b>Джассером</b> первым героем и формацией <b>50 / 20 / 30</b>. Для удержания объекта нужен <b>Сергей</b>, <b>Патрик</b> или <b>Бахити</b> первым героем и формация <b>60 / 40 / 0</b>. На <b>СвС</b> нельзя вести параллельные атаки по разным объектам, но после захвата <b>можно и нужно</b> отправлять марши в <b>свой гарнизон</b> для замены и пополнения.</p></aside>
+
 <section class="guide-block">
 <h2 id="hospital">0. Госпиталь и недопустимые потери</h2>
 <p class="body-p">В важных боях нужно следить не только за захватом объекта, но и за состоянием госпиталя. После поражения около <b>30% войск отряда</b> попадают в госпиталь как тяжелораненые. Пока в госпитале есть место, эти войска можно вернуть. Когда госпиталь переполняется, войска начинают погибать окончательно.</p>
 <p class="body-p">Восстанавливать такие потери через Военное Бюро очень дорого или очень долго. Поэтому задача игрока — не допускать переполнения госпиталя, вовремя лечиться и, если ситуация выходит из-под контроля, лучше временно выйти из боя на лечение, чем потерять невосполнимые тысячи, десятки и сотни тысяч войск.</p>
-<figure class="sync-figure"><img alt="Экран лечения с выделенным госпиталем и лечением на четыре минуты" loading="lazy" src="../../assets/guides/pvp/heal-4min.webp"/><figcaption>Следим за заполнением госпиталя и подбираем такие партии лечения, чтобы таймер был кратен 4 минутам. Помощь альянса мгновенно снимает 4 минуты лечения.</figcaption></figure>
+<figure class="sync-figure"><img alt="Экран лечения с выделенным госпиталем и лечением на четыре минуты" loading="lazy" src="../../assets/guides/pvp/heal-4min.webp" width="900" height="557" decoding="async"><figcaption>Следим за заполнением госпиталя и подбираем такие партии лечения, чтобы таймер был кратен 4 минутам. Помощь альянса мгновенно снимает 4 минуты лечения.</figcaption></figure>
 <p class="body-p">Базовый принцип бесплатного по времени лечения простой: выгодно выставлять для лечения количество войск, кратное <b>4 минутам</b>. Каждая помощь альянса моментально лечит <b>4 минуты</b>. Если в альянсе есть, например, <b>5 игроков</b> с Ультраценной картой, то вы получаете мгновенное лечение партий суммарно до <b>20 минут</b> без расхода ускорений.</p>
 <div class="pvp-note"><strong>Как лечиться на практике</strong>В реальных важных боях, особенно в <b>СвС</b>, при необходимости можно и нужно тратить ускорения лечения. Но в обычной ситуации выгоднее лечиться маленькими партиями так, чтобы их закрывала помощь альянса, а не ваши ускорения.</div>
 <div class="pvp-note warn"><strong>ОКОНЧАТЕЛЬНАЯ УТРАТА ВОЙСК НЕПРИЕМЛЕМА</strong>Если госпиталь близок к заполнению, игроку лучше сделать паузу и уйти на лечение, чем продолжать бой ценой прямых необратимых потерь. Исключение — осознанные особые случаи, но по умолчанию такие потери недопустимы.</div>
-<figure class="battle-figure"><img alt="Отчёт боя с выделенной строкой потерь как пример недопустимой окончательной утраты войск" loading="lazy" src="../../assets/guides/pvp/losses-unacceptable.webp"/><figcaption>Строка «Потери» — это окончательно погибшие войска. За этим показателем следим в первую очередь. При атаках на город другого игрока часть войск в потерях обычно будет всегда, поэтому к таким ударам относимся особенно осторожно.</figcaption></figure>
+<figure class="battle-figure"><img alt="Отчёт боя с выделенной строкой потерь как пример недопустимой окончательной утраты войск" loading="lazy" src="../../assets/guides/pvp/losses-unacceptable.webp" width="866" height="986" decoding="async"><figcaption>Строка «Потери» — это окончательно погибшие войска. За этим показателем следим в первую очередь. При атаках на город другого игрока часть войск в потерях обычно будет всегда, поэтому к таким ударам относимся особенно осторожно.</figcaption></figure>
 </section>
 <section class="guide-block">
 <h2 id="formations">1. Герои и формации</h2>
@@ -84,12 +76,12 @@ html[data-theme="dark"] .role-divider,html[data-theme="dark"] .pvp-shot,html[dat
 <div class="ratio"><span>Пехота 50%</span><span>Копья 20%</span><span>Стрелки 30%</span></div>
 </div>
 <div class="shot-grid">
-<figure class="pvp-shot"><img alt="Атакующая формация 50 20 30 с Джесси первым героем" loading="lazy" src="../../assets/guides/pvp/attack-jessie.webp"/><figcaption>Джесси первой · 50% пехоты / 20% копий / 30% стрелков.</figcaption></figure>
-<figure class="pvp-shot"><img alt="Атакующая формация 50 20 30 с Джассером первым героем" loading="lazy" src="../../assets/guides/pvp/attack-jasser.webp"/><figcaption>Джассер первым · та же универсальная формация 50 / 20 / 30.</figcaption></figure>
+<figure class="pvp-shot"><img alt="Атакующая формация 50 20 30 с Джесси первым героем" loading="lazy" src="../../assets/guides/pvp/attack-jessie.webp" width="720" height="1147" decoding="async"><figcaption>Джесси первой · 50% пехоты / 20% копий / 30% стрелков.</figcaption></figure>
+<figure class="pvp-shot"><img alt="Атакующая формация 50 20 30 с Джассером первым героем" loading="lazy" src="../../assets/guides/pvp/attack-jasser.webp" width="720" height="1147" decoding="async"><figcaption>Джассер первым · та же универсальная формация 50 / 20 / 30.</figcaption></figure>
 </div>
 <div class="skill-grid">
-<div class="skill-card"><img alt="Навык Джесси на повышение урона всех войск" loading="lazy" src="../../assets/guides/pvp/skill-jessie.webp"/><p><b>Джесси.</b> Экспедиционный навык повышает урон, наносимый всеми войсками. Именно ради этого навыка она ставится первой.</p></div>
-<div class="skill-card"><img alt="Навык Джассера на повышение урона всех войск" loading="lazy" src="../../assets/guides/pvp/skill-jasser.webp"/><p><b>Джассер.</b> Экспедиционный навык также повышает урон всех войск. По задаче это прямой аналог Джесси для участия в атаке.</p></div>
+<div class="skill-card"><img alt="Навык Джесси на повышение урона всех войск" loading="lazy" src="../../assets/guides/pvp/skill-jessie.webp" width="720" height="1112" decoding="async"><p><b>Джесси.</b> Экспедиционный навык повышает урон, наносимый всеми войсками. Именно ради этого навыка она ставится первой.</p></div>
+<div class="skill-card"><img alt="Навык Джассера на повышение урона всех войск" loading="lazy" src="../../assets/guides/pvp/skill-jasser.webp" width="720" height="1112" decoding="async"><p><b>Джассер.</b> Экспедиционный навык также повышает урон всех войск. По задаче это прямой аналог Джесси для участия в атаке.</p></div>
 </div>
 <div class="pvp-note"><strong>Что здесь действительно работает</strong>При присоединении к рейду или гарнизону у обычного участника учитывается только навык <b>первого</b> героя. Поэтому в атаке нужны именно Джесси или Джассер. Второй и третий герои в этой схеме бонуса не дают и могут быть любыми.</div>
 <div class="role-divider defense">
@@ -100,13 +92,13 @@ html[data-theme="dark"] .role-divider,html[data-theme="dark"] .pvp-shot,html[dat
 <div class="ratio"><span>Пехота 60%</span><span>Копья 40%</span><span>Стрелки 0%</span></div>
 </div>
 <div class="shot-grid">
-<figure class="pvp-shot"><img alt="Защитная формация 60 40 0 с Сергеем первым героем" loading="lazy" src="../../assets/guides/pvp/defense-sergey.webp"/><figcaption>Сергей первым · защитная формация 60% пехоты / 40% копий / 0% стрелков.</figcaption></figure>
-<figure class="pvp-shot"><img alt="Защитная формация 60 40 0 с Патриком первым героем" loading="lazy" src="../../assets/guides/pvp/defense-patrick.webp"/><figcaption>Патрик первым · тот же защитный шаблон 60 / 40 / 0.</figcaption></figure>
+<figure class="pvp-shot"><img alt="Защитная формация 60 40 0 с Сергеем первым героем" loading="lazy" src="../../assets/guides/pvp/defense-sergey.webp" width="720" height="1147" decoding="async"><figcaption>Сергей первым · защитная формация 60% пехоты / 40% копий / 0% стрелков.</figcaption></figure>
+<figure class="pvp-shot"><img alt="Защитная формация 60 40 0 с Патриком первым героем" loading="lazy" src="../../assets/guides/pvp/defense-patrick.webp" width="720" height="1147" decoding="async"><figcaption>Патрик первым · тот же защитный шаблон 60 / 40 / 0.</figcaption></figure>
 </div>
 <div class="skill-grid">
-<div class="skill-card"><img alt="Навык Сергея на снижение получаемого урона" loading="lazy" src="../../assets/guides/pvp/skill-sergey.webp"/><p><b>Сергей.</b> Экспедиционный навык снижает получаемый урон всеми войсками. Это один из базовых защитных навыков для гарнизона.</p></div>
-<div class="skill-card"><img alt="Навык Патрика на повышение здоровья всех войск" loading="lazy" src="../../assets/guides/pvp/skill-patrick.webp"/><p><b>Патрик.</b> Экспедиционный навык повышает здоровье всех войск. Это стандартный вариант для защиты объекта.</p></div>
-<div class="skill-card"><img alt="Экспедиционный навык Бахити Шестое чувство на снижение получаемого урона" loading="lazy" src="../../assets/guides/pvp/skill-bahiti.png"/><p><b>Бахити.</b> Экспедиционный навык <b>Шестое чувство</b> снижает получаемый урон всеми войсками. Поэтому Бахити тоже подходит как первый герой для защитного гарнизона, если офицеры разрешили его в конкретном бою.</p></div>
+<div class="skill-card"><img alt="Навык Сергея на снижение получаемого урона" loading="lazy" src="../../assets/guides/pvp/skill-sergey.webp" width="720" height="1112" decoding="async"><p><b>Сергей.</b> Экспедиционный навык снижает получаемый урон всеми войсками. Это один из базовых защитных навыков для гарнизона.</p></div>
+<div class="skill-card"><img alt="Навык Патрика на повышение здоровья всех войск" loading="lazy" src="../../assets/guides/pvp/skill-patrick.webp" width="720" height="1112" decoding="async"><p><b>Патрик.</b> Экспедиционный навык повышает здоровье всех войск. Это стандартный вариант для защиты объекта.</p></div>
+<div class="skill-card"><img alt="Экспедиционный навык Бахити Шестое чувство на снижение получаемого урона" loading="lazy" src="../../assets/guides/pvp/skill-bahiti-display.webp" width="720" height="1112" decoding="async"><p><b>Бахити.</b> Экспедиционный навык <b>Шестое чувство</b> снижает получаемый урон всеми войсками. Поэтому Бахити тоже подходит как первый герой для защитного гарнизона, если офицеры разрешили его в конкретном бою.</p></div>
 </div>
 <div class="pvp-note"><strong>Почему Сергей, Патрик или Бахити</strong>Для удержания объекта нужен защитный эффект: снижение входящего урона у Сергея или Бахити либо повышение здоровья войск у Патрика. Какой вариант нужен в конкретном бою, решают офицеры. Второй и третий герои в отряде снова ничего не добавляют.</div>
 </section>
@@ -169,7 +161,7 @@ html[data-theme="dark"] .role-divider,html[data-theme="dark"] .pvp-shot,html[dat
 <div class="pvp-note warn"><strong>Синхронизация времени — сверхважная часть PvP</strong>Главный бой за объекты — это СвС. В атаке побеждает команда, которая привела несколько рейдов в одну секунду и не дала противнику обновить гарнизон между ударами.</div>
 <p class="body-p">При отправке отряда смотрим не только на состав, но и на время в пути. Его показывает кнопка <b>«Отправить»</b> внизу экрана. Для атакующих рейдов на СвС это время нужно, чтобы подстроиться под общий момент удара.</p>
 <div class="pvp-note warn"><strong>Минимальное ожидание рейда</strong>В тайминг рейда обязательно входит <b>минимум 5 минут ожидания до выхода рейда</b>. Поэтому реальное время попадания считается не как один только ход до объекта, а как <b>5:00 ожидания + путь до цели</b>. Если целевое время удара ближе, чем эта сумма, такой рейд уже физически не успеет.</div>
-<figure class="sync-figure"><img alt="Кнопка Отправить с таймером времени в пути до цели" loading="lazy" src="../../assets/guides/pvp/sync-timer.webp"/><figcaption>Таймер рядом с кнопкой «Отправить» показывает, сколько ваш марш будет идти до цели. Этот показатель нужен и для синхронной атаки, и для аккуратного подвода замены.</figcaption></figure>
+<figure class="sync-figure"><img alt="Кнопка Отправить с таймером времени в пути до цели" loading="lazy" src="../../assets/guides/pvp/sync-timer.webp" srcset="../../assets/guides/pvp/sync-timer-mobile.webp 720w, ../../assets/guides/pvp/sync-timer.webp 980w" sizes="(max-width: 620px) calc(100vw - 64px), 800px" width="980" height="980" decoding="async"><figcaption>Таймер рядом с кнопкой «Отправить» показывает, сколько ваш марш будет идти до цели. Этот показатель нужен и для синхронной атаки, и для аккуратного подвода замены.</figcaption></figure>
 <div class="sync-grid">
 <div>
 <h3 class="mini-title">Как работает синхронизация</h3>
@@ -193,13 +185,13 @@ html[data-theme="dark"] .role-divider,html[data-theme="dark"] .pvp-shot,html[dat
 </div>
 </div>
 <p class="body-p">Во время плотного боя дополнительно следим за двумя зонами на карте: слева — наши марши и время их прибытия, справа — таймеры ближайших вражеских ударов или рейдов. Но базовая команда для синхрона всегда формулируется через целевое время попадания, а не через разрозненные отправки без общей секунды удара.</p>
-<figure class="battle-figure"><img alt="Бой за объект с выделенными маршами слева и таймерами входящих атак справа" loading="lazy" src="../../assets/guides/pvp/battle-timers.webp"/><figcaption>Слева — состояние и время наших маршей. Справа — ближайшие входящие удары или рейды по объекту. Остальной экран в этот момент вторичен.</figcaption></figure>
+<figure class="battle-figure"><img alt="Бой за объект с выделенными маршами слева и таймерами входящих атак справа" loading="lazy" src="../../assets/guides/pvp/battle-timers.webp" width="900" height="1027" decoding="async"><figcaption>Слева — состояние и время наших маршей. Справа — ближайшие входящие удары или рейды по объекту. Остальной экран в этот момент вторичен.</figcaption></figure>
 </section>
 <section class="guide-block">
 <h2 id="minimarch">7. Дробное пополнение для каждого игрока</h2>
 <p class="body-p">Этот приём нужен не только офицерам. Любой игрок, который следит за входящими ударами, может заранее подвести подкрепление так, чтобы оно пришло <b>сразу после вражеского удара</b> — например через 00:01 после него. Если это умеют делать многие участники, гарнизон становится заметно труднее выбить даже серией вражеских рейдов.</p>
 <p class="body-p">На <b>СвС</b> в свой гарнизон можно отправлять несколько маршей пополнения. В замке это особенно важно: если гарнизон просел после удара, игроки <b>обязаны быстро вернуть численность</b>, не ожидая, что кто-то централизованно заменит их отряд.</p>
-<figure class="collage-figure"><img alt="Пошаговый коллаж подготовки мини-отрядов для дробного пополнения гарнизона" loading="lazy" src="../../assets/guides/pvp/refill-minimarches-collage.webp"/><figcaption>Последовательность подготовки мини-отрядов: базовая отправка → убрать героев при ещё не выровненном войске → нажать «Уравнять» и выровнять все три типа → убрать всех стрелков.</figcaption></figure>
+<figure class="collage-figure"><img alt="Пошаговый коллаж подготовки мини-отрядов для дробного пополнения гарнизона" loading="lazy" src="../../assets/guides/pvp/refill-minimarches-collage.webp" srcset="../../assets/guides/pvp/refill-minimarches-collage-mobile.webp 720w, ../../assets/guides/pvp/refill-minimarches-collage.webp 1084w" sizes="(max-width: 620px) calc(100vw - 64px), 800px" width="1084" height="2036" decoding="async"><figcaption>Последовательность подготовки мини-отрядов: базовая отправка → убрать героев при ещё не выровненном войске → нажать «Уравнять» и выровнять все три типа → убрать всех стрелков.</figcaption></figure>
 <ol class="command-list">
 <li>Открываете отправку подкрепления и оцениваете, когда именно после вражеского удара должны прийти ваши войска.</li>
 <li>Через «минус» убираете героев. Для такого пополнения герои не нужны.</li>
@@ -288,9 +280,27 @@ html[data-theme="dark"] .role-divider,html[data-theme="dark"] .pvp-shot,html[dat
 </article>
 <section class="related"><h2>Связанные материалы</h2><div class="related-grid"><a href="war-rules.html">⚔️ Правила войны</a><a href="combat-system.html">Боевая система</a><a href="../events/foundry.html">Битва за Литейную</a><a href="../svs/first-svs.html">Первый СвС</a></div></section>
 </main>
-<a class="back-top" href="#" id="backTop">↑</a>
-<nav class="bottom-nav"><a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open=""><span class="ico">🔎</span><span>Поиск</span></button></nav>
-<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: PvP, гарнизон, Джесси, Бахити…" type="search"/><button class="search-close" data-search-close="">×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
-<script src="../../assets/js/search-index.js?v=42"></script><script src="../../assets/js/app.js?v=28"></script>
+<a class="back-top" href="#mainContent" id="backTop" aria-label="К началу статьи">↑</a>
+<nav class="bottom-nav" aria-label="Основная навигация">
+  <a href="../../index.html" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3Z M9 20v-7h6v7"></path></svg><span>Главная</span></a>
+  <a href="../../index.html#guides" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h7l2 2 2-2h7v16h-7l-2 1-2-1H3Z M12 6v15"></path></svg><span>Гайды</span></a>
+  <a href="../../index.html#tools" ><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"></rect><path d="M8 7h8 M8 12h2 M14 12h2 M8 17h2 M14 17h2"></path></svg><span>Расчёты</span></a>
+  <a href="../../index.html#library" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v19l-6-4-6 4Z"></path></svg><span>Избранное</span></a>
+</nav>
+
+<div id="searchModal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" hidden>
+  <div class="search-box">
+    <div class="search-title-row"><h2 id="searchTitle">Найти в справочнике</h2><button class="search-close" data-search-close type="button" aria-label="Закрыть поиск">×</button></div>
+    <div class="search-head"><label class="visually-hidden" for="searchInput">Название, герой или событие</label><input id="searchInput" type="search" placeholder="Медведь, Флинт, строительство…" autocomplete="off" enterkeyhint="search"></div>
+    <p class="search-status" id="searchStatus" role="status" aria-live="polite"></p>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
+
+<script defer src="../../assets/js/search.js?v=abc984bc6b"></script>
+<script defer src="../../assets/js/library.js?v=09cf33f0c5"></script>
+<script defer src="../../assets/js/tables.js?v=4c7277d582"></script>
+<script defer src="../../assets/js/offline.js?v=b87e685010"></script>
+<script defer src="../../assets/js/app.js?v=f7850ce940"></script>
 </body>
 </html>

@@ -1,43 +1,46 @@
-﻿<!DOCTYPE html>
-
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="#0f5f8f" name="theme-color"/>
-<meta content="Колесо Фортуны в Whiteout Survival: сколько гемов нужно на 120 круток, сколько фрагментов ждать, почему важны книги навыков и какого героя выбирать." name="description"/>
-<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../../manifest.webmanifest" rel="manifest"/>
-<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
-<link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
-<link href="../../assets/css/content.css?v=30" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#126d91">
+<meta name="description" content="Колесо Фортуны в Whiteout Survival: сколько гемов нужно на 120 круток, сколько фрагментов ждать, почему важны книги навыков и какого героя выбирать.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="КОЛЕСО ФОРТУНЫ · Whiteout Survival">
+<meta property="og:description" content="Колесо Фортуны в Whiteout Survival: сколько гемов нужно на 120 круток, сколько фрагментов ждать, почему важны книги навыков и какого героя выбирать.">
 <title>КОЛЕСО ФОРТУНЫ · Whiteout Survival</title>
-<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
-<style>
-.wheel-intro{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);gap:15px;align-items:start;margin:14px 0 18px}.wheel-copy{display:grid;gap:10px}.wheel-card{padding:14px 15px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(135deg,rgba(223,153,28,.10),rgba(22,118,166,.05))}.wheel-card strong{display:block;margin-bottom:5px;color:var(--ink);font-size:14px}.wheel-card p{margin:0;color:var(--ink);font-size:12.5px;line-height:1.55}.wheel-shot{margin:0;padding:8px;border:1px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden}.wheel-shot img{display:block;width:100%;height:auto;border-radius:12px}.wheel-shot figcaption{padding:8px 4px 2px;color:var(--muted);font-size:10.5px;line-height:1.42}
-.wheel-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0 18px}.wheel-fact{padding:12px 13px;border:1px solid var(--line);border-radius:15px;background:var(--card)}.wheel-fact b{display:block;margin-bottom:4px;color:#12648d;font-size:12px}.wheel-fact strong{display:block;color:var(--ink);font-size:17px;margin-bottom:4px}.wheel-fact p{margin:0;color:var(--ink);font-size:11.5px;line-height:1.48}
-.wheel-math{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:13px 0 18px}.wheel-math-card{padding:15px;border:1px solid var(--line);border-radius:18px;background:var(--card)}.wheel-math-card h3{margin:0 0 8px;color:var(--ink);font-size:15px}.wheel-formula{padding:11px 12px;border-radius:13px;background:rgba(223,153,28,.10);border:1px solid rgba(223,153,28,.23);font-size:13px;line-height:1.5;color:var(--ink);font-weight:800}.wheel-math-card p{margin:9px 0 0;color:var(--ink);font-size:12px;line-height:1.52}.wheel-math-card .small{color:var(--muted);font-size:10.8px}
-.wheel-choice{display:grid;grid-template-columns:minmax(250px,.78fr) minmax(0,1.22fr);gap:15px;align-items:start;margin:13px 0 18px}.wheel-choice-copy{display:grid;gap:9px}.wheel-rule{padding:12px 13px;border:1px solid var(--line);border-radius:15px;background:var(--card);color:var(--ink);font-size:12px;line-height:1.5}.wheel-rule strong{display:block;color:#12648d;margin-bottom:4px}.wheel-rule.warn{background:linear-gradient(135deg,rgba(194,67,61,.08),rgba(255,255,255,0));border-color:rgba(194,67,61,.22)}.wheel-rule.warn strong{color:#a33a35}.wheel-rule.good{background:linear-gradient(135deg,rgba(42,151,102,.09),rgba(255,255,255,0));border-color:rgba(42,151,102,.24)}.wheel-rule.good strong{color:#15744e}.wheel-link{display:inline-flex;align-items:center;gap:6px;margin-top:6px;color:#12648d;font-weight:850;text-decoration:none}.wheel-link:hover{text-decoration:underline}
-.wheel-books{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 18px}.wheel-book{padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--card)}.wheel-book b{display:block;color:#12648d;margin-bottom:5px}.wheel-book p{margin:0;color:var(--ink);font-size:12px;line-height:1.5}
-.wheel-check{counter-reset:wheel;display:grid;gap:8px;margin:12px 0}.wheel-check div{counter-increment:wheel;position:relative;padding:11px 12px 11px 46px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);font-size:12.5px;line-height:1.48}.wheel-check div:before{content:counter(wheel);position:absolute;left:12px;top:11px;width:24px;height:24px;border-radius:8px;display:grid;place-items:center;background:rgba(223,153,28,.13);color:#94600b;font-size:11px;font-weight:900}
-html[data-theme="dark"] .wheel-card{background:linear-gradient(135deg,#433416,#0b3149);border-color:#315573}html[data-theme="dark"] .wheel-shot,html[data-theme="dark"] .wheel-fact,html[data-theme="dark"] .wheel-math-card,html[data-theme="dark"] .wheel-rule,html[data-theme="dark"] .wheel-book,html[data-theme="dark"] .wheel-check div{background:linear-gradient(135deg,#0b2942,#0c3550);border-color:#225878}html[data-theme="dark"] .wheel-fact b,html[data-theme="dark"] .wheel-rule strong,html[data-theme="dark"] .wheel-book b,html[data-theme="dark"] .wheel-link{color:#8ce1ff}html[data-theme="dark"] .wheel-formula{background:rgba(223,153,28,.14);border-color:rgba(239,178,72,.30)}html[data-theme="dark"] .wheel-rule.warn{background:linear-gradient(135deg,#442522,#0b3149);border-color:#693b38}html[data-theme="dark"] .wheel-rule.warn strong{color:#ffaaa5}html[data-theme="dark"] .wheel-rule.good{background:linear-gradient(135deg,#123b30,#0b3149);border-color:#29634f}html[data-theme="dark"] .wheel-rule.good strong{color:#89e6b6}html[data-theme="dark"] .wheel-check div:before{background:#4a3518;color:#ffd38d}
-@media(max-width:760px){.wheel-intro,.wheel-choice{grid-template-columns:1fr}.wheel-facts{grid-template-columns:1fr}.wheel-math,.wheel-books{grid-template-columns:1fr}.wheel-shot{max-width:520px;margin-inline:auto}.wheel-choice>.wheel-shot{max-width:480px}}
-</style>
+<link rel="icon" href="../../assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../../assets/icons/icon-192.png">
+<script src="../../assets/js/theme.js?v=4299827f73"></script>
+<link rel="stylesheet" href="../../assets/css/shell.css?v=9113c68b9c">
+<link rel="stylesheet" href="../../assets/css/content.css?v=759843efec">
+<link rel="stylesheet" href="../../assets/css/pages/guides-development-lucky-wheel.css?v=3d99271c63">
+<link rel="stylesheet" href="../../assets/css/interface.css?v=3ecc262c14">
 </head>
-<body data-root="../../">
-<header class="site-top"><a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a><div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div></header>
-<main class="guide-wrap">
-<section class="guide-hero"><div class="eyebrow">🧭 ОСНОВЫ ИГРЫ · ПРОЧЕЕ</div><h1>КОЛЕСО ФОРТУНЫ</h1><p>Главный способ превращать гемы в актуальных героев и книги навыков</p><div class="hero-meta"><span class="pill">Подготовлено SuBL · сентябрь 2026</span></div></section>
-<div class="guide-toolbar"><a class="action-link" href="../../index.html#guides">← Все гайды</a></div>
+<body data-root="../../" data-page-kind="guide" data-page-url="guides/development/lucky-wheel.html" data-search-index="../../assets/js/search-index.js?v=879a7f632a" data-catalog="../../assets/js/catalog-data.js?v=a180d1d8cb">
+<a class="skip-link" href="#mainContent">Перейти к содержимому</a>
+<header class="site-top">
+  <a class="site-brand" href="../../index.html" aria-label="Whiteout Survival — главная"><span class="site-brand-mark" aria-hidden="true">W</span><span>Whiteout<span class="brand-second"> Survival</span><small>справочник SuBL</small></span></a>
+  <div class="site-top-actions">
+    
+    <button class="site-icon-btn theme-toggle" data-theme-toggle type="button" aria-label="Переключить тему"><span class="theme-icon" aria-hidden="true">◐</span></button>
+    <button class="site-icon-btn" data-search-open type="button" aria-label="Открыть поиск"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg></button>
+  </div>
+</header>
+
+<main class="guide-wrap" id="mainContent">
+<section class="guide-hero has-game-icon"><img class="guide-title-icon" src="../../assets/icons/game/lucky-wheel.png" alt="" width="48" height="48"><div class="eyebrow">🧭 ОСНОВЫ ИГРЫ · ПРОЧЕЕ</div><h1>Колесо Фортуны</h1><p>Главный способ превращать гемы в актуальных героев и книги навыков</p><div class="hero-meta"><span class="pill">Подготовлено SuBL · сентябрь 2026</span></div></section><div class="guide-actions"><a class="action-link" href="../../index.html#guides">← Все гайды</a><button class="action-link" data-favorite type="button" aria-pressed="false">☆ В избранное</button><button class="action-link" data-offline-save type="button" aria-label="Сохранить гайд офлайн">↓ Офлайн</button></div>
+<div class="guide-toolbar"></div>
 <details class="toc"><summary>Содержание</summary><div class="toc-list"><a href="#why">Зачем крутить</a><a href="#cost">Цена и фрагменты</a><a href="#hero">Какого героя выбирать</a><a href="#books">Книги навыков</a><a href="#check">Коротко</a></div></details>
 <article class="article">
 <div class="wheel-intro">
 <div class="wheel-copy">
-<aside class="callout"><strong>Главный расход гемов</strong><p>Для обычного F2P или игрока с небольшим донатом Колесо Фортуны — основной потребитель накопленных гемов и один из главных источников актуальных мифических героев.</p></aside>
+<aside class="callout guide-summary"><strong>Главный расход гемов</strong><p>Для обычного F2P или игрока с небольшим донатом Колесо Фортуны — основной потребитель накопленных гемов и один из главных источников актуальных мифических героев.</p><button type="button" class="text-button" data-copy-summary>Скопировать совет</button></aside>
 <div class="wheel-card"><strong>Гемы лучше копить именно под Колесо</strong><p>Не размазывайте крупные траты по случайным магазинам и ускорениям. Полное Колесо стоит дорого, но даёт одновременно фрагменты героя, гарантированные награды шкалы и книги навыков.</p></div>
 <div class="wheel-card"><strong>Донатить ради круток обычно не нужно</strong><p>При активной игре гемов приходит достаточно много. Практический ориентир для активного аккаунта — накоплений хватает примерно на 9 полных Колёс из 10, поэтому покупать наборы только ради круток невыгодно.</p></div>
 </div>
-<figure class="wheel-shot"><img alt="Основной экран Колеса Фортуны" loading="lazy" src="../../assets/guides/lucky-wheel/wheel-main.webp"/><figcaption>Главная цель — дойти до последней награды шкалы на 120 крутках. Крутки по 10 дают скидку.</figcaption></figure>
+<figure class="wheel-shot"><img alt="Основной экран Колеса Фортуны" loading="lazy" src="../../assets/guides/lucky-wheel/wheel-main.webp" srcset="../../assets/guides/lucky-wheel/wheel-main-mobile.webp 720w, ../../assets/guides/lucky-wheel/wheel-main.webp 1080w" sizes="(max-width: 620px) calc(100vw - 64px), 800px" width="1080" height="1920" decoding="async"><figcaption>Главная цель — дойти до последней награды шкалы на 120 крутках. Крутки по 10 дают скидку.</figcaption></figure>
 </div>
 <section class="guide-block"><h2 id="why">1. Что даёт Колесо</h2>
 <div class="wheel-facts">
@@ -53,7 +56,7 @@ html[data-theme="dark"] .wheel-card{background:linear-gradient(135deg,#433416,#0
 <aside class="callout"><strong>Не оценивайте Колесо по одному заходу</strong><p>Случайные фрагменты могут выпадать неравномерно. Ориентир «примерно один фрагмент на тысячу гемов» — средняя оценка на дистанции, а не гарантия конкретного результата.</p></aside></section>
 <section class="guide-block"><h2 id="hero">3. Какого героя крутить</h2>
 <div class="wheel-choice">
-<figure class="wheel-shot"><img alt="Выбор героя в Колесе Фортуны" loading="lazy" src="../../assets/guides/lucky-wheel/hero-choice.webp"/><figcaption>Героя Колеса можно менять. В актуальной версии доступны герой текущего Колеса и герои двух предыдущих Колёс.</figcaption></figure>
+<figure class="wheel-shot"><img alt="Выбор героя в Колесе Фортуны" loading="lazy" src="../../assets/guides/lucky-wheel/hero-choice.webp" srcset="../../assets/guides/lucky-wheel/hero-choice-mobile.webp 720w, ../../assets/guides/lucky-wheel/hero-choice.webp 1080w" sizes="(max-width: 620px) calc(100vw - 64px), 800px" width="1080" height="1920" decoding="async"><figcaption>Героя Колеса можно менять. В актуальной версии доступны герой текущего Колеса и герои двух предыдущих Колёс.</figcaption></figure>
 <div class="wheel-choice-copy">
 <div class="wheel-rule good"><strong>По умолчанию берём актуального героя</strong>Новый герой обычно лучше соответствует текущему поколению и дольше остаётся полезным. Возвращаться к предыдущему имеет смысл, если вы не успели довести важного героя до рабочего состояния.</div>
 <div class="wheel-rule"><strong>Рабочая цель — 4★</strong>Для обычного игрока 4★ — основной ориентир: на этом уровне герой уже полноценно работает и получает доступ к полной прокачке навыков. <a class="wheel-link" href="../combat/heroes.html#stars">Подробнее в руководстве «Герои» →</a></div>
@@ -78,9 +81,27 @@ html[data-theme="dark"] .wheel-card{background:linear-gradient(135deg,#433416,#0
 </div></section>
 </article>
 </main>
-<a class="back-top" href="#" id="backTop">↑</a>
-<nav class="bottom-nav"><a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open=""><span class="ico">🔎</span><span>Поиск</span></button></nav>
-<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: Колесо, гемы, 120 круток, 4★…" type="search"/><button class="search-close" data-search-close="">×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
-<script src="../../assets/js/search-index.js?v=42"></script><script src="../../assets/js/app.js?v=28"></script>
+<a class="back-top" href="#mainContent" id="backTop" aria-label="К началу статьи">↑</a>
+<nav class="bottom-nav" aria-label="Основная навигация">
+  <a href="../../index.html" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3Z M9 20v-7h6v7"></path></svg><span>Главная</span></a>
+  <a href="../../index.html#guides" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h7l2 2 2-2h7v16h-7l-2 1-2-1H3Z M12 6v15"></path></svg><span>Гайды</span></a>
+  <a href="../../index.html#tools" ><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"></rect><path d="M8 7h8 M8 12h2 M14 12h2 M8 17h2 M14 17h2"></path></svg><span>Расчёты</span></a>
+  <a href="../../index.html#library" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v19l-6-4-6 4Z"></path></svg><span>Избранное</span></a>
+</nav>
+
+<div id="searchModal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" hidden>
+  <div class="search-box">
+    <div class="search-title-row"><h2 id="searchTitle">Найти в справочнике</h2><button class="search-close" data-search-close type="button" aria-label="Закрыть поиск">×</button></div>
+    <div class="search-head"><label class="visually-hidden" for="searchInput">Название, герой или событие</label><input id="searchInput" type="search" placeholder="Медведь, Флинт, строительство…" autocomplete="off" enterkeyhint="search"></div>
+    <p class="search-status" id="searchStatus" role="status" aria-live="polite"></p>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
+
+<script defer src="../../assets/js/search.js?v=abc984bc6b"></script>
+<script defer src="../../assets/js/library.js?v=09cf33f0c5"></script>
+<script defer src="../../assets/js/tables.js?v=4c7277d582"></script>
+<script defer src="../../assets/js/offline.js?v=b87e685010"></script>
+<script defer src="../../assets/js/app.js?v=f7850ce940"></script>
 </body>
 </html>

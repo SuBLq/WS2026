@@ -1,69 +1,42 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="#0f5f8f" name="theme-color"/>
-<meta content="Битва за Литейную — PvP за объекты, очки, AFK-фарм, мастерские, наёмники, телепорты и командная логика." name="description"/>
-<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../../manifest.webmanifest" rel="manifest"/>
-<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
-<link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
-<link href="../../assets/css/content.css?v=30" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#126d91">
+<meta name="description" content="Битва за Литейную — PvP за объекты, очки, AFK-фарм, мастерские, наёмники, телепорты и командная логика.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="БИТВА ЗА ЛИТЕЙНУЮ · Whiteout Survival">
+<meta property="og:description" content="Битва за Литейную — PvP за объекты, очки, AFK-фарм, мастерские, наёмники, телепорты и командная логика.">
 <title>БИТВА ЗА ЛИТЕЙНУЮ · Whiteout Survival</title>
-<style>
-:root{--fy-blue:#2d8fc0;--fy-cyan:#5fc8e8;--fy-green:#28a979;--fy-orange:#d98a32;--fy-red:#c95b55;--fy-ink:#173f56;--fy-muted:#587485;--fy-line:#d6e6ed;--fy-bg:#f7fbfd}
-.fy-intro{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:13px 0 15px}.fy-intro-card{border:1px solid var(--fy-line);border-radius:17px;padding:15px 16px;background:linear-gradient(145deg,#f5fafc,#fff);box-shadow:0 5px 16px rgba(28,91,120,.05)}.fy-intro-card h3{margin:0 0 7px;font-size:17px;color:var(--fy-ink)}.fy-intro-card p{margin:0;font-size:12.5px;line-height:1.5;color:#4d6a7a}.fy-intro-card.team{border-top:4px solid var(--fy-blue)}.fy-intro-card.personal{border-top:4px solid var(--fy-green)}
-.fy-links{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 17px}.fy-links a{display:inline-flex;align-items:center;gap:6px;padding:8px 10px;border-radius:12px;border:1px solid #cfe0e8;background:#eef7fa;color:#145f82;text-decoration:none;font-size:11.5px;font-weight:900}.fy-links a:hover{background:#e3f2f7}
-.fy-section-lead{border:1px solid var(--fy-line);border-radius:16px;padding:14px 15px;margin:12px 0;background:linear-gradient(135deg,#edf7fb,#fbfdfe);color:#31566a}.fy-section-lead strong{display:block;color:#0f638c;margin-bottom:5px}.fy-section-lead.green{background:linear-gradient(135deg,#e9f8f2,#f9fcfb);border-color:#c8e8d9;color:#315b50}.fy-section-lead.green strong{color:#087350}.fy-section-lead.orange{background:linear-gradient(135deg,#fff4e4,#fffaf2);border-color:#efd4ae;color:#674a28}.fy-section-lead.orange strong{color:#975516}.fy-section-lead.red{background:linear-gradient(135deg,#fff0ee,#fff9f8);border-color:#ecc9c4;color:#70433e}.fy-section-lead.red strong{color:#a94f47}
-.formation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0 15px}.formation-card{overflow:hidden;border:1px solid var(--fy-line);border-radius:18px;background:#fff;box-shadow:0 5px 16px rgba(28,91,120,.05)}.formation-card.attack{border-top:4px solid var(--fy-orange)}.formation-card.defense{border-top:4px solid var(--fy-blue)}.formation-card .head{padding:12px 13px 9px}.formation-card h3{font-size:17px;margin:0 0 4px;color:var(--fy-ink)}.formation-card .sub{font-size:11.5px;color:var(--fy-muted);line-height:1.4}.formation-card img{display:block;width:100%;height:280px;object-fit:cover;object-position:top;background:#0d3a60}.formation-card .body{padding:10px 13px 13px}.ratio-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:7px}.ratio-row span{padding:5px 8px;border-radius:999px;background:#eaf4f8;border:1px solid #d3e5ec;color:#245d77;font-size:10.5px;font-weight:900}.formation-card p{margin:0;font-size:11.5px;line-height:1.48;color:#496473}
-.entry-check{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:10px 0 18px}.entry-check div{border:1px solid #dde9ee;border-radius:13px;padding:10px;background:#fafcfd;color:#36586a;font-size:11.2px;line-height:1.4}.entry-check b{display:block;color:#0f638c;margin-bottom:3px}
-.value-ladder{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0 14px}.value-card{border:1px solid var(--fy-line);border-radius:15px;padding:13px 11px;background:#fff;position:relative;overflow:hidden}.value-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--fy-blue)}.value-card:nth-child(2):before{background:#43a9ce}.value-card:nth-child(3):before{background:#6cae8e}.value-card:nth-child(4):before{background:#d89a4a}.value-card .num{display:block;font-size:24px;font-weight:1000;color:#123f58;letter-spacing:-.6px}.value-card b{font-size:11.5px;color:#1d506a}.value-card p{font-size:10.5px;color:#6b8290;margin:4px 0 0;line-height:1.35}
-.foundry-figure{margin:13px 0 18px;border:1px solid var(--fy-line);border-radius:17px;padding:8px;background:#f7fbfd;box-shadow:0 4px 14px rgba(28,91,120,.04)}.foundry-figure img{display:block;width:100%;height:auto;border-radius:12px;background:#edf4f8}.foundry-figure figcaption{font-size:10.5px;line-height:1.45;color:#6b8190;padding:8px 4px 2px}
-.data-panel{border:1px solid #d7e6ed;border-radius:15px;margin:12px 0 17px;overflow:hidden;background:#fbfdfe}.data-panel summary{cursor:pointer;list-style:none;padding:11px 13px;font-size:12px;font-weight:900;color:#176487;background:#edf7fa}.data-panel summary::-webkit-details-marker{display:none}.data-panel summary:after{content:'＋';float:right;color:#4d8ca8}.data-panel[open] summary:after{content:'−'}.data-panel .table-scroll{margin:0;border:0;border-radius:0}
-.afk-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}.afk-card{border:1px solid #c9e8da;border-radius:17px;padding:14px;background:linear-gradient(135deg,#eaf8f3,#fbfefd);color:#315b50}.afk-card .score{display:block;font-size:24px;font-weight:1000;color:#087350}.afk-card b{display:block;font-size:12px;margin:2px 0 5px}.afk-card p{font-size:11px;line-height:1.45;margin:0}.march-slots{display:flex;gap:5px;flex-wrap:wrap;margin:8px 0 2px}.march-slots span{padding:4px 6px;border-radius:8px;background:#d8f0e6;color:#17654d;font-weight:900;font-size:9.5px}
-.object-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0 18px}.object-card{margin:0;border:1px solid var(--fy-line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 4px 14px rgba(28,91,120,.04)}.object-card img{display:block;width:100%;height:220px;object-fit:cover;object-position:top;background:#eaf2f6}.object-card figcaption{padding:10px 11px 12px;font-size:10.7px;line-height:1.42;color:#5a7585}.object-card figcaption b{display:block;color:#164d69;font-size:11.5px;margin-bottom:3px}.object-card .rate{color:#087350;font-weight:1000}
-.service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 18px}.service-card{display:grid;grid-template-columns:112px 1fr;border:1px solid #efd7b6;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#fff8ed,#fff);min-height:150px}.service-card img{width:112px;height:100%;object-fit:cover;object-position:top}.service-card .body{padding:11px 12px}.service-card h3{margin:0 0 4px;font-size:14px;color:#71491f}.service-card .effect{display:block;font-size:11px;font-weight:1000;color:#a25a16;margin-bottom:5px}.service-card p{font-size:10.8px;line-height:1.42;color:#6e5a42;margin:0}
-.compare-strip{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:12px 0 17px}.compare-box{border-radius:15px;padding:13px 14px;border:1px solid var(--fy-line);background:#f8fbfc}.compare-box h3{font-size:14px;margin:0 0 6px;color:var(--fy-ink)}.compare-box ul{margin:0;padding-left:17px;color:#4c6878;font-size:11px;line-height:1.5}.compare-box.points{border-top:4px solid var(--fy-green)}.compare-box.win{border-top:4px solid var(--fy-orange)}
-.workshop-split,.merc-split{display:grid;grid-template-columns:.86fr 1.14fr;gap:12px;align-items:start;margin:12px 0 16px}.workshop-split .foundry-figure,.merc-split .foundry-figure{margin:0}.metric-box{border:1px solid #cae6dc;border-radius:17px;background:linear-gradient(135deg,#edf9f4,#fff);padding:14px}.metric-box .metric{font-size:26px;font-weight:1000;color:#087350}.metric-box h3{font-size:15px;margin:0 0 7px;color:#174f40}.metric-box p{font-size:11.5px;color:#456b5f;line-height:1.5;margin:4px 0}.metric-box .formula{margin:10px 0;padding:9px 10px;border-radius:11px;background:#dff3ea;color:#17654d;font-weight:900;font-size:11.5px}
-.merc-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:11px 0}.merc-flow div{position:relative;border:1px solid #ecd6bb;border-radius:13px;padding:10px;background:#fffaf2;color:#6e563b;font-size:10.8px;line-height:1.4}.merc-flow b{display:block;color:#9a591d;margin-bottom:3px}.merc-flow div:not(:last-child):after{content:'→';position:absolute;right:-8px;top:50%;transform:translateY(-50%);width:17px;height:17px;border-radius:50%;background:#fff4e3;color:#b56a25;display:grid;place-items:center;font-weight:1000;z-index:2}
-.resource-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}.resource-card{border:1px solid var(--fy-line);border-radius:15px;padding:12px;background:#fff}.resource-card .ico{font-size:23px}.resource-card b{display:block;color:#164d69;font-size:12px;margin:5px 0}.resource-card p{font-size:10.7px;color:#5f7887;line-height:1.45;margin:0}
-.foundry-recovery{display:grid;grid-template-columns:154px 1fr;gap:13px;align-items:stretch;margin:15px 0 17px;border:1px solid #e9c786;border-radius:18px;padding:10px;background:linear-gradient(135deg,#fff4dc,#fffaf0 58%,#f7fbfd);box-shadow:0 7px 22px rgba(139,93,27,.10)}.recovery-timer{display:grid;place-items:center;align-content:center;min-height:142px;padding:13px;border-radius:14px;background:linear-gradient(145deg,#b96d18,#df9a38);color:#fff;text-align:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.2)}.recovery-timer span{font-size:9.5px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;opacity:.9}.recovery-timer strong{display:block;margin:3px 0 2px;font-size:32px;line-height:1;font-weight:1000;letter-spacing:-.8px}.recovery-timer small{font-size:9.5px;line-height:1.25;font-weight:800;opacity:.9}.recovery-body{padding:5px 5px 4px 0}.recovery-body h3{margin:0 0 6px;font-size:15px;color:#754716}.recovery-body p{margin:0;color:#655440;font-size:11.5px;line-height:1.5}.recovery-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:10px}.recovery-step{padding:9px 9px 8px;border:1px solid #edd6ad;border-radius:11px;background:rgba(255,255,255,.72);color:#68543b;font-size:10.5px;line-height:1.38}.recovery-step b{display:block;margin-bottom:2px;color:#9a5c17;font-size:10px}.recovery-result{margin-top:9px;padding:8px 10px;border-left:4px solid #3d9b78;border-radius:9px;background:#eff9f4;color:#356454;font-size:11px;line-height:1.42}.recovery-result b{color:#167151}
-.match-plan{counter-reset:step;list-style:none;margin:12px 0;padding:0;display:grid;gap:7px}.match-plan li{counter-increment:step;position:relative;padding:11px 12px 11px 45px;border:1px solid #dce8ed;border-radius:14px;background:#fafcfd;color:#36586a;font-size:11.5px;line-height:1.45}.match-plan li:before{content:counter(step);position:absolute;left:11px;top:10px;width:24px;height:24px;border-radius:8px;background:#e1f1f7;color:#12688e;display:grid;place-items:center;font-weight:1000;font-size:11px}
-.related-lite{margin:18px 0 4px;padding:14px;border:1px solid var(--fy-line);border-radius:17px;background:linear-gradient(145deg,#f4f9fb,#fff)}.related-lite h3{margin:0 0 9px;color:var(--fy-ink);font-size:15px}.related-lite .fy-links{margin:0}
-@media(max-width:780px){.service-card{grid-template-columns:94px 1fr}.service-card img{width:94px}.workshop-split,.merc-split{grid-template-columns:1fr}.formation-card img{height:240px}}
-@media(max-width:620px){.fy-intro,.formation-grid,.afk-grid,.service-grid,.compare-strip{grid-template-columns:1fr}.entry-check,.value-ladder{grid-template-columns:repeat(2,minmax(0,1fr))}.object-grid{grid-template-columns:1fr}.object-card{display:grid;grid-template-columns:128px 1fr}.object-card img{height:100%;min-height:150px}.service-card{grid-template-columns:112px 1fr}.service-card img{width:112px}.merc-flow,.resource-grid{grid-template-columns:1fr}.merc-flow div:not(:last-child):after{content:'↓';right:50%;top:auto;bottom:-12px;transform:translateX(50%)}.formation-card img{height:auto;max-height:460px;object-fit:cover}.fy-links a{flex:1 1 150px;justify-content:center}.value-card .num{font-size:21px}.foundry-recovery{grid-template-columns:1fr;padding:9px}.recovery-timer{min-height:100px}.recovery-timer strong{font-size:29px}.recovery-body{padding:3px 4px 4px}.recovery-steps{grid-template-columns:1fr}}
-@media(max-width:390px){.entry-check,.value-ladder{grid-template-columns:1fr}.object-card{grid-template-columns:108px 1fr}.service-card{grid-template-columns:96px 1fr}.service-card img{width:96px}}
-html[data-theme="dark"]{--fy-ink:#eef9ff;--fy-muted:#aec6d3;--fy-line:#28546e;--fy-bg:#0a2942}
-html[data-theme="dark"] .fy-intro-card,html[data-theme="dark"] .formation-card,html[data-theme="dark"] .value-card,html[data-theme="dark"] .foundry-figure,html[data-theme="dark"] .object-card,html[data-theme="dark"] .resource-card,html[data-theme="dark"] .compare-box,html[data-theme="dark"] .related-lite,html[data-theme="dark"] .match-plan li{background:linear-gradient(145deg,#0d334f,#0a2942);border-color:#28546e;box-shadow:0 8px 22px rgba(0,0,0,.16)}
-html[data-theme="dark"] .fy-intro-card p,html[data-theme="dark"] .formation-card p,html[data-theme="dark"] .object-card figcaption,html[data-theme="dark"] .resource-card p,html[data-theme="dark"] .compare-box ul,html[data-theme="dark"] .foundry-figure figcaption,html[data-theme="dark"] .match-plan li{color:#abc4d2}
-html[data-theme="dark"] .fy-links a{background:#103956;border-color:#2b5b75;color:#9de3ff}html[data-theme="dark"] .fy-links a:hover{background:#124461}
-html[data-theme="dark"] .fy-section-lead{background:linear-gradient(135deg,#0e3856,#0a2944);border-color:#2a5b76;color:#c8ddea}html[data-theme="dark"] .fy-section-lead strong{color:#90e1ff}html[data-theme="dark"] .fy-section-lead.green{background:linear-gradient(135deg,#0d4143,#0a2c3d);border-color:#2c746c;color:#c9e8df}html[data-theme="dark"] .fy-section-lead.green strong{color:#76e5b9}html[data-theme="dark"] .fy-section-lead.orange{background:linear-gradient(135deg,#44351f,#132f40);border-color:#745a32;color:#ead6b9}html[data-theme="dark"] .fy-section-lead.orange strong{color:#ffd48d}html[data-theme="dark"] .fy-section-lead.red{background:linear-gradient(135deg,#472b2d,#132f40);border-color:#7c4d50;color:#ebc8c8}html[data-theme="dark"] .fy-section-lead.red strong{color:#ffaaaa}
-html[data-theme="dark"] .formation-card .sub{color:#abc4d2}html[data-theme="dark"] .ratio-row span{background:#103956;border-color:#2b5b75;color:#c9e3ef}html[data-theme="dark"] .entry-check div{background:#0c314c;border-color:#28546e;color:#bcd2dd}html[data-theme="dark"] .entry-check b{color:#8de0ff}
-html[data-theme="dark"] .value-card .num,html[data-theme="dark"] .value-card b,html[data-theme="dark"] .object-card figcaption b,html[data-theme="dark"] .resource-card b,html[data-theme="dark"] .compare-box h3,html[data-theme="dark"] .related-lite h3{color:#eef9ff}html[data-theme="dark"] .object-card .rate{color:#76e5b9}
-html[data-theme="dark"] .data-panel{background:#0a2942;border-color:#28546e}html[data-theme="dark"] .data-panel summary{background:#103956;color:#9de3ff}
-html[data-theme="dark"] .afk-card,html[data-theme="dark"] .metric-box{background:linear-gradient(135deg,#0d4143,#0a2c3d);border-color:#2c746c;color:#c9e8df}html[data-theme="dark"] .afk-card .score,html[data-theme="dark"] .metric-box .metric{color:#76e5b9}html[data-theme="dark"] .afk-card p,html[data-theme="dark"] .metric-box p{color:#c0dfd6}html[data-theme="dark"] .march-slots span,html[data-theme="dark"] .metric-box .formula{background:#123f3e;color:#89e6c0}
-html[data-theme="dark"] .foundry-recovery{background:linear-gradient(135deg,#42331d,#182d3b 58%,#0b293d);border-color:#72562b;box-shadow:0 8px 24px rgba(0,0,0,.2)}html[data-theme="dark"] .recovery-timer{background:linear-gradient(145deg,#8e5015,#b97823)}html[data-theme="dark"] .recovery-body h3{color:#ffd99a}html[data-theme="dark"] .recovery-body p{color:#dbcbb5}html[data-theme="dark"] .recovery-step{background:rgba(9,39,58,.66);border-color:#705a38;color:#d9c9b3}html[data-theme="dark"] .recovery-step b{color:#ffc976}html[data-theme="dark"] .recovery-result{background:#103d36;border-left-color:#50b88f;color:#bfe5d6}html[data-theme="dark"] .recovery-result b{color:#7fe0b8}
-html[data-theme="dark"] .service-card{background:linear-gradient(135deg,#44351f,#132f40);border-color:#745a32}html[data-theme="dark"] .service-card h3{color:#ffe1aa}html[data-theme="dark"] .service-card .effect{color:#ffc778}html[data-theme="dark"] .service-card p{color:#e0cdb0}
-html[data-theme="dark"] .merc-flow div{background:#3f3424;border-color:#715a37;color:#e0cdb0}html[data-theme="dark"] .merc-flow b{color:#ffd18c}html[data-theme="dark"] .merc-flow div:not(:last-child):after{background:#122e40;color:#ffd18c}
-html[data-theme="dark"] .match-plan li:before{background:#104966;color:#9fe7ff}
-</style>
-<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
+<link rel="icon" href="../../assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../../assets/icons/icon-192.png">
+<script src="../../assets/js/theme.js?v=4299827f73"></script>
+<link rel="stylesheet" href="../../assets/css/shell.css?v=9113c68b9c">
+<link rel="stylesheet" href="../../assets/css/content.css?v=759843efec">
+<link rel="stylesheet" href="../../assets/css/pages/guides-events-foundry.css?v=a957e1d531">
+<link rel="stylesheet" href="../../assets/css/interface.css?v=3ecc262c14">
 </head>
-<body data-root="../../">
+<body data-root="../../" data-page-kind="guide" data-page-url="guides/events/foundry.html" data-search-index="../../assets/js/search-index.js?v=879a7f632a" data-catalog="../../assets/js/catalog-data.js?v=a180d1d8cb">
+<a class="skip-link" href="#mainContent">Перейти к содержимому</a>
 <header class="site-top">
-<a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a>
-<div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div>
+  <a class="site-brand" href="../../index.html" aria-label="Whiteout Survival — главная"><span class="site-brand-mark" aria-hidden="true">W</span><span>Whiteout<span class="brand-second"> Survival</span><small>справочник SuBL</small></span></a>
+  <div class="site-top-actions">
+    
+    <button class="site-icon-btn theme-toggle" data-theme-toggle type="button" aria-label="Переключить тему"><span class="theme-icon" aria-hidden="true">◐</span></button>
+    <button class="site-icon-btn" data-search-open type="button" aria-label="Открыть поиск"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg></button>
+  </div>
 </header>
-<main class="guide-wrap">
-<section class="guide-hero">
+
+<main class="guide-wrap" id="mainContent">
+<section class="guide-hero has-game-icon"><img class="guide-title-icon" src="../../assets/icons/game/fort.png" alt="" width="48" height="48">
 <div class="eyebrow">🎯 СОБЫТИЯ И РЕЖИМЫ</div>
-<h1>БИТВА ЗА ЛИТЕЙНУЮ</h1>
+<h1>Битва за литейную</h1>
 <p>PvP за объекты, командные бонусы и экономика маршей: как выигрывать матч и не оставлять личные очки на столе</p>
 <div class="hero-meta"><span class="pill">Подготовлено SuBL · обновлено сентябрь 2026</span></div>
-</section>
-<div class="guide-toolbar"><a class="action-link" href="../../index.html#guides">← Все гайды</a></div>
+</section><div class="guide-actions"><a class="action-link" href="../../index.html#guides">← Все гайды</a><button class="action-link" data-favorite type="button" aria-pressed="false">☆ В избранное</button><button class="action-link" data-offline-save type="button" aria-label="Сохранить гайд офлайн">↓ Офлайн</button></div>
+<div class="guide-toolbar"></div>
 <details class="toc">
 <summary>Содержание</summary>
 <div class="toc-list">
@@ -94,12 +67,12 @@ html[data-theme="dark"] .match-plan li:before{background:#104966;color:#9fe7ff}
 <div class="formation-grid">
 <section class="formation-card attack">
 <div class="head"><h3>⚔️ АТК — забрать объект</h3><div class="sub">Для присоединения к атакующим ралли и активного выбивания гарнизона</div></div>
-<img alt="Пример атакующей PvP-формации с героем атаки первым" loading="lazy" src="../../assets/guides/pvp/attack-jessie.webp"/>
+<img alt="Пример атакующей PvP-формации с героем атаки первым" loading="lazy" src="../../assets/guides/pvp/attack-jessie.webp" width="720" height="1147" decoding="async">
 <div class="body"><div class="ratio-row"><span>Джесси / Джассер первым</span><span>50 / 20 / 30</span></div><p>Задача атакующей формации — быстро продавить объект. После успешного захвата её не оставляем как постоянную защиту.</p></div>
 </section>
 <section class="formation-card defense">
 <div class="head"><h3>🛡️ ЗАЩ — удержать объект</h3><div class="sub">После захвата меняем атакующие навыки на защитные</div></div>
-<img alt="Пример защитной PvP-формации с Патриком первым героем" loading="lazy" src="../../assets/guides/pvp/defense-patrick.webp"/>
+<img alt="Пример защитной PvP-формации с Патриком первым героем" loading="lazy" src="../../assets/guides/pvp/defense-patrick.webp" width="720" height="1147" decoding="async">
 <div class="body"><div class="ratio-row"><span>Сергей / Патрик первым</span><span>60 / 40 / 0</span></div><p>Для удержания объекта используем защитный первый навык и более плотный фронт.</p></div>
 </section>
 </div>
@@ -129,7 +102,7 @@ html[data-theme="dark"] .match-plan li:before{background:#104966;color:#9fe7ff}
 <tr><td>Котельная</td><td>1 200</td><td>240/мин</td><td>600</td><td>120/мин</td></tr>
 <tr><td>Транзитная станция</td><td>1 200</td><td>240/мин</td><td>600</td><td>120/мин</td></tr>
 </table></div></details>
-<figure class="foundry-figure"><img alt="Поле боя Литейной с 7 560 командных очков в минуту при полном контроле" loading="lazy" src="../../assets/guides/foundry/score.webp"/><figcaption><b>Контрольная цифра:</b> полный контроль карты даёт +7 560 командных очков в минуту.</figcaption></figure>
+<figure class="foundry-figure"><img alt="Поле боя Литейной с 7 560 командных очков в минуту при полном контроле" loading="lazy" src="../../assets/guides/foundry/score.webp" srcset="../../assets/guides/foundry/score-mobile.webp 720w, ../../assets/guides/foundry/score.webp 1000w" sizes="(max-width: 620px) calc(100vw - 64px), 800px" width="1000" height="697" decoding="async"><figcaption><b>Контрольная цифра:</b> полный контроль карты даёт +7 560 командных очков в минуту.</figcaption></figure>
 <div class="fy-section-lead orange"><strong>После перехвата здания</strong>Часть накопленных временных очков может рассыпаться рядом как припасы Арсенала. Их подбирает любая сторона, поэтому после смены владельца сразу смотрим пространство вокруг объекта — не отдаём выпавшие очки обратно противнику.</div></section>
 <section class="guide-block"><h2 id="afk">4. AFK-фарм и распределение 6 маршей</h2>
 <p class="body-p">Если активный бой прямо сейчас не требует всех ваших маршей, пассивный доход можно считать почти как экономику производства.</p>
@@ -144,9 +117,9 @@ html[data-theme="dark"] .match-plan li:before{background:#104966;color:#9fe7ff}
 </ul></section>
 <section class="guide-block"><h2 id="scoring-objects">5. Главные объекты, приносящие очки</h2>
 <div class="object-grid">
-<figure class="object-card"><img alt="Королевская литейная" loading="lazy" src="../../assets/guides/foundry/foundry.webp"/><figcaption><b>Королевская литейная</b><span class="rate">900 личных/мин</span>. Самый дорогой пассивный объект карты, но обычно и самый спорный.</figcaption></figure>
-<figure class="object-card"><img alt="Прототипный объект" loading="lazy" src="../../assets/guides/foundry/prototype.webp"/><figcaption><b>Прототипный объект ×2</b><span class="rate">600 личных/мин</span>. Отличное сочетание доходности и относительной стабильности.</figcaption></figure>
-<figure class="object-card"><img alt="Ремонтный комплекс" loading="lazy" src="../../assets/guides/foundry/repair.webp"/><figcaption><b>Ремонтный комплекс ×4</b><span class="rate">300 личных/мин</span>. Основа спокойного пассивного набора и хорошее место для вторичных маршей.</figcaption></figure>
+<figure class="object-card"><img alt="Королевская литейная" loading="lazy" src="../../assets/guides/foundry/foundry.webp" srcset="../../assets/guides/foundry/foundry-mobile.webp 720w, ../../assets/guides/foundry/foundry.webp 1000w" sizes="(max-width: 620px) calc(100vw - 64px), 800px" width="1000" height="1015" decoding="async"><figcaption><b>Королевская литейная</b><span class="rate">900 личных/мин</span>. Самый дорогой пассивный объект карты, но обычно и самый спорный.</figcaption></figure>
+<figure class="object-card"><img alt="Прототипный объект" loading="lazy" src="../../assets/guides/foundry/prototype.webp" srcset="../../assets/guides/foundry/prototype-mobile.webp 720w, ../../assets/guides/foundry/prototype.webp 1000w" sizes="(max-width: 620px) calc(100vw - 64px), 800px" width="1000" height="1182" decoding="async"><figcaption><b>Прототипный объект ×2</b><span class="rate">600 личных/мин</span>. Отличное сочетание доходности и относительной стабильности.</figcaption></figure>
+<figure class="object-card"><img alt="Ремонтный комплекс" loading="lazy" src="../../assets/guides/foundry/repair.webp" srcset="../../assets/guides/foundry/repair-mobile.webp 720w, ../../assets/guides/foundry/repair.webp 1000w" sizes="(max-width: 620px) calc(100vw - 64px), 800px" width="1000" height="1015" decoding="async"><figcaption><b>Ремонтный комплекс ×4</b><span class="rate">300 личных/мин</span>. Основа спокойного пассивного набора и хорошее место для вторичных маршей.</figcaption></figure>
 </div>
 <div class="compare-strip">
 <div class="compare-box points"><h3>⭐ Если нужна личка</h3><ul><li>Литейная → Прототипы → Ремонтники.</li><li>Стабильный аптайм важнее красивой цифры объекта.</li><li>Свободные места в гарнизонах — бесплатные очки.</li></ul></div>
@@ -155,15 +128,15 @@ html[data-theme="dark"] .match-plan li:before{background:#104966;color:#9fe7ff}
 <section class="guide-block"><h2 id="service-objects">6. Служебные объекты: мало очков, много пользы</h2>
 <p class="body-p">Все четыре дают лишь <b>120 личных очков/мин</b>. Их смысл — создать преимущество для всей команды.</p>
 <div class="service-grid">
-<section class="service-card"><img alt="Склад вооружения" loading="lazy" src="../../assets/guides/foundry/warehouse.webp"/><div class="body"><h3>Склад вооружения</h3><span class="effect">+15% урона · −15% входящего урона</span><p>Прямой боевой бонус. В плотном матче может быть важнее любого объекта, приносящего очки.</p></div></section>
-<section class="service-card"><img alt="Котельная" loading="lazy" src="../../assets/guides/foundry/boiler.webp"/><div class="body"><h3>Котельная</h3><span class="effect">Время контроля объекта −50%</span><p>Ускоряет превращение захвата в полноценное владение. Особенно полезна при частых перехватах.</p></div></section>
-<section class="service-card"><img alt="Центральная транзитная станция" loading="lazy" src="../../assets/guides/foundry/transit.webp"/><div class="body"><h3>Транзитная станция</h3><span class="effect">Откат бесплатного телепорта −50%</span><p>Повышает мобильность всей команды: быстрее меняем фланг, подкрепляем объект и выходим из фокуса.</p></div></section>
-<section class="service-card"><img alt="Лагерь наёмников" loading="lazy" src="../../assets/guides/foundry/merc.webp"/><div class="body"><h3>Лагерь наёмников</h3><span class="effect">До 4 ударных отрядов по зданиям</span><p>Инструмент давления на плотный гарнизон. Нужен не ради 120/мин, а чтобы открыть дорогу к более ценному объекту.</p></div></section>
+<section class="service-card"><img alt="Склад вооружения" loading="lazy" src="../../assets/guides/foundry/warehouse.webp" srcset="../../assets/guides/foundry/warehouse-mobile.webp 720w, ../../assets/guides/foundry/warehouse.webp 1000w" sizes="(max-width: 620px) calc(100vw - 64px), 800px" width="1000" height="1369" decoding="async"><div class="body"><h3>Склад вооружения</h3><span class="effect">+15% урона · −15% входящего урона</span><p>Прямой боевой бонус. В плотном матче может быть важнее любого объекта, приносящего очки.</p></div></section>
+<section class="service-card"><img alt="Котельная" loading="lazy" src="../../assets/guides/foundry/boiler.webp" srcset="../../assets/guides/foundry/boiler-mobile.webp 720w, ../../assets/guides/foundry/boiler.webp 1000w" sizes="(max-width: 620px) calc(100vw - 64px), 800px" width="1000" height="1271" decoding="async"><div class="body"><h3>Котельная</h3><span class="effect">Время контроля объекта −50%</span><p>Ускоряет превращение захвата в полноценное владение. Особенно полезна при частых перехватах.</p></div></section>
+<section class="service-card"><img alt="Центральная транзитная станция" loading="lazy" src="../../assets/guides/foundry/transit.webp" srcset="../../assets/guides/foundry/transit-mobile.webp 720w, ../../assets/guides/foundry/transit.webp 1000w" sizes="(max-width: 620px) calc(100vw - 64px), 800px" width="1000" height="1192" decoding="async"><div class="body"><h3>Транзитная станция</h3><span class="effect">Откат бесплатного телепорта −50%</span><p>Повышает мобильность всей команды: быстрее меняем фланг, подкрепляем объект и выходим из фокуса.</p></div></section>
+<section class="service-card"><img alt="Лагерь наёмников" loading="lazy" src="../../assets/guides/foundry/merc.webp" srcset="../../assets/guides/foundry/merc-mobile.webp 720w, ../../assets/guides/foundry/merc.webp 1000w" sizes="(max-width: 620px) calc(100vw - 64px), 800px" width="1000" height="1409" decoding="async"><div class="body"><h3>Лагерь наёмников</h3><span class="effect">До 4 ударных отрядов по зданиям</span><p>Инструмент давления на плотный гарнизон. Нужен не ради 120/мин, а чтобы открыть дорогу к более ценному объекту.</p></div></section>
 </div>
 <div class="fy-section-lead orange"><strong>Главная ошибка по объектам</strong>Сравнивать Склад с Ремонтником только как <b>120 против 300</b>. Личная доходность — лишь одна метрика. Если +15% урона помогает команде забрать Литейную и два Прототипа, Склад окупается многократно.</div></section>
 <section class="guide-block"><h2 id="workshops">7. Оружейные мастерские: свободный марш тоже должен работать</h2>
 <div class="workshop-split">
-<figure class="foundry-figure"><img alt="Оружейная мастерская: вместимость 4 800 и время сбора 20 минут" loading="lazy" src="../../assets/guides/foundry/workshop.webp"/><figcaption>Оружейная мастерская: 4 800 очков за 20 минут сбора.</figcaption></figure>
+<figure class="foundry-figure"><img alt="Оружейная мастерская: вместимость 4 800 и время сбора 20 минут" loading="lazy" src="../../assets/guides/foundry/workshop.webp" width="710" height="710" decoding="async"><figcaption>Оружейная мастерская: 4 800 очков за 20 минут сбора.</figcaption></figure>
 <div class="metric-box"><h3>Экономика одной плитки</h3><span class="metric">240/мин</span><div class="formula">4 800 ÷ 20 минут = 240 очков Арсенала/мин</div><p>Мастерская хуже хорошего гарнизона, но лучше марша, который просто стоит в городе.</p><p><b>Приоритет:</b> критический гарнизон → выгодный гарнизон на объекте, приносящем очки → мастерская → бездействие.</p></div>
 </div>
 <ul class="bullets">
@@ -173,7 +146,7 @@ html[data-theme="dark"] .match-plan li:before{background:#104966;color:#9fe7ff}
 </ul></section>
 <section class="guide-block"><h2 id="mercs">8. Наёмники: размягчить гарнизон перед атакой</h2>
 <div class="merc-split">
-<figure class="foundry-figure"><img alt="Отчёт удара наёмников по гарнизону" loading="lazy" src="../../assets/guides/foundry/merc-mail.webp"/><figcaption>Один зафиксированный удар: 123 тяжелораненых из 1 226 войск. Это пример конкретной волны, а не универсальная формула.</figcaption></figure>
+<figure class="foundry-figure"><img alt="Отчёт удара наёмников по гарнизону" loading="lazy" src="../../assets/guides/foundry/merc-mail.webp" srcset="../../assets/guides/foundry/merc-mail-mobile.webp 720w, ../../assets/guides/foundry/merc-mail.webp 1000w" sizes="(max-width: 620px) calc(100vw - 64px), 800px" width="1000" height="1278" decoding="async"><figcaption>Один зафиксированный удар: 123 тяжелораненых из 1 226 войск. Это пример конкретной волны, а не универсальная формула.</figcaption></figure>
 <div>
 <div class="fy-section-lead orange" style="margin-top:0"><strong>Наёмники — не фармилка</strong>Сам Лагерь даёт всего 120 личных/мин. Его задача — помочь отобрать объект, который стоит гораздо дороже по очкам или по командному эффекту.</div>
 <div class="merc-flow"><div><b>1. Захватили Лагерь</b>Получили доступ к ударным отрядам.</div><div><b>2. Давим гарнизон</b>До четырёх волн ослабляют занятое врагом здание.</div><div><b>3. Входим сами</b>После размягчения отправляем атаку или ралли.</div></div>
@@ -214,15 +187,27 @@ html[data-theme="dark"] .match-plan li:before{background:#104966;color:#9fe7ff}
 <div class="related-lite"><h3>Связанные руководства</h3><div class="fy-links"><a href="canyon-clash.html">🏰 Битва в каньоне</a><a href="../combat/war-rules.html">⚔️ Правила войны</a><a href="../combat/pvp-objects.html">🏰 PvP за объекты</a><a href="../combat/combat-system.html">⚙️ Боевая система</a><a href="../combat/heroes.html">🧬 Герои</a><a href="../combat/hero-gear.html">🛡️ Снаряжение героев</a></div></div></section>
 </article>
 </main>
-<a class="back-top" href="#" id="backTop">↑</a>
-<nav class="bottom-nav">
-<a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a>
-<a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a>
-<a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a>
-<button data-search-open=""><span class="ico">🔎</span><span>Поиск</span></button>
+<a class="back-top" href="#mainContent" id="backTop" aria-label="К началу статьи">↑</a>
+<nav class="bottom-nav" aria-label="Основная навигация">
+  <a href="../../index.html" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3Z M9 20v-7h6v7"></path></svg><span>Главная</span></a>
+  <a href="../../index.html#guides" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h7l2 2 2-2h7v16h-7l-2 1-2-1H3Z M12 6v15"></path></svg><span>Гайды</span></a>
+  <a href="../../index.html#tools" ><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"></rect><path d="M8 7h8 M8 12h2 M14 12h2 M8 17h2 M14 17h2"></path></svg><span>Расчёты</span></a>
+  <a href="../../index.html#library" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v19l-6-4-6 4Z"></path></svg><span>Избранное</span></a>
 </nav>
-<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: Литейная, гарнизон, телепорт…" type="search"/><button class="search-close" data-search-close="">×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
-<script src="../../assets/js/search-index.js?v=48"></script>
-<script src="../../assets/js/app.js?v=28"></script>
+
+<div id="searchModal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" hidden>
+  <div class="search-box">
+    <div class="search-title-row"><h2 id="searchTitle">Найти в справочнике</h2><button class="search-close" data-search-close type="button" aria-label="Закрыть поиск">×</button></div>
+    <div class="search-head"><label class="visually-hidden" for="searchInput">Название, герой или событие</label><input id="searchInput" type="search" placeholder="Медведь, Флинт, строительство…" autocomplete="off" enterkeyhint="search"></div>
+    <p class="search-status" id="searchStatus" role="status" aria-live="polite"></p>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
+
+<script defer src="../../assets/js/search.js?v=abc984bc6b"></script>
+<script defer src="../../assets/js/library.js?v=09cf33f0c5"></script>
+<script defer src="../../assets/js/tables.js?v=4c7277d582"></script>
+<script defer src="../../assets/js/offline.js?v=b87e685010"></script>
+<script defer src="../../assets/js/app.js?v=f7850ce940"></script>
 </body>
 </html>

@@ -1,35 +1,41 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="#0f5f8f" name="theme-color"/>
-<meta content="Охота на медведя — пять волн рейдов: короткая инструкция игроку и схема организации для офицера." name="description"/>
-<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../../manifest.webmanifest" rel="manifest"/>
-<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
-<link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
-<link href="../../assets/css/content.css?v=30" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#126d91">
+<meta name="description" content="Охота на медведя — пять волн рейдов: короткая инструкция игроку и схема организации для офицера.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ОХОТА НА МЕДВЕДЯ · Whiteout Survival">
+<meta property="og:description" content="Охота на медведя — пять волн рейдов: короткая инструкция игроку и схема организации для офицера.">
 <title>ОХОТА НА МЕДВЕДЯ · Whiteout Survival</title>
-<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
-<style>
-.bear-role-tabs{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:14px 0 18px}.bear-role-tab{display:block;padding:12px 14px;border-radius:15px;text-decoration:none;font-weight:900;text-align:center;border:1px solid var(--line);background:linear-gradient(135deg,rgba(22,118,166,.12),rgba(48,184,196,.08));color:var(--ink)}.bear-role-tab.officer{background:linear-gradient(135deg,rgba(77,107,170,.13),rgba(22,118,166,.08))}
-.bear-rings{position:relative;width:min(100%,520px);margin:16px auto 20px;aspect-ratio:1/1;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(22,118,166,.10),rgba(48,184,196,.035));overflow:hidden;box-shadow:0 8px 24px rgba(23,72,99,.08)}.bear-rings:after{content:"";position:absolute;top:44px;bottom:44px;left:50%;border-left:2px dashed rgba(69,137,174,.46);z-index:4}.bear-half{position:absolute;top:13px;font-size:10px;font-weight:950;letter-spacing:.045em;color:var(--muted);z-index:8}.bear-half.left{left:13px}.bear-half.right{right:13px}.bear-ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border:2px solid rgba(22,118,166,.38);border-radius:24px;z-index:2}.bear-ring.r2{width:82%;height:82%;background:rgba(22,118,166,.03)}.bear-ring.r1{width:53%;height:53%;background:rgba(22,118,166,.055);z-index:3}.ring-title{position:absolute;left:50%;transform:translateX(-50%);font-size:10px;font-weight:950;letter-spacing:.04em;color:var(--muted);white-space:nowrap}.r2>.ring-title{top:9px}.r1>.ring-title{top:9px}.bear-trap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:9;width:98px;height:70px;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#0e6e9c,#24a3b3);color:#fff;box-shadow:0 10px 26px rgba(12,89,125,.24);font-weight:950;font-size:12px}.bear-trap span{font-size:23px;line-height:1}.wave-label{position:absolute;z-index:7;min-width:112px;padding:7px 9px;border:1px solid rgba(42,126,164,.30);border-radius:12px;background:rgba(245,251,254,.88);font-size:10px;line-height:1.25;font-weight:850;color:#164f6f;box-shadow:0 4px 14px rgba(25,75,101,.08)}.wave-label b{display:block;font-size:15px;color:#0f77a6}.w30{left:8%;top:43%}.w29{right:8%;top:43%;text-align:right}.w28{left:5%;top:16%}.w27{right:5%;top:16%;text-align:right}.w26{left:50%;bottom:14px;transform:translateX(-50%);text-align:center;min-width:190px}.wave-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin:12px 0 18px}.wave-card{border-radius:14px;border:1px solid var(--line);padding:10px 7px;text-align:center;background:var(--card)}.wave-card strong{display:block;font-size:18px;color:#1676a6}.wave-card span{display:block;font-size:9.5px;line-height:1.35;color:var(--muted);margin-top:3px}.route-rule{padding:14px 15px;border-radius:16px;border:1px solid rgba(22,118,166,.22);background:linear-gradient(135deg,rgba(22,118,166,.13),rgba(45,178,184,.07));margin:12px 0}.route-rule strong{color:#11688f}.player-step{display:grid;grid-template-columns:34px 1fr;gap:10px;margin:10px 0;padding:12px;border:1px solid var(--line);border-radius:15px;background:var(--card)}.player-step .n{width:32px;height:32px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#116b98,#23a1ae);color:#fff;font-weight:950}.player-step h3{margin:1px 0 4px;font-size:14px;color:var(--ink)}.player-step p{margin:0;color:var(--ink);font-size:12.5px;line-height:1.52}.hero-support{margin:14px 0 18px;padding:14px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,rgba(22,118,166,.10),rgba(48,184,196,.045))}.hero-support h3{margin:0 0 5px;font-size:14px}.hero-support>p{margin:0 0 12px;font-size:12.5px;line-height:1.5}.hero-support-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.hero-card{margin:0;padding:8px;border-radius:15px;border:1px solid var(--line);background:var(--card);text-align:center;overflow:hidden}.hero-card img{display:block;width:100%;aspect-ratio:237/400;object-fit:cover;border-radius:11px}.hero-card figcaption{padding:7px 2px 1px;font-size:11px;line-height:1.35;color:var(--muted)}.hero-card strong{display:block;color:var(--ink);font-size:13px}.hero-card.situational{border-style:dashed}.hero-later{margin-top:10px;padding:9px 11px;border-radius:12px;border:1px solid rgba(22,118,166,.20);font-size:12px;line-height:1.45}.officer-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}.officer-card{border:1px solid var(--line);border-radius:16px;padding:13px;background:linear-gradient(135deg,rgba(33,91,139,.08),rgba(48,184,196,.035))}.officer-card h3{font-size:13px;margin:0 0 6px;color:var(--ink)}.officer-card p{font-size:12px;line-height:1.52;margin:0;color:var(--ink)}
-html[data-theme="dark"] .bear-role-tab,html[data-theme="dark"] .wave-card,html[data-theme="dark"] .player-step,html[data-theme="dark"] .hero-card{background:linear-gradient(135deg,#0b2942,#0c3550);border-color:#225878;color:#eaf8ff}html[data-theme="dark"] .bear-role-tab.officer{background:linear-gradient(135deg,#122d4d,#0a4055)}html[data-theme="dark"] .bear-rings{background:linear-gradient(145deg,#071c30,#0b2f47);border-color:#235674}html[data-theme="dark"] .bear-ring.r2{background:rgba(18,86,119,.16);border-color:#2a6788}html[data-theme="dark"] .bear-ring.r1{background:rgba(24,111,146,.18);border-color:#3884a4}html[data-theme="dark"] .wave-label{background:rgba(8,39,61,.94);border-color:#2d6e8f;color:#b9d9ea;box-shadow:none}html[data-theme="dark"] .wave-label b{color:#70d9ff}html[data-theme="dark"] .wave-card strong{color:#6fd8ff}html[data-theme="dark"] .route-rule,html[data-theme="dark"] .hero-support{background:linear-gradient(135deg,#0b3450,#0a4656);border-color:#2a7187}html[data-theme="dark"] .route-rule strong{color:#79e7ff}html[data-theme="dark"] .player-step h3,html[data-theme="dark"] .officer-card h3,html[data-theme="dark"] .hero-card strong{color:#f1fbff}html[data-theme="dark"] .player-step p,html[data-theme="dark"] .officer-card p,html[data-theme="dark"] .hero-card figcaption{color:#c7dbe6}html[data-theme="dark"] .hero-later{border-color:#2a7187;background:rgba(7,29,47,.34)}html[data-theme="dark"] .officer-card{background:linear-gradient(135deg,#0b2942,#0b3a4c);border-color:#245c78}
-@media(max-width:620px){.wave-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.wave-card:last-child{grid-column:1/-1}.officer-grid{grid-template-columns:1fr}.bear-role-tabs{grid-template-columns:1fr 1fr}.bear-rings{width:min(100%,460px)}.wave-label{min-width:95px;font-size:9px;padding:6px}.wave-label b{font-size:14px}.w30{left:5%}.w29{right:5%}.w28{left:3%}.w27{right:3%}.w26{min-width:170px}.hero-support-grid{gap:7px}.hero-card{padding:5px}.hero-card figcaption{font-size:10px}.hero-card strong{font-size:12px}}
-@media(max-width:390px){.bear-role-tabs{grid-template-columns:1fr}.bear-rings{width:100%}.bear-rings:after{top:38px;bottom:38px}.bear-ring.r2{width:84%;height:84%}.bear-ring.r1{width:54%;height:54%}.wave-label{min-width:78px;max-width:92px;font-size:8px;padding:5px}.wave-label b{font-size:13px}.w30{left:3%;top:44%}.w29{right:3%;top:44%}.w28{left:2%;top:18%}.w27{right:2%;top:18%}.w26{min-width:150px;max-width:175px;bottom:9px}.bear-trap{width:82px;height:60px;font-size:10px}.bear-trap span{font-size:20px}.ring-title{font-size:8px}.hero-support-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.hero-card{padding:4px;border-radius:11px}.hero-card img{border-radius:8px}.hero-card figcaption{font-size:9px}.hero-card strong{font-size:11px}}
-</style>
+<link rel="icon" href="../../assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../../assets/icons/icon-192.png">
+<script src="../../assets/js/theme.js?v=4299827f73"></script>
+<link rel="stylesheet" href="../../assets/css/shell.css?v=9113c68b9c">
+<link rel="stylesheet" href="../../assets/css/content.css?v=759843efec">
+<link rel="stylesheet" href="../../assets/css/pages/guides-events-bear-hunt.css?v=a1be8c9a08">
+<link rel="stylesheet" href="../../assets/css/interface.css?v=3ecc262c14">
 </head>
-<body data-root="../../">
-<header class="site-top"><a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a><div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div></header>
-<main class="guide-wrap">
-<section class="guide-hero"><div class="eyebrow">🐻 СОБЫТИЯ И РЕЖИМЫ</div><h1>ОХОТА НА МЕДВЕДЯ</h1><p>Пять волн рейдов: короткая инструкция игроку и схема организации для офицера</p><div class="hero-meta"><span class="pill">Подготовлено SuBL · сентябрь 2026</span></div></section>
-<div class="guide-toolbar"><a class="action-link" href="../../index.html#guides">← Все гайды</a></div>
+<body data-root="../../" data-page-kind="guide" data-page-url="guides/events/bear-hunt.html" data-search-index="../../assets/js/search-index.js?v=879a7f632a" data-catalog="../../assets/js/catalog-data.js?v=a180d1d8cb">
+<a class="skip-link" href="#mainContent">Перейти к содержимому</a>
+<header class="site-top">
+  <a class="site-brand" href="../../index.html" aria-label="Whiteout Survival — главная"><span class="site-brand-mark" aria-hidden="true">W</span><span>Whiteout<span class="brand-second"> Survival</span><small>справочник SuBL</small></span></a>
+  <div class="site-top-actions">
+    
+    <button class="site-icon-btn theme-toggle" data-theme-toggle type="button" aria-label="Переключить тему"><span class="theme-icon" aria-hidden="true">◐</span></button>
+    <button class="site-icon-btn" data-search-open type="button" aria-label="Открыть поиск"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg></button>
+  </div>
+</header>
+
+<main class="guide-wrap" id="mainContent">
+<section class="guide-hero has-game-icon"><img class="guide-title-icon" src="../../assets/icons/game/bear-hunt.png" alt="" width="48" height="48"><div class="eyebrow">🐻 СОБЫТИЯ И РЕЖИМЫ</div><h1>Охота на медведя</h1><p>Пять волн рейдов: короткая инструкция игроку и схема организации для офицера</p><div class="hero-meta"><span class="pill">Подготовлено SuBL · сентябрь 2026</span></div></section><div class="guide-actions"><a class="action-link" href="../../index.html#guides">← Все гайды</a><button class="action-link" data-favorite type="button" aria-pressed="false">☆ В избранное</button><button class="action-link" data-offline-save type="button" aria-label="Сохранить гайд офлайн">↓ Офлайн</button></div><aside class="callout guide-summary"><strong>Главное правило</strong><p>Рейды идут пятью волнами, а войска после возврата сразу отправляются в следующий подходящий рейд. Чем меньше марш стоит без дела, тем больше ударов он успевает нанести Медведю.</p><button type="button" class="text-button" data-copy-summary>Скопировать совет</button></aside>
+<div class="guide-toolbar"></div>
 <div class="bear-role-tabs"><a class="bear-role-tab" href="#player">👤 Для игрока</a><a class="bear-role-tab officer" href="#officer">🛡️ Для офицера</a></div>
 <details class="toc"><summary>Содержание</summary><div class="toc-list"><a href="#player">Для игрока</a><a href="#waves">Волны и круги вокруг Ловушки</a><a href="#support">Герои при присоединении к рейду</a><a href="#officer">Для офицера</a><a href="#why-five">Почему именно пять волн</a><a href="#setup">Как организовать альянс</a></div></details>
 <article class="article">
-<aside class="callout"><strong>Главное правило</strong><p>Рейды идут пятью волнами, а войска после возврата сразу отправляются в следующий подходящий рейд. Чем меньше марш стоит без дела, тем больше ударов он успевает нанести Медведю.</p></aside>
+
 <aside class="callout"><strong>Не путайте пять волн и количество рейдов</strong><p><b>Пять</b> — это число временных волн в нашей схеме запуска. При открытых шести маршах игрок может одновременно отправить <b>6 маршей в чужие рейды</b>, а <b>собственный рейд на Медведя считается системой отдельно</b> и не занимает одну из этих маршевых очередей. То есть максимум — собственный рейд плюс шесть присоединений.</p></aside>
 <section class="guide-block"><h2 id="player">Для игрока</h2>
 <div class="player-step"><div class="n">1</div><div><h3>Запускай рейд по своей волне</h3><p>Старт определяется положением города вокруг Ловушки: <b>30:00, 29:20, 28:40, 28:00 или 27:20</b>. После удара и возврата войск новый рейд открываем <b>сразу</b>: полный цикл занимает примерно 5:20 плюс несколько секунд на повторный запуск. Не ждём прежние «ровные пять минут» — они математически не помещаются.</p></div></div>
@@ -42,13 +48,13 @@ html[data-theme="dark"] .bear-role-tab,html[data-theme="dark"] .wave-card,html[d
 <section class="guide-block"><h2 id="support">Герои при присоединении к рейду</h2>
 <div class="hero-support"><h3>Кого ставить первым при присоединении</h3><p>Первый герой даёт рейду свой экспедиционный навык. <b>Второй и третий герои при присоединении дают только размер марша и ничего более</b> — их навыки рейд не усиливают.</p>
 <div class="hero-support-grid">
-<figure class="hero-card"><img alt="Джесси" loading="lazy" src="../../assets/guides/bear/jessie.webp"/><figcaption><strong>Джесси</strong>Основной вариант поддержки</figcaption></figure>
-<figure class="hero-card"><img alt="Джассер" loading="lazy" src="../../assets/guides/bear/jasser.webp"/><figcaption><strong>Джассер</strong>Основной вариант поддержки</figcaption></figure>
-<figure class="hero-card situational"><img alt="Со-Юн" loading="lazy" src="../../assets/guides/bear/seo-yoon.webp"/><figcaption><strong>Со-Юн</strong>Используется ситуативно</figcaption></figure>
+<figure class="hero-card"><img alt="Джесси" loading="lazy" src="../../assets/guides/bear/jessie.webp" width="237" height="400" decoding="async"><figcaption><strong>Джесси</strong>Основной вариант поддержки</figcaption></figure>
+<figure class="hero-card"><img alt="Джассер" loading="lazy" src="../../assets/guides/bear/jasser.webp" width="237" height="400" decoding="async"><figcaption><strong>Джассер</strong>Основной вариант поддержки</figcaption></figure>
+<figure class="hero-card situational"><img alt="Со-Юн" loading="lazy" src="../../assets/guides/bear/seo-yoon.webp" width="237" height="400" decoding="async"><figcaption><strong>Со-Юн</strong>Используется ситуативно</figcaption></figure>
 </div>
-<div class="hero-later"><b>Также можно использовать:</b> <b>Мию</b>, <b>Филли</b>, <b>Джеронимо</b>.<br/><span><b>Джеронимо</b> — донатный герой и не привязан к возрасту сервера. Мия и Филли становятся доступны по мере развития сервера.</span></div></div></section>
+<div class="hero-later"><b>Также можно использовать:</b> <b>Мию</b>, <b>Филли</b>, <b>Джеронимо</b>.<br><span><b>Джеронимо</b> — донатный герой и не привязан к возрасту сервера. Мия и Филли становятся доступны по мере развития сервера.</span></div></div></section>
 <section class="guide-block"><h2 id="waves">Волны и круги вокруг Ловушки</h2>
-<aside class="callout"><strong>Что значит «первый круг»</strong><p><b>Первый круг</b> — ближайшее кольцо городов вокруг Ловушки: между твоим городом и Ловушкой нет другого города.<br/><b>Второй круг</b> — следующий ряд городов сразу за первым.<br/><b>Дальше второго круга</b> — все остальные города; их лидеры относятся к пятой волне.<br/>Левая и правая половины определяются относительно центра Ловушки на карте.</p></aside>
+<aside class="callout"><strong>Что значит «первый круг»</strong><p><b>Первый круг</b> — ближайшее кольцо городов вокруг Ловушки: между твоим городом и Ловушкой нет другого города.<br><b>Второй круг</b> — следующий ряд городов сразу за первым.<br><b>Дальше второго круга</b> — все остальные города; их лидеры относятся к пятой волне.<br>Левая и правая половины определяются относительно центра Ловушки на карте.</p></aside>
 <div aria-label="Квадратная схема первого и второго кругов вокруг Медвежьей ловушки" class="bear-rings">
 <span class="bear-half left">← ЛЕВАЯ ПОЛОВИНА</span><span class="bear-half right">ПРАВАЯ ПОЛОВИНА →</span>
 <div class="bear-ring r2"><span class="ring-title">2-Й КРУГ</span></div>
@@ -79,8 +85,27 @@ html[data-theme="dark"] .bear-role-tab,html[data-theme="dark"] .wave-card,html[d
 <aside class="callout"><strong>Организация в одной строке</strong><p>Пять географических волн стартуют каждые 40 секунд от 30:00 до 27:20, а дальше каждый лидер перезапускает рейд сразу после возврата войск. Участники занимают ближайший подходящий рейд и не держат марши без дела.</p></aside></section>
 </article>
 </main>
-<a class="back-top" href="#" id="backTop">↑</a>
-<nav class="bottom-nav"><a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open=""><span class="ico">🔎</span><span>Поиск</span></button></nav>
-<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: Медведь, Литейная, Флинт…" type="search"/><button class="search-close" data-search-close="">×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
-<script src="../../assets/js/search-index.js?v=45"></script><script src="../../assets/js/app.js?v=28"></script>
-</body></html>
+<a class="back-top" href="#mainContent" id="backTop" aria-label="К началу статьи">↑</a>
+<nav class="bottom-nav" aria-label="Основная навигация">
+  <a href="../../index.html" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3Z M9 20v-7h6v7"></path></svg><span>Главная</span></a>
+  <a href="../../index.html#guides" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h7l2 2 2-2h7v16h-7l-2 1-2-1H3Z M12 6v15"></path></svg><span>Гайды</span></a>
+  <a href="../../index.html#tools" ><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"></rect><path d="M8 7h8 M8 12h2 M14 12h2 M8 17h2 M14 17h2"></path></svg><span>Расчёты</span></a>
+  <a href="../../index.html#library" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v19l-6-4-6 4Z"></path></svg><span>Избранное</span></a>
+</nav>
+
+<div id="searchModal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" hidden>
+  <div class="search-box">
+    <div class="search-title-row"><h2 id="searchTitle">Найти в справочнике</h2><button class="search-close" data-search-close type="button" aria-label="Закрыть поиск">×</button></div>
+    <div class="search-head"><label class="visually-hidden" for="searchInput">Название, герой или событие</label><input id="searchInput" type="search" placeholder="Медведь, Флинт, строительство…" autocomplete="off" enterkeyhint="search"></div>
+    <p class="search-status" id="searchStatus" role="status" aria-live="polite"></p>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
+
+<script defer src="../../assets/js/search.js?v=abc984bc6b"></script>
+<script defer src="../../assets/js/library.js?v=09cf33f0c5"></script>
+<script defer src="../../assets/js/tables.js?v=4c7277d582"></script>
+<script defer src="../../assets/js/offline.js?v=b87e685010"></script>
+<script defer src="../../assets/js/app.js?v=f7850ce940"></script>
+</body>
+</html>

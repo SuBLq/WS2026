@@ -1,38 +1,40 @@
-﻿<!DOCTYPE html>
-
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="#0f5f8f" name="theme-color"/>
-<meta content="Магазины и валюты в Whiteout Survival: что регулярно брать в Магазине Альянса и как выбирать дефицитные ресурсы для развития аккаунта." name="description"/>
-<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../../manifest.webmanifest" rel="manifest"/>
-<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
-<link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
-<link href="../../assets/css/content.css?v=30" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#126d91">
+<meta name="description" content="Магазины и валюты в Whiteout Survival: что регулярно брать в Магазине Альянса и как выбирать дефицитные ресурсы для развития аккаунта.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="МАГАЗИНЫ И ВАЛЮТЫ · Whiteout Survival">
+<meta property="og:description" content="Магазины и валюты в Whiteout Survival: что регулярно брать в Магазине Альянса и как выбирать дефицитные ресурсы для развития аккаунта.">
 <title>МАГАЗИНЫ И ВАЛЮТЫ · Whiteout Survival</title>
-<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
-<style>
-.shop-brief{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0 18px}.shop-brief-card{padding:13px 14px;border:1px solid var(--line);border-radius:16px;background:var(--card)}.shop-brief-card b{display:block;margin-bottom:5px;color:#12648d;font-size:12px}.shop-brief-card p{margin:0;color:var(--ink);font-size:11.8px;line-height:1.5}.shop-brief-card.good{background:linear-gradient(135deg,rgba(42,151,102,.09),rgba(255,255,255,0));border-color:rgba(42,151,102,.24)}.shop-brief-card.good b{color:#15744e}.shop-brief-card.warn{background:linear-gradient(135deg,rgba(223,153,28,.10),rgba(255,255,255,0));border-color:rgba(223,153,28,.23)}.shop-brief-card.warn b{color:#98620c}
-.alliance-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 18px}.alliance-box{padding:15px;border:1px solid var(--line);border-radius:18px;background:var(--card)}.alliance-box h3{display:flex;align-items:center;gap:8px;margin:0 0 10px;color:var(--ink);font-size:15px}.alliance-box h3 span{width:30px;height:30px;display:grid;place-items:center;border-radius:10px;background:rgba(18,100,141,.10)}.buy-list{display:grid;gap:8px}.buy-row{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;padding:10px 11px;border:1px solid var(--line);border-radius:14px;background:rgba(18,100,141,.035)}.buy-row .ico{width:29px;height:29px;display:grid;place-items:center;border-radius:9px;background:rgba(18,100,141,.10);font-size:15px}.buy-row b{display:block;color:var(--ink);font-size:12px;margin-bottom:3px}.buy-row p{margin:0;color:var(--muted);font-size:10.8px;line-height:1.45}.discount-badge{display:inline-flex;align-items:center;padding:3px 7px;margin-left:5px;border-radius:999px;background:rgba(42,151,102,.12);border:1px solid rgba(42,151,102,.24);color:#15744e;font-size:9px;font-weight:900;vertical-align:middle}
-.resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 18px}.resource-card{padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--card)}.resource-head{display:flex;align-items:center;gap:9px;margin-bottom:6px}.resource-head .ico{width:31px;height:31px;display:grid;place-items:center;border-radius:10px;background:rgba(18,100,141,.10);font-size:16px}.resource-card h3{margin:0;color:var(--ink);font-size:13px}.resource-card p{margin:0;color:var(--ink);font-size:11.8px;line-height:1.5}.resource-card .mini{display:block;margin-top:7px;color:var(--muted);font-size:10.3px;line-height:1.4}.inline-ref{color:#12648d;font-weight:850;text-decoration:none}.inline-ref:hover{text-decoration:underline}
-.priority-rule{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0 18px;counter-reset:shoprule}.priority-step{counter-increment:shoprule;position:relative;padding:43px 12px 12px;border:1px solid var(--line);border-radius:15px;background:var(--card);color:var(--ink);font-size:11.3px;line-height:1.48}.priority-step:before{content:counter(shoprule);position:absolute;left:12px;top:11px;width:25px;height:25px;display:grid;place-items:center;border-radius:8px;background:rgba(18,100,141,.11);color:#12648d;font-size:11px;font-weight:900}.priority-step b{display:block;margin-bottom:4px;color:var(--ink);font-size:11.8px}
-.low-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0 16px}.low-card{padding:12px 13px;border:1px solid rgba(194,67,61,.18);border-radius:15px;background:linear-gradient(135deg,rgba(194,67,61,.055),rgba(255,255,255,0))}.low-card b{display:block;color:#9d3934;margin-bottom:4px;font-size:11.8px}.low-card p{margin:0;color:var(--ink);font-size:11px;line-height:1.47}
-.shop-note{padding:13px 14px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(135deg,rgba(18,100,141,.06),rgba(255,255,255,0));color:var(--ink);font-size:12px;line-height:1.52;margin:12px 0 16px}.shop-note strong{display:block;color:#12648d;margin-bottom:4px}
-html[data-theme="dark"] .shop-brief-card,html[data-theme="dark"] .alliance-box,html[data-theme="dark"] .resource-card,html[data-theme="dark"] .priority-step{background:linear-gradient(135deg,#0b2942,#0c3550);border-color:#225878}html[data-theme="dark"] .shop-brief-card.good{background:linear-gradient(135deg,#123b30,#0b3149);border-color:#29634f}html[data-theme="dark"] .shop-brief-card.good b{color:#89e6b6}html[data-theme="dark"] .shop-brief-card.warn{background:linear-gradient(135deg,#443416,#0b3149);border-color:#705629}html[data-theme="dark"] .shop-brief-card.warn b{color:#ffd38d}html[data-theme="dark"] .shop-brief-card b,html[data-theme="dark"] .inline-ref,html[data-theme="dark"] .shop-note strong{color:#8ce1ff}html[data-theme="dark"] .buy-row{background:rgba(140,225,255,.035);border-color:#225878}html[data-theme="dark"] .buy-row .ico,html[data-theme="dark"] .resource-head .ico,html[data-theme="dark"] .alliance-box h3 span,html[data-theme="dark"] .priority-step:before{background:rgba(140,225,255,.10);color:#8ce1ff}html[data-theme="dark"] .discount-badge{background:rgba(66,189,120,.13);border-color:#29634f;color:#89e6b6}html[data-theme="dark"] .low-card{background:linear-gradient(135deg,#442522,#0b3149);border-color:#693b38}html[data-theme="dark"] .low-card b{color:#ffaaa5}html[data-theme="dark"] .shop-note{background:linear-gradient(135deg,#0b2942,#0c3550);border-color:#225878}
-@media(max-width:760px){.shop-brief{grid-template-columns:1fr}.alliance-grid{grid-template-columns:1fr}.resource-grid{grid-template-columns:1fr}.priority-rule{grid-template-columns:1fr 1fr}.low-grid{grid-template-columns:1fr}}
-@media(max-width:480px){.priority-rule{grid-template-columns:1fr}}
-</style>
+<link rel="icon" href="../../assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../../assets/icons/icon-192.png">
+<script src="../../assets/js/theme.js?v=4299827f73"></script>
+<link rel="stylesheet" href="../../assets/css/shell.css?v=9113c68b9c">
+<link rel="stylesheet" href="../../assets/css/content.css?v=759843efec">
+<link rel="stylesheet" href="../../assets/css/pages/guides-development-shops-currencies.css?v=540b4046cd">
+<link rel="stylesheet" href="../../assets/css/interface.css?v=3ecc262c14">
 </head>
-<body data-root="../../">
-<header class="site-top"><a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a><div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div></header>
-<main class="guide-wrap">
-<section class="guide-hero"><div class="eyebrow">🧭 ОСНОВЫ ИГРЫ · ПРОЧЕЕ</div><h1>МАГАЗИНЫ И ВАЛЮТЫ</h1><p>Покупаем дефицит своего аккаунта, а не всё, что лежит на витрине</p><div class="hero-meta"><span class="pill">Подготовлено SuBL · сентябрь 2026</span></div></section>
-<div class="guide-toolbar"><a class="action-link" href="../../index.html#guides">← Все гайды</a></div>
+<body data-root="../../" data-page-kind="guide" data-page-url="guides/development/shops-currencies.html" data-search-index="../../assets/js/search-index.js?v=879a7f632a" data-catalog="../../assets/js/catalog-data.js?v=a180d1d8cb">
+<a class="skip-link" href="#mainContent">Перейти к содержимому</a>
+<header class="site-top">
+  <a class="site-brand" href="../../index.html" aria-label="Whiteout Survival — главная"><span class="site-brand-mark" aria-hidden="true">W</span><span>Whiteout<span class="brand-second"> Survival</span><small>справочник SuBL</small></span></a>
+  <div class="site-top-actions">
+    
+    <button class="site-icon-btn theme-toggle" data-theme-toggle type="button" aria-label="Переключить тему"><span class="theme-icon" aria-hidden="true">◐</span></button>
+    <button class="site-icon-btn" data-search-open type="button" aria-label="Открыть поиск"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg></button>
+  </div>
+</header>
+
+<main class="guide-wrap" id="mainContent">
+<section class="guide-hero has-game-icon"><img class="guide-title-icon" src="../../assets/icons/game/shop.png" alt="" width="48" height="48"><div class="eyebrow">🧭 ОСНОВЫ ИГРЫ · ПРОЧЕЕ</div><h1>Магазины и валюты</h1><p>Покупаем дефицит своего аккаунта, а не всё, что лежит на витрине</p><div class="hero-meta"><span class="pill">Подготовлено SuBL · сентябрь 2026</span></div></section><div class="guide-actions"><a class="action-link" href="../../index.html#guides">← Все гайды</a><button class="action-link" data-favorite type="button" aria-pressed="false">☆ В избранное</button><button class="action-link" data-offline-save type="button" aria-label="Сохранить гайд офлайн">↓ Офлайн</button></div><aside class="callout guide-summary"><strong>Кратко за минуту</strong><p>Универсального списка «что купить в каждом магазине» нет. Почти везде правильная покупка — это <b>дефицитный ресурс той системы, которая сейчас отстаёт именно у вас</b>. Исключение — Магазин Альянса: там есть несколько позиций, которые стоит проверять регулярно.</p><button type="button" class="text-button" data-copy-summary>Скопировать совет</button></aside>
+<div class="guide-toolbar"></div>
 <details class="toc"><summary>Содержание</summary><div class="toc-list"><a href="#alliance">Магазин Альянса</a><a href="#scarce">Что считать дефицитом</a><a href="#rule">Как выбирать покупку</a><a href="#skip">Что обычно пропускаем</a></div></details>
 <article class="article">
-<aside class="callout"><strong>Кратко за минуту</strong><p>Универсального списка «что купить в каждом магазине» нет. Почти везде правильная покупка — это <b>дефицитный ресурс той системы, которая сейчас отстаёт именно у вас</b>. Исключение — Магазин Альянса: там есть несколько позиций, которые стоит проверять регулярно.</p></aside>
+
 <div class="shop-brief">
 <div class="shop-brief-card good"><b>Раз в неделю</b><p>Конверты с паззлами для Монумента, Пропуск Переноса и 12-часовые щиты.</p></div>
 <div class="shop-brief-card warn"><b>Каждый день</b><p>Возврат отправленного отряда, щиты и телепорты — если они выпали со скидкой <b>70%</b>.</p></div>
@@ -87,9 +89,27 @@ html[data-theme="dark"] .shop-brief-card,html[data-theme="dark"] .alliance-box,h
 </article>
 <section class="related"><h2>Связанные материалы</h2><div class="related-grid"><a href="account-development.html">📈 РАЗВИТИЕ АККАУНТА</a><a href="../combat/hero-gear.html">🛡️ СНАРЯЖЕНИЕ ГЕРОЕВ</a><a href="../combat/heroes.html">🧬 ГЕРОИ</a><a href="../svs/first-svs.html">⚔️ СвС</a></div></section>
 </main>
-<a class="back-top" href="#" id="backTop">↑</a>
-<nav class="bottom-nav"><a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open=""><span class="ico">🔎</span><span>Поиск</span></button></nav>
-<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: магазин, Мифрил, Пропуск Переноса…" type="search"/><button class="search-close" data-search-close="">×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
-<script src="../../assets/js/search-index.js?v=42"></script><script src="../../assets/js/app.js?v=28"></script>
+<a class="back-top" href="#mainContent" id="backTop" aria-label="К началу статьи">↑</a>
+<nav class="bottom-nav" aria-label="Основная навигация">
+  <a href="../../index.html" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3Z M9 20v-7h6v7"></path></svg><span>Главная</span></a>
+  <a href="../../index.html#guides" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h7l2 2 2-2h7v16h-7l-2 1-2-1H3Z M12 6v15"></path></svg><span>Гайды</span></a>
+  <a href="../../index.html#tools" ><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"></rect><path d="M8 7h8 M8 12h2 M14 12h2 M8 17h2 M14 17h2"></path></svg><span>Расчёты</span></a>
+  <a href="../../index.html#library" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v19l-6-4-6 4Z"></path></svg><span>Избранное</span></a>
+</nav>
+
+<div id="searchModal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" hidden>
+  <div class="search-box">
+    <div class="search-title-row"><h2 id="searchTitle">Найти в справочнике</h2><button class="search-close" data-search-close type="button" aria-label="Закрыть поиск">×</button></div>
+    <div class="search-head"><label class="visually-hidden" for="searchInput">Название, герой или событие</label><input id="searchInput" type="search" placeholder="Медведь, Флинт, строительство…" autocomplete="off" enterkeyhint="search"></div>
+    <p class="search-status" id="searchStatus" role="status" aria-live="polite"></p>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
+
+<script defer src="../../assets/js/search.js?v=abc984bc6b"></script>
+<script defer src="../../assets/js/library.js?v=09cf33f0c5"></script>
+<script defer src="../../assets/js/tables.js?v=4c7277d582"></script>
+<script defer src="../../assets/js/offline.js?v=b87e685010"></script>
+<script defer src="../../assets/js/app.js?v=f7850ce940"></script>
 </body>
 </html>

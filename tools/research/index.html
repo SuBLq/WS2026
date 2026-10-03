@@ -1,19 +1,35 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-<meta name="theme-color" content="#0f5f8f"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#126d91">
+<meta name="description" content="Введите текущие технологии, выберите цель и получите полный путь, время и ресурсы.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Калькулятор технологий · Whiteout Survival">
+<meta property="og:description" content="Введите текущие технологии, выберите цель и получите полный путь, время и ресурсы.">
 <title>Калькулятор технологий · Whiteout Survival</title>
-<link rel="stylesheet" href="research.css?v=24"/>
-<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script></head>
-<body data-root="../../">
-<header class="top">
-  <a class="brand" href="../../index.html"><span class="brand-mark">W</span><span>Whiteout Survival</span></a>
-  <div class="top-actions"><button class="top-btn theme-btn" id="themeToggle" type="button" aria-label="Переключить тему"><span class="theme-icon">🌙</span></button><button class="top-btn help-btn" id="openHelp" type="button" aria-label="Открыть памятку">?</button><button class="top-btn" id="saveProfile" type="button">💾 <span>Сохранить</span></button></div>
+<link rel="icon" href="../../assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../../assets/icons/icon-192.png">
+<script src="../../assets/js/theme.js?v=4299827f73"></script>
+<link rel="stylesheet" href="../../assets/css/shell.css?v=9113c68b9c">
+<link rel="stylesheet" href="../../assets/css/content.css?v=759843efec">
+<link rel="stylesheet" href="../../tools/research/research.css?v=f9b0cf0c18">
+<link rel="stylesheet" href="../../assets/css/interface.css?v=3ecc262c14">
+</head>
+<body data-root="../../" data-page-kind="tool" data-page-url="tools/research/index.html" data-search-index="../../assets/js/search-index.js?v=879a7f632a" data-catalog="../../assets/js/catalog-data.js?v=a180d1d8cb">
+<a class="skip-link" href="#mainContent">Перейти к содержимому</a>
+<header class="site-top">
+  <a class="site-brand" href="../../index.html" aria-label="Whiteout Survival — главная"><span class="site-brand-mark" aria-hidden="true">W</span><span>Whiteout<span class="brand-second"> Survival</span><small>справочник SuBL</small></span></a>
+  <div class="site-top-actions">
+    <button class="site-icon-btn" id="openHelp" type="button" aria-label="Открыть памятку">?</button><button class="site-icon-btn" id="saveProfile" type="button" aria-label="Сохранить профиль">✓</button>
+    <button class="site-icon-btn theme-toggle" data-theme-toggle type="button" aria-label="Переключить тему"><span class="theme-icon" aria-hidden="true">◐</span></button>
+    <button class="site-icon-btn" data-search-open type="button" aria-label="Открыть поиск"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg></button>
+  </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="mainContent">
   <section class="hero">
     <div class="eyebrow">ИНСТРУМЕНТ</div>
     <h1>Калькулятор технологий</h1>
@@ -25,15 +41,15 @@
       <button class="btn primary compact" id="openTree" type="button">Настроить технологии</button>
     </div>
     <div class="profile-grid">
-      <label class="field"><span>🏛️ Исследовательский центр</span><input id="rcLevel" type="number" min="1" max="30" value="30" inputmode="numeric"/></label>
-      <label class="field"><span>⚡ Скорость исследований, +%</span><input id="researchSpeed" type="number" min="0" step="0.1" value="0" inputmode="decimal"/></label>
-      <label class="field"><span>⏱️ Временный бонус, +%</span><input id="tempSpeed" type="number" min="0" step="0.1" value="0" inputmode="decimal"/></label>
+      <label class="field"><span>🏛️ Исследовательский центр</span><input id="rcLevel" type="number" min="1" max="30" value="30" inputmode="numeric"></label>
+      <label class="field"><span>⚡ Скорость исследований, +%</span><input id="researchSpeed" type="number" min="0" step="0.1" value="0" inputmode="decimal"></label>
+      <label class="field"><span>⏱️ Временный бонус, +%</span><input id="tempSpeed" type="number" min="0" step="0.1" value="0" inputmode="decimal"></label>
     </div>
     <div class="profile-foot">
       <div class="profile-summary" id="profileSummary">Технологии не настроены</div>
       <button class="text-btn" id="clearProfile" type="button">Очистить технологии</button>
     </div>
-  </section>
+  <p class="autosave-note">Изменения профиля и плана сохраняются на устройстве автоматически.</p></section>
 
   <section class="card target-card">
     <div class="card-head"><h2>Цель</h2></div>
@@ -44,14 +60,14 @@
     <label class="field goal-select-field"><span>Технология</span><select id="goalTech"></select></label>
     <div class="goal-level" id="goalLevelWrap">
       <div class="range-head"><span>Целевой уровень</span><strong id="goalLevelText">—</strong></div>
-      <input class="range" id="goalLevel" type="range" min="1" max="1" step="1" value="1"/>
+      <input class="range" id="goalLevel" type="range" min="1" max="1" step="1" value="1" aria-label="Целевой уровень технологии">
     </div>
     <div class="goal-preview" id="goalPreview" hidden></div>
     <button class="btn primary goal-add" id="addGoalToPlan" type="button" disabled>Добавить в план расчётов</button>
     <div class="empty-goals" id="emptyGoals" hidden>Все технологии этой ветки уже изучены полностью.</div>
   </section>
 
-  <section class="card totals-card">
+  <section class="card totals-card" id="calculationResult">
     <div class="card-head"><h2>Итого</h2><div class="rc-warning" id="rcWarning" hidden></div></div>
     <div class="kpis">
       <div class="kpi"><span>⏱ Время</span><strong id="totalTime">—</strong></div>
@@ -85,7 +101,7 @@
   <aside class="drawer" role="dialog" aria-modal="true" aria-label="Настройка технологий">
     <div class="drawer-head">
       <div class="drawer-title-row"><h2>Мои технологии</h2><button class="close" id="closeTree" type="button">×</button></div>
-      <div class="drawer-search"><input id="treeSearch" type="search" placeholder="Найти технологию…"/></div>
+      <div class="drawer-search"><input id="treeSearch" type="search" placeholder="Найти технологию…"></div>
       <div class="tabs">
         <button class="tab active" type="button" data-branch="Growth">📈 Развитие</button>
         <button class="tab" type="button" data-branch="Battle">⚔️ Битва</button>
@@ -112,13 +128,30 @@
 </div>
 
 <div class="toast" id="toast"></div>
-<nav class="bottom">
-  <a href="../../index.html">⌂<br/><span>Главная</span></a>
-  <a href="../construction/index.html">🏗️<br/><span>Стройка</span></a>
-  <button class="active" id="openTreeBottom" type="button">🌳<br/><span>Технологии</span></button>
+
+<nav class="bottom-nav" aria-label="Основная навигация">
+  <a href="../../index.html" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3Z M9 20v-7h6v7"></path></svg><span>Главная</span></a>
+  <a href="../../index.html#guides" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h7l2 2 2-2h7v16h-7l-2 1-2-1H3Z M12 6v15"></path></svg><span>Гайды</span></a>
+  <a href="../../index.html#tools" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"></rect><path d="M8 7h8 M8 12h2 M14 12h2 M8 17h2 M14 17h2"></path></svg><span>Расчёты</span></a>
+  <a href="../../index.html#library" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v19l-6-4-6 4Z"></path></svg><span>Избранное</span></a>
 </nav>
-<script src="research-data.js?v=24"></script>
-<script src="research-app.js?v=25"></script>
-<script src="../../assets/js/app.js?v=28"></script>
+
+<div id="searchModal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" hidden>
+  <div class="search-box">
+    <div class="search-title-row"><h2 id="searchTitle">Найти в справочнике</h2><button class="search-close" data-search-close type="button" aria-label="Закрыть поиск">×</button></div>
+    <div class="search-head"><label class="visually-hidden" for="searchInput">Название, герой или событие</label><input id="searchInput" type="search" placeholder="Медведь, Флинт, строительство…" autocomplete="off" enterkeyhint="search"></div>
+    <p class="search-status" id="searchStatus" role="status" aria-live="polite"></p>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
+
+<script defer src="../../assets/js/search.js?v=abc984bc6b"></script>
+<script defer src="../../assets/js/library.js?v=09cf33f0c5"></script>
+<script defer src="../../assets/js/tables.js?v=4c7277d582"></script>
+<script defer src="../../assets/js/offline.js?v=b87e685010"></script>
+<script defer src="../../assets/js/app.js?v=f7850ce940"></script>
+<script defer src="../../assets/js/calculator-math.js?v=9764f3586a"></script>
+<script defer src="../../tools/research/research-data.js?v=1d15460ebc"></script>
+<script defer src="../../tools/research/research-app.js?v=2565116bbd"></script>
 </body>
 </html>

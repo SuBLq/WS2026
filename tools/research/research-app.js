@@ -10,7 +10,8 @@ const RU_BASE=DATA?.meta?.translations||{};
 const STAT_RU={
   'research-speed':'скорость исследований','construction-speed':'скорость строительства','healing-speed':'скорость лечения','training-speed':'скорость обучения',
   attack:'атака',defense:'защита',health:'здоровье',lethality:'смертоносность','march-capacity':'вместимость марша','rally-capacity':'вместимость ралли',
-  'hospital-capacity':'вместимость лазарета','training-capacity':'вместимость обучения'
+  'hospital-capacity':'вместимость лазарета','infirmary-capacity':'вместимость лазарета','training-capacity':'вместимость обучения',
+  'march-queue':'маршевые очереди','troop-deployment-capacity':'вместимость марша'
 };
 const TROOP_RU={all:'все войска',infantry:'пехота',marksman:'стрелки',lancer:'копейщики'};
 const fmt=new Intl.NumberFormat('ru-RU');
@@ -19,17 +20,12 @@ let goalBranch='Battle',goalId='',goalLevel=1,overrides={},candidateId='',candid
 let saveTimer=null,liveTotalsFrame=0,clearProfileArmed=false,clearProfileTimer=null;
 
 function theme(){return document.documentElement.dataset.theme==='dark'?'dark':'light'}
-function applyTheme(t,persist=true){
-  t=t==='dark'?'dark':'light';document.documentElement.dataset.theme=t;
-  if(persist){try{localStorage.setItem(THEME_KEY,t)}catch(e){}}
-  const btn=$('#themeToggle'),icon=btn?.querySelector('.theme-icon');if(icon)icon.textContent=t==='dark'?'☀️':'🌙';
-  if(btn){btn.title=t==='dark'?'Светлая тема':'Тёмная тема';btn.setAttribute('aria-label',t==='dark'?'Включить светлую тему':'Включить тёмную тему')}
-  const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute('content',t==='dark'?'#06192b':'#0f5f8f');
-}
+function applyTheme(t,persist=true){window.WOS.theme.apply(t,persist)}
 function toast(text){const e=$('#toast');if(!e)return;e.textContent=text;e.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('show'),1700)}
 function saveSoon(){clearTimeout(saveTimer);saveTimer=setTimeout(save,120)}
-function showHelp(force=false){const e=$('#helpBackdrop');if(!e||(!force&&localStorage.getItem(HELP_KEY)))return;e.classList.add('open');e.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
-function hideHelp(markSeen=true){const e=$('#helpBackdrop');if(!e)return;e.classList.remove('open');e.setAttribute('aria-hidden','true');if(markSeen)localStorage.setItem(HELP_KEY,'1');if(!$('#drawerBackdrop')?.classList.contains('open'))document.body.style.overflow=''}
+function readStorage(key){try{return localStorage.getItem(key)}catch(e){return null}}
+function showHelp(force=false){const e=$('#helpBackdrop');if(!e||(!force&&readStorage(HELP_KEY)))return;e.classList.add('open');e.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function hideHelp(markSeen=true){const e=$('#helpBackdrop');if(!e)return;e.classList.remove('open');e.setAttribute('aria-hidden','true');if(markSeen){try{localStorage.setItem(HELP_KEY,'1')}catch(e){}}if(!$('#drawerBackdrop')?.classList.contains('open'))document.body.style.overflow=''}
 function scheduleLiveTotals(){if(liveTotalsFrame)cancelAnimationFrame(liveTotalsFrame);liveTotalsFrame=requestAnimationFrame(()=>{liveTotalsFrame=0;if(!goalId||!TECHS[goalId]){renderTotals(null);return}const target=mergeTargetWithOverrides();renderTotals(simulate(current,target,speed+tempSpeed))})}
 function romanFromId(id){const m=id.match(/-([ivx]+)$/i);return m?m[1].toUpperCase():''}
 function baseId(id){return id.replace(/-([ivx]+)$/i,'')}
@@ -136,9 +132,9 @@ function simulate(base,target,startSpeed){
   for(const n of order){
     const lv=getLevel(n.id,n.l);if(!lv)continue;const c=lv.cost||{};
     for(const r of ['meat','wood','coal','iron','steel'])t[r]+=Number(c[r])||0;
-    t.power+=Number(lv.power)||0;const sec=Number(lv['research-time-seconds'])||0;t.base+=sec;t.actual+=sec/(1+s/100);t.rc=Math.max(t.rc,levelReqRC(n.id,n.l));t.nodes++;
+    t.power+=Number(lv.power)||0;const sec=Number(lv['research-time-seconds'])||0;t.base+=sec;t.actual+=window.WOS.math.duration(sec,s);t.rc=Math.max(t.rc,levelReqRC(n.id,n.l));t.nodes++;
     if(TECHS[n.id].stat==='research-speed')s+=Number(lv['stat-addition'])||0;
-    t.order.push({...n,baseSeconds:sec,actualSeconds:sec/(1+(s-(TECHS[n.id].stat==='research-speed'?(Number(lv['stat-addition'])||0):0))/100),cost:{...c},power:Number(lv.power)||0,rc:levelReqRC(n.id,n.l)});
+    t.order.push({...n,baseSeconds:sec,actualSeconds:window.WOS.math.duration(sec,s-(TECHS[n.id].stat==='research-speed'?(Number(lv['stat-addition'])||0):0)),cost:{...c},power:Number(lv.power)||0,rc:levelReqRC(n.id,n.l)});
   }
   t.speedEnd=s;return t;
 }
@@ -149,7 +145,7 @@ function rangePct(el){const min=Number(el.min)||0,max=Number(el.max)||1,val=Numb
 function updateRangeVisual(el){rangePct(el)}
 function setRange(el,min,max,value){el.min=min;el.max=Math.max(min,max);el.value=Math.max(min,Math.min(max,value));rangePct(el)}
 
-function save(){localStorage.setItem(STATE_KEY,JSON.stringify({current,rcLevel,speed,tempSpeed,goalBranch,goalId,goalLevel,overrides}))}
+function save(){try{localStorage.setItem(STATE_KEY,JSON.stringify({current,rcLevel,speed,tempSpeed,goalBranch,goalId,goalLevel,overrides}));return true}catch(e){return false}}
 function loadState(){
   let s=null;try{s=JSON.parse(localStorage.getItem(STATE_KEY)||'null')}catch(e){}
   if(!s){for(const key of LEGACY_KEYS){try{const x=JSON.parse(localStorage.getItem(key)||'null');if(x){s={current:x.current||{},rcLevel:x.rcLevel,speed:x.speed,tempSpeed:x.tempSpeed};break}}catch(e){}}}
@@ -357,9 +353,9 @@ function clearProfile(){
 function setGoalBranch(b){if(!['Growth','Battle'].includes(b)||b===goalBranch)return;goalBranch=b;candidateId='';candidateLevel=1;renderGoalOptions();save()}
 function bind(){
   $('#themeToggle')?.addEventListener('click',()=>applyTheme(theme()==='dark'?'light':'dark'));
-  $('#saveProfile').addEventListener('click',()=>{save();toast('Профиль сохранён')});
+  $('#saveProfile').addEventListener('click',()=>{toast(save()?'Профиль сохранён':'Не удалось сохранить профиль на устройстве')});
   $('#openHelp').addEventListener('click',()=>showHelp(true));$('#closeHelp').addEventListener('click',()=>hideHelp(true));$('#helpDone').addEventListener('click',()=>hideHelp(true));$('#helpBackdrop').addEventListener('click',e=>{if(e.target===$('#helpBackdrop'))hideHelp(true)});
-  $('#openTree').addEventListener('click',openDrawer);$('#openTreeBottom').addEventListener('click',openDrawer);$('#closeTree').addEventListener('click',closeDrawer);$('#drawerBackdrop').addEventListener('click',e=>{if(e.target===$('#drawerBackdrop'))closeDrawer()});
+  $('#openTree').addEventListener('click',openDrawer);$('#openTreeBottom')?.addEventListener('click',openDrawer);$('#closeTree').addEventListener('click',closeDrawer);$('#drawerBackdrop').addEventListener('click',e=>{if(e.target===$('#drawerBackdrop'))closeDrawer()});
   $('#clearProfile').addEventListener('click',clearProfile);
   $('#rcLevel').addEventListener('change',e=>{rcLevel=Math.max(1,Math.min(30,Number(e.target.value)||1));const req=highestRequiredRC(current);if(rcLevel<req){rcLevel=req;toast(`Нужен Иссл. Центр: ур. ${req}`)}save();renderProfile();renderGoalOptions();renderTotals(goalId?simulate(current,mergeTargetWithOverrides(),speed+tempSpeed):null)});
   $('#researchSpeed').addEventListener('input',e=>{speed=Math.max(0,Number(e.target.value)||0);save();renderCalculation();renderGoalPreview();renderProfile()});
@@ -375,7 +371,7 @@ function bind(){
 }
 function init(){
   if(!DATA){document.body.innerHTML='<main class="wrap"><section class="card"><h2>Не удалось загрузить базу технологий.</h2></section></main>';return}
-  loadState();buildTechs();bind();applyTheme(theme(),false);renderAll();save();if(!localStorage.getItem(HELP_KEY))setTimeout(()=>showHelp(false),180);
+  loadState();buildTechs();bind();applyTheme(theme(),false);renderAll();save();if(!readStorage(HELP_KEY))setTimeout(()=>showHelp(false),180);
 }
 init();
 })();

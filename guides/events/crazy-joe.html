@@ -1,44 +1,46 @@
-﻿<!DOCTYPE html>
-
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="#0f5f8f" name="theme-color"/>
-<meta content="Безумная Джо в Whiteout Survival: обмен войсками, две рабочие схемы, важные волны, герои стены и подкрепления." name="description"/>
-<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../../manifest.webmanifest" rel="manifest"/>
-<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
-<link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
-<link href="../../assets/css/content.css?v=30" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#126d91">
+<meta name="description" content="Безумная Джо в Whiteout Survival: обмен войсками, две рабочие схемы, важные волны, герои стены и подкрепления.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="БЕЗУМНАЯ ДЖО · Whiteout Survival">
+<meta property="og:description" content="Безумная Джо в Whiteout Survival: обмен войсками, две рабочие схемы, важные волны, герои стены и подкрепления.">
 <title>БЕЗУМНАЯ ДЖО · Whiteout Survival</title>
-<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
-<style>
-.joe-intro{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(270px,.85fr);gap:15px;align-items:start;margin:14px 0 18px}.joe-intro-copy{display:grid;gap:10px}.joe-intro-card{padding:14px 15px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(135deg,rgba(92,48,122,.09),rgba(22,118,166,.05))}.joe-intro-card strong{display:block;margin-bottom:5px;color:var(--ink);font-size:14px}.joe-intro-card p{margin:0;color:var(--ink);font-size:12.5px;line-height:1.55}.joe-shot{margin:0;padding:8px;border:1px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden}.joe-shot img{display:block;width:100%;height:auto;border-radius:12px}.joe-shot figcaption{padding:8px 4px 2px;color:var(--muted);font-size:10.5px;line-height:1.42}
-.joe-basics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0 18px}.joe-basic{padding:12px 13px;border:1px solid var(--line);border-radius:15px;background:var(--card)}.joe-basic b{display:block;margin-bottom:4px;color:#12648d;font-size:12px}.joe-basic p{margin:0;color:var(--ink);font-size:11.5px;line-height:1.5}
-.joe-strategies{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:13px 0 18px}.joe-strategy{position:relative;padding:15px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card)}.joe-strategy:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:#5e98b5}.joe-strategy.safe:before{background:#2e9c70}.joe-strategy.full:before{background:#d68a23}.joe-strategy h3{margin:0 0 5px;color:var(--ink);font-size:15px}.joe-strategy .tag{display:inline-flex;margin-bottom:10px;padding:4px 8px;border-radius:999px;font-size:9.5px;font-weight:900;letter-spacing:.02em}.joe-strategy.safe .tag{background:rgba(46,156,112,.12);border:1px solid rgba(46,156,112,.28);color:#16754e}.joe-strategy.full .tag{background:rgba(214,138,35,.12);border:1px solid rgba(214,138,35,.30);color:#9b5c0d}.joe-strategy p{margin:0 0 9px;color:var(--ink);font-size:12px;line-height:1.52}.joe-strategy ul{margin:0;padding-left:18px}.joe-strategy li{margin:5px 0;color:var(--ink);font-size:11.5px;line-height:1.45}.joe-formula{margin-top:11px;padding:9px 10px;border-radius:12px;background:rgba(22,118,166,.07);border:1px solid rgba(22,118,166,.14);font-size:11.5px;line-height:1.45;color:var(--ink)}
-.joe-steps{display:grid;gap:8px;margin:12px 0 17px}.joe-step{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:12px;border:1px solid var(--line);border-radius:15px;background:var(--card)}.joe-step .n{width:32px;height:32px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#6c397f,#9b4e88);color:#fff;font-weight:950}.joe-step h3{margin:1px 0 4px;color:var(--ink);font-size:13.5px}.joe-step p{margin:0;color:var(--ink);font-size:12px;line-height:1.5}
-.joe-wave-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0 17px}.joe-wave{padding:12px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(135deg,rgba(92,48,122,.08),rgba(22,118,166,.04))}.joe-wave strong{display:block;color:#7a3d80;font-size:17px;margin-bottom:4px}.joe-wave span{display:block;color:var(--ink);font-size:11.5px;line-height:1.45}
-.joe-wall{display:grid;grid-template-columns:minmax(260px,.82fr) minmax(0,1.18fr);gap:15px;align-items:start;margin:13px 0 18px}.joe-wall-copy{display:grid;gap:9px}.joe-rule{padding:12px 13px;border:1px solid var(--line);border-radius:15px;background:var(--card);color:var(--ink);font-size:12px;line-height:1.5}.joe-rule strong{display:block;color:#12648d;margin-bottom:4px}.joe-rule.warn{background:linear-gradient(135deg,rgba(214,138,35,.10),rgba(255,255,255,0));border-color:rgba(214,138,35,.28)}.joe-rule.warn strong{color:#9b5c0d}
-.joe-check{counter-reset:joe;display:grid;gap:8px;margin:12px 0}.joe-check div{counter-increment:joe;position:relative;padding:11px 12px 11px 46px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);font-size:12.5px;line-height:1.48}.joe-check div:before{content:counter(joe);position:absolute;left:12px;top:11px;width:24px;height:24px;border-radius:8px;display:grid;place-items:center;background:rgba(92,48,122,.12);color:#733b7b;font-size:11px;font-weight:900}
-html[data-theme="dark"] .joe-intro-card,html[data-theme="dark"] .joe-wave{background:linear-gradient(135deg,#2c1d3b,#0b3149);border-color:#315573}html[data-theme="dark"] .joe-basic,html[data-theme="dark"] .joe-shot,html[data-theme="dark"] .joe-strategy,html[data-theme="dark"] .joe-step,html[data-theme="dark"] .joe-rule,html[data-theme="dark"] .joe-check div{background:linear-gradient(135deg,#0b2942,#0c3550);border-color:#225878}html[data-theme="dark"] .joe-basic b,html[data-theme="dark"] .joe-rule strong{color:#8ce1ff}html[data-theme="dark"] .joe-strategy.safe .tag{background:rgba(46,156,112,.16);border-color:rgba(80,205,150,.34);color:#89e6b6}html[data-theme="dark"] .joe-strategy.full .tag{background:rgba(214,138,35,.16);border-color:rgba(229,165,77,.36);color:#ffd38d}html[data-theme="dark"] .joe-formula{background:rgba(25,105,143,.15);border-color:#285e79}html[data-theme="dark"] .joe-wave strong{color:#e6a1ef}html[data-theme="dark"] .joe-rule.warn{background:linear-gradient(135deg,#4a3518,#0b3149);border-color:#785625}html[data-theme="dark"] .joe-rule.warn strong{color:#ffd38d}html[data-theme="dark"] .joe-check div:before{background:#42274c;color:#efb5f5}
-@media(max-width:760px){.joe-intro,.joe-wall{grid-template-columns:1fr}.joe-strategies{grid-template-columns:1fr}.joe-basics,.joe-wave-grid{grid-template-columns:1fr}.joe-shot{max-width:520px;margin-inline:auto}.joe-wall>.joe-shot{max-width:480px}}
-</style>
+<link rel="icon" href="../../assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../../assets/icons/icon-192.png">
+<script src="../../assets/js/theme.js?v=4299827f73"></script>
+<link rel="stylesheet" href="../../assets/css/shell.css?v=9113c68b9c">
+<link rel="stylesheet" href="../../assets/css/content.css?v=759843efec">
+<link rel="stylesheet" href="../../assets/css/pages/guides-events-crazy-joe.css?v=bb197f67ae">
+<link rel="stylesheet" href="../../assets/css/interface.css?v=3ecc262c14">
 </head>
-<body data-root="../../">
-<header class="site-top"><a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a><div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div></header>
-<main class="guide-wrap">
-<section class="guide-hero"><div class="eyebrow">🎯 СОБЫТИЯ И РЕЖИМЫ</div><h1>БЕЗУМНАЯ ДЖО</h1><p>Как распределить войска, пережить волны и получить больше очков с подкреплений</p><div class="hero-meta"><span class="pill">Подготовлено SuBL · сентябрь 2026</span></div></section>
-<div class="guide-toolbar"><a class="action-link" href="../../index.html#guides">← Все гайды</a></div>
+<body data-root="../../" data-page-kind="guide" data-page-url="guides/events/crazy-joe.html" data-search-index="../../assets/js/search-index.js?v=879a7f632a" data-catalog="../../assets/js/catalog-data.js?v=a180d1d8cb">
+<a class="skip-link" href="#mainContent">Перейти к содержимому</a>
+<header class="site-top">
+  <a class="site-brand" href="../../index.html" aria-label="Whiteout Survival — главная"><span class="site-brand-mark" aria-hidden="true">W</span><span>Whiteout<span class="brand-second"> Survival</span><small>справочник SuBL</small></span></a>
+  <div class="site-top-actions">
+    
+    <button class="site-icon-btn theme-toggle" data-theme-toggle type="button" aria-label="Переключить тему"><span class="theme-icon" aria-hidden="true">◐</span></button>
+    <button class="site-icon-btn" data-search-open type="button" aria-label="Открыть поиск"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg></button>
+  </div>
+</header>
+
+<main class="guide-wrap" id="mainContent">
+<section class="guide-hero has-game-icon"><img class="guide-title-icon" src="../../assets/icons/game/mad-joe.png" alt="" width="48" height="48"><div class="eyebrow">🎯 СОБЫТИЯ И РЕЖИМЫ</div><h1>Безумная Джо</h1><p>Как распределить войска, пережить волны и получить больше очков с подкреплений</p><div class="hero-meta"><span class="pill">Подготовлено SuBL · сентябрь 2026</span></div></section><div class="guide-actions"><a class="action-link" href="../../index.html#guides">← Все гайды</a><button class="action-link" data-favorite type="button" aria-pressed="false">☆ В избранное</button><button class="action-link" data-offline-save type="button" aria-label="Сохранить гайд офлайн">↓ Офлайн</button></div>
+<div class="guide-toolbar"></div>
 <details class="toc"><summary>Содержание</summary><div class="toc-list"><a href="#basics">Как устроена Джо</a><a href="#exchange">Две схемы обмена войсками</a><a href="#waves">Важные волны</a><a href="#troops">Какие войска отправлять</a><a href="#wall">Герои стены и подкрепления</a><a href="#check">Короткий чек-лист</a></div></details>
 <article class="article">
 <div class="joe-intro">
 <div class="joe-intro-copy">
-<aside class="callout"><strong>Основной принцип</strong><p>На Джо выгодно, чтобы ваши войска работали в городах союзников, а ваш город защищали их подкрепления. Так одни и те же войска участвуют в большем числе полезных оборон.</p></aside>
+<aside class="callout guide-summary"><strong>Основной принцип</strong><p>На Джо выгодно, чтобы ваши войска работали в городах союзников, а ваш город защищали их подкрепления. Так одни и те же войска участвуют в большем числе полезных оборон.</p><button type="button" class="text-button" data-copy-summary>Скопировать совет</button></aside>
 <div class="joe-intro-card"><strong>Перед стартом договоритесь об обмене</strong><p>Не отправляйте войска случайно. Заранее решите, кого вы укрепляете и кто укрепляет вас. Особенно это важно для схемы без страховки, где дома почти не остаётся собственных войск.</p></div>
 <div class="joe-intro-card"><strong>После двух провалов город перестаёт получать обычные атаки</strong><p>Если союзник уже дважды не отбил волну, отзывайте из него свои марши и переносите их в города, которые ещё продолжают принимать Джо.</p></div>
 </div>
-<figure class="joe-shot"><img alt="Основной экран события Безумная Джо" loading="lazy" src="../../assets/guides/crazy-joe/event-screen.webp"/><figcaption>Основной экран события. Перед запуском проверьте участников, время и договорённости по подкреплениям.</figcaption></figure>
+<figure class="joe-shot"><img alt="Основной экран события Безумная Джо" loading="lazy" src="../../assets/guides/crazy-joe/event-screen.webp" srcset="../../assets/guides/crazy-joe/event-screen-mobile.webp 720w, ../../assets/guides/crazy-joe/event-screen.webp 1080w" sizes="(max-width: 620px) calc(100vw - 64px), 800px" width="1080" height="1920" decoding="async"><figcaption>Основной экран события. Перед запуском проверьте участников, время и договорённости по подкреплениям.</figcaption></figure>
 </div>
 <section class="guide-block"><h2 id="basics">1. Как устроена Джо</h2>
 <p class="body-p">Смысл события — переживать последовательные атаки Джо и одновременно зарабатывать очки на защите союзников. Поэтому самый результативный вариант обычно не «сидеть всей армией дома», а обмениваться подкреплениями внутри альянса.</p>
@@ -79,7 +81,7 @@ html[data-theme="dark"] .joe-intro-card,html[data-theme="dark"] .joe-wave{backgr
 <aside class="callout"><strong>Это и есть причина схемы со страховкой</strong><p>Пехота и копья уходят работать в чужие города, а лучники остаются резервом дома. Если подкрепления справляются сами, лучники почти не мешают; если нет — помогают не провалить волну.</p></aside></section>
 <section class="guide-block"><h2 id="wall">5. Герои стены и подкрепления</h2>
 <div class="joe-wall">
-<figure class="joe-shot"><img alt="Герои, закреплённые в стене города" loading="lazy" src="../../assets/guides/crazy-joe/wall-heroes.webp"/><figcaption>Основных героев оставляем закреплёнными в стене. Войска можно разослать, героев стены — нет.</figcaption></figure>
+<figure class="joe-shot"><img alt="Герои, закреплённые в стене города" loading="lazy" src="../../assets/guides/crazy-joe/wall-heroes.webp" srcset="../../assets/guides/crazy-joe/wall-heroes-mobile.webp 720w, ../../assets/guides/crazy-joe/wall-heroes.webp 1080w" sizes="(max-width: 620px) calc(100vw - 64px), 800px" width="1080" height="1920" decoding="async"><figcaption>Основных героев оставляем закреплёнными в стене. Войска можно разослать, героев стены — нет.</figcaption></figure>
 <div class="joe-wall-copy">
 <div class="joe-rule"><strong>Герои стены остаются дома</strong>Даже при полном выводе войск не отправляйте основных защитных героев в подкрепления. Они должны оставаться в стене и усиливать оборону вашего города.</div>
 <div class="joe-rule"><strong>Подкрепления должны быть надёжными</strong>Если играете без страховки, заранее договоритесь с сильными союзниками. Пустой город без нормального подкрепления — не оптимизация, а потерянная волна.</div>
@@ -99,9 +101,27 @@ html[data-theme="dark"] .joe-intro-card,html[data-theme="dark"] .joe-wave{backgr
 </div></section>
 </article>
 </main>
-<a class="back-top" href="#" id="backTop">↑</a>
-<nav class="bottom-nav"><a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open=""><span class="ico">🔎</span><span>Поиск</span></button></nav>
-<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: Джо, подкрепления, волны…" type="search"/><button class="search-close" data-search-close="">×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
-<script src="../../assets/js/search-index.js?v=42"></script><script src="../../assets/js/app.js?v=28"></script>
+<a class="back-top" href="#mainContent" id="backTop" aria-label="К началу статьи">↑</a>
+<nav class="bottom-nav" aria-label="Основная навигация">
+  <a href="../../index.html" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3Z M9 20v-7h6v7"></path></svg><span>Главная</span></a>
+  <a href="../../index.html#guides" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h7l2 2 2-2h7v16h-7l-2 1-2-1H3Z M12 6v15"></path></svg><span>Гайды</span></a>
+  <a href="../../index.html#tools" ><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"></rect><path d="M8 7h8 M8 12h2 M14 12h2 M8 17h2 M14 17h2"></path></svg><span>Расчёты</span></a>
+  <a href="../../index.html#library" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v19l-6-4-6 4Z"></path></svg><span>Избранное</span></a>
+</nav>
+
+<div id="searchModal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" hidden>
+  <div class="search-box">
+    <div class="search-title-row"><h2 id="searchTitle">Найти в справочнике</h2><button class="search-close" data-search-close type="button" aria-label="Закрыть поиск">×</button></div>
+    <div class="search-head"><label class="visually-hidden" for="searchInput">Название, герой или событие</label><input id="searchInput" type="search" placeholder="Медведь, Флинт, строительство…" autocomplete="off" enterkeyhint="search"></div>
+    <p class="search-status" id="searchStatus" role="status" aria-live="polite"></p>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
+
+<script defer src="../../assets/js/search.js?v=abc984bc6b"></script>
+<script defer src="../../assets/js/library.js?v=09cf33f0c5"></script>
+<script defer src="../../assets/js/tables.js?v=4c7277d582"></script>
+<script defer src="../../assets/js/offline.js?v=b87e685010"></script>
+<script defer src="../../assets/js/app.js?v=f7850ce940"></script>
 </body>
 </html>

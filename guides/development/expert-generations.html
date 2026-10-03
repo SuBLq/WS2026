@@ -1,33 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="#0f5f8f" name="theme-color"/>
-<meta content="Эксперты Белой Мглы по поколениям: сроки появления, роли, навыки и приоритеты развития для обычного игрока." name="description"/>
-<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../../manifest.webmanifest" rel="manifest"/>
-<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
-<link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
-<link href="../../assets/css/content.css?v=30" rel="stylesheet"/><link href="../../assets/css/game-icons.css?v=1" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#126d91">
+<meta name="description" content="Эксперты Белой Мглы по поколениям: сроки появления, роли, навыки и приоритеты развития для обычного игрока.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ЭКСПЕРТЫ ПО ПОКОЛЕНИЯМ · Белая Мгла">
+<meta property="og:description" content="Эксперты Белой Мглы по поколениям: сроки появления, роли, навыки и приоритеты развития для обычного игрока.">
 <title>ЭКСПЕРТЫ ПО ПОКОЛЕНИЯМ · Белая Мгла</title>
-<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
-<style>
-.gen-timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0 18px}.gen-time{padding:12px;border:1px solid var(--line);border-radius:15px;background:var(--card)}.gen-time b{display:block;color:#12648d;font-size:13px;margin-bottom:3px}.gen-time strong{display:block;color:var(--ink);font-size:18px}.gen-time span{display:block;margin-top:3px;color:var(--muted);font-size:10.5px;line-height:1.4}
-.gen-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}.gen-head h3{margin:0;color:var(--ink);font-size:15px}.gen-head p{margin:3px 0 0;color:var(--muted);font-size:10.8px;line-height:1.4}.gen-chip{flex:0 0 auto;padding:4px 8px;border-radius:999px;background:rgba(18,100,141,.10);color:#12648d;font-size:9px;font-weight:900}
-.expert-list{display:grid;gap:9px}.expert-card{border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden}.expert-card summary{cursor:pointer;list-style:none;padding:12px 13px}.expert-card summary::-webkit-details-marker{display:none}.expert-summary{display:grid;grid-template-columns:34px 1fr auto;gap:9px;align-items:center}.expert-num{width:30px;height:30px;display:grid;place-items:center;border-radius:9px;background:rgba(18,100,141,.10);color:#12648d;font-weight:950}.expert-name{color:var(--ink);font-size:12.5px;font-weight:900}.expert-role{display:block;margin-top:2px;color:var(--muted);font-size:10.2px;line-height:1.35}.expert-priority{padding:4px 7px;border-radius:999px;border:1px solid rgba(42,151,102,.24);background:rgba(42,151,102,.10);color:#15744e;font-size:8.8px;font-weight:900;white-space:nowrap}.expert-priority.mode{border-color:rgba(223,153,28,.25);background:rgba(223,153,28,.10);color:#98620c}.expert-priority.late{border-color:rgba(194,67,61,.22);background:rgba(194,67,61,.08);color:#9d3934}.expert-card[open] summary{border-bottom:1px solid var(--line);background:rgba(18,100,141,.035)}.expert-body{padding:12px 13px}.skill-lines{display:grid;gap:6px}.skill-line{display:grid;grid-template-columns:22px 1fr;gap:7px;color:var(--ink);font-size:10.8px;line-height:1.43}.skill-line span:first-child{display:grid;place-items:center;width:20px;height:20px;border-radius:6px;background:rgba(18,100,141,.08);color:#12648d;font-size:9px;font-weight:900}.talent-line{margin-top:9px;padding:8px 9px;border-radius:10px;background:rgba(42,151,102,.06);color:var(--ink);font-size:10.8px;line-height:1.43}.talent-line b{color:#15744e}.expert-note{margin:9px 0 0;color:var(--muted);font-size:10.5px;line-height:1.45}
-html[data-theme="dark"] .gen-time,html[data-theme="dark"] .expert-card{background:linear-gradient(135deg,#0b2942,#0c3550);border-color:#225878}html[data-theme="dark"] .gen-time b,html[data-theme="dark"] .gen-chip,html[data-theme="dark"] .expert-num,html[data-theme="dark"] .skill-line span:first-child{color:#8ce1ff}html[data-theme="dark"] .expert-card[open] summary{background:rgba(140,225,255,.04);border-color:#225878}html[data-theme="dark"] .expert-priority{color:#89e6b6}html[data-theme="dark"] .expert-priority.mode{color:#ffd38d}html[data-theme="dark"] .expert-priority.late{color:#ffaaa5}html[data-theme="dark"] .talent-line{background:rgba(137,230,182,.06)}html[data-theme="dark"] .talent-line b{color:#89e6b6}
-@media(max-width:620px){.gen-timeline{grid-template-columns:1fr 1fr}.gen-time:first-child{grid-column:1/-1}.expert-summary{grid-template-columns:32px 1fr}.expert-priority{grid-column:2;justify-self:start}.gen-head{display:block}.gen-chip{display:inline-flex;margin-top:7px}}
-</style>
+<link rel="icon" href="../../assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../../assets/icons/icon-192.png">
+<script src="../../assets/js/theme.js?v=4299827f73"></script>
+<link rel="stylesheet" href="../../assets/css/shell.css?v=9113c68b9c">
+<link rel="stylesheet" href="../../assets/css/content.css?v=759843efec">
+<link rel="stylesheet" href="../../assets/css/pages/guides-development-expert-generations.css?v=6327731058">
+<link rel="stylesheet" href="../../assets/css/interface.css?v=3ecc262c14">
 </head>
-<body data-root="../../">
-<header class="site-top"><a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a><div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div></header>
-<main class="guide-wrap">
-<section class="guide-hero has-game-icon"><div class="guide-hero-icon game-icon-shell"><img alt="Иконка Экспертов" loading="lazy" src="../../assets/icons/experts-badge.webp"/></div><div class="eyebrow">🧭 ОСНОВЫ ИГРЫ · РАЗВИТИЕ</div><h1>ЭКСПЕРТЫ ПО ПОКОЛЕНИЯМ</h1><p>Когда появляются, что дают и куда направлять ресурсы</p><div class="hero-meta"><span class="pill">Подготовлено SuBL · сентябрь 2026</span></div></section>
-<div class="guide-toolbar"><a class="action-link" href="experts.html">← К гайду по Экспертам</a></div>
+<body data-root="../../" data-page-kind="guide" data-page-url="guides/development/expert-generations.html" data-search-index="../../assets/js/search-index.js?v=879a7f632a" data-catalog="../../assets/js/catalog-data.js?v=a180d1d8cb">
+<a class="skip-link" href="#mainContent">Перейти к содержимому</a>
+<header class="site-top">
+  <a class="site-brand" href="../../index.html" aria-label="Whiteout Survival — главная"><span class="site-brand-mark" aria-hidden="true">W</span><span>Whiteout<span class="brand-second"> Survival</span><small>справочник SuBL</small></span></a>
+  <div class="site-top-actions">
+    
+    <button class="site-icon-btn theme-toggle" data-theme-toggle type="button" aria-label="Переключить тему"><span class="theme-icon" aria-hidden="true">◐</span></button>
+    <button class="site-icon-btn" data-search-open type="button" aria-label="Открыть поиск"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg></button>
+  </div>
+</header>
+
+<main class="guide-wrap" id="mainContent">
+<section class="guide-hero has-game-icon"><img class="guide-title-icon" src="../../assets/icons/experts-badge.webp" alt="" width="48" height="48"><div class="guide-hero-icon game-icon-shell"><img alt="Иконка Экспертов" loading="lazy" src="../../assets/icons/experts-badge.webp" width="256" height="256" decoding="async"></div><div class="eyebrow">🧭 ОСНОВЫ ИГРЫ · РАЗВИТИЕ</div><h1>Эксперты по поколениям</h1><p>Когда появляются, что дают и куда направлять ресурсы</p><div class="hero-meta"><span class="pill">Подготовлено SuBL · сентябрь 2026</span></div></section><div class="guide-actions"><a class="action-link" href="../../index.html#guides">← Все гайды</a><button class="action-link" data-favorite type="button" aria-pressed="false">☆ В избранное</button><button class="action-link" data-offline-save type="button" aria-label="Сохранить гайд офлайн">↓ Офлайн</button></div><aside class="callout guide-summary"><strong>Как использовать справочник</strong><p>Не воспринимаем поколение как команду «качать всех». Смотрим, какой Эксперт усиливает рост аккаунта целиком, берём разумный порог и сохраняем ресурсы для следующей полезной волны.</p><button type="button" class="text-button" data-copy-summary>Скопировать совет</button></aside>
+<div class="guide-toolbar"></div>
 <details class="toc"><summary>Содержание</summary><div class="toc-list"><a href="#timing">Когда выходят поколения</a><a href="#g1">Поколение 1</a><a href="#g2">Поколение 2</a><a href="#g3">Поколение 3 и дальше</a></div></details>
 <article class="article">
-<aside class="callout"><strong>Как использовать справочник</strong><p>Не воспринимаем поколение как команду «качать всех». Смотрим, какой Эксперт усиливает рост аккаунта целиком, берём разумный порог и сохраняем ресурсы для следующей полезной волны.</p></aside><p class="body-p">Ниже собраны роли и ключевые эффекты Экспертов. Данные по первым поколениям сверены по доступным игровым экранам и актуальным community-справочникам; если у разработчиков будет очередной ребаланс, окончательным источником всё равно остаётся ваш клиент.</p>
+<p class="body-p">Ниже собраны роли и ключевые эффекты Экспертов. Данные по первым поколениям сверены по доступным игровым экранам и актуальным community-справочникам; если у разработчиков будет очередной ребаланс, окончательным источником всё равно остаётся ваш клиент.</p>
 <section class="guide-block"><h2 id="timing">Когда выходят поколения</h2>
 <p class="body-p">Первые поколения Экспертов на типичном таймлайне идут примерно с шагом <b>45 дней</b>. Фактическая дата может сдвигаться вместе с прогрессом государства и доступностью обновлений.</p>
 <div class="gen-timeline"><div class="gen-time"><b>Поколение 1</b><strong>≈ 150-й день</strong><span>Агнес, Сирилла, Хольгер, Ромул</span></div><div class="gen-time"><b>Поколение 2</b><strong>≈ 195-й день</strong><span>Бальдур, Фабиан, Валерия, Ронне</span></div><div class="gen-time"><b>Поколение 3</b><strong>≈ 240-й день</strong><span>Кэти; дальнейшие Эксперты открываются по мере доступности для государства</span></div></div>
@@ -54,5 +61,27 @@ html[data-theme="dark"] .gen-time,html[data-theme="dark"] .expert-card{backgroun
 </section>
 </article>
 </main>
-<script defer src="../../assets/js/search-index.js?v=45"></script><script defer src="../../assets/js/app.js?v=28"></script>
-</body></html>
+<a class="back-top" href="#mainContent" id="backTop" aria-label="К началу статьи">↑</a>
+<nav class="bottom-nav" aria-label="Основная навигация">
+  <a href="../../index.html" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3Z M9 20v-7h6v7"></path></svg><span>Главная</span></a>
+  <a href="../../index.html#guides" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h7l2 2 2-2h7v16h-7l-2 1-2-1H3Z M12 6v15"></path></svg><span>Гайды</span></a>
+  <a href="../../index.html#tools" ><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"></rect><path d="M8 7h8 M8 12h2 M14 12h2 M8 17h2 M14 17h2"></path></svg><span>Расчёты</span></a>
+  <a href="../../index.html#library" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v19l-6-4-6 4Z"></path></svg><span>Избранное</span></a>
+</nav>
+
+<div id="searchModal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" hidden>
+  <div class="search-box">
+    <div class="search-title-row"><h2 id="searchTitle">Найти в справочнике</h2><button class="search-close" data-search-close type="button" aria-label="Закрыть поиск">×</button></div>
+    <div class="search-head"><label class="visually-hidden" for="searchInput">Название, герой или событие</label><input id="searchInput" type="search" placeholder="Медведь, Флинт, строительство…" autocomplete="off" enterkeyhint="search"></div>
+    <p class="search-status" id="searchStatus" role="status" aria-live="polite"></p>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
+
+<script defer src="../../assets/js/search.js?v=abc984bc6b"></script>
+<script defer src="../../assets/js/library.js?v=09cf33f0c5"></script>
+<script defer src="../../assets/js/tables.js?v=4c7277d582"></script>
+<script defer src="../../assets/js/offline.js?v=b87e685010"></script>
+<script defer src="../../assets/js/app.js?v=f7850ce940"></script>
+</body>
+</html>

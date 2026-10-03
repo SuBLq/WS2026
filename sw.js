@@ -1,32 +1,71 @@
-const CACHE='wos-guide-site-v79';
-const ASSETS=["./assets/js/canyon-gallery.js?v=1", "./assets/guides/canyon/01-overview.webp", "./assets/guides/canyon/02-citadel.webp", "./assets/guides/canyon/03-forts.webp", "./assets/guides/canyon/04-airports.webp","./","./index.html","./manifest.webmanifest","./assets/css/shell.css?v=24","./assets/css/content.css?v=30","./assets/js/search-index.js?v=49","./assets/js/app.js?v=28","./assets/css/game-icons.css?v=5","./assets/js/game-icons.js?v=5","./assets/icons/game/snowbusters.png","./assets/icons/game/bear-hunt.png","./assets/icons/game/rally.png","./assets/icons/game/fort.png","./assets/icons/favicon.svg","./assets/icons/icon-192.png","./assets/icons/icon-512.png","./tools/construction/index.html","./guides/events/ice-mine.html","./guides/events/snowbusters.html","./guides/events/crazy-joe.html","./guides/events/wandering-theater.html","./guides/events/foundry.html","./guides/events/canyon-clash.html","./guides/combat/combat-system.html","./guides/combat/heroes-gear.html","./guides/combat/heroes.html","./guides/combat/hero-gear.html","./assets/guides/heroes/natalia-expedition.webp","./assets/guides/heroes/flint-expedition.webp","./assets/guides/heroes/alonso-four-stars.webp","./assets/guides/heroes/alonso-skills-5.webp","./assets/guides/heroes/philly-star-upgrade.webp","./assets/guides/heroes/philly-summary.webp","./assets/guides/heroes/philly-skills.webp","./guides/development/account-development.html","./guides/development/shops-currencies.html","./guides/development/experts.html","./guides/development/expert-generations.html","./assets/guides/experts/trek-choice.webp","./assets/guides/experts/trek-station.webp","./assets/guides/experts/agnes-main.webp","./assets/guides/experts/agnes-gifts.webp","./assets/guides/experts/agnes-skill-upgrade.webp","./assets/guides/experts/agnes-skill-locked.webp","./assets/guides/experts/agnes-overview.webp","./assets/guides/experts/agnes-efficient-recon.webp","./assets/guides/experts/agnes-rationalization.webp","./assets/guides/experts/agnes-project-management.webp","./assets/guides/experts/agnes-secret-knowledge.webp","./assets/guides/experts/agnes-earthbreaker.webp","./assets/guides/experts/seeker-chest-top.webp","./assets/guides/experts/seeker-chest-bottom.webp","./guides/svs/first-svs.html","./guides/buildings/furnace.html","./guides/combat/hero-generations.html","./guides/buildings/buildings.html","./assets/guides/foundry/score.webp","./assets/guides/foundry/foundry.webp","./assets/guides/foundry/prototype.webp","./assets/guides/foundry/repair.webp","./assets/guides/foundry/warehouse.webp","./assets/guides/foundry/boiler.webp","./assets/guides/foundry/transit.webp","./assets/guides/foundry/merc.webp","./assets/guides/foundry/workshop.webp","./assets/guides/foundry/merc-mail.webp","./tools/research/index.html","./tools/research/research.css?v=24","./tools/research/research-data.js?v=24","./tools/research/research-app.js?v=25","./guides/events/bear-hunt.html","./assets/guides/bear/jessie.webp","./assets/guides/bear/jasser.webp","./assets/guides/bear/seo-yoon.webp","./guides/combat/pvp-objects.html","./guides/combat/war-rules.html","./assets/guides/war-rules/bigger-fish.webp","./assets/guides/pvp/attack-jessie.webp","./assets/guides/pvp/defense-sergey.webp","./assets/guides/pvp/defense-patrick.webp","./assets/guides/pvp/skill-bahiti.png","./assets/guides/pvp/refill-minimarches-collage.webp","./assets/guides/snowbusters/rockets-purchase.webp","./assets/guides/snowbusters/superplow-area13.webp","./assets/guides/snowbusters/coal-to-fuel.webp","./assets/guides/snowbusters/area14-start.webp","./assets/guides/snowbusters/gear-coat-boots.webp","./guides/events/alliance-mobilization.html","./assets/guides/mobilization/attempts-150.webp","./assets/guides/mobilization/personal-200-120.webp","./assets/guides/mobilization/personal-cooldowns.webp","./assets/guides/mobilization/alliance-monuments.webp","./assets/guides/hero-gear/flint-balanced.webp","./assets/guides/hero-gear/infantry-goggles.webp","./assets/guides/hero-gear/infantry-boots.webp","./assets/guides/hero-gear/infantry-gloves.webp","./assets/guides/hero-gear/infantry-belt.webp","./assets/guides/hero-gear/marksman-belt.webp","./assets/guides/hero-gear/marksman-goggles.webp","./assets/guides/hero-gear/marksman-boots.webp","./assets/guides/hero-gear/marksman-gloves.webp","./assets/guides/hero-gear/widget-flint-info.webp","./assets/guides/hero-gear/widget-flint-upgrade.webp","./assets/guides/hero-gear/widget-alonso-info.webp","./assets/guides/combat-system/march-setup.webp","./assets/guides/combat-system/report-overview.webp","./assets/guides/combat-system/report-force.webp","./assets/guides/combat-system/report-stats.webp","./assets/guides/combat-system/report-special.webp","./assets/guides/combat-system/report-skills.webp","./assets/guides/combat-system/report-losses.webp","./assets/guides/combat-system/report-gear-heroes.webp","./assets/guides/combat-system/bad-stats-collage.webp","./assets/guides/svs/matchmaking.webp","./assets/guides/svs/opponent-found.webp","./assets/guides/svs/prep-rewards-overview.webp","./assets/guides/svs/battle-rewards-overview.webp","./assets/guides/svs/day-ranking-example.webp","./assets/guides/svs/philly-chest.webp","./assets/guides/svs/conquest-sword.webp","./assets/guides/svs/battle-phase-tab.png","./assets/guides/svs/battle-rewards-tab.png","./assets/guides/svs/enemy-castle-border.png","./assets/guides/svs/enemy-castle-area.png","./assets/guides/svs/troop-revival-main.png","./assets/guides/svs/troop-revival-limit.png","./assets/guides/svs/troop-revival-confirm.png","./guides/combat/arena-exploration.html","./assets/guides/arena/formation.webp","./assets/guides/arena/flint-skills.webp","./assets/guides/arena/flint-stats.webp","./assets/guides/arena/exploration-stage.webp","./assets/guides/arena/arena-shop.webp","./assets/guides/arena/arena-daily.webp","./assets/guides/arena/arena-season.webp","./guides/events/penguin-party.html","./assets/icons/penguin-party-icon.webp","./assets/guides/penguin-party/daily-missions-done.webp","./assets/guides/penguin-party/daily-missions.webp","./assets/guides/penguin-party/ice-blast-daily.webp","./assets/guides/penguin-party/ice-blast-rewards.webp","./assets/guides/penguin-party/lost-loot-chest-rewards.webp","./assets/guides/penguin-party/lost-loot-island-building.webp","./assets/guides/penguin-party/lost-loot-overview.webp","./assets/guides/penguin-party/lost-loot-stage-preview-extended.webp","./assets/guides/penguin-party/lost-loot-stage-preview.webp","./assets/guides/penguin-party/lost-loot-stage3.webp","./assets/guides/penguin-party/lost-loot-stage7.webp","./assets/guides/penguin-party/park-overview.webp","./assets/guides/penguin-party/park-probabilities.webp","./assets/guides/penguin-party/party-pro.webp","./assets/guides/penguin-party/ring-left.webp","./assets/guides/penguin-party/ring-right.webp","./assets/guides/penguin-party/shop.webp","./assets/guides/penguin-party/symphony.webp","./guides/events/winter-siege.html","./assets/icons/winter-siege-icon.webp","./assets/guides/winter-siege/overview.webp","./assets/guides/winter-siege/command.webp","./assets/guides/winter-siege/garrison.webp"];
+'use strict';
+const VERSION = '83832c838718';
+const SHELL_CACHE = 'wos-guide-shell-' + VERSION;
+const RUNTIME_CACHE = 'wos-guide-runtime-' + VERSION;
+const SAVED_CACHE = 'wos-guide-saved-v1';
+const SHELL = ["./", "./index.html", "./manifest.webmanifest", "./assets/icons/favicon.svg", "./assets/icons/icon-192.png", "./assets/icons/icon-512.png", "./assets/css/shell.css?v=9113c68b9c", "./assets/css/content.css?v=759843efec", "./assets/css/interface.css?v=3ecc262c14", "./assets/js/theme.js?v=4299827f73", "./assets/js/search.js?v=abc984bc6b", "./assets/js/library.js?v=09cf33f0c5", "./assets/js/tables.js?v=4c7277d582", "./assets/js/offline.js?v=b87e685010", "./assets/js/app.js?v=f7850ce940", "./assets/js/catalog-data.js?v=a180d1d8cb"];
+const scope = new URL('./', self.location.href);
+const scoped = url => url.origin === scope.origin && url.pathname.startsWith(scope.pathname);
 
-self.addEventListener('install',event=>{
-  self.skipWaiting();
-  event.waitUntil(caches.open(CACHE).then(cache=>Promise.allSettled(ASSETS.map(url=>cache.add(url)))));
+self.addEventListener('install', event => {
+  // Do not replace an active page until the user chooses to update.
+  event.waitUntil(caches.open(SHELL_CACHE).then(cache => cache.addAll(SHELL)));
 });
-self.addEventListener('activate',event=>{
-  event.waitUntil((async()=>{
-    const keys=await caches.keys();
-    await Promise.all(keys.filter(key=>key.startsWith('wos-guide-site-')&&key!==CACHE).map(key=>caches.delete(key)));
+self.addEventListener('activate', event => {
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys.filter(key => (key.startsWith('wos-guide-site-') || key.startsWith('wos-guide-shell-') || key.startsWith('wos-guide-runtime-')) && ![SHELL_CACHE, RUNTIME_CACHE].includes(key)).map(key => caches.delete(key)));
     await self.clients.claim();
   })());
 });
-self.addEventListener('fetch',event=>{
-  const req=event.request;
-  if(req.method!=='GET')return;
-  const url=new URL(req.url);
-  if(url.origin!==self.location.origin)return;
-  event.respondWith((async()=>{
-    try{
-      const fresh=await fetch(req,{cache:'no-store'});
-      if(fresh&&fresh.ok){const cache=await caches.open(CACHE);cache.put(req,fresh.clone()).catch(()=>{});}
-      return fresh;
-    }catch(err){
-      const cached=await caches.match(req,{ignoreSearch:false})||await caches.match(req,{ignoreSearch:true});
-      if(cached)return cached;
-      if(req.mode==='navigate')return (await caches.match('./index.html'))||Response.error();
-      throw err;
-    }
+async function cached(request) {
+  for (const name of [SHELL_CACHE, RUNTIME_CACHE, SAVED_CACHE]) {
+    const cache = await caches.open(name);
+    const match = await cache.match(request) || await cache.match(request, { ignoreSearch: true });
+    if (match) return match;
+  }
+}
+async function store(request, response) {
+  if (!response.ok || response.type === 'opaque') return;
+  const cache = await caches.open(RUNTIME_CACHE); await cache.put(request, response.clone());
+  const keys = await cache.keys(); await Promise.all(keys.slice(0, Math.max(0, keys.length - 100)).map(key => cache.delete(key)));
+}
+async function fromNetwork(request) { const response = await fetch(request); await store(request, response).catch(() => {}); return response; }
+async function navigation(request) {
+  const controller = new AbortController(); const timer = setTimeout(() => controller.abort(), 4000);
+  try { const response = await fetch(request, { signal: controller.signal }); await store(request, response).catch(() => {}); return response; }
+  catch (_) {
+    const response = await cached(request); if (response) return response;
+    return new Response('<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Нет соединения</title><body style="font:16px/1.6 system-ui;padding:24px;background:#edf4f7;color:#18384b"><h1>Этот гайд ещё не сохранён</h1><p>Подключитесь к сети или откройте материал, который посещали раньше.</p><a href="' + scope.pathname + 'index.html#library">Вернуться в справочник</a></body></html>', { status: 503, headers: { 'Content-Type': 'text/html; charset=utf-8' } });
+  } finally { clearTimeout(timer); }
+}
+self.addEventListener('fetch', event => {
+  const request = event.request, url = new URL(request.url);
+  if (request.method !== 'GET' || !scoped(url)) return;
+  if (request.mode === 'navigate') { event.respondWith(navigation(request)); return; }
+  // Hashed scripts/styles are immutable. Never substitute a different version online.
+  event.respondWith((async () => {
+    const cache = await caches.open(RUNTIME_CACHE), shell = await caches.open(SHELL_CACHE);
+    const exact = await shell.match(request) || await cache.match(request);
+    if (exact) return exact;
+    const saved = await (await caches.open(SAVED_CACHE)).match(request);
+    if (saved) return saved;
+    try { return await fromNetwork(request); }
+    catch (_) { return await cached(request) || Response.error(); }
+  })());
+});
+self.addEventListener('message', event => {
+  if (event.data?.type === 'ACTIVATE') { self.skipWaiting(); return; }
+  if (event.data?.type !== 'SAVE_PAGE') return;
+  event.waitUntil((async () => {
+    try {
+      const urls = [...new Set([event.data.url, ...(event.data.resources || [])])].map(value => new URL(value, scope)).filter(scoped);
+      if (!urls.length || urls.length > 250) throw new Error('resources');
+      const cache = await caches.open(SAVED_CACHE);
+      // Fetch before committing: a failed download must never be labelled complete.
+      const responses = await Promise.all(urls.map(async url => { const response = await fetch(url.href); if (!response.ok) throw new Error('network'); return [url.href, response]; }));
+      await Promise.all(responses.map(([url, response]) => cache.put(url, response)));
+      event.ports[0]?.postMessage({ ok: true });
+    } catch (error) { event.ports[0]?.postMessage({ ok: false, error: String(error) }); }
   })());
 });

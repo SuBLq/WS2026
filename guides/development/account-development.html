@@ -1,36 +1,37 @@
-﻿<!DOCTYPE html>
-
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="#0f5f8f" name="theme-color"/>
-<meta content="Развитие аккаунта в Whiteout Survival: что копить между СвС, что тратить на стадии подготовки, как балансировать системы и куда направлять дефицитные ресурсы." name="description"/>
-<link href="../../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../../manifest.webmanifest" rel="manifest"/>
-<link href="../../assets/icons/icon-192.png" rel="apple-touch-icon"/>
-<link href="../../assets/css/shell.css?v=24" rel="stylesheet"/>
-<link href="../../assets/css/content.css?v=30" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#126d91">
+<meta name="description" content="Развитие аккаунта в Whiteout Survival: что копить между СвС, что тратить на стадии подготовки, как балансировать системы и куда направлять дефицитные ресурсы.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="РАЗВИТИЕ АККАУНТА · Whiteout Survival">
+<meta property="og:description" content="Развитие аккаунта в Whiteout Survival: что копить между СвС, что тратить на стадии подготовки, как балансировать системы и куда направлять дефицитные ресурсы.">
 <title>РАЗВИТИЕ АККАУНТА · Whiteout Survival</title>
-<script>(()=>{try{const q=new URLSearchParams(location.search).get('theme');const s=localStorage.getItem('wos-theme');const t=q||(s==='dark'||s==='light'?s:(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));document.documentElement.dataset.theme=t}catch(e){}})();</script>
-<style>
-.account-core{margin:14px 0 18px;padding:15px;border:1px solid rgba(32,143,188,.30);border-radius:19px;background:linear-gradient(135deg,rgba(32,143,188,.13),rgba(70,115,180,.05));box-shadow:0 7px 22px rgba(28,91,120,.06)}.account-core>strong{display:block;margin-bottom:10px;color:#11688f;font-size:15px}.cycle-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.cycle-step{position:relative;padding:13px 12px;border:1px solid var(--line);border-radius:15px;background:var(--card)}.cycle-step .num{display:inline-flex;margin-bottom:7px;padding:4px 8px;border-radius:999px;background:rgba(32,143,188,.11);border:1px solid rgba(32,143,188,.24);color:#1476a0;font-size:9.5px;font-weight:900}.cycle-step b{display:block;margin-bottom:4px;color:var(--ink);font-size:13px}.cycle-step p{margin:0;color:var(--ink);font-size:11.5px;line-height:1.47}.account-core-note{margin-top:10px;padding-top:10px;border-top:1px solid rgba(32,143,188,.18);color:var(--ink);font-size:12px;line-height:1.5}.account-core-note b{color:#12648d}
-.svs-lead{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(270px,.85fr);gap:12px;margin:13px 0 18px}.svs-main{padding:15px;border:1px solid rgba(46,156,112,.27);border-radius:18px;background:linear-gradient(135deg,rgba(46,156,112,.11),rgba(32,143,188,.04))}.svs-main .tag{display:inline-flex;margin-bottom:8px;padding:4px 8px;border-radius:999px;background:rgba(46,156,112,.12);border:1px solid rgba(46,156,112,.26);color:#16754e;font-size:9.5px;font-weight:900}.svs-main h3{margin:0 0 6px;color:var(--ink);font-size:16px}.svs-main p{margin:0;color:var(--ink);font-size:12.5px;line-height:1.56}.svs-side{display:grid;gap:9px}.svs-side-card{padding:12px 13px;border:1px solid var(--line);border-radius:15px;background:var(--card)}.svs-side-card b{display:block;color:#12648d;font-size:12.5px;margin-bottom:4px}.svs-side-card p{margin:0;color:var(--ink);font-size:11.5px;line-height:1.47}
-.spend-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 18px}.spend-card{padding:14px;border:1px solid var(--line);border-radius:17px;background:var(--card)}.spend-card h3{margin:0 0 8px;color:var(--ink);font-size:14px}.spend-card ul{margin:0;padding-left:18px;color:var(--ink);font-size:11.7px;line-height:1.52}.spend-card li+li{margin-top:5px}.spend-card.save{border-color:rgba(32,143,188,.26);background:linear-gradient(135deg,rgba(32,143,188,.08),rgba(255,255,255,0))}.spend-card.now{border-color:rgba(214,138,35,.26);background:linear-gradient(135deg,rgba(214,138,35,.08),rgba(255,255,255,0))}
-.account-note{margin:12px 0;padding:13px 14px;border:1px solid var(--line);border-radius:16px;background:var(--card);color:var(--ink);font-size:12px;line-height:1.5}.account-note strong{display:block;margin-bottom:4px;color:#12648d}.account-note.good{border-color:rgba(46,156,112,.28);background:linear-gradient(135deg,rgba(46,156,112,.10),rgba(255,255,255,0))}.account-note.good strong{color:#16754e}.account-note.warn{border-color:rgba(214,138,35,.28);background:linear-gradient(135deg,rgba(214,138,35,.10),rgba(255,255,255,0))}.account-note.warn strong{color:#9b5c0d}
-.balance-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0 18px}.balance-card{padding:14px;border:1px solid var(--line);border-radius:17px;background:var(--card)}.balance-card .ico{display:grid;place-items:center;width:34px;height:34px;margin-bottom:8px;border-radius:11px;background:rgba(32,143,188,.11);font-size:18px}.balance-card b{display:block;margin-bottom:5px;color:var(--ink);font-size:12.5px}.balance-card p{margin:0;color:var(--ink);font-size:11.5px;line-height:1.47}.balance-arrow{margin:5px 0 0;color:#12648d;font-size:11px;font-weight:900}
-.resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 18px}.resource-card{padding:14px 15px;border:1px solid var(--line);border-radius:17px;background:var(--card)}.resource-head{display:flex;gap:9px;align-items:center;margin-bottom:7px}.resource-head .ico{display:grid;place-items:center;flex:0 0 34px;width:34px;height:34px;border-radius:11px;background:rgba(32,143,188,.11);font-size:17px}.resource-head h3{margin:0;color:var(--ink);font-size:13.5px}.resource-card p{margin:0;color:var(--ink);font-size:11.7px;line-height:1.5}.resource-card .mini{display:block;margin-top:7px;padding-top:7px;border-top:1px solid var(--line);color:var(--muted);font-size:10.7px;line-height:1.43}
-.money-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 18px}.money-card{padding:14px;border:1px solid var(--line);border-radius:17px;background:var(--card)}.money-card b{display:block;color:#12648d;margin-bottom:5px;font-size:12.5px}.money-card p{margin:0;color:var(--ink);font-size:11.6px;line-height:1.5}
-.checklist{counter-reset:account;display:grid;gap:8px;margin:12px 0 17px}.check{counter-increment:account;position:relative;padding:11px 12px 11px 46px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);font-size:12.2px;line-height:1.48}.check:before{content:counter(account);position:absolute;left:12px;top:11px;width:24px;height:24px;border-radius:8px;display:grid;place-items:center;background:rgba(32,143,188,.12);color:#1476a0;font-size:11px;font-weight:900}
-html[data-theme="dark"] .account-core,html[data-theme="dark"] .cycle-step,html[data-theme="dark"] .svs-side-card,html[data-theme="dark"] .spend-card,html[data-theme="dark"] .account-note,html[data-theme="dark"] .balance-card,html[data-theme="dark"] .resource-card,html[data-theme="dark"] .money-card,html[data-theme="dark"] .check{background:linear-gradient(135deg,#0b2942,#0c3550);border-color:#225878}html[data-theme="dark"] .account-core{background:linear-gradient(135deg,#0b3149,#132b49)}html[data-theme="dark"] .account-core>strong,html[data-theme="dark"] .account-core-note b,html[data-theme="dark"] .svs-side-card b,html[data-theme="dark"] .account-note strong,html[data-theme="dark"] .balance-arrow,html[data-theme="dark"] .money-card b{color:#8ce1ff}html[data-theme="dark"] .svs-main{background:linear-gradient(135deg,#123f32,#0b3149);border-color:#266a51}html[data-theme="dark"] .svs-main .tag,html[data-theme="dark"] .account-note.good strong{color:#89e6b6}html[data-theme="dark"] .svs-main .tag{background:rgba(46,156,112,.16);border-color:#266a51}html[data-theme="dark"] .spend-card.save{background:linear-gradient(135deg,#0b3149,#0c3550)}html[data-theme="dark"] .spend-card.now,html[data-theme="dark"] .account-note.warn{background:linear-gradient(135deg,#4a3518,#0b3149);border-color:#785625}html[data-theme="dark"] .account-note.warn strong{color:#ffd38d}html[data-theme="dark"] .account-note.good{background:linear-gradient(135deg,#123f32,#0b3149);border-color:#266a51}html[data-theme="dark"] .cycle-step .num{background:#123e57;border-color:#225878;color:#9be5ff}html[data-theme="dark"] .check:before{background:#123e57;color:#9be5ff}
-@media(max-width:760px){.cycle-grid,.balance-grid{grid-template-columns:1fr}.svs-lead,.spend-grid,.resource-grid,.money-grid{grid-template-columns:1fr}}
-</style>
+<link rel="icon" href="../../assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../../assets/icons/icon-192.png">
+<script src="../../assets/js/theme.js?v=4299827f73"></script>
+<link rel="stylesheet" href="../../assets/css/shell.css?v=9113c68b9c">
+<link rel="stylesheet" href="../../assets/css/content.css?v=759843efec">
+<link rel="stylesheet" href="../../assets/css/pages/guides-development-account-development.css?v=a4e47057de">
+<link rel="stylesheet" href="../../assets/css/interface.css?v=3ecc262c14">
 </head>
-<body data-root="../../">
-<header class="site-top"><a class="site-brand" href="../../index.html"><span class="site-brand-mark">W</span><span>Whiteout Survival</span></a><div class="site-top-actions"><button class="site-icon-btn" data-search-open="">🔍 Поиск</button></div></header>
-<main class="guide-wrap">
-<section class="guide-hero"><div class="eyebrow">🧭 ОСНОВЫ ИГРЫ · ПРОЧЕЕ</div><h1>РАЗВИТИЕ АККАУНТА</h1><p>Как копить ресурсы месяц и тратить их там, где они дают больше всего пользы</p><div class="hero-meta"><span class="pill">Подготовлено SuBL · сентябрь 2026</span></div></section>
-<div class="guide-toolbar"><a class="action-link" href="../../index.html#guides">← Все гайды</a></div>
+<body data-root="../../" data-page-kind="guide" data-page-url="guides/development/account-development.html" data-search-index="../../assets/js/search-index.js?v=879a7f632a" data-catalog="../../assets/js/catalog-data.js?v=a180d1d8cb">
+<a class="skip-link" href="#mainContent">Перейти к содержимому</a>
+<header class="site-top">
+  <a class="site-brand" href="../../index.html" aria-label="Whiteout Survival — главная"><span class="site-brand-mark" aria-hidden="true">W</span><span>Whiteout<span class="brand-second"> Survival</span><small>справочник SuBL</small></span></a>
+  <div class="site-top-actions">
+    
+    <button class="site-icon-btn theme-toggle" data-theme-toggle type="button" aria-label="Переключить тему"><span class="theme-icon" aria-hidden="true">◐</span></button>
+    <button class="site-icon-btn" data-search-open type="button" aria-label="Открыть поиск"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg></button>
+  </div>
+</header>
+
+<main class="guide-wrap" id="mainContent">
+<section class="guide-hero has-game-icon"><img class="guide-title-icon" src="../../assets/icons/game/furnace.png" alt="" width="48" height="48"><div class="eyebrow">🧭 ОСНОВЫ ИГРЫ · ПРОЧЕЕ</div><h1>Развитие аккаунта</h1><p>Как копить ресурсы месяц и тратить их там, где они дают больше всего пользы</p><div class="hero-meta"><span class="pill">Подготовлено SuBL · сентябрь 2026</span></div></section><div class="guide-actions"><a class="action-link" href="../../index.html#guides">← Все гайды</a><button class="action-link" data-favorite type="button" aria-pressed="false">☆ В избранное</button><button class="action-link" data-offline-save type="button" aria-label="Сохранить гайд офлайн">↓ Офлайн</button></div>
+<div class="guide-toolbar"></div>
 <details class="toc"><summary>Содержание</summary><div class="toc-list"><a href="#cycle">Главное правило месяца</a><a href="#svs">СвС — основное окно траты</a><a href="#outside">Что тратим вне СвС</a><a href="#balance">Баланс систем</a><a href="#resources">Куда идут основные ресурсы</a><a href="#money">Донат и вторичные ресурсы</a><a href="#check">Перед большой тратой</a></div></details>
 <article class="article">
 <div class="account-core" id="cycle">
@@ -95,13 +96,31 @@ html[data-theme="dark"] .account-core,html[data-theme="dark"] .cycle-step,html[d
 <div class="check"><b>Я закрываю законченную цель?</b> Герой до рабочего звёздного уровня, здание до нужного порога, конкретная технология — лучше, чем пять незаконченных проектов.</div>
 <div class="check"><b>После траты останется резерв?</b> Не обязаны обнулять рюкзак даже в СвС. Следующий цикл начинается сразу после текущего.</div>
 </div>
-<aside class="callout"><strong>Итог</strong><p>Развитие аккаунта — это не постоянное нажатие всех доступных улучшений. Между СвС копим, на Подготовке СвС реализуем значительную часть заранее запланированного прогресса, а внутри самого аккаунта постоянно переносим фокус туда, где следующий сильный шаг стоит дешевле.</p></aside></section>
+<aside class="callout guide-summary"><strong>Итог</strong><p>Развитие аккаунта — это не постоянное нажатие всех доступных улучшений. Между СвС копим, на Подготовке СвС реализуем значительную часть заранее запланированного прогресса, а внутри самого аккаунта постоянно переносим фокус туда, где следующий сильный шаг стоит дешевле.</p><button type="button" class="text-button" data-copy-summary>Скопировать совет</button></aside></section>
 </article>
 <section class="related"><h2>Связанные материалы</h2><div class="related-grid"><a href="../svs/first-svs.html">⚔️ ПЕРВОЕ СвС</a><a href="lucky-wheel.html">🎡 КОЛЕСО ФОРТУНЫ</a><a href="../combat/heroes.html">🧬 ГЕРОИ</a><a href="../combat/hero-gear.html">🛡️ СНАРЯЖЕНИЕ ГЕРОЕВ</a><a href="../combat/hero-generations.html">🧬 ГЕРОИ ПО ПОКОЛЕНИЯМ</a><a href="../buildings/furnace.html">🔥 ТОПКА</a><a href="shops-currencies.html">🛒 МАГАЗИНЫ И ВАЛЮТЫ</a></div></section>
 </main>
-<a class="back-top" href="#" id="backTop">↑</a>
-<nav class="bottom-nav"><a href="../../index.html"><span class="ico">🏠</span><span>Главная</span></a><a href="../../index.html#guides"><span class="ico">📚</span><span>Гайды</span></a><a href="../../index.html#tools"><span class="ico">🧮</span><span>Инструменты</span></a><button data-search-open=""><span class="ico">🔎</span><span>Поиск</span></button></nav>
-<div class="search-modal" id="searchModal"><div class="search-box"><div class="search-head"><input autocomplete="off" id="searchInput" placeholder="Поиск: СвС, гемы, ускорения, снаряжение…" type="search"/><button class="search-close" data-search-close="">×</button></div><div class="search-results" id="searchResults"><div class="search-empty">Начните вводить запрос.</div></div></div></div>
-<script src="../../assets/js/search-index.js?v=42"></script><script src="../../assets/js/app.js?v=28"></script>
+<a class="back-top" href="#mainContent" id="backTop" aria-label="К началу статьи">↑</a>
+<nav class="bottom-nav" aria-label="Основная навигация">
+  <a href="../../index.html" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3Z M9 20v-7h6v7"></path></svg><span>Главная</span></a>
+  <a href="../../index.html#guides" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h7l2 2 2-2h7v16h-7l-2 1-2-1H3Z M12 6v15"></path></svg><span>Гайды</span></a>
+  <a href="../../index.html#tools" ><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"></rect><path d="M8 7h8 M8 12h2 M14 12h2 M8 17h2 M14 17h2"></path></svg><span>Расчёты</span></a>
+  <a href="../../index.html#library" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v19l-6-4-6 4Z"></path></svg><span>Избранное</span></a>
+</nav>
+
+<div id="searchModal" class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchTitle" hidden>
+  <div class="search-box">
+    <div class="search-title-row"><h2 id="searchTitle">Найти в справочнике</h2><button class="search-close" data-search-close type="button" aria-label="Закрыть поиск">×</button></div>
+    <div class="search-head"><label class="visually-hidden" for="searchInput">Название, герой или событие</label><input id="searchInput" type="search" placeholder="Медведь, Флинт, строительство…" autocomplete="off" enterkeyhint="search"></div>
+    <p class="search-status" id="searchStatus" role="status" aria-live="polite"></p>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
+
+<script defer src="../../assets/js/search.js?v=abc984bc6b"></script>
+<script defer src="../../assets/js/library.js?v=09cf33f0c5"></script>
+<script defer src="../../assets/js/tables.js?v=4c7277d582"></script>
+<script defer src="../../assets/js/offline.js?v=b87e685010"></script>
+<script defer src="../../assets/js/app.js?v=f7850ce940"></script>
 </body>
 </html>
