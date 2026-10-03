@@ -1,0 +1,408 @@
+[
+  {
+    "url": "guides/buildings/buildings.html",
+    "title": "ЗДАНИЯ: СТОИМОСТЬ И ВРЕМЯ · Whiteout Survival",
+    "name": "ЗДАНИЯ: СТОИМОСТЬ И ВРЕМЯ",
+    "description": "ЗДАНИЯ: СТОИМОСТЬ И ВРЕМЯ — мобильный справочник Whiteout Survival",
+    "category": "Строительство",
+    "icon": "🏗️",
+    "kind": "guide",
+    "bodyAttrs": {
+      "data-guide-kind": "buildings"
+    },
+    "css": [],
+    "js": []
+  },
+  {
+    "url": "guides/buildings/furnace.html",
+    "title": "ТОПКА: ТРЕБОВАНИЯ И СТОИМОСТЬ · Whiteout Survival",
+    "name": "ТОПКА: ТРЕБОВАНИЯ И СТОИМОСТЬ",
+    "description": "ТОПКА: ТРЕБОВАНИЯ И СТОИМОСТЬ — мобильный справочник Whiteout Survival",
+    "category": "Строительство",
+    "icon": "🔥",
+    "kind": "guide",
+    "bodyAttrs": {
+      "data-guide-kind": "buildings"
+    },
+    "css": [],
+    "js": []
+  },
+  {
+    "url": "guides/combat/arena-exploration.html",
+    "title": "АРЕНА И ОСВОЕНИЕ · Whiteout Survival",
+    "name": "АРЕНА И ОСВОЕНИЕ",
+    "description": "Арена и Освоение в Whiteout Survival: расстановка героев, логика целей, навыки и характеристики Освоения, экипировка, попытки, награды и магазин Арены.",
+    "category": "Бой и герои",
+    "icon": "🏟️",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-combat-arena-exploration.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/combat/combat-system.html",
+    "title": "БОЕВАЯ СИСТЕМА · Whiteout Survival",
+    "name": "БОЕВАЯ СИСТЕМА",
+    "description": "Боевая система Whiteout Survival: состав марша, типы войск, 12 боевых статов, ралли и гарнизон, чтение боевого отчёта и диагностика поражения.",
+    "category": "Бой и герои",
+    "icon": "⚔️",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-combat-combat-system.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/combat/hero-gear.html",
+    "title": "СНАРЯЖЕНИЕ ГЕРОЕВ · Whiteout Survival",
+    "name": "СНАРЯЖЕНИЕ ГЕРОЕВ",
+    "description": "Снаряжение героев Whiteout Survival: здоровье и смертоносность по слотам, приоритет пехоты и стрелков, лестница усиления, Камни Эссенции и эксклюзивные виджеты.",
+    "category": "Бой и герои",
+    "icon": "🛡️",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-combat-hero-gear.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/combat/hero-generations.html",
+    "title": "ГЕРОИ ПО ПОКОЛЕНИЯМ · Whiteout Survival",
+    "name": "ГЕРОИ ПО ПОКОЛЕНИЯМ",
+    "description": "Герои Whiteout Survival по поколениям: приоритеты вложений для F2P и малого/среднего доната, источники героев и рабочая звёздность.",
+    "category": "Бой и герои",
+    "icon": "🧬",
+    "kind": "guide",
+    "bodyAttrs": {
+      "data-guide-kind": "heroes"
+    },
+    "css": [
+      "assets/css/pages/guides-combat-hero-generations.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/combat/heroes-gear.html",
+    "title": "ГЕРОИ И СНАРЯЖЕНИЕ · Whiteout Survival",
+    "name": "ГЕРОИ И СНАРЯЖЕНИЕ",
+    "description": "Старое руководство Герои и снаряжение разделено на два отдельных гайда.",
+    "category": "Бой и герои",
+    "icon": "📄",
+    "kind": "redirect",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-combat-heroes-gear.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/combat/heroes.html",
+    "title": "ГЕРОИ · Whiteout Survival",
+    "name": "ГЕРОИ",
+    "description": "Герои Whiteout Survival: поколения, источники, звёзды, навыки и разумная прокачка без слива фрагментов.",
+    "category": "Бой и герои",
+    "icon": "🧬",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-combat-heroes.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/combat/pvp-objects.html",
+    "title": "PVP ЗА ОБЪЕКТЫ · Whiteout Survival",
+    "name": "PVP ЗА ОБЪЕКТЫ",
+    "description": "PvP за объекты в Whiteout Survival: Джесси и Джассер в атаке, Сергей, Патрик и Бахити в защите, формации 50/20/30 и 60/40/0, СвС, замена в свой гарнизон, пополнение и синхронные удары.",
+    "category": "Бой и герои",
+    "icon": "🩸",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-combat-pvp-objects.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/combat/war-rules.html",
+    "title": "ПРАВИЛА ВОЙНЫ · Whiteout Survival",
+    "name": "ПРАВИЛА ВОЙНЫ",
+    "description": "Правила войны в Whiteout Survival: базовые отряды DMG и DEF, фейковый марш FKE, вывод войск из-под удара и выбор боя против более сильного противника.",
+    "category": "Бой и герои",
+    "icon": "⚔️",
+    "kind": "guide",
+    "bodyAttrs": {
+      "class": "rules-page"
+    },
+    "css": [
+      "assets/css/pages/guides-combat-war-rules.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/development/account-development.html",
+    "title": "РАЗВИТИЕ АККАУНТА · Whiteout Survival",
+    "name": "РАЗВИТИЕ АККАУНТА",
+    "description": "Развитие аккаунта в Whiteout Survival: что копить между СвС, что тратить на стадии подготовки, как балансировать системы и куда направлять дефицитные ресурсы.",
+    "category": "Развитие",
+    "icon": "📈",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-development-account-development.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/development/expert-generations.html",
+    "title": "ЭКСПЕРТЫ ПО ПОКОЛЕНИЯМ · Белая Мгла",
+    "name": "ЭКСПЕРТЫ ПО ПОКОЛЕНИЯМ",
+    "description": "Эксперты Белой Мглы по поколениям: сроки появления, роли, навыки и приоритеты развития для обычного игрока.",
+    "category": "Развитие",
+    "icon": "🎓",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-development-expert-generations.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/development/experts.html",
+    "title": "ЭКСПЕРТЫ · Белая Мгла",
+    "name": "ЭКСПЕРТЫ",
+    "description": "Эксперты в Белой Мгле: как открыть, развивать сближение и навыки, как работают походы и почему обычному игроку выгоднее сначала экономические эксперты.",
+    "category": "Развитие",
+    "icon": "🎓",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-development-experts.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/development/lucky-wheel.html",
+    "title": "КОЛЕСО ФОРТУНЫ · Whiteout Survival",
+    "name": "КОЛЕСО ФОРТУНЫ",
+    "description": "Колесо Фортуны в Whiteout Survival: сколько гемов нужно на 120 круток, сколько фрагментов ждать, почему важны книги навыков и какого героя выбирать.",
+    "category": "Развитие",
+    "icon": "🎡",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-development-lucky-wheel.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/development/shops-currencies.html",
+    "title": "МАГАЗИНЫ И ВАЛЮТЫ · Whiteout Survival",
+    "name": "МАГАЗИНЫ И ВАЛЮТЫ",
+    "description": "Магазины и валюты в Whiteout Survival: что регулярно брать в Магазине Альянса и как выбирать дефицитные ресурсы для развития аккаунта.",
+    "category": "Развитие",
+    "icon": "🛒",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-development-shops-currencies.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/events/alliance-mobilization.html",
+    "title": "МОБИЛИЗАЦИЯ АЛЬЯНСА · Whiteout Survival",
+    "name": "МОБИЛИЗАЦИЯ АЛЬЯНСА",
+    "description": "Мобилизация альянса — 6000+ очков без слива запасов: личные задания 200%/120%, три попытки за 150 гемов, билеты и работа R4/R5.",
+    "category": "События",
+    "icon": "🏆",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-events-alliance-mobilization.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/events/bear-hunt.html",
+    "title": "ОХОТА НА МЕДВЕДЯ · Whiteout Survival",
+    "name": "ОХОТА НА МЕДВЕДЯ",
+    "description": "Охота на медведя — пять волн рейдов: короткая инструкция игроку и схема организации для офицера.",
+    "category": "События",
+    "icon": "🐻",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-events-bear-hunt.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/events/canyon-clash.html",
+    "title": "БИТВА В КАНЬОНЕ · Whiteout Survival",
+    "name": "БИТВА В КАНЬОНЕ",
+    "description": "Практический гайд по Битве в каньоне в Whiteout Survival: три отряда, топливо, очередь боёв, Форты, Ледяная цитадель и отдельная инструкция для R4/R5.",
+    "category": "События",
+    "icon": "🏰",
+    "kind": "guide",
+    "bodyAttrs": {
+      "class": "canyon-page"
+    },
+    "css": [
+      "assets/css/pages/guides-events-canyon-clash.css"
+    ],
+    "js": [
+      "assets/js/canyon-gallery.js"
+    ]
+  },
+  {
+    "url": "guides/events/crazy-joe.html",
+    "title": "БЕЗУМНАЯ ДЖО · Whiteout Survival",
+    "name": "БЕЗУМНАЯ ДЖО",
+    "description": "Безумная Джо в Whiteout Survival: обмен войсками, две рабочие схемы, важные волны, герои стены и подкрепления.",
+    "category": "События",
+    "icon": "🔥",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-events-crazy-joe.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/events/foundry.html",
+    "title": "БИТВА ЗА ЛИТЕЙНУЮ · Whiteout Survival",
+    "name": "БИТВА ЗА ЛИТЕЙНУЮ",
+    "description": "Битва за Литейную — PvP за объекты, очки, AFK-фарм, мастерские, наёмники, телепорты и командная логика.",
+    "category": "События",
+    "icon": "🏭",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-events-foundry.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/events/ice-mine.html",
+    "title": "РУДНИК ЛЕДЯНОГО ОГНЯ · Whiteout Survival",
+    "name": "РУДНИК ЛЕДЯНОГО ОГНЯ",
+    "description": "Рудник Ледяного Огня в Whiteout Survival: навыки, патрули, россыпи орихалка, Прорывы жил, телепорты и две рабочие стратегии.",
+    "category": "События",
+    "icon": "⛏️",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-events-ice-mine.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/events/penguin-party.html",
+    "title": "ПИНГВИНЬЯ ВЕЧЕРИНКА · Whiteout Survival",
+    "name": "ПИНГВИНЬЯ ВЕЧЕРИНКА",
+    "description": "Пингвинья вечеринка: Парк пингвинов, Ледяной взрыв, Профи вечеринок, Потерянная добыча, средние монеты, лопаты и магазин.",
+    "category": "События",
+    "icon": "🐧",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-events-penguin-party.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/events/snowbusters.html",
+    "title": "СНЕГОУБОРЩИКИ · Whiteout Survival",
+    "name": "СНЕГОУБОРЩИКИ",
+    "description": "Снегоуборщики — F2P-стратегия: Суперочиститель до 13-го, минимум 4 ракеты на 14+, печь, Пальто и бесплатное прохождение до 19-го этапа.",
+    "category": "События",
+    "icon": "❄️",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-events-snowbusters.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/events/wandering-theater.html",
+    "title": "БРОДЯЧИЙ ТЕАТР · Whiteout Survival",
+    "name": "БРОДЯЧИЙ ТЕАТР",
+    "description": "БРОДЯЧИЙ ТЕАТР — мобильный справочник Whiteout Survival",
+    "category": "События",
+    "icon": "🎭",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [],
+    "js": []
+  },
+  {
+    "url": "guides/events/winter-siege.html",
+    "title": "ЗИМНЯЯ ОСАДА · Whiteout Survival",
+    "name": "ЗИМНЯЯ ОСАДА",
+    "description": "Зимняя осада: два отряда, гарнизоны, Надзиратели, мораль, звёзды, подготовка R4/R5 и тактика атаки.",
+    "category": "События",
+    "icon": "🏰",
+    "kind": "guide",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/guides-events-winter-siege.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "guides/svs/first-svs.html",
+    "title": "СвС — подготовка и боевая фаза · Whiteout Survival",
+    "name": "ПЕРВОЕ СвС — МОЩЬ ГОСУДАРСТВ",
+    "description": "СвС (Мощь государств): подготовка по дням, боевая фаза, восстановление, награды и магазин — кратко в статье, точные таблицы в спойлерах.",
+    "category": "СвС",
+    "icon": "🏆",
+    "kind": "guide",
+    "bodyAttrs": {
+      "class": "svs-page"
+    },
+    "css": [
+      "assets/css/pages/guides-svs-first-svs.css"
+    ],
+    "js": []
+  },
+  {
+    "url": "tools/construction/index.html",
+    "title": "Whiteout Survival — калькулятор строительства",
+    "name": "Калькулятор строительства",
+    "description": "Калькулятор времени и ресурсов строительства Whiteout Survival со встроенным справочником зданий.",
+    "category": "Калькуляторы",
+    "icon": "🧮",
+    "kind": "tool",
+    "bodyAttrs": {},
+    "css": [
+      "assets/css/pages/tools-construction-index.css"
+    ],
+    "js": [
+      "assets/js/construction-data.js",
+      "assets/js/tools-construction-index.js"
+    ]
+  },
+  {
+    "url": "tools/research/index.html",
+    "title": "Калькулятор технологий · Whiteout Survival",
+    "name": "Калькулятор технологий",
+    "description": "Введите текущие технологии, выберите цель и получите полный путь, время и ресурсы.",
+    "category": "Калькуляторы",
+    "icon": "🌳",
+    "kind": "tool",
+    "bodyAttrs": {},
+    "css": [
+      "tools/research/research.css"
+    ],
+    "js": [
+      "tools/research/research-data.js",
+      "tools/research/research-app.js"
+    ]
+  }
+]

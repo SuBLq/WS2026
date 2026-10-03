@@ -1,0 +1,72 @@
+<main class="app">
+<header class="hero">
+  <div class="eyebrow">WHITEOUT SURVIVAL</div>
+  <h1>Калькулятор строительства</h1>
+  <p>Добавляйте нужные стройки в список — время и ресурсы суммируются автоматически.</p>
+  <div class="version">Версия 4.0 · единый список</div>
+</header>
+
+<section class="card">
+<h2>⚡ Общие бонусы</h2>
+<div class="grid2">
+  <div class="field"><div class="label">Моя скорость строительства</div><div class="suffix"><input id="ownSpeed" type="number" min="0" step="0.1" value="0" inputmode="decimal"></div><small>Постоянный показатель без отдельно включённых ниже бонусов.</small></div>
+  <div class="field"><div class="label">Гиена</div><select id="hyena"><option value="0">Нет — 0%</option><option value="1">Ур. 1 — 5%</option><option value="2">Ур. 2 — 7%</option><option value="3">Ур. 3 — 9%</option><option value="4">Ур. 4 — 12%</option><option value="5">Ур. 5 — 15%</option></select></div>
+</div>
+<div class="controls" style="margin-top:10px">
+  <div class="control"><div><b>Титул строителя</b><span>+10% скорости строительства</span></div><label class="switch"><input id="titleBonus" type="checkbox"><span class="slider"></span></label></div>
+  <div class="control"><div><b>«Двойное время»</b><span>отдельный множитель времени</span></div><label class="switch"><input id="doubleTime" type="checkbox"><span class="slider"></span></label></div>
+</div>
+<div class="field" style="margin-top:10px"><div class="label">Другой временный бонус</div><div class="suffix"><input id="otherBonus" type="number" min="0" step="0.1" value="0" inputmode="decimal"></div></div>
+<div class="note"><b>Важно:</b> если титул, Гиена или другой временный эффект уже входят в отображаемую в игре скорость строительства, не добавляйте их второй раз.</div>
+</section>
+
+<section class="card">
+<h2>🏗️ Добавить стройку</h2>
+<div class="add-row">
+  <div class="field"><div class="label">Здание</div><select id="pickBuilding"></select></div>
+  <div class="field level-field"><div class="label">Переход</div><select id="pickTransition"></select></div>
+  <button id="addBuild" class="add-btn" aria-label="Добавить стройку" title="Добавить">+</button>
+</div>
+<div class="pick-info"><span>Базовое время выбранной стройки</span><b id="pickTime">—</b></div>
+<div id="pickStatus" class="status"></div>
+</section>
+
+<section class="card">
+<div class="list-head"><h2 style="margin:0">Список строек</h2><div id="countBadge" class="count-badge">0</div></div>
+<div id="buildList" class="build-list"></div>
+<div class="actions"><button id="clearBuilds" class="btn danger">Очистить список</button></div>
+</section>
+
+<section class="result">
+<div class="label">ИТОГО ПО СПИСКУ</div>
+<div id="totalReal" class="big">0 мин</div>
+<div class="result-grid">
+  <div class="metric"><span>Базовое время</span><b id="totalBase">0 мин</b></div>
+  <div class="metric"><span>Сэкономлено</span><b id="totalSaved">0 мин</b></div>
+  <div class="metric"><span>Суммарная скорость</span><b id="totalSpeed">0%</b></div>
+  <div class="metric"><span>Строек</span><b id="totalCount">0</b></div>
+</div>
+<div class="resource-total"><div class="label">СУММАРНЫЕ РЕСУРСОЗАТРАТЫ</div><div id="totalResources" class="resource-grid"></div></div>
+</section>
+
+<details class="card bulk">
+<summary>Добавить весь переход сразу</summary>
+<div class="inside">
+  <div class="field"><div class="label">Общий переход</div><select id="bulkTransition"></select></div>
+  <div id="bulkMeta" class="bulk-meta"></div>
+  <div class="actions"><button id="bulkAdd" class="btn">Добавить недостающие здания</button></div>
+</div>
+</details>
+
+<details class="card settings">
+<summary>Настройки коэффициентов</summary>
+<div class="inside">
+  <div class="label">Бонус Гиены по уровням</div>
+  <div class="hyena-grid"><label>Ур. 1<input id="h1" type="number" step="0.1" value="5"></label><label>Ур. 2<input id="h2" type="number" step="0.1" value="7"></label><label>Ур. 3<input id="h3" type="number" step="0.1" value="9"></label><label>Ур. 4<input id="h4" type="number" step="0.1" value="12"></label><label>Ур. 5<input id="h5" type="number" step="0.1" value="15"></label><label>Титул<input id="titlePct" type="number" step="0.1" value="10"></label></div>
+  <div class="field" style="margin-top:10px"><div class="label">Множитель «Двойного времени»</div><input id="doubleMult" type="number" min="0.01" step="0.01" value="0.80"></div>
+  <div class="actions"><button id="resetSettings" class="btn">Сбросить коэффициенты</button></div>
+</div>
+</details>
+
+<div class="footer">Подготовлено SuBL · 206 переходов · 11 типов зданий</div>
+</main>

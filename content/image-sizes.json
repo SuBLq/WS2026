@@ -1,0 +1,1206 @@
+{
+  "assets/icons/experts-badge-128.png": [
+    128,
+    128
+  ],
+  "assets/icons/experts-badge.webp": [
+    256,
+    256
+  ],
+  "assets/icons/icon-192.png": [
+    192,
+    192
+  ],
+  "assets/icons/icon-512.png": [
+    512,
+    512
+  ],
+  "assets/icons/penguin-party-icon.webp": [
+    256,
+    256
+  ],
+  "assets/icons/winter-siege-icon.webp": [
+    256,
+    256
+  ],
+  "assets/guides/arena/arena-daily-marked-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/arena/arena-daily-marked.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/arena/arena-daily-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/arena/arena-daily.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/arena/arena-season-marked-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/arena/arena-season-marked.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/arena/arena-season-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/arena/arena-season.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/arena/arena-shop-marked-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/arena/arena-shop-marked.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/arena/arena-shop-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/arena/arena-shop.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/arena/battle-backline-mobile.webp": [
+    720,
+    738
+  ],
+  "assets/guides/arena/battle-backline.webp": [
+    1152,
+    1180
+  ],
+  "assets/guides/arena/battle-start-mobile.webp": [
+    720,
+    738
+  ],
+  "assets/guides/arena/battle-start.webp": [
+    1152,
+    1180
+  ],
+  "assets/guides/arena/exploration-stage-marked-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/arena/exploration-stage-marked.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/arena/exploration-stage-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/arena/exploration-stage.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/arena/flint-skills-marked-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/arena/flint-skills-marked.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/arena/flint-skills-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/arena/flint-skills.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/arena/flint-stats-marked-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/arena/flint-stats-marked.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/arena/flint-stats-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/arena/flint-stats.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/arena/formation-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/arena/formation.webp": [
+    1152,
+    2048
+  ],
+  "assets/guides/bear/jasser.webp": [
+    237,
+    400
+  ],
+  "assets/guides/bear/jessie.webp": [
+    237,
+    400
+  ],
+  "assets/guides/bear/seo-yoon.webp": [
+    237,
+    400
+  ],
+  "assets/guides/canyon/01-overview-mobile.webp": [
+    720,
+    1206
+  ],
+  "assets/guides/canyon/01-overview.webp": [
+    1463,
+    2450
+  ],
+  "assets/guides/canyon/02-citadel-mobile.webp": [
+    720,
+    1073
+  ],
+  "assets/guides/canyon/02-citadel.webp": [
+    1463,
+    2180
+  ],
+  "assets/guides/canyon/03-forts-mobile.webp": [
+    720,
+    1073
+  ],
+  "assets/guides/canyon/03-forts.webp": [
+    1463,
+    2180
+  ],
+  "assets/guides/canyon/04-airports-mobile.webp": [
+    720,
+    1073
+  ],
+  "assets/guides/canyon/04-airports.webp": [
+    1463,
+    2180
+  ],
+  "assets/guides/combat-system/bad-stats-collage-mobile.webp": [
+    705,
+    1400
+  ],
+  "assets/guides/combat-system/bad-stats-collage.webp": [
+    1032,
+    2048
+  ],
+  "assets/guides/combat-system/march-setup-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/combat-system/march-setup.webp": [
+    1152,
+    2048
+  ],
+  "assets/guides/combat-system/report-force-mobile.webp": [
+    720,
+    527
+  ],
+  "assets/guides/combat-system/report-force.webp": [
+    2050,
+    1500
+  ],
+  "assets/guides/combat-system/report-gear-heroes-mobile.webp": [
+    720,
+    761
+  ],
+  "assets/guides/combat-system/report-gear-heroes.webp": [
+    2025,
+    2140
+  ],
+  "assets/guides/combat-system/report-losses-mobile.webp": [
+    720,
+    713
+  ],
+  "assets/guides/combat-system/report-losses.webp": [
+    1970,
+    1950
+  ],
+  "assets/guides/combat-system/report-overview-mobile.webp": [
+    720,
+    724
+  ],
+  "assets/guides/combat-system/report-overview.webp": [
+    2040,
+    2050
+  ],
+  "assets/guides/combat-system/report-skills-mobile.webp": [
+    720,
+    1042
+  ],
+  "assets/guides/combat-system/report-skills.webp": [
+    2060,
+    2980
+  ],
+  "assets/guides/combat-system/report-special-mobile.webp": [
+    720,
+    917
+  ],
+  "assets/guides/combat-system/report-special.webp": [
+    1970,
+    2510
+  ],
+  "assets/guides/combat-system/report-stats-mobile.webp": [
+    720,
+    952
+  ],
+  "assets/guides/combat-system/report-stats.webp": [
+    2050,
+    2710
+  ],
+  "assets/guides/crazy-joe/event-screen-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/crazy-joe/event-screen.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/crazy-joe/wall-heroes-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/crazy-joe/wall-heroes.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/experts/agnes-earthbreaker.webp": [
+    860,
+    1529
+  ],
+  "assets/guides/experts/agnes-efficient-recon.webp": [
+    860,
+    1529
+  ],
+  "assets/guides/experts/agnes-gifts.webp": [
+    860,
+    1529
+  ],
+  "assets/guides/experts/agnes-main.webp": [
+    860,
+    1529
+  ],
+  "assets/guides/experts/agnes-overview.webp": [
+    860,
+    1529
+  ],
+  "assets/guides/experts/agnes-project-management.webp": [
+    860,
+    1529
+  ],
+  "assets/guides/experts/agnes-rationalization.webp": [
+    860,
+    1529
+  ],
+  "assets/guides/experts/agnes-secret-knowledge.webp": [
+    860,
+    1529
+  ],
+  "assets/guides/experts/agnes-skill-locked.webp": [
+    860,
+    1529
+  ],
+  "assets/guides/experts/agnes-skill-upgrade.webp": [
+    860,
+    1529
+  ],
+  "assets/guides/experts/seeker-chest-bottom.webp": [
+    860,
+    1529
+  ],
+  "assets/guides/experts/seeker-chest-top.webp": [
+    860,
+    1529
+  ],
+  "assets/guides/experts/trek-choice.webp": [
+    860,
+    1529
+  ],
+  "assets/guides/experts/trek-station.webp": [
+    860,
+    1529
+  ],
+  "assets/guides/foundry/boiler-mobile.webp": [
+    720,
+    915
+  ],
+  "assets/guides/foundry/boiler.webp": [
+    1000,
+    1271
+  ],
+  "assets/guides/foundry/foundry-mobile.webp": [
+    720,
+    731
+  ],
+  "assets/guides/foundry/foundry.webp": [
+    1000,
+    1015
+  ],
+  "assets/guides/foundry/merc-mail-mobile.webp": [
+    720,
+    920
+  ],
+  "assets/guides/foundry/merc-mail.webp": [
+    1000,
+    1278
+  ],
+  "assets/guides/foundry/merc-mobile.webp": [
+    720,
+    1014
+  ],
+  "assets/guides/foundry/merc.webp": [
+    1000,
+    1409
+  ],
+  "assets/guides/foundry/prototype-mobile.webp": [
+    720,
+    851
+  ],
+  "assets/guides/foundry/prototype.webp": [
+    1000,
+    1182
+  ],
+  "assets/guides/foundry/repair-mobile.webp": [
+    720,
+    731
+  ],
+  "assets/guides/foundry/repair.webp": [
+    1000,
+    1015
+  ],
+  "assets/guides/foundry/score-mobile.webp": [
+    720,
+    502
+  ],
+  "assets/guides/foundry/score.webp": [
+    1000,
+    697
+  ],
+  "assets/guides/foundry/transit-mobile.webp": [
+    720,
+    858
+  ],
+  "assets/guides/foundry/transit.webp": [
+    1000,
+    1192
+  ],
+  "assets/guides/foundry/warehouse-mobile.webp": [
+    720,
+    986
+  ],
+  "assets/guides/foundry/warehouse.webp": [
+    1000,
+    1369
+  ],
+  "assets/guides/foundry/workshop.webp": [
+    710,
+    710
+  ],
+  "assets/guides/hero-gear/flint-balanced-mobile.webp": [
+    720,
+    783
+  ],
+  "assets/guides/hero-gear/flint-balanced.webp": [
+    1152,
+    1252
+  ],
+  "assets/guides/hero-gear/infantry-belt-mobile.webp": [
+    720,
+    527
+  ],
+  "assets/guides/hero-gear/infantry-belt.webp": [
+    1114,
+    816
+  ],
+  "assets/guides/hero-gear/infantry-boots-mobile.webp": [
+    720,
+    527
+  ],
+  "assets/guides/hero-gear/infantry-boots.webp": [
+    1114,
+    816
+  ],
+  "assets/guides/hero-gear/infantry-gloves-mobile.webp": [
+    720,
+    527
+  ],
+  "assets/guides/hero-gear/infantry-gloves.webp": [
+    1114,
+    816
+  ],
+  "assets/guides/hero-gear/infantry-goggles-mobile.webp": [
+    720,
+    527
+  ],
+  "assets/guides/hero-gear/infantry-goggles.webp": [
+    1114,
+    816
+  ],
+  "assets/guides/hero-gear/marksman-belt-mobile.webp": [
+    720,
+    527
+  ],
+  "assets/guides/hero-gear/marksman-belt.webp": [
+    1114,
+    816
+  ],
+  "assets/guides/hero-gear/marksman-boots-mobile.webp": [
+    720,
+    527
+  ],
+  "assets/guides/hero-gear/marksman-boots.webp": [
+    1114,
+    816
+  ],
+  "assets/guides/hero-gear/marksman-gloves-mobile.webp": [
+    720,
+    527
+  ],
+  "assets/guides/hero-gear/marksman-gloves.webp": [
+    1114,
+    816
+  ],
+  "assets/guides/hero-gear/marksman-goggles-mobile.webp": [
+    720,
+    527
+  ],
+  "assets/guides/hero-gear/marksman-goggles.webp": [
+    1114,
+    816
+  ],
+  "assets/guides/hero-gear/widget-alonso-info-mobile.webp": [
+    720,
+    603
+  ],
+  "assets/guides/hero-gear/widget-alonso-info.webp": [
+    1073,
+    899
+  ],
+  "assets/guides/hero-gear/widget-flint-info-mobile.webp": [
+    720,
+    941
+  ],
+  "assets/guides/hero-gear/widget-flint-info.webp": [
+    1122,
+    1466
+  ],
+  "assets/guides/hero-gear/widget-flint-upgrade-mobile.webp": [
+    720,
+    551
+  ],
+  "assets/guides/hero-gear/widget-flint-upgrade.webp": [
+    1071,
+    819
+  ],
+  "assets/guides/heroes/alonso-four-stars-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/heroes/alonso-four-stars.webp": [
+    1152,
+    2048
+  ],
+  "assets/guides/heroes/alonso-skills-5-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/heroes/alonso-skills-5.webp": [
+    1152,
+    2048
+  ],
+  "assets/guides/heroes/flint-expedition-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/heroes/flint-expedition.webp": [
+    1152,
+    2048
+  ],
+  "assets/guides/heroes/natalia-expedition-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/heroes/natalia-expedition.webp": [
+    1152,
+    2048
+  ],
+  "assets/guides/heroes/philly-skills-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/heroes/philly-skills.webp": [
+    1152,
+    2048
+  ],
+  "assets/guides/heroes/philly-star-upgrade-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/heroes/philly-star-upgrade.webp": [
+    1152,
+    2048
+  ],
+  "assets/guides/heroes/philly-summary-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/heroes/philly-summary.webp": [
+    1152,
+    2048
+  ],
+  "assets/guides/ice-mine/orichalcum-map-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/ice-mine/orichalcum-map.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/ice-mine/orichalcum-selected-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/ice-mine/orichalcum-selected.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/ice-mine/result-screen-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/ice-mine/result-screen.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/ice-mine/skill-tree-empty-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/ice-mine/skill-tree-empty.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/ice-mine/skill-tree-upgraded.webp": [
+    607,
+    1079
+  ],
+  "assets/guides/ice-mine/vein-breakthrough-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/ice-mine/vein-breakthrough.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/lucky-wheel/hero-choice-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/lucky-wheel/hero-choice.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/lucky-wheel/wheel-main-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/lucky-wheel/wheel-main.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/mobilization/alliance-monuments-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/mobilization/alliance-monuments.webp": [
+    912,
+    1621
+  ],
+  "assets/guides/mobilization/attempts-150-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/mobilization/attempts-150.webp": [
+    912,
+    1621
+  ],
+  "assets/guides/mobilization/personal-200-120-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/mobilization/personal-200-120.webp": [
+    912,
+    1621
+  ],
+  "assets/guides/mobilization/personal-cooldowns-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/mobilization/personal-cooldowns.webp": [
+    1152,
+    2048
+  ],
+  "assets/guides/penguin-party/daily-missions-done.webp": [
+    760,
+    1351
+  ],
+  "assets/guides/penguin-party/daily-missions.webp": [
+    760,
+    1351
+  ],
+  "assets/guides/penguin-party/ice-blast-daily.webp": [
+    900,
+    1600
+  ],
+  "assets/guides/penguin-party/ice-blast-rewards.webp": [
+    900,
+    1600
+  ],
+  "assets/guides/penguin-party/lost-loot-chest-rewards.webp": [
+    900,
+    1600
+  ],
+  "assets/guides/penguin-party/lost-loot-island-building.webp": [
+    900,
+    1600
+  ],
+  "assets/guides/penguin-party/lost-loot-overview.webp": [
+    760,
+    1351
+  ],
+  "assets/guides/penguin-party/lost-loot-stage-preview-extended.webp": [
+    900,
+    1600
+  ],
+  "assets/guides/penguin-party/lost-loot-stage-preview.webp": [
+    760,
+    1351
+  ],
+  "assets/guides/penguin-party/lost-loot-stage3.webp": [
+    760,
+    1351
+  ],
+  "assets/guides/penguin-party/lost-loot-stage7.webp": [
+    760,
+    1351
+  ],
+  "assets/guides/penguin-party/park-overview.webp": [
+    760,
+    1351
+  ],
+  "assets/guides/penguin-party/park-probabilities.webp": [
+    900,
+    1064
+  ],
+  "assets/guides/penguin-party/party-pro.webp": [
+    760,
+    1351
+  ],
+  "assets/guides/penguin-party/ring-left.webp": [
+    900,
+    532
+  ],
+  "assets/guides/penguin-party/ring-right.webp": [
+    900,
+    537
+  ],
+  "assets/guides/penguin-party/shop.webp": [
+    760,
+    1351
+  ],
+  "assets/guides/penguin-party/symphony.webp": [
+    760,
+    1351
+  ],
+  "assets/guides/pvp/attack-jasser.webp": [
+    720,
+    1147
+  ],
+  "assets/guides/pvp/attack-jessie.webp": [
+    720,
+    1147
+  ],
+  "assets/guides/pvp/battle-timers.webp": [
+    900,
+    1027
+  ],
+  "assets/guides/pvp/defense-patrick.webp": [
+    720,
+    1147
+  ],
+  "assets/guides/pvp/defense-sergey.webp": [
+    720,
+    1147
+  ],
+  "assets/guides/pvp/heal-4min.webp": [
+    900,
+    557
+  ],
+  "assets/guides/pvp/losses-unacceptable.webp": [
+    866,
+    986
+  ],
+  "assets/guides/pvp/refill-minimarches-collage-mobile.webp": [
+    720,
+    1352
+  ],
+  "assets/guides/pvp/refill-minimarches-collage.webp": [
+    1084,
+    2036
+  ],
+  "assets/guides/pvp/skill-bahiti-display.webp": [
+    720,
+    1112
+  ],
+  "assets/guides/pvp/skill-bahiti.png": [
+    720,
+    1112
+  ],
+  "assets/guides/pvp/skill-jasser.webp": [
+    720,
+    1112
+  ],
+  "assets/guides/pvp/skill-jessie.webp": [
+    720,
+    1112
+  ],
+  "assets/guides/pvp/skill-patrick.webp": [
+    720,
+    1112
+  ],
+  "assets/guides/pvp/skill-sergey.webp": [
+    720,
+    1112
+  ],
+  "assets/guides/pvp/sync-timer-mobile.webp": [
+    720,
+    720
+  ],
+  "assets/guides/pvp/sync-timer.webp": [
+    980,
+    980
+  ],
+  "assets/guides/snowbusters/area14-start.webp": [
+    900,
+    1600
+  ],
+  "assets/guides/snowbusters/coal-to-fuel.webp": [
+    900,
+    1600
+  ],
+  "assets/guides/snowbusters/gear-coat-boots.webp": [
+    900,
+    1600
+  ],
+  "assets/guides/snowbusters/rockets-purchase.webp": [
+    900,
+    1600
+  ],
+  "assets/guides/snowbusters/superplow-area13.webp": [
+    900,
+    1600
+  ],
+  "assets/guides/svs/battle-phase-tab-display.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/svs/battle-phase-tab-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/svs/battle-phase-tab.png": [
+    1080,
+    1920
+  ],
+  "assets/guides/svs/battle-rewards-overview-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/svs/battle-rewards-overview.webp": [
+    1000,
+    1778
+  ],
+  "assets/guides/svs/battle-rewards-tab-display.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/svs/battle-rewards-tab-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/svs/battle-rewards-tab.png": [
+    1080,
+    1920
+  ],
+  "assets/guides/svs/conquest-sword-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/svs/conquest-sword.webp": [
+    1000,
+    1778
+  ],
+  "assets/guides/svs/day-ranking-example-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/svs/day-ranking-example.webp": [
+    1000,
+    1778
+  ],
+  "assets/guides/svs/enemy-castle-area-display.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/svs/enemy-castle-area-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/svs/enemy-castle-area.png": [
+    1080,
+    1920
+  ],
+  "assets/guides/svs/enemy-castle-border-display.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/svs/enemy-castle-border-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/svs/enemy-castle-border.png": [
+    1080,
+    1920
+  ],
+  "assets/guides/svs/matchmaking-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/svs/matchmaking.webp": [
+    1000,
+    1778
+  ],
+  "assets/guides/svs/opponent-found-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/svs/opponent-found.webp": [
+    1000,
+    1778
+  ],
+  "assets/guides/svs/philly-chest-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/svs/philly-chest.webp": [
+    1000,
+    1778
+  ],
+  "assets/guides/svs/prep-rewards-overview-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/svs/prep-rewards-overview.webp": [
+    1000,
+    1778
+  ],
+  "assets/guides/svs/troop-revival-confirm-display.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/svs/troop-revival-confirm-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/svs/troop-revival-confirm.png": [
+    1080,
+    1920
+  ],
+  "assets/guides/svs/troop-revival-limit-display.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/svs/troop-revival-limit-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/svs/troop-revival-limit.png": [
+    1080,
+    1920
+  ],
+  "assets/guides/svs/troop-revival-main-display.webp": [
+    1080,
+    1920
+  ],
+  "assets/guides/svs/troop-revival-main-mobile.webp": [
+    720,
+    1280
+  ],
+  "assets/guides/svs/troop-revival-main.png": [
+    1080,
+    1920
+  ],
+  "assets/guides/war-rules/bigger-fish-mobile.webp": [
+    720,
+    405
+  ],
+  "assets/guides/war-rules/bigger-fish.webp": [
+    1672,
+    941
+  ],
+  "assets/guides/winter-siege/command.webp": [
+    820,
+    1458
+  ],
+  "assets/guides/winter-siege/garrison.webp": [
+    820,
+    1458
+  ],
+  "assets/guides/winter-siege/overview.webp": [
+    820,
+    1458
+  ],
+  "assets/icons/game/alliance.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/arena.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/attack.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/bear-hunt.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/bell.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/coal.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/construction.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/defense.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/endless-trial.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/energy.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/event-token.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/expedition-book.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/fire-crystal.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/food.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/fort.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/furnace.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/governor-gear.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/healing.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/health.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/hero-fragment.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/hero-gear.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/heroes.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/ice-mine.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/iron.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/key-gold.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/key-silver.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/lethality.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/lucky-wheel.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/mad-joe.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/mastery-book.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/mithril.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/peace-shield.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/pet-book.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/pet-chest.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/pet-potion.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/pet-syringe.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/pilot-token.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/president.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/rally.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/rare-crystal.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/research.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/resource-chest.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/reward-chest.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/scout.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/scroll.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/sealed-scroll.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/shop.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/snowbusters.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/svs.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/talisman.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/teleport-advanced.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/teleport-alliance.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/teleport-random.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/ticket.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/training.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/transfer-pass.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/universal-fragment.png": [
+    128,
+    128
+  ],
+  "assets/icons/game/wood.png": [
+    128,
+    128
+  ]
+}

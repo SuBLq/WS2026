@@ -1,0 +1,517 @@
+{
+  "assets/guides/arena/arena-daily-marked.webp": {
+    "display": "assets/guides/arena/arena-daily-marked.webp",
+    "mobile": "assets/guides/arena/arena-daily-marked-mobile.webp"
+  },
+  "assets/guides/arena/arena-daily.webp": {
+    "display": "assets/guides/arena/arena-daily.webp",
+    "mobile": "assets/guides/arena/arena-daily-mobile.webp"
+  },
+  "assets/guides/arena/arena-season-marked.webp": {
+    "display": "assets/guides/arena/arena-season-marked.webp",
+    "mobile": "assets/guides/arena/arena-season-marked-mobile.webp"
+  },
+  "assets/guides/arena/arena-season.webp": {
+    "display": "assets/guides/arena/arena-season.webp",
+    "mobile": "assets/guides/arena/arena-season-mobile.webp"
+  },
+  "assets/guides/arena/arena-shop-marked.webp": {
+    "display": "assets/guides/arena/arena-shop-marked.webp",
+    "mobile": "assets/guides/arena/arena-shop-marked-mobile.webp"
+  },
+  "assets/guides/arena/arena-shop.webp": {
+    "display": "assets/guides/arena/arena-shop.webp",
+    "mobile": "assets/guides/arena/arena-shop-mobile.webp"
+  },
+  "assets/guides/arena/battle-backline.webp": {
+    "display": "assets/guides/arena/battle-backline.webp",
+    "mobile": "assets/guides/arena/battle-backline-mobile.webp"
+  },
+  "assets/guides/arena/battle-start.webp": {
+    "display": "assets/guides/arena/battle-start.webp",
+    "mobile": "assets/guides/arena/battle-start-mobile.webp"
+  },
+  "assets/guides/arena/exploration-stage-marked.webp": {
+    "display": "assets/guides/arena/exploration-stage-marked.webp",
+    "mobile": "assets/guides/arena/exploration-stage-marked-mobile.webp"
+  },
+  "assets/guides/arena/exploration-stage.webp": {
+    "display": "assets/guides/arena/exploration-stage.webp",
+    "mobile": "assets/guides/arena/exploration-stage-mobile.webp"
+  },
+  "assets/guides/arena/flint-skills-marked.webp": {
+    "display": "assets/guides/arena/flint-skills-marked.webp",
+    "mobile": "assets/guides/arena/flint-skills-marked-mobile.webp"
+  },
+  "assets/guides/arena/flint-skills.webp": {
+    "display": "assets/guides/arena/flint-skills.webp",
+    "mobile": "assets/guides/arena/flint-skills-mobile.webp"
+  },
+  "assets/guides/arena/flint-stats-marked.webp": {
+    "display": "assets/guides/arena/flint-stats-marked.webp",
+    "mobile": "assets/guides/arena/flint-stats-marked-mobile.webp"
+  },
+  "assets/guides/arena/flint-stats.webp": {
+    "display": "assets/guides/arena/flint-stats.webp",
+    "mobile": "assets/guides/arena/flint-stats-mobile.webp"
+  },
+  "assets/guides/arena/formation.webp": {
+    "display": "assets/guides/arena/formation.webp",
+    "mobile": "assets/guides/arena/formation-mobile.webp"
+  },
+  "assets/guides/bear/jasser.webp": {
+    "display": "assets/guides/bear/jasser.webp"
+  },
+  "assets/guides/bear/jessie.webp": {
+    "display": "assets/guides/bear/jessie.webp"
+  },
+  "assets/guides/bear/seo-yoon.webp": {
+    "display": "assets/guides/bear/seo-yoon.webp"
+  },
+  "assets/guides/canyon/01-overview.webp": {
+    "display": "assets/guides/canyon/01-overview.webp",
+    "mobile": "assets/guides/canyon/01-overview-mobile.webp"
+  },
+  "assets/guides/canyon/02-citadel.webp": {
+    "display": "assets/guides/canyon/02-citadel.webp",
+    "mobile": "assets/guides/canyon/02-citadel-mobile.webp"
+  },
+  "assets/guides/canyon/03-forts.webp": {
+    "display": "assets/guides/canyon/03-forts.webp",
+    "mobile": "assets/guides/canyon/03-forts-mobile.webp"
+  },
+  "assets/guides/canyon/04-airports.webp": {
+    "display": "assets/guides/canyon/04-airports.webp",
+    "mobile": "assets/guides/canyon/04-airports-mobile.webp"
+  },
+  "assets/guides/combat-system/bad-stats-collage.webp": {
+    "display": "assets/guides/combat-system/bad-stats-collage.webp",
+    "mobile": "assets/guides/combat-system/bad-stats-collage-mobile.webp"
+  },
+  "assets/guides/combat-system/march-setup.webp": {
+    "display": "assets/guides/combat-system/march-setup.webp",
+    "mobile": "assets/guides/combat-system/march-setup-mobile.webp"
+  },
+  "assets/guides/combat-system/report-force.webp": {
+    "display": "assets/guides/combat-system/report-force.webp",
+    "mobile": "assets/guides/combat-system/report-force-mobile.webp"
+  },
+  "assets/guides/combat-system/report-gear-heroes.webp": {
+    "display": "assets/guides/combat-system/report-gear-heroes.webp",
+    "mobile": "assets/guides/combat-system/report-gear-heroes-mobile.webp"
+  },
+  "assets/guides/combat-system/report-losses.webp": {
+    "display": "assets/guides/combat-system/report-losses.webp",
+    "mobile": "assets/guides/combat-system/report-losses-mobile.webp"
+  },
+  "assets/guides/combat-system/report-overview.webp": {
+    "display": "assets/guides/combat-system/report-overview.webp",
+    "mobile": "assets/guides/combat-system/report-overview-mobile.webp"
+  },
+  "assets/guides/combat-system/report-skills.webp": {
+    "display": "assets/guides/combat-system/report-skills.webp",
+    "mobile": "assets/guides/combat-system/report-skills-mobile.webp"
+  },
+  "assets/guides/combat-system/report-special.webp": {
+    "display": "assets/guides/combat-system/report-special.webp",
+    "mobile": "assets/guides/combat-system/report-special-mobile.webp"
+  },
+  "assets/guides/combat-system/report-stats.webp": {
+    "display": "assets/guides/combat-system/report-stats.webp",
+    "mobile": "assets/guides/combat-system/report-stats-mobile.webp"
+  },
+  "assets/guides/crazy-joe/event-screen.webp": {
+    "display": "assets/guides/crazy-joe/event-screen.webp",
+    "mobile": "assets/guides/crazy-joe/event-screen-mobile.webp"
+  },
+  "assets/guides/crazy-joe/wall-heroes.webp": {
+    "display": "assets/guides/crazy-joe/wall-heroes.webp",
+    "mobile": "assets/guides/crazy-joe/wall-heroes-mobile.webp"
+  },
+  "assets/guides/experts/agnes-earthbreaker.webp": {
+    "display": "assets/guides/experts/agnes-earthbreaker.webp"
+  },
+  "assets/guides/experts/agnes-efficient-recon.webp": {
+    "display": "assets/guides/experts/agnes-efficient-recon.webp"
+  },
+  "assets/guides/experts/agnes-gifts.webp": {
+    "display": "assets/guides/experts/agnes-gifts.webp"
+  },
+  "assets/guides/experts/agnes-main.webp": {
+    "display": "assets/guides/experts/agnes-main.webp"
+  },
+  "assets/guides/experts/agnes-overview.webp": {
+    "display": "assets/guides/experts/agnes-overview.webp"
+  },
+  "assets/guides/experts/agnes-project-management.webp": {
+    "display": "assets/guides/experts/agnes-project-management.webp"
+  },
+  "assets/guides/experts/agnes-rationalization.webp": {
+    "display": "assets/guides/experts/agnes-rationalization.webp"
+  },
+  "assets/guides/experts/agnes-secret-knowledge.webp": {
+    "display": "assets/guides/experts/agnes-secret-knowledge.webp"
+  },
+  "assets/guides/experts/agnes-skill-locked.webp": {
+    "display": "assets/guides/experts/agnes-skill-locked.webp"
+  },
+  "assets/guides/experts/agnes-skill-upgrade.webp": {
+    "display": "assets/guides/experts/agnes-skill-upgrade.webp"
+  },
+  "assets/guides/experts/seeker-chest-bottom.webp": {
+    "display": "assets/guides/experts/seeker-chest-bottom.webp"
+  },
+  "assets/guides/experts/seeker-chest-top.webp": {
+    "display": "assets/guides/experts/seeker-chest-top.webp"
+  },
+  "assets/guides/experts/trek-choice.webp": {
+    "display": "assets/guides/experts/trek-choice.webp"
+  },
+  "assets/guides/experts/trek-station.webp": {
+    "display": "assets/guides/experts/trek-station.webp"
+  },
+  "assets/guides/foundry/boiler.webp": {
+    "display": "assets/guides/foundry/boiler.webp",
+    "mobile": "assets/guides/foundry/boiler-mobile.webp"
+  },
+  "assets/guides/foundry/foundry.webp": {
+    "display": "assets/guides/foundry/foundry.webp",
+    "mobile": "assets/guides/foundry/foundry-mobile.webp"
+  },
+  "assets/guides/foundry/merc-mail.webp": {
+    "display": "assets/guides/foundry/merc-mail.webp",
+    "mobile": "assets/guides/foundry/merc-mail-mobile.webp"
+  },
+  "assets/guides/foundry/merc.webp": {
+    "display": "assets/guides/foundry/merc.webp",
+    "mobile": "assets/guides/foundry/merc-mobile.webp"
+  },
+  "assets/guides/foundry/prototype.webp": {
+    "display": "assets/guides/foundry/prototype.webp",
+    "mobile": "assets/guides/foundry/prototype-mobile.webp"
+  },
+  "assets/guides/foundry/repair.webp": {
+    "display": "assets/guides/foundry/repair.webp",
+    "mobile": "assets/guides/foundry/repair-mobile.webp"
+  },
+  "assets/guides/foundry/score.webp": {
+    "display": "assets/guides/foundry/score.webp",
+    "mobile": "assets/guides/foundry/score-mobile.webp"
+  },
+  "assets/guides/foundry/transit.webp": {
+    "display": "assets/guides/foundry/transit.webp",
+    "mobile": "assets/guides/foundry/transit-mobile.webp"
+  },
+  "assets/guides/foundry/warehouse.webp": {
+    "display": "assets/guides/foundry/warehouse.webp",
+    "mobile": "assets/guides/foundry/warehouse-mobile.webp"
+  },
+  "assets/guides/foundry/workshop.webp": {
+    "display": "assets/guides/foundry/workshop.webp"
+  },
+  "assets/guides/hero-gear/flint-balanced.webp": {
+    "display": "assets/guides/hero-gear/flint-balanced.webp",
+    "mobile": "assets/guides/hero-gear/flint-balanced-mobile.webp"
+  },
+  "assets/guides/hero-gear/infantry-belt.webp": {
+    "display": "assets/guides/hero-gear/infantry-belt.webp",
+    "mobile": "assets/guides/hero-gear/infantry-belt-mobile.webp"
+  },
+  "assets/guides/hero-gear/infantry-boots.webp": {
+    "display": "assets/guides/hero-gear/infantry-boots.webp",
+    "mobile": "assets/guides/hero-gear/infantry-boots-mobile.webp"
+  },
+  "assets/guides/hero-gear/infantry-gloves.webp": {
+    "display": "assets/guides/hero-gear/infantry-gloves.webp",
+    "mobile": "assets/guides/hero-gear/infantry-gloves-mobile.webp"
+  },
+  "assets/guides/hero-gear/infantry-goggles.webp": {
+    "display": "assets/guides/hero-gear/infantry-goggles.webp",
+    "mobile": "assets/guides/hero-gear/infantry-goggles-mobile.webp"
+  },
+  "assets/guides/hero-gear/marksman-belt.webp": {
+    "display": "assets/guides/hero-gear/marksman-belt.webp",
+    "mobile": "assets/guides/hero-gear/marksman-belt-mobile.webp"
+  },
+  "assets/guides/hero-gear/marksman-boots.webp": {
+    "display": "assets/guides/hero-gear/marksman-boots.webp",
+    "mobile": "assets/guides/hero-gear/marksman-boots-mobile.webp"
+  },
+  "assets/guides/hero-gear/marksman-gloves.webp": {
+    "display": "assets/guides/hero-gear/marksman-gloves.webp",
+    "mobile": "assets/guides/hero-gear/marksman-gloves-mobile.webp"
+  },
+  "assets/guides/hero-gear/marksman-goggles.webp": {
+    "display": "assets/guides/hero-gear/marksman-goggles.webp",
+    "mobile": "assets/guides/hero-gear/marksman-goggles-mobile.webp"
+  },
+  "assets/guides/hero-gear/widget-alonso-info.webp": {
+    "display": "assets/guides/hero-gear/widget-alonso-info.webp",
+    "mobile": "assets/guides/hero-gear/widget-alonso-info-mobile.webp"
+  },
+  "assets/guides/hero-gear/widget-flint-info.webp": {
+    "display": "assets/guides/hero-gear/widget-flint-info.webp",
+    "mobile": "assets/guides/hero-gear/widget-flint-info-mobile.webp"
+  },
+  "assets/guides/hero-gear/widget-flint-upgrade.webp": {
+    "display": "assets/guides/hero-gear/widget-flint-upgrade.webp",
+    "mobile": "assets/guides/hero-gear/widget-flint-upgrade-mobile.webp"
+  },
+  "assets/guides/heroes/alonso-four-stars.webp": {
+    "display": "assets/guides/heroes/alonso-four-stars.webp",
+    "mobile": "assets/guides/heroes/alonso-four-stars-mobile.webp"
+  },
+  "assets/guides/heroes/alonso-skills-5.webp": {
+    "display": "assets/guides/heroes/alonso-skills-5.webp",
+    "mobile": "assets/guides/heroes/alonso-skills-5-mobile.webp"
+  },
+  "assets/guides/heroes/flint-expedition.webp": {
+    "display": "assets/guides/heroes/flint-expedition.webp",
+    "mobile": "assets/guides/heroes/flint-expedition-mobile.webp"
+  },
+  "assets/guides/heroes/natalia-expedition.webp": {
+    "display": "assets/guides/heroes/natalia-expedition.webp",
+    "mobile": "assets/guides/heroes/natalia-expedition-mobile.webp"
+  },
+  "assets/guides/heroes/philly-skills.webp": {
+    "display": "assets/guides/heroes/philly-skills.webp",
+    "mobile": "assets/guides/heroes/philly-skills-mobile.webp"
+  },
+  "assets/guides/heroes/philly-star-upgrade.webp": {
+    "display": "assets/guides/heroes/philly-star-upgrade.webp",
+    "mobile": "assets/guides/heroes/philly-star-upgrade-mobile.webp"
+  },
+  "assets/guides/heroes/philly-summary.webp": {
+    "display": "assets/guides/heroes/philly-summary.webp",
+    "mobile": "assets/guides/heroes/philly-summary-mobile.webp"
+  },
+  "assets/guides/ice-mine/orichalcum-map.webp": {
+    "display": "assets/guides/ice-mine/orichalcum-map.webp",
+    "mobile": "assets/guides/ice-mine/orichalcum-map-mobile.webp"
+  },
+  "assets/guides/ice-mine/orichalcum-selected.webp": {
+    "display": "assets/guides/ice-mine/orichalcum-selected.webp",
+    "mobile": "assets/guides/ice-mine/orichalcum-selected-mobile.webp"
+  },
+  "assets/guides/ice-mine/result-screen.webp": {
+    "display": "assets/guides/ice-mine/result-screen.webp",
+    "mobile": "assets/guides/ice-mine/result-screen-mobile.webp"
+  },
+  "assets/guides/ice-mine/skill-tree-empty.webp": {
+    "display": "assets/guides/ice-mine/skill-tree-empty.webp",
+    "mobile": "assets/guides/ice-mine/skill-tree-empty-mobile.webp"
+  },
+  "assets/guides/ice-mine/skill-tree-upgraded.webp": {
+    "display": "assets/guides/ice-mine/skill-tree-upgraded.webp"
+  },
+  "assets/guides/ice-mine/vein-breakthrough.webp": {
+    "display": "assets/guides/ice-mine/vein-breakthrough.webp",
+    "mobile": "assets/guides/ice-mine/vein-breakthrough-mobile.webp"
+  },
+  "assets/guides/lucky-wheel/hero-choice.webp": {
+    "display": "assets/guides/lucky-wheel/hero-choice.webp",
+    "mobile": "assets/guides/lucky-wheel/hero-choice-mobile.webp"
+  },
+  "assets/guides/lucky-wheel/wheel-main.webp": {
+    "display": "assets/guides/lucky-wheel/wheel-main.webp",
+    "mobile": "assets/guides/lucky-wheel/wheel-main-mobile.webp"
+  },
+  "assets/guides/mobilization/alliance-monuments.webp": {
+    "display": "assets/guides/mobilization/alliance-monuments.webp",
+    "mobile": "assets/guides/mobilization/alliance-monuments-mobile.webp"
+  },
+  "assets/guides/mobilization/attempts-150.webp": {
+    "display": "assets/guides/mobilization/attempts-150.webp",
+    "mobile": "assets/guides/mobilization/attempts-150-mobile.webp"
+  },
+  "assets/guides/mobilization/personal-200-120.webp": {
+    "display": "assets/guides/mobilization/personal-200-120.webp",
+    "mobile": "assets/guides/mobilization/personal-200-120-mobile.webp"
+  },
+  "assets/guides/mobilization/personal-cooldowns.webp": {
+    "display": "assets/guides/mobilization/personal-cooldowns.webp",
+    "mobile": "assets/guides/mobilization/personal-cooldowns-mobile.webp"
+  },
+  "assets/guides/penguin-party/daily-missions-done.webp": {
+    "display": "assets/guides/penguin-party/daily-missions-done.webp"
+  },
+  "assets/guides/penguin-party/daily-missions.webp": {
+    "display": "assets/guides/penguin-party/daily-missions.webp"
+  },
+  "assets/guides/penguin-party/ice-blast-daily.webp": {
+    "display": "assets/guides/penguin-party/ice-blast-daily.webp"
+  },
+  "assets/guides/penguin-party/ice-blast-rewards.webp": {
+    "display": "assets/guides/penguin-party/ice-blast-rewards.webp"
+  },
+  "assets/guides/penguin-party/lost-loot-chest-rewards.webp": {
+    "display": "assets/guides/penguin-party/lost-loot-chest-rewards.webp"
+  },
+  "assets/guides/penguin-party/lost-loot-island-building.webp": {
+    "display": "assets/guides/penguin-party/lost-loot-island-building.webp"
+  },
+  "assets/guides/penguin-party/lost-loot-overview.webp": {
+    "display": "assets/guides/penguin-party/lost-loot-overview.webp"
+  },
+  "assets/guides/penguin-party/lost-loot-stage-preview-extended.webp": {
+    "display": "assets/guides/penguin-party/lost-loot-stage-preview-extended.webp"
+  },
+  "assets/guides/penguin-party/lost-loot-stage-preview.webp": {
+    "display": "assets/guides/penguin-party/lost-loot-stage-preview.webp"
+  },
+  "assets/guides/penguin-party/lost-loot-stage3.webp": {
+    "display": "assets/guides/penguin-party/lost-loot-stage3.webp"
+  },
+  "assets/guides/penguin-party/lost-loot-stage7.webp": {
+    "display": "assets/guides/penguin-party/lost-loot-stage7.webp"
+  },
+  "assets/guides/penguin-party/park-overview.webp": {
+    "display": "assets/guides/penguin-party/park-overview.webp"
+  },
+  "assets/guides/penguin-party/park-probabilities.webp": {
+    "display": "assets/guides/penguin-party/park-probabilities.webp"
+  },
+  "assets/guides/penguin-party/party-pro.webp": {
+    "display": "assets/guides/penguin-party/party-pro.webp"
+  },
+  "assets/guides/penguin-party/ring-left.webp": {
+    "display": "assets/guides/penguin-party/ring-left.webp"
+  },
+  "assets/guides/penguin-party/ring-right.webp": {
+    "display": "assets/guides/penguin-party/ring-right.webp"
+  },
+  "assets/guides/penguin-party/shop.webp": {
+    "display": "assets/guides/penguin-party/shop.webp"
+  },
+  "assets/guides/penguin-party/symphony.webp": {
+    "display": "assets/guides/penguin-party/symphony.webp"
+  },
+  "assets/guides/pvp/attack-jasser.webp": {
+    "display": "assets/guides/pvp/attack-jasser.webp"
+  },
+  "assets/guides/pvp/attack-jessie.webp": {
+    "display": "assets/guides/pvp/attack-jessie.webp"
+  },
+  "assets/guides/pvp/battle-timers.webp": {
+    "display": "assets/guides/pvp/battle-timers.webp"
+  },
+  "assets/guides/pvp/defense-patrick.webp": {
+    "display": "assets/guides/pvp/defense-patrick.webp"
+  },
+  "assets/guides/pvp/defense-sergey.webp": {
+    "display": "assets/guides/pvp/defense-sergey.webp"
+  },
+  "assets/guides/pvp/heal-4min.webp": {
+    "display": "assets/guides/pvp/heal-4min.webp"
+  },
+  "assets/guides/pvp/losses-unacceptable.webp": {
+    "display": "assets/guides/pvp/losses-unacceptable.webp"
+  },
+  "assets/guides/pvp/refill-minimarches-collage.webp": {
+    "display": "assets/guides/pvp/refill-minimarches-collage.webp",
+    "mobile": "assets/guides/pvp/refill-minimarches-collage-mobile.webp"
+  },
+  "assets/guides/pvp/skill-bahiti.png": {
+    "display": "assets/guides/pvp/skill-bahiti-display.webp"
+  },
+  "assets/guides/pvp/skill-jasser.webp": {
+    "display": "assets/guides/pvp/skill-jasser.webp"
+  },
+  "assets/guides/pvp/skill-jessie.webp": {
+    "display": "assets/guides/pvp/skill-jessie.webp"
+  },
+  "assets/guides/pvp/skill-patrick.webp": {
+    "display": "assets/guides/pvp/skill-patrick.webp"
+  },
+  "assets/guides/pvp/skill-sergey.webp": {
+    "display": "assets/guides/pvp/skill-sergey.webp"
+  },
+  "assets/guides/pvp/sync-timer.webp": {
+    "display": "assets/guides/pvp/sync-timer.webp",
+    "mobile": "assets/guides/pvp/sync-timer-mobile.webp"
+  },
+  "assets/guides/snowbusters/area14-start.webp": {
+    "display": "assets/guides/snowbusters/area14-start.webp"
+  },
+  "assets/guides/snowbusters/coal-to-fuel.webp": {
+    "display": "assets/guides/snowbusters/coal-to-fuel.webp"
+  },
+  "assets/guides/snowbusters/gear-coat-boots.webp": {
+    "display": "assets/guides/snowbusters/gear-coat-boots.webp"
+  },
+  "assets/guides/snowbusters/rockets-purchase.webp": {
+    "display": "assets/guides/snowbusters/rockets-purchase.webp"
+  },
+  "assets/guides/snowbusters/superplow-area13.webp": {
+    "display": "assets/guides/snowbusters/superplow-area13.webp"
+  },
+  "assets/guides/svs/battle-phase-tab.png": {
+    "display": "assets/guides/svs/battle-phase-tab-display.webp",
+    "mobile": "assets/guides/svs/battle-phase-tab-mobile.webp"
+  },
+  "assets/guides/svs/battle-rewards-overview.webp": {
+    "display": "assets/guides/svs/battle-rewards-overview.webp",
+    "mobile": "assets/guides/svs/battle-rewards-overview-mobile.webp"
+  },
+  "assets/guides/svs/battle-rewards-tab.png": {
+    "display": "assets/guides/svs/battle-rewards-tab-display.webp",
+    "mobile": "assets/guides/svs/battle-rewards-tab-mobile.webp"
+  },
+  "assets/guides/svs/conquest-sword.webp": {
+    "display": "assets/guides/svs/conquest-sword.webp",
+    "mobile": "assets/guides/svs/conquest-sword-mobile.webp"
+  },
+  "assets/guides/svs/day-ranking-example.webp": {
+    "display": "assets/guides/svs/day-ranking-example.webp",
+    "mobile": "assets/guides/svs/day-ranking-example-mobile.webp"
+  },
+  "assets/guides/svs/enemy-castle-area.png": {
+    "display": "assets/guides/svs/enemy-castle-area-display.webp",
+    "mobile": "assets/guides/svs/enemy-castle-area-mobile.webp"
+  },
+  "assets/guides/svs/enemy-castle-border.png": {
+    "display": "assets/guides/svs/enemy-castle-border-display.webp",
+    "mobile": "assets/guides/svs/enemy-castle-border-mobile.webp"
+  },
+  "assets/guides/svs/matchmaking.webp": {
+    "display": "assets/guides/svs/matchmaking.webp",
+    "mobile": "assets/guides/svs/matchmaking-mobile.webp"
+  },
+  "assets/guides/svs/opponent-found.webp": {
+    "display": "assets/guides/svs/opponent-found.webp",
+    "mobile": "assets/guides/svs/opponent-found-mobile.webp"
+  },
+  "assets/guides/svs/philly-chest.webp": {
+    "display": "assets/guides/svs/philly-chest.webp",
+    "mobile": "assets/guides/svs/philly-chest-mobile.webp"
+  },
+  "assets/guides/svs/prep-rewards-overview.webp": {
+    "display": "assets/guides/svs/prep-rewards-overview.webp",
+    "mobile": "assets/guides/svs/prep-rewards-overview-mobile.webp"
+  },
+  "assets/guides/svs/troop-revival-confirm.png": {
+    "display": "assets/guides/svs/troop-revival-confirm-display.webp",
+    "mobile": "assets/guides/svs/troop-revival-confirm-mobile.webp"
+  },
+  "assets/guides/svs/troop-revival-limit.png": {
+    "display": "assets/guides/svs/troop-revival-limit-display.webp",
+    "mobile": "assets/guides/svs/troop-revival-limit-mobile.webp"
+  },
+  "assets/guides/svs/troop-revival-main.png": {
+    "display": "assets/guides/svs/troop-revival-main-display.webp",
+    "mobile": "assets/guides/svs/troop-revival-main-mobile.webp"
+  },
+  "assets/guides/war-rules/bigger-fish.webp": {
+    "display": "assets/guides/war-rules/bigger-fish.webp",
+    "mobile": "assets/guides/war-rules/bigger-fish-mobile.webp"
+  },
+  "assets/guides/winter-siege/command.webp": {
+    "display": "assets/guides/winter-siege/command.webp"
+  },
+  "assets/guides/winter-siege/garrison.webp": {
+    "display": "assets/guides/winter-siege/garrison.webp"
+  },
+  "assets/guides/winter-siege/overview.webp": {
+    "display": "assets/guides/winter-siege/overview.webp"
+  }
+}
